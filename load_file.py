@@ -147,14 +147,17 @@ def load_pdf_with_Unstructured(file_path:str):
 
 
 def load_md(file_path:str)->List[Document]:
+    # 负责人：么一明
     # 该方法实现加载md文件，并返回一个List[Document]
     # clue：参考https://python.langchain.com/docs/how_to/document_loader_markdown/
     pass
 def load_docx(file_path:str)->List[Document]:
+    # 负责人：李宏伟
     # 该方法实现加载docx文件，并返回一个List[Document]
     # clue：参考https://python.langchain.com/docs/how_to/document_loader_office_file/
     pass
 def load_pptx(file_path:str)->List[Document]:
+    # 负责人： 高哲文
     # 该方法实现加载pptx文件，并返回一个List[Document]
     # clue：参考https://python.langchain.com/docs/how_to/document_loader_office_file/
     pass
