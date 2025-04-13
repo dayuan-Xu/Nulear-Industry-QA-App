@@ -5,10 +5,10 @@
 # 要求各个函数将文件内容加载为List[Document]后输出前几个doc看看是否正确。
 
 import os
+
 from typing_extensions import List
 from langchain_core.documents import Document
 from langchain_text_splitters import RecursiveCharacterTextSplitter
-import nltk
 
 def load_txt(file_path:str)->List[Document]:
     # 该函数对一个TXT文件实现加载并返回List[Document]
@@ -76,7 +76,7 @@ def load_txt(file_path:str)->List[Document]:
     # 4、返回该List[Document]
     return all_docs
 
-from langchain.document_loaders import PyPDFLoader
+from langchain_community.document_loaders import PyPDFLoader
 def load_pdf_simply(file_path:str)->List[Document]:
     # 该方法基于pypdf库加载pdf文件，只是对pdf文件文本的简单快速提取。
 
@@ -111,8 +111,6 @@ def load_pdf_simply(file_path:str)->List[Document]:
     return all_splits
 
 from langchain_unstructured import UnstructuredLoader
-import pandas as pd
-from io import StringIO
 def load_pdf_with_Unstructured(file_path:str):
     # 该方法测试pdf文件的布局解析，使用Unstructured提供的API接口。
     # 优点：能够正确识别pdf文件中不同的结构类别，从而可以编码实现专门从指定结构中提取文本: 比如可以从表格中正确提取数据，从富文本图像中正确提取文本。
@@ -149,7 +147,7 @@ def load_pdf_with_Unstructured(file_path:str):
 
 from typing import List
 from langchain.schema import Document
-from langchain.document_loaders import UnstructuredMarkdownLoader
+from langchain_community.document_loaders import UnstructuredMarkdownLoader
 
 def load_md(file_path:str)->List[Document]:
     # 负责人：么一明
@@ -180,6 +178,8 @@ def load_md(file_path:str)->List[Document]:
         )
         # 分割文档
         all_splits = text_splitter.split_documents(documents)
+        print(all_splits[0].metadata,end="\n")
+        print(all_splits[0].page_content)
         return all_splits
     except Exception as e:
         print(f"加载 Markdown 文件时出错: {e}")
@@ -199,8 +199,7 @@ def load_pptx(file_path:str)->List[Document]:
 if __name__ == "__main__":
     # load_txt("test_files/核工业百科.txt")
     # load_pdf_simply("test_files/1.10MW 高温堆热启动时蒸汽发生器.pdf")
-
-    # 下面3个函数有待实现，已经分别指定了测试文件
-    # load_md(r"C:\Users\lenovo\Desktop\Nulear-Industry-QA-App\test_files\LangChainItroduction.md")
-    # load_docx("test_files/大创开题报告.docx")
-    # load_pptx("test_files/核工业专业知识问答模型构建-开题答辩.pptx")
+    # load_md("test_files/LangChainItroduction.md")
+    # 下面2个函数有待实现，已经分别指定了测试文件
+     load_docx("test_files/大创开题报告.docx")
+     load_pptx("test_files/核工业专业知识问答模型构建-开题答辩.pptx")
