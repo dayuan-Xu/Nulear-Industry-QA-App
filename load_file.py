@@ -146,7 +146,6 @@ def load_pdf_with_Unstructured(file_path:str):
         print()
 
 from typing import List
-from langchain.schema import Document
 from langchain_community.document_loaders import UnstructuredMarkdownLoader
 
 def load_md(file_path:str)->List[Document]:
