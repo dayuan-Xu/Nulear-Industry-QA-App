@@ -8,6 +8,7 @@ import os
 from typing_extensions import List
 from langchain_core.documents import Document
 from langchain_text_splitters import RecursiveCharacterTextSplitter
+import nltk
 
 def load_txt(file_path:str)->List[Document]:
     # 该函数对一个TXT文件实现加载并返回List[Document]
@@ -149,6 +150,7 @@ def load_pdf_with_Unstructured(file_path:str):
 from typing import List
 from langchain.schema import Document
 from langchain.document_loaders import UnstructuredMarkdownLoader
+
 def load_md(file_path:str)->List[Document]:
     # 负责人：么一明
     # 该方法实现加载md文件，并返回一个List[Document]
@@ -159,11 +161,38 @@ def load_md(file_path:str)->List[Document]:
         loader = UnstructuredMarkdownLoader(file_path)
         # 加载文档并返回
         documents = loader.load()
-        return documents
+        # 初始化 RecursiveCharacterTextSplitter
+        text_splitter = RecursiveCharacterTextSplitter(
+            separators=[
+                "\n\n",  # 空行，常作为不同章节的分割标志
+                "\n",  # 换行符，常作为段落之间或文本与公式之间的分割标志
+                " ",  # 空格，常作为英文单词之间分割标志
+                ".",
+                ",",
+                "\u200b",  # Zero-width space (零宽空格): （不可见）
+                "\uff0c",  # Fullwidth comma (全角逗号): ，
+                "\u3001",  # Ideographic comma (顿号): 、
+                "\uff0e",  # Fullwidth full stop (全角句号): ．
+                "\u3002",  # Ideographic full stop (句号): 。
+            ],
+            chunk_size=500,
+            chunk_overlap=200,
+            add_start_index=True
+        )
+ 
+        # 分割文档
+        all_splits = []
+        for doc in documents:
+            split_docs = text_splitter.split_documents([doc])  # 注意这里需要将单个文档包装在列表中
+            all_splits.extend(split_docs)
+ 
+      
+ 
+        return all_splits
+        
     except Exception as e:
         print(f"加载 Markdown 文件时出错: {e}")
         return []
-
     pass
 def load_docx(file_path:str)->List[Document]:
     # 负责人：李宏伟
@@ -177,12 +206,10 @@ def load_pptx(file_path:str)->List[Document]:
     pass
 
 if __name__ == "__main__":
-    load_txt("test_files/核工业百科.txt")
-    load_pdf_simply("test_files/1.10MW 高温堆热启动时蒸汽发生器.pdf")
+    # load_txt("test_files/核工业百科.txt")
+    # load_pdf_simply("test_files/1.10MW 高温堆热启动时蒸汽发生器.pdf")
 
     # 下面3个函数有待实现，已经分别指定了测试文件
-    # load_md("test_files/LangChainIntroduction.md")
+    # load_md(r"C:\Users\lenovo\Desktop\Nulear-Industry-QA-App\test_files\LangChainItroduction.md")
     # load_docx("test_files/大创开题报告.docx")
     # load_pptx("test_files/核工业专业知识问答模型构建-开题答辩.pptx")
-
-
