@@ -8,6 +8,7 @@ import os
 from typing_extensions import List
 from langchain_core.documents import Document
 from langchain_text_splitters import RecursiveCharacterTextSplitter
+
 def load_txt(file_path:str)->List[Document]:
     # 该函数对一个TXT文件实现加载并返回List[Document]
 
@@ -74,7 +75,7 @@ def load_txt(file_path:str)->List[Document]:
     # 4、返回该List[Document]
     return all_docs
 
-from langchain_community.document_loaders import PyPDFLoader
+from langchain.document_loaders import PyPDFLoader
 def load_pdf_simply(file_path:str)->List[Document]:
     # 该方法基于pypdf库加载pdf文件，只是对pdf文件文本的简单快速提取。
 
@@ -145,11 +146,24 @@ def load_pdf_with_Unstructured(file_path:str):
         print("page_content:",doc.page_content)
         print()
 
-
+from typing import List
+from langchain.schema import Document
+from langchain.document_loaders import UnstructuredMarkdownLoader
 def load_md(file_path:str)->List[Document]:
     # 负责人：么一明
     # 该方法实现加载md文件，并返回一个List[Document]
     # clue：参考https://python.langchain.com/docs/how_to/document_loader_markdown/
+
+    try:
+        # 使用 LangChain 提供的 UnstructuredMarkdownLoader 加载 Markdown 文件
+        loader = UnstructuredMarkdownLoader(file_path)
+        # 加载文档并返回
+        documents = loader.load()
+        return documents
+    except Exception as e:
+        print(f"加载 Markdown 文件时出错: {e}")
+        return []
+
     pass
 def load_docx(file_path:str)->List[Document]:
     # 负责人：李宏伟
