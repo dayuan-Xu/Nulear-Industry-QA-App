@@ -155,7 +155,6 @@ def load_md(file_path:str)->List[Document]:
     # 负责人：么一明
     # 该方法实现加载md文件，并返回一个List[Document]
     # clue：参考https://python.langchain.com/docs/how_to/document_loader_markdown/
-
     try:
         # 使用 LangChain 提供的 UnstructuredMarkdownLoader 加载 Markdown 文件
         loader = UnstructuredMarkdownLoader(file_path)
@@ -179,21 +178,13 @@ def load_md(file_path:str)->List[Document]:
             chunk_overlap=200,
             add_start_index=True
         )
- 
         # 分割文档
-        all_splits = []
-        for doc in documents:
-            split_docs = text_splitter.split_documents([doc])  # 注意这里需要将单个文档包装在列表中
-            all_splits.extend(split_docs)
- 
-      
- 
+        all_splits = text_splitter.split_documents(documents)
         return all_splits
-        
     except Exception as e:
         print(f"加载 Markdown 文件时出错: {e}")
         return []
-    pass
+
 def load_docx(file_path:str)->List[Document]:
     # 负责人：李宏伟
     # 该方法实现加载docx文件，并返回一个List[Document]
