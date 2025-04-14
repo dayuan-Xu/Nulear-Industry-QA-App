@@ -7,6 +7,7 @@
 import os
 from typing_extensions import List
 from langchain_core.documents import Document
+
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 def load_txt(file_path:str)->List[Document]:
     # 该函数对一个TXT文件实现加载并返回List[Document]
@@ -151,11 +152,70 @@ def load_md(file_path:str)->List[Document]:
     # 该方法实现加载md文件，并返回一个List[Document]
     # clue：参考https://python.langchain.com/docs/how_to/document_loader_markdown/
     pass
-def load_docx(file_path:str)->List[Document]:
-    # 负责人：李宏伟
-    # 该方法实现加载docx文件，并返回一个List[Document]
-    # clue：参考https://python.langchain.com/docs/how_to/document_loader_office_file/
-    pass
+
+
+from langchain_community.document_loaders import Docx2txtLoader
+from langchain_text_splitters import RecursiveCharacterTextSplitter
+from langchain_core.documents import Document
+from typing import List
+import os
+
+
+def load_docx(file_path: str) -> List[Document]:
+    """
+    加载DOCX文件并返回分块后的List[Document]。
+
+    参数:
+        file_path (str): DOCX文件的路径。
+
+    返回:
+        List[Document]: 分块后的文档列表。
+    """
+    # 1. 检查文件是否存在
+    if not os.path.exists(file_path):
+        raise FileNotFoundError(f"文件 {file_path} 不存在！")
+
+    # 2. 初始化加载器
+    loader = Docx2txtLoader(file_path)
+
+    # 3. 加载文档
+    docs = loader.load()
+
+    # 4. 初始化文本分割器
+    text_splitter = RecursiveCharacterTextSplitter(
+        separators=[
+            "\n\n",  # 空行
+            "\n",  # 换行符
+            " ",  # 空格
+            ".",  # 英文句号
+            ",",  # 英文逗号
+            "\u3002",  # 中文句号
+            "\uff0c",  # 中文逗号
+            "\u3001",  # 中文顿号
+            "",  # 空字符
+        ],
+        chunk_size=500,
+        chunk_overlap=100,
+        add_start_index=True
+    )
+
+    # 5. 对文档进行分块
+    splits = text_splitter.split_documents(docs)
+
+    # 6. 为每个分块添加source元数据
+    for split in splits:
+        split.metadata["source"] = file_path
+
+    # 7. 打印前3个分块用于测试
+    print(f"DOCX文件 {file_path} 被切分为 {len(splits)} 个分块。")
+    for i, split in enumerate(splits[:3]):
+        print(f"\n分块 {i + 1}:")
+        print(split.page_content)
+        print("元数据:", split.metadata)
+
+    return splits
+
+
 def load_pptx(file_path:str)->List[Document]:
     # 负责人： 高哲文
     # 该方法实现加载pptx文件，并返回一个List[Document]
@@ -168,7 +228,7 @@ if __name__ == "__main__":
 
     # 下面3个函数有待实现，已经分别指定了测试文件
     # load_md("test_files/LangChainIntroduction.md")
-    # load_docx("test_files/大创开题报告.docx")
+    load_docx("test_files/大创开题报告.docx")
     # load_pptx("test_files/核工业专业知识问答模型构建-开题答辩.pptx")
 
 
