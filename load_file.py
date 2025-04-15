@@ -8,6 +8,7 @@ import os
 
 from typing_extensions import List
 from langchain_core.documents import Document
+
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 
 def load_txt(file_path:str)->List[Document]:
@@ -184,14 +185,59 @@ def load_md(file_path:str)->List[Document]:
         print(f"加载 Markdown 文件时出错: {e}")
         return []
 
+from langchain_community.document_loaders import Docx2txtLoader
+from langchain_text_splitters import RecursiveCharacterTextSplitter
+from langchain_core.documents import Document
+from typing import List
+import os
 def load_docx(file_path:str)->List[Document]:
     # 负责人：李宏伟
     # 该方法实现加载docx文件，并返回一个List[Document]
     # clue：参考https://python.langchain.com/docs/how_to/document_loader_office_file/
-    pass
+    # 1. 检查文件是否存在
+    if not os.path.exists(file_path):
+        raise FileNotFoundError(f"文件 {file_path} 不存在！")
 
+    # 2. 初始化加载器
+    loader = Docx2txtLoader(file_path)
 
+    # 3. 加载文档
+    docs = loader.load()
 
+    # 4. 初始化文本分割器
+    text_splitter = RecursiveCharacterTextSplitter(
+        separators=[
+            "\n\n",  # 空行
+            "\n",  # 换行符
+            " ",  # 空格
+            ".",  # 英文句号
+            ",",  # 英文逗号
+            "\u3002",  # 中文句号
+            "\uff0c",  # 中文逗号
+            "\u3001",  # 中文顿号
+            "",  # 空字符
+        ],
+        chunk_size=500,
+        chunk_overlap=100,
+        add_start_index=True
+    )
+
+    # 5. 对文档进行分块
+    splits = text_splitter.split_documents(docs)
+
+    # 6. 为每个分块添加source元数据
+    for split in splits:
+        split.metadata["source"] = file_path
+
+    # 7. 打印前3个分块用于测试
+    print(f"DOCX文件 {file_path} 被切分为 {len(splits)} 个分块。")
+    for i, split in enumerate(splits[:3]):
+        print(f"\n分块 {i + 1}:")
+        print(split.page_content)
+        print("元数据:", split.metadata)
+
+    return splits
+  
 
 from pptx import Presentation
 from langchain_core.documents import Document
