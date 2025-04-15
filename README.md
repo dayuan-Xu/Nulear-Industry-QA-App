@@ -10,5 +10,9 @@
 - 次年1月-2月：增加文件解析范围，比如CSV文件、HTML文件、MD文件。
 - 次年3月：增加代理功能等优化工作。
 
-# 常用命令
+# 常用命令(在工作目录下执行)
 - 生成本地环境中安装的所有python包: pip freeze > requirements.txt
+- 将所有项目文件添加到暂存区: git add -A
+- 将暂存区的文件提交到本地仓库: git commit -m "commit message"
+- 将本地仓库提交到远程仓库: git push 
+- 将远程仓库更新到本地仓库: git pull
