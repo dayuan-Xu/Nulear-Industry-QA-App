@@ -189,16 +189,77 @@ def load_docx(file_path:str)->List[Document]:
     # 该方法实现加载docx文件，并返回一个List[Document]
     # clue：参考https://python.langchain.com/docs/how_to/document_loader_office_file/
     pass
+
+
+
+
+from pptx import Presentation
+from langchain_core.documents import Document
+from langchain_text_splitters import RecursiveCharacterTextSplitter
+from typing import List
 def load_pptx(file_path:str)->List[Document]:
     # 负责人： 高哲文
     # 该方法实现加载pptx文件，并返回一个List[Document]
     # clue：参考https://python.langchain.com/docs/how_to/document_loader_office_file/
-    pass
+    """
+        加载 pptx 文件并返回一个 List[Document] 对象，每个 Document 对应一部分文本内容。
+        """
+
+    try:
+        # 1. 使用 python-pptx 加载 pptx 文件
+        prs = Presentation(file_path)
+
+        # 2. 提取每张幻灯片中的文本内容
+        all_texts = []
+        for slide in prs.slides:
+            slide_text = ""
+            for shape in slide.shapes:
+                if hasattr(shape, "text") and shape.text.strip():  # 确保是文本框
+                    slide_text += shape.text.strip() + "\n"
+            if slide_text.strip():  # 仅当幻灯片有文本内容时才添加
+                all_texts.append(slide_text.strip())
+
+        # 3. 使用 RecursiveCharacterTextSplitter 对提取的文本进行分割
+        text_splitter = RecursiveCharacterTextSplitter(
+            separators=[
+                "\n\n",  # 空行，常作为不同章节的分割标志
+                "\n",  # 换行符，常作为段落之间或文本与公式之间的分割标志
+                " ",  # 空格，常作为英文单词之间分割标志
+                ".",  # 句号
+                ",",  # 逗号
+                "\u200b",  # Zero-width space (零宽空格)
+                "\uff0c",  # 全角逗号
+                "\u3001",  # 顿号
+                "\uff0e",  # 全角句号
+                "\u3002",  # 句号
+            ],
+            chunk_size=500,  # 每个文档的最大字数
+            chunk_overlap=200,  # 每个文档的重叠部分
+            add_start_index=True
+        )
+
+        # 将所有幻灯片文本切割成多个 Document 对象
+        all_docs = text_splitter.create_documents(all_texts)
+
+        # 4. 输出前三个 Document 对象，检查是否加载正确
+        print(f"加载的 PPTX 文件包含 {len(all_docs)} 个文档块。\n")
+        for i in range(len(all_docs)):
+            print(f"Document {i + 1} 元数据: {all_docs[i].metadata}")
+            print(f"Document {i + 1} 内容: {all_docs[i].page_content}\n")
+
+        # 5. 返回所有的 Document 对象
+        return all_docs
+
+    except Exception as e:
+        print(f"加载 PPTX 文件时出错: {e}")
+        return []
+
 
 if __name__ == "__main__":
     # load_txt("test_files/核工业百科.txt")
     # load_pdf_simply("test_files/1.10MW 高温堆热启动时蒸汽发生器.pdf")
     # load_md("test_files/LangChainItroduction.md")
     # 下面2个函数有待实现，已经分别指定了测试文件
+    
      load_docx("test_files/大创开题报告.docx")
      load_pptx("test_files/核工业专业知识问答模型构建-开题答辩.pptx")
