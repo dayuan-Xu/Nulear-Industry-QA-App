@@ -1,18 +1,19 @@
 # 该模块基于LangChain的Document loaders：https://python.langchain.com/docs/how_to/#document-loaders
 # 各个函数加载指定路径下的文件，返回一个List[Document]
-# 对于文件的加载要求：仅仅要求提取出文件中的文本内容即可，不要求将文件中的图表、表格等复杂结构也转化为文本。
-
-# 要求各个函数将文件内容加载为List[Document]后输出前几个doc看看是否正确。
-
-import os
-
+# 对于文件的加载要求：仅仅要求提取出文件中的文本内容即可，尽量将文件中的图表、表格等复杂结构也转化为文本。
+# 要求各个函数将文件内容加载为List[Document]后输出前几个doc，查看是否正确加载文件内容为文本。
 from typing_extensions import List
 from langchain_core.documents import Document
-
 from langchain_text_splitters import RecursiveCharacterTextSplitter
+from langchain_community.document_loaders import PyPDFLoader
+from langchain_unstructured import UnstructuredLoader
+from langchain_community.document_loaders import UnstructuredMarkdownLoader
+from langchain_community.document_loaders import Docx2txtLoader
+from pptx import Presentation
+import os
 
 def load_txt(file_path:str)->List[Document]:
-    # 该函数对一个TXT文件实现加载并返回List[Document]
+    # 该函数加载一个TXT文件，返回List[Document]
 
     # 1、建立文本切分器
     text_splitter = RecursiveCharacterTextSplitter(
@@ -76,10 +77,8 @@ def load_txt(file_path:str)->List[Document]:
         print(all_docs[i])
     # 4、返回该List[Document]
     return all_docs
-
-from langchain_community.document_loaders import PyPDFLoader
 def load_pdf_simply(file_path:str)->List[Document]:
-    # 该方法基于pypdf库加载pdf文件，只是对pdf文件文本的简单快速提取。
+    # 该方法基于pypdf库加载pdf文件，实现对pdf文件中文本的简单快速提取。
 
     # 1、初始化加载器
     loader = PyPDFLoader(file_path=file_path)
@@ -111,7 +110,6 @@ def load_pdf_simply(file_path:str)->List[Document]:
     all_splits=text_splitter.split_documents(docs)
     return all_splits
 
-from langchain_unstructured import UnstructuredLoader
 def load_pdf_with_Unstructured(file_path:str):
     # 该方法测试pdf文件的布局解析，使用Unstructured提供的API接口。
     # 优点：能够正确识别pdf文件中不同的结构类别，从而可以编码实现专门从指定结构中提取文本: 比如可以从表格中正确提取数据，从富文本图像中正确提取文本。
@@ -146,12 +144,9 @@ def load_pdf_with_Unstructured(file_path:str):
         print("page_content:",doc.page_content)
         print()
 
-from typing import List
-from langchain_community.document_loaders import UnstructuredMarkdownLoader
-
 def load_md(file_path:str)->List[Document]:
     # 负责人：么一明
-    # 该方法实现加载md文件，并返回一个List[Document]
+    # 该方法加载md文件，并返回一个List[Document]
     # clue：参考https://python.langchain.com/docs/how_to/document_loader_markdown/
     try:
         # 使用 LangChain 提供的 UnstructuredMarkdownLoader 加载 Markdown 文件
@@ -185,12 +180,7 @@ def load_md(file_path:str)->List[Document]:
         print(f"加载 Markdown 文件时出错: {e}")
         return []
 
-from langchain_community.document_loaders import Docx2txtLoader
-from langchain_text_splitters import RecursiveCharacterTextSplitter
-from langchain_core.documents import Document
-from typing import List
-import os
-def load_docx(file_path:str)->List[Document]:
+def load_docx_simply(file_path:str)->List[Document]:
     # 负责人：李宏伟
     # 该方法实现加载docx文件，并返回一个List[Document]
     # clue：参考https://python.langchain.com/docs/how_to/document_loader_office_file/
@@ -237,20 +227,10 @@ def load_docx(file_path:str)->List[Document]:
         print("元数据:", split.metadata)
 
     return splits
-  
 
-from pptx import Presentation
-from langchain_core.documents import Document
-from langchain_text_splitters import RecursiveCharacterTextSplitter
-from typing import List
-def load_pptx(file_path:str)->List[Document]:
+def load_pptx_simply(file_path:str)->List[Document]:
     # 负责人： 高哲文
-    # 该方法实现加载pptx文件，并返回一个List[Document]
-    # clue：参考https://python.langchain.com/docs/how_to/document_loader_office_file/
-    """
-        加载 pptx 文件并返回一个 List[Document] 对象，每个 Document 对应一部分文本内容。
-        """
-
+    # 该方法实现加载pptx文件，提取文本框和表格中的文本，并返回一个List[Document]
     try:
         # 1. 使用 python-pptx 加载 pptx 文件
         prs = Presentation(file_path)
@@ -259,10 +239,21 @@ def load_pptx(file_path:str)->List[Document]:
         all_texts = []
         for slide in prs.slides:
             slide_text = ""
+
+            # 提取文本框中的文本
             for shape in slide.shapes:
-                if hasattr(shape, "text") and shape.text.strip():  # 确保是文本框
+                if hasattr(shape, "text") and shape.text.strip():
                     slide_text += shape.text.strip() + "\n"
-            if slide_text.strip():  # 仅当幻灯片有文本内容时才添加
+
+            # 提取表格中的文本
+            for shape in slide.shapes:
+                if shape.shape_type == 19:  # 19 对应表格
+                    table = shape.table
+                    for row in table.rows:
+                        for cell in row.cells:
+                            slide_text += cell.text.strip() + "\n"
+
+            if slide_text.strip():
                 all_texts.append(slide_text.strip())
 
         # 3. 使用 RecursiveCharacterTextSplitter 对提取的文本进行分割
@@ -300,12 +291,14 @@ def load_pptx(file_path:str)->List[Document]:
         print(f"加载 PPTX 文件时出错: {e}")
         return []
 
+def load_file_with_azure(fiele_path:str)->List[Document]:
+    # 该方法基于Azure Form Recognizer提取文件中文本，返回一个List[Document]
 
+    pass
 if __name__ == "__main__":
     # load_txt("test_files/核工业百科.txt")
     # load_pdf_simply("test_files/1.10MW 高温堆热启动时蒸汽发生器.pdf")
     # load_md("test_files/LangChainItroduction.md")
     # 下面2个函数有待实现，已经分别指定了测试文件
-    
-     load_docx("test_files/大创开题报告.docx")
-     load_pptx("test_files/核工业专业知识问答模型构建-开题答辩.pptx")
+    # load_docx("test_files/大创开题报告.docx")
+     load_pptx_simply("test_files/核工业专业知识问答模型构建-开题答辩.pptx")
