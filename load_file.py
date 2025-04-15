@@ -2,6 +2,9 @@
 # 各个函数加载指定路径下的文件，返回一个List[Document]
 # 对于文件的加载要求：仅仅要求提取出文件中的文本内容即可，尽量将文件中的图表、表格等复杂结构也转化为文本。
 # 要求各个函数将文件内容加载为List[Document]后输出前几个doc，查看是否正确加载文件内容为文本。
+
+import os
+from dotenv import load_dotenv
 from typing_extensions import List
 from langchain_core.documents import Document
 from langchain_text_splitters import RecursiveCharacterTextSplitter
@@ -10,8 +13,14 @@ from langchain_unstructured import UnstructuredLoader
 from langchain_community.document_loaders import UnstructuredMarkdownLoader
 from langchain_community.document_loaders import Docx2txtLoader
 from pptx import Presentation
-import os
+from langchain_community.document_loaders import AzureAIDocumentIntelligenceLoader
 
+# 加载环境变量
+load_dotenv(override=True)
+UNSTRUCTURED_API_KEY=os.getenv('UNSTRUCTURED_API_KEY')
+AZURE_ENDPOINT=os.getenv('AZURE_ENDPOINT')
+AZURE_API_KEY=os.getenv('AZURE_API_KEY')
+print("付费服务相关变量设置成功")
 def load_txt(file_path:str)->List[Document]:
     # 该函数加载一个TXT文件，返回List[Document]
 
@@ -116,12 +125,14 @@ def load_pdf_with_Unstructured(file_path:str):
     # 缺点：对于公式、两行内容的表头识别可能不准确（可能与pdf文件本身清晰度有关）；没有把跨左右两栏的一个段落识别为一个整体
 
     # 1、初始化加载器
-    if "UNSTRUCTURED_API_KEY" not in os.environ:
-        print("未设置UNSTRUCTURED_API_KEY环境变量，请先设置该环境变量！")
+    if UNSTRUCTURED_API_KEY is None:
+        print("未设置UNSTRUCTURED_API_KEY，请先加载该变量！")
+        return  []
     loader = UnstructuredLoader(
         file_path=file_path,
         strategy="hi_res",
         partition_via_api=True,
+        api_key=UNSTRUCTURED_API_KEY,
     )
 
     # 2、获取Doc列表
@@ -147,7 +158,6 @@ def load_pdf_with_Unstructured(file_path:str):
 def load_md(file_path:str)->List[Document]:
     # 负责人：么一明
     # 该方法加载md文件，并返回一个List[Document]
-    # clue：参考https://python.langchain.com/docs/how_to/document_loader_markdown/
     try:
         # 使用 LangChain 提供的 UnstructuredMarkdownLoader 加载 Markdown 文件
         loader = UnstructuredMarkdownLoader(file_path)
@@ -182,8 +192,7 @@ def load_md(file_path:str)->List[Document]:
 
 def load_docx_simply(file_path:str)->List[Document]:
     # 负责人：李宏伟
-    # 该方法实现加载docx文件，并返回一个List[Document]
-    # clue：参考https://python.langchain.com/docs/how_to/document_loader_office_file/
+    # 该方法加载docx文件，并返回一个List[Document]
     # 1. 检查文件是否存在
     if not os.path.exists(file_path):
         raise FileNotFoundError(f"文件 {file_path} 不存在！")
@@ -230,7 +239,7 @@ def load_docx_simply(file_path:str)->List[Document]:
 
 def load_pptx_simply(file_path:str)->List[Document]:
     # 负责人： 高哲文
-    # 该方法实现加载pptx文件，提取文本框和表格中的文本，并返回一个List[Document]
+    # 该方法基于python-pptx库加载pptx文件，只提取文本框和表格中的文本，并返回一个List[Document]
     try:
         # 1. 使用 python-pptx 加载 pptx 文件
         prs = Presentation(file_path)
@@ -277,6 +286,9 @@ def load_pptx_simply(file_path:str)->List[Document]:
 
         # 将所有幻灯片文本切割成多个 Document 对象
         all_docs = text_splitter.create_documents(all_texts)
+        # 添加元数据source
+        for doc in all_docs:
+            doc.metadata["source"] = file_path
 
         # 4. 输出前三个 Document 对象，检查是否加载正确
         print(f"加载的 PPTX 文件包含 {len(all_docs)} 个文档块。\n")
@@ -291,14 +303,67 @@ def load_pptx_simply(file_path:str)->List[Document]:
         print(f"加载 PPTX 文件时出错: {e}")
         return []
 
-def load_file_with_azure(fiele_path:str)->List[Document]:
-    # 该方法基于Azure Form Recognizer提取文件中文本，返回一个List[Document]
 
-    pass
+def load_pdf_with_Azure(file_path:str)->List[Document]:
+    # 该方法基于Azure Form Recognizer提取pdf文件中文本，返回一个List[Document]
+    # 优点：文本提取精度高，可以准确提取 文本（包括手写）、表格、文档结构（例如标题、章节标题等）和 键值对
+    # 缺点：付费服务(至少使用S0级别的订阅)
+
+    # 1、检查变量endpoint和key是否设置了
+
+    if  AZURE_ENDPOINT is None or AZURE_API_KEY is None :
+        print("请设置环境变量AZURE_ENDPOINT和AZURE_API_KEY")
+        return []
+
+    loader = AzureAIDocumentIntelligenceLoader(
+        api_endpoint=AZURE_ENDPOINT,
+        api_key=AZURE_API_KEY,
+        file_path=file_path,
+        api_model="prebuilt-layout",
+    )
+    docs = loader.load()
+
+    # 输出发现docs长度为1，唯一Document的内容为md格式的Document，元数据为大量无效信息。
+    print("测试用的文件被加载为：", len(docs), "个Document\n")
+    for i in range(len(docs)):
+        print(f"第{i}页的内容为: {docs[i].page_content}\n\n")
+        print(f"第{i}页的元数据为: {docs[i].metadata}\n")
+
+    docs[0].metadata={"source":file_path}
+
+    # 初始化 RecursiveCharacterTextSplitter
+    text_splitter = RecursiveCharacterTextSplitter(
+        separators=[
+            "<!-- PageBreak -->",# 对于md格式的内容，先分页
+            "##",    # 之后按照节标题切分
+            "\n\n",  # 空行，常作为不同章节的分割标志
+            "\n",  # 换行符，常作为段落之间或文本与公式之间的分割标志
+            " ",  # 空格，常作为英文单词之间分割标志
+            ".",
+            ",",
+            "\u200b",  # Zero-width space (零宽空格): （不可见）
+            "\uff0c",  # Fullwidth comma (全角逗号): ，
+            "\u3001",  # Ideographic comma (顿号): 、
+            "\uff0e",  # Fullwidth full stop (全角句号): ．
+            "\u3002",  # Ideographic full stop (句号): 。
+        ],
+        chunk_size=500,
+        chunk_overlap=200,
+        add_start_index=True
+    )
+    # 分割文档
+    all_splits = text_splitter.split_documents(docs)
+    # 输出前all_splits中前3个分块用于测试
+    for i, split in enumerate(all_splits[:3]):
+        print(f"\n分块 {i + 1}:")
+        print(split.page_content)
+        print("元数据:", split.metadata)
+    return all_splits
+
 if __name__ == "__main__":
     # load_txt("test_files/核工业百科.txt")
     # load_pdf_simply("test_files/1.10MW 高温堆热启动时蒸汽发生器.pdf")
     # load_md("test_files/LangChainItroduction.md")
-    # 下面2个函数有待实现，已经分别指定了测试文件
     # load_docx("test_files/大创开题报告.docx")
-     load_pptx_simply("test_files/核工业专业知识问答模型构建-开题答辩.pptx")
+    # load_pptx_simply("test_files/核工业专业知识问答模型构建-开题答辩.pptx")
+     load_pdf_with_Azure("test_files/1.10MW 高温堆热启动时蒸汽发生器.pdf")
