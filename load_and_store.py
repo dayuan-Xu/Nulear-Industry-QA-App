@@ -33,7 +33,7 @@ if client.collection_exists(COLLECTION_NAME)==False:
     )
     print(f"测试集合{COLLECTION_NAME} 已成功创建！")
 
-# 一个本地向量数据库（与目标集合相关联）
+# 一个本地向量数据库（与目标Collection相关联）
 vector_store = QdrantVectorStore(
     client=client,
     collection_name=COLLECTION_NAME,

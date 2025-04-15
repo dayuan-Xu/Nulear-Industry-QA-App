@@ -5,10 +5,12 @@
 # 要求各个函数将文件内容加载为List[Document]后输出前几个doc看看是否正确。
 
 import os
+
 from typing_extensions import List
 from langchain_core.documents import Document
 
 from langchain_text_splitters import RecursiveCharacterTextSplitter
+
 def load_txt(file_path:str)->List[Document]:
     # 该函数对一个TXT文件实现加载并返回List[Document]
 
@@ -110,8 +112,6 @@ def load_pdf_simply(file_path:str)->List[Document]:
     return all_splits
 
 from langchain_unstructured import UnstructuredLoader
-import pandas as pd
-from io import StringIO
 def load_pdf_with_Unstructured(file_path:str):
     # 该方法测试pdf文件的布局解析，使用Unstructured提供的API接口。
     # 优点：能够正确识别pdf文件中不同的结构类别，从而可以编码实现专门从指定结构中提取文本: 比如可以从表格中正确提取数据，从富文本图像中正确提取文本。
@@ -146,31 +146,54 @@ def load_pdf_with_Unstructured(file_path:str):
         print("page_content:",doc.page_content)
         print()
 
+from typing import List
+from langchain_community.document_loaders import UnstructuredMarkdownLoader
 
 def load_md(file_path:str)->List[Document]:
     # 负责人：么一明
     # 该方法实现加载md文件，并返回一个List[Document]
     # clue：参考https://python.langchain.com/docs/how_to/document_loader_markdown/
-    pass
-
+    try:
+        # 使用 LangChain 提供的 UnstructuredMarkdownLoader 加载 Markdown 文件
+        loader = UnstructuredMarkdownLoader(file_path)
+        # 加载文档并返回
+        documents = loader.load()
+        # 初始化 RecursiveCharacterTextSplitter
+        text_splitter = RecursiveCharacterTextSplitter(
+            separators=[
+                "\n\n",  # 空行，常作为不同章节的分割标志
+                "\n",  # 换行符，常作为段落之间或文本与公式之间的分割标志
+                " ",  # 空格，常作为英文单词之间分割标志
+                ".",
+                ",",
+                "\u200b",  # Zero-width space (零宽空格): （不可见）
+                "\uff0c",  # Fullwidth comma (全角逗号): ，
+                "\u3001",  # Ideographic comma (顿号): 、
+                "\uff0e",  # Fullwidth full stop (全角句号): ．
+                "\u3002",  # Ideographic full stop (句号): 。
+            ],
+            chunk_size=500,
+            chunk_overlap=200,
+            add_start_index=True
+        )
+        # 分割文档
+        all_splits = text_splitter.split_documents(documents)
+        print(all_splits[0].metadata,end="\n")
+        print(all_splits[0].page_content)
+        return all_splits
+    except Exception as e:
+        print(f"加载 Markdown 文件时出错: {e}")
+        return []
 
 from langchain_community.document_loaders import Docx2txtLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_core.documents import Document
 from typing import List
 import os
-
-
-def load_docx(file_path: str) -> List[Document]:
-    """
-    加载DOCX文件并返回分块后的List[Document]。
-
-    参数:
-        file_path (str): DOCX文件的路径。
-
-    返回:
-        List[Document]: 分块后的文档列表。
-    """
+def load_docx(file_path:str)->List[Document]:
+    # 负责人：李宏伟
+    # 该方法实现加载docx文件，并返回一个List[Document]
+    # clue：参考https://python.langchain.com/docs/how_to/document_loader_office_file/
     # 1. 检查文件是否存在
     if not os.path.exists(file_path):
         raise FileNotFoundError(f"文件 {file_path} 不存在！")
@@ -214,8 +237,7 @@ def load_docx(file_path: str) -> List[Document]:
         print("元数据:", split.metadata)
 
     return splits
-
-
+  
 def load_pptx(file_path:str)->List[Document]:
     # 负责人： 高哲文
     # 该方法实现加载pptx文件，并返回一个List[Document]
