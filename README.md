@@ -1,5 +1,4 @@
-# Nulear-Industry-QA-App
-核工业专业知识问答应用
+# Nulear-Industry-QA-App 核工业专业知识问答应用
 
 [LangChian官网](https://python.langchain.com/docs/how_to/)
 
@@ -10,3 +9,6 @@
 - 10-12月：实现Web界面的各种功能。
 - 次年1月-2月：增加文件解析范围，比如CSV文件、HTML文件、MD文件。
 - 次年3月：增加代理功能等优化工作。
+
+# 常用命令
+- 生成本地环境中安装的所有python包: pip freeze > requirements.txt
