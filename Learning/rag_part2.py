@@ -6,12 +6,12 @@ load_dotenv(override=True)
 OPENAI_API_KEY = os.getenv('FREE_OPENAI_API_KEY')
 OPENAI_BASE_URL=os.getenv('OPENAI_BASE_URL')
 
-# 1、加载大语言模型
+# 1、加载大语言模型，供App使用。
 from langchain.chat_models import init_chat_model
 
 # 动态完全可配置模式:
 llm=init_chat_model(configurable_fields="any")
-model="gpt-4o"
+model="gpt-4o-mini"
 model_provider="openai"
 config={
     "configurable": {
@@ -22,15 +22,14 @@ config={
     }
 }
 
-#  2、加载嵌入模型
+#  2、加载嵌入模型，供向量数据库使用。
 from langchain_openai import OpenAIEmbeddings
-
 embeddings = OpenAIEmbeddings(model="text-embedding-ada-002", )
 embeddings.openai_api_key = OPENAI_API_KEY
 embeddings.openai_api_base = OPENAI_BASE_URL
 
 
-# 3、加载向量数据库
+# 3、加载向量数据库服务，供给检索工具使用。
 from langchain_qdrant import QdrantVectorStore
 from qdrant_client import QdrantClient
 QDRANT_HOST = os.getenv('QDRANT_HOST')
@@ -49,8 +48,8 @@ from langchain_core.documents import Document
 from typing_extensions import List
 
 class State(MessagesState):
-    # 此处context对应artifact，即所有检索到的doc的列表
-    context: List[Document]
+    # 此处docs即所有检索到的doc的列表，该字段由生成步骤负责填充。
+    docs: List[Document]
 
 graph_builder = StateGraph(State)
 
@@ -70,23 +69,36 @@ def retrieve_info_of_nuclear_industry(query: str):
     )
     #此处context对应content，retrieved_docs对应artifact
     #由llm提供query，实际的工具调用由App执行，工具执行结果会保存进App状态作为一条TOOlMESSAGE。
-    #后续生成时只将ToolMessage的content作为给模型的检索结果，而artifact则被App用来提取元数据。
+    #后续生成时只将ToolMessage的content提供给模型的作为知识库内容，而artifact则被App用来提取元数据。
     return context, retrieved_docs
 
 # 6、定义App的各个步骤
 from langchain_core.messages import SystemMessage
 from langgraph.prebuilt import ToolNode
 
-# 6.1: 生成一个AiMessage，它的内容可能是直接回答或工具调用请求，也可能是用户问题的直接响应。
+# 6.1: 生成一个AiMessage，它的内容是对用户提问的直接回答 或 对外部工具的调用请求
 def query_or_respond(state: MessagesState):
-    """Generate tool call for retrieval or respond."""
     #将llm绑定到工具，并调用llm
     llm_with_tools = llm.bind_tools([retrieve_info_of_nuclear_industry])
-    #在设置了检查点的情况下，下面的state["messages"]应该会是上一次的state["messages"]+当前轮次的输入问题HUMANMESAGE
-    #而我们希望过往轮次后APP状态中的一些信息(比如APP执行检索工具后的ToolMessage)是不应该暴露给llm的，所以下面的应该要有一定修改。
-    #从上次APP执行后状态中提取出对话消息列表，包含：HumanMessage、AiMessage(不包含工具调用请求)
+
+    # # 验证：在设置了检查点的情况下，当前的state["messages"]应该会是上一次的state["messages"]+当前轮次的输入问题HumanMessage
+    # print("本次一问一答刚刚开始，当前App状态中的消息列表长度为",len(state["messages"]))
+    # # 统计输出App状态中的消息列表中3种类型的消息（根据消息对象的type字段判断类型）的个数
+    # message_counts = {
+    #     "human": 0,
+    #     "ai": 0,
+    #     "tool": 0,
+    # }
+    # for message in state["messages"]:
+    #     message_counts[message.type] += 1
+    #
+    # # 输出统计信息
+    # for message_type, count in message_counts.items():
+    #     print(f"  {message_type}消息的数量为：{count}")
+
+    #从当前APP状态中提取出对话消息列表，包含：HumanMessage、AiMessage(非工具调用请求的)
     system_message_content = (
-        "你是一名核工业专业知识问答助理。你的任务是尽力回答用户的提问(尽管用户提问可能与核工业专业知识无关)。\n"
+        "你是一名核工业专业知识问答助理。你的任务是尽力响应用户的输入(尽管用户的输入不是对核工业专业知识的提问)。\n"
         "总是以“欢迎你再次提问！”作为每次回答的结尾。"
     )
     conversation_messages = [
@@ -96,19 +108,17 @@ def query_or_respond(state: MessagesState):
            or (message.type == "ai" and not message.tool_calls)
     ]
     prompt = [SystemMessage(system_message_content)] + conversation_messages
+    # 调用llm
     response = llm_with_tools.invoke(prompt,config=config)
     # 响应为AiMessage，会加进App的状态。
     return {"messages": [response]}
 
-
-# 6.2: 创建一个工具节点，它将调用检索工具，并将工具调用结果作为一个ToolMessage加入到App状态。
+# 6.2: 创建一个工具节点，它将调用检索工具，并将工具调用结果封装为一个ToolMessage加入App状态。
 tools = ToolNode([retrieve_info_of_nuclear_industry])
 
-
-# 6.3: 将检索到的信息封装进SystemMessage，重新调用llm，获取答案。
+# 6.3: 负责将检索到的context封装进SystemMessage，重新调用llm，获取答案。
 def generate(state: MessagesState):
-    """Generate answer."""
-    # Get generated ToolMessages
+    # 1、从App状态中提取出ToolMessage，即检索工具调用结果。
     recent_tool_messages = []
     for message in reversed(state["messages"]):
         if message.type == "tool":
@@ -117,8 +127,8 @@ def generate(state: MessagesState):
             break
     tool_messages = recent_tool_messages[::-1]
 
-    # 可见每一个ToolMessage包含content字段，其实还包含artifact字段
-    docs_content = "\n\n".join(doc.content for doc in tool_messages)
+    # 根据工具的定义，此处每一个ToolMessage实例包含两个字段：content、artifact
+    docs_content = "\n\n".join(tool_message.content for tool_message in tool_messages)
     system_message_content = (
         "你是一名核工业专业知识问答助理。使用下面检索到的上下文信息回答提问。如果检索到的上下文信息对于生成答案没有帮助，请直接告诉我你不知道。\n"
         "最多使用三条检索到的信息，确保答案简明。\n"
@@ -128,10 +138,13 @@ def generate(state: MessagesState):
     )
     # 走到这个步骤时，App状态中包括HumanMessage用户提问、AiMessage工具调用请求、ToolMessage检索到的信息各一条。
     # 此处为了让llm生成答案，需要从App状态中提取出一开始的用户提问
-    # 但是单纯这样仍然不能支持多轮对话，因为一次Graph的执行只涉及一次问答
+    # 但是单纯这样仍然不能支持多轮对话，因为Graph的一次执行只是单次问答
     # 而在Graph的多次执行之间，也就是多次问答之间还不存在问答记录的保存机制。
-    # 除非引入检查点机制保存之前问答的记录，其实保存的是属于一个线程的graph多次调用的state快照集合
-    # 引入了检查点，那么就会将之前问答结束时的state["messages"]用来初始化当前graph的state["messages"]
+    # 除非引入检查点，使得在某次问答中能够获取之前的问答记录（对话窗口）。
+    # 引入了检查点，其实保存的是属于一个thread的App多次执行的state快照集合，每个App步骤都对应一个快照。
+    # 在每次单独问答流程刚开始时，都会使用上一次问答结束时的state["messages"]来初始化当前App状态的state["messages"]
+
+    # 总的来说，一个thread对应一个多轮对话，在该thread下存在着一个不断扩大的对话窗口。
     conversation_messages = [
         message
         for message in state["messages"]
@@ -140,13 +153,13 @@ def generate(state: MessagesState):
     ]
     prompt = [SystemMessage(system_message_content)] + conversation_messages
 
-    # 将消息列表(包含上下文的系统消息+对话消息列表)发给llm
+    # 2、将消息列表(包含上下文的系统消息+对话消息列表)发给llm
     response = llm.invoke(prompt,config=config)
-    context = []
+    docs = []
     for tool_message in tool_messages:
-        context.extend(tool_message.artifact)
-    #返回的是回答AiMessage和contest，都会加进App状态。
-    return {"messages": [response], "context": context}
+        docs.extend(tool_message.artifact)
+    # 3、返回的是回答AiMessage和docs，都加进App状态中对应的字段。
+    return {"messages": [response], "docs": docs}
 
 # 7、定义控制流（添加节点、设置入口、添加边）、编译应用
 from langgraph.graph import START,END
@@ -164,7 +177,7 @@ graph_builder.add_conditional_edges(
 graph_builder.add_edge("tools", "generate")
 graph_builder.add_edge("generate", END)
 
-# 添加一个内存检查器
+# 添加一个内存保存器，实现在一轮对话内，保存App快照集合。
 from langgraph.checkpoint.memory import MemorySaver
 
 memory = MemorySaver()
@@ -173,7 +186,7 @@ graph = graph_builder.compile(checkpointer=memory)
 # 为线程指定ID
 config_of_run = {"configurable": {"thread_id": "abc123"}}
 
-
+# 获取App流程图
 # image_data = graph.get_graph().draw_mermaid_png()
 # with open("output.png", "wb") as f:
 #     f.write(image_data)
@@ -188,18 +201,35 @@ config_of_run = {"configurable": {"thread_id": "abc123"}}
 
 
 input_message = ""
-print("下面开始输出RAG应用开始执行后的输出：\n")
+print("下面开始输出RAG应用多轮对话的输出：\n")
 while True:
+    # 下面开始单次问答
     input_message = input("请输入问题：")
     if input_message == "exit":
         break
-    for step in graph.stream(
+    for step_state in graph.stream(
         {"messages": [{"role": "user", "content": input_message}]},
         stream_mode="values",
         config=config_of_run,
     ):
-        step["messages"][-1].pretty_print()
-        # # 输出生成步骤中检索到的信息的来源
-        # if "context" in step:
-        #     for doc in step["context"]:
-        #         print(doc.metadata)
+        # 输出此次App流程中各个步骤的执行结果
+        step_state["messages"][-1].pretty_print()
+        # 但在用户界面中，应该只暴露出生成的AiMessage（非工具调用请求）
+        # if step_state["messages"][-1].type == "ai" and not step_state["messages"][-1].tool_calls:
+        #     print(step_state["messages"][-1].content)
+
+        # 输出生成步骤中检索到的信息的来源
+        if "docs" in step_state:
+            print("\n检索到的信息来源：")
+            for doc in step_state["docs"]:
+                print(doc.metadata["source"])
+        # 如果是AiMessage，则输出令牌使用量
+        if step_state["messages"][-1].type== "ai":
+            if  len(step_state["messages"][-1].tool_calls) > 0:
+                AiMessageType="Ai工具调用请求"
+            else:
+                AiMessageType="Ai回答"
+            print(f"\n本次{AiMessageType}的令牌使用情况：")
+            print(f"Input Tokens:{step_state["messages"][-1].usage_metadata["input_tokens"]}")
+            print(f"Output Tokens:{step_state["messages"][-1].usage_metadata["output_tokens"]}")
+            print(f"Total Tokens:{step_state["messages"][-1].usage_metadata["total_tokens"]}")

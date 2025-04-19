@@ -12,12 +12,12 @@ from langchain_core.messages import HumanMessage
 #配置一个llm，方便下面的测试函数使用:
 llm = init_chat_model("gpt-3.5-turbo", model_provider="openai",api_key=OPENAI_API_KEY,base_url=OPENAI_BASE_URL)
 
-def check_AIMESSAGE_format():
-    #该方法检查LangChain中对于llm输出的封装，即AIMESSAGE的确切格式
-    AIMESSAGE=llm.invoke("给我讲一个笑话") #此处直接传入一个str，但是invoke方法内部会将该str自动封装成一个HUMANMESSAGE，再封装进一个消息列表List[BaseMessage]，于是llm接受的还是一个消息列表。
-    print("AIMESSAGE的结构为:\n")
-    for key, value in vars(AIMESSAGE).items():
-        # 输出vars(AIMESSAGE_format)中每个键值对
+def check_AiMessage_format():
+    #该方法检查LangChain中对于llm输出的封装，即AiMessage的确切格式
+    AiMessage=llm.invoke("给我讲一个笑话") #此处直接传入一个str，但是invoke方法内部会将该str自动封装成一个HumanMessage，再封装进一个消息列表List[BaseMessage]，于是llm接受的还是一个消息列表。
+    print("AiMessage的结构为:\n")
+    for key, value in vars(AiMessage).items():
+        # 输出vars(AiMessage_format)中每个键值对
         print(f"{key}: {value}")
 
 def check_PromptValue_format():
@@ -48,9 +48,9 @@ def check_structured_output():
 
 def check_stream_output():
     # 该函数是用于测试llm的流式输出。
-    for chunk in llm.stream("给我讲一个笑话"):
+    for chunk in llm.stream("给我讲一个500字的笑话"):
         #print(chunk)
         print(chunk.content,end="")
 
 if __name__ == "__main__":
-    check_stream_output()
+    check_AiMessage_format()
