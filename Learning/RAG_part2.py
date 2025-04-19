@@ -1,3 +1,7 @@
+# RAG part2相较于RAG part1的改进：
+# 1、检索过程定义为可选的工具，不是每次都调用。
+# 2、引入检查点，实现了单个线程内的对话窗口（但单次对话中构建的对话窗口仍然是基于内存的，没有持久化App状态）。
+
 # 0、加载和读取
 from dotenv import load_dotenv
 import os
@@ -6,7 +10,7 @@ load_dotenv(override=True)
 OPENAI_API_KEY = os.getenv('FREE_OPENAI_API_KEY')
 OPENAI_BASE_URL=os.getenv('OPENAI_BASE_URL')
 
-# 1、加载大语言模型，供App使用。
+# 1、加载llm，供App调用。
 from langchain.chat_models import init_chat_model
 
 # 动态完全可配置模式:
@@ -27,7 +31,6 @@ from langchain_openai import OpenAIEmbeddings
 embeddings = OpenAIEmbeddings(model="text-embedding-ada-002", )
 embeddings.openai_api_key = OPENAI_API_KEY
 embeddings.openai_api_base = OPENAI_BASE_URL
-
 
 # 3、加载向量数据库服务，供给检索工具使用。
 from langchain_qdrant import QdrantVectorStore
@@ -136,15 +139,6 @@ def generate(state: MessagesState):
         "\n\n"
         f"{docs_content}"
     )
-    # 走到这个步骤时，App状态中包括HumanMessage用户提问、AiMessage工具调用请求、ToolMessage检索到的信息各一条。
-    # 此处为了让llm生成答案，需要从App状态中提取出一开始的用户提问
-    # 但是单纯这样仍然不能支持多轮对话，因为Graph的一次执行只是单次问答
-    # 而在Graph的多次执行之间，也就是多次问答之间还不存在问答记录的保存机制。
-    # 除非引入检查点，使得在某次问答中能够获取之前的问答记录（对话窗口）。
-    # 引入了检查点，其实保存的是属于一个thread的App多次执行的state快照集合，每个App步骤都对应一个快照。
-    # 在每次单独问答流程刚开始时，都会使用上一次问答结束时的state["messages"]来初始化当前App状态的state["messages"]
-
-    # 总的来说，一个thread对应一个多轮对话，在该thread下存在着一个不断扩大的对话窗口。
     conversation_messages = [
         message
         for message in state["messages"]
@@ -177,13 +171,13 @@ graph_builder.add_conditional_edges(
 graph_builder.add_edge("tools", "generate")
 graph_builder.add_edge("generate", END)
 
-# 添加一个内存保存器，实现在一轮对话内，保存App快照集合。
+# 在编译App时指定一个 检查器，用于在每次执行时保存App状态
 from langgraph.checkpoint.memory import MemorySaver
 
 memory = MemorySaver()
 graph = graph_builder.compile(checkpointer=memory)
 
-# 为线程指定ID
+# 设置了检查器，就能在多次执行App时获取之前的App状态，这些App状态与一个thread_id绑定在一起。
 config_of_run = {"configurable": {"thread_id": "abc123"}}
 
 # 获取App流程图
@@ -192,13 +186,10 @@ config_of_run = {"configurable": {"thread_id": "abc123"}}
 #     f.write(image_data)
 # print("图片已保存为 output.png")
 
-
-
 # # 可见App调用结果仍然是一个App状态
 #input_message = "给我讲一个100字的笑话"
 # result=graph.invoke({"messages": [{"role": "user", "content": input_message}]})
 # print(result)
-
 
 input_message = ""
 print("下面开始输出RAG应用多轮对话的输出：\n")
@@ -222,7 +213,7 @@ while True:
         if "docs" in step_state:
             print("\n检索到的信息来源：")
             for doc in step_state["docs"]:
-                print(doc.metadata["source"])
+                print("    ",doc.metadata["source"])
         # 如果是AiMessage，则输出令牌使用量
         if step_state["messages"][-1].type== "ai":
             if  len(step_state["messages"][-1].tool_calls) > 0:
@@ -230,6 +221,6 @@ while True:
             else:
                 AiMessageType="Ai回答"
             print(f"\n本次{AiMessageType}的令牌使用情况：")
-            print(f"Input Tokens:{step_state["messages"][-1].usage_metadata["input_tokens"]}")
-            print(f"Output Tokens:{step_state["messages"][-1].usage_metadata["output_tokens"]}")
-            print(f"Total Tokens:{step_state["messages"][-1].usage_metadata["total_tokens"]}")
+            print(f"    输入令牌数:{step_state["messages"][-1].usage_metadata["input_tokens"]}")
+            print(f"    输出令牌数:{step_state["messages"][-1].usage_metadata["output_tokens"]}")
+            print(f"    总共的令牌消耗:{step_state["messages"][-1].usage_metadata["total_tokens"]}")
