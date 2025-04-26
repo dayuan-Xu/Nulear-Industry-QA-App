@@ -171,13 +171,13 @@ graph_builder.add_conditional_edges(
 graph_builder.add_edge("tools", "generate")
 graph_builder.add_edge("generate", END)
 
-# 在编译App时指定一个 检查器，用于在每次执行时保存App状态
+# 8、在编译App时指定一个 检查器，用于在每次执行时保存App状态
 from langgraph.checkpoint.memory import MemorySaver
 
 memory = MemorySaver()
 graph = graph_builder.compile(checkpointer=memory)
 
-# 设置了检查器，就能在多次执行App时获取之前的App状态，这些App状态与一个thread_id绑定在一起。
+# 9、设置App运行时配置
 config_of_run = {"configurable": {"thread_id": "abc123"}}
 
 # 获取App流程图
