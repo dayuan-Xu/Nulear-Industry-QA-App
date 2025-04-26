@@ -17,7 +17,7 @@ from langchain.chat_models import init_chat_model
 llm=init_chat_model(configurable_fields="any")
 model="gpt-4o-mini"
 model_provider="openai"
-config={
+modelConfig={
     "configurable": {
         "model": f"{model}",
         "model_provider": f"{model_provider}",
@@ -112,7 +112,7 @@ def query_or_respond(state: MessagesState):
     ]
     prompt = [SystemMessage(system_message_content)] + conversation_messages
     # 调用llm
-    response = llm_with_tools.invoke(prompt,config=config)
+    response = llm_with_tools.invoke(prompt,config=modelConfig)
     # 响应为AiMessage，会加进App的状态。
     return {"messages": [response]}
 
@@ -148,7 +148,7 @@ def generate(state: MessagesState):
     prompt = [SystemMessage(system_message_content)] + conversation_messages
 
     # 2、将消息列表(包含上下文的系统消息+对话消息列表)发给llm
-    response = llm.invoke(prompt,config=config)
+    response = llm.invoke(prompt,config=modelConfig)
     docs = []
     for tool_message in tool_messages:
         docs.extend(tool_message.artifact)
@@ -171,14 +171,14 @@ graph_builder.add_conditional_edges(
 graph_builder.add_edge("tools", "generate")
 graph_builder.add_edge("generate", END)
 
-# 8、在编译App时指定一个 检查器，用于在每次执行时保存App状态
+# 8、指定一个 内存检查器，用于保存检查点
 from langgraph.checkpoint.memory import MemorySaver
 
 memory = MemorySaver()
 graph = graph_builder.compile(checkpointer=memory)
 
 # 9、设置App运行时配置
-config_of_run = {"configurable": {"thread_id": "abc123"}}
+appConfig = {"configurable": {"thread_id": "abc123"}}
 
 # 获取App流程图
 # image_data = graph.get_graph().draw_mermaid_png()
@@ -192,35 +192,49 @@ config_of_run = {"configurable": {"thread_id": "abc123"}}
 # print(result)
 
 input_message = ""
-print("下面开始输出RAG应用多轮对话的输出：\n")
-while True:
-    # 下面开始单次问答
+
+choice=input("请选择运行方式：\n1.单次问答\n2.多轮对话\n")
+if choice=="1":
     input_message = input("请输入问题：")
-    if input_message == "exit":
-        break
     for step_state in graph.stream(
         {"messages": [{"role": "user", "content": input_message}]},
         stream_mode="values",
-        config=config_of_run,
+        config=appConfig,
     ):
         # 输出此次App流程中各个步骤的执行结果
         step_state["messages"][-1].pretty_print()
-        # 但在用户界面中，应该只暴露出生成的AiMessage（非工具调用请求）
-        # if step_state["messages"][-1].type == "ai" and not step_state["messages"][-1].tool_calls:
-        #     print(step_state["messages"][-1].content)
 
-        # 输出生成步骤中检索到的信息的来源
-        if "docs" in step_state:
-            print("\n检索到的信息来源：")
-            for doc in step_state["docs"]:
-                print("    ",doc.metadata["source"])
-        # 如果是AiMessage，则输出令牌使用量
-        if step_state["messages"][-1].type== "ai":
-            if  len(step_state["messages"][-1].tool_calls) > 0:
-                AiMessageType="Ai工具调用请求"
-            else:
-                AiMessageType="Ai回答"
-            print(f"\n本次{AiMessageType}的令牌使用情况：")
-            print(f"    输入令牌数:{step_state["messages"][-1].usage_metadata["input_tokens"]}")
-            print(f"    输出令牌数:{step_state["messages"][-1].usage_metadata["output_tokens"]}")
-            print(f"    总共的令牌消耗:{step_state["messages"][-1].usage_metadata["total_tokens"]}")
+    #最后输出此次App流程中创建的所有检查点
+    #print(list(graph.get_state_history(appConfig)))
+elif choice=="2":
+    while True:
+        # 下面开始多轮问答（对话模式）
+        input_message = input("请输入问题：")
+        if input_message == "exit":
+            break
+        for step_state in graph.stream(
+            {"messages": [{"role": "user", "content": input_message}]},
+            stream_mode="values",
+            config=appConfig,
+        ):
+            # 输出此次App流程中各个步骤的执行结果
+            step_state["messages"][-1].pretty_print()
+            # 但在用户界面中，应该只暴露出生成的AiMessage（非工具调用请求）
+            # if step_state["messages"][-1].type == "ai" and not step_state["messages"][-1].tool_calls:
+            #     print(step_state["messages"][-1].content)
+
+            # 输出生成步骤中检索到的信息的来源
+            if "docs" in step_state:
+                print("\n检索到的信息来源：")
+                for doc in step_state["docs"]:
+                    print("    ",doc.metadata["source"])
+            # 如果是AiMessage，则输出令牌使用量
+            if step_state["messages"][-1].type== "ai":
+                if  len(step_state["messages"][-1].tool_calls) > 0:
+                    AiMessageType="Ai工具调用请求"
+                else:
+                    AiMessageType="Ai回答"
+                print(f"\n本次{AiMessageType}的令牌使用情况：")
+                print(f"    输入令牌数:{step_state["messages"][-1].usage_metadata["input_tokens"]}")
+                print(f"    输出令牌数:{step_state["messages"][-1].usage_metadata["output_tokens"]}")
+                print(f"    总共的令牌消耗:{step_state["messages"][-1].usage_metadata["total_tokens"]}")
