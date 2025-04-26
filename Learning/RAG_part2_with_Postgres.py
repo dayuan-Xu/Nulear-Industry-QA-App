@@ -1,18 +1,20 @@
+# RAG part2 with Postgre相较于RAG part2的改进：
+# 基于PostgreSQL实现了对话历史的保存与重加载。
+
+# 持久化细节：
+# https://langchain-ai.github.io/langgraph/concepts/persistence
+# 检查点在进入App的每个step之前那一刻生成，是一个StateSnapshot对象，
+# 它包含上一个结点执行之后的App状态和一些相关元数据（比如上一个结点对App状态作出的改变）。
+# 每个检查点都对应一个线程，一个线程代表了一个检查点的集合。
+# RAG part2 中的App是一个最多5步骤的应用，所以一次App流程最多新增5个检查点
+# 在本模块中，使用一条PostgreSQL数据库连接创建一个检查器，用于保存每次App流程中新增的检查点，
+# 使得后续重新运行该App时，只要传入先前配置appConfig，就可以加载最新的检查点。（检查点的values字段的值就是App状态，其中包含了我们想要的对话历史）
+# 此时就可以将最新检查点作为进入_START_节点前的那个检查点，从而继续执行App流程，继续对话。
+
 # 导入必要的模块和库
-import os
-from typing import Literal
-from langchain_core.tools import tool
-from langchain_openai import ChatOpenAI
-from langgraph.prebuilt import create_react_agent
 from langgraph.checkpoint.postgres import PostgresSaver
 from dotenv import load_dotenv
 load_dotenv(override=True)
-
-
-# RAG part2相较于RAG part1的改进：
-# 1、检索过程定义为可选的工具，不是每次都调用。
-# 2、引入检查点，实现了单个线程内的对话窗口（但单次对话中构建的对话窗口仍然是基于内存的，没有持久化App状态）。
-
 # 0、加载和读取
 from dotenv import load_dotenv
 import os
@@ -61,11 +63,11 @@ from langgraph.graph import MessagesState, StateGraph
 from langchain_core.documents import Document
 from typing_extensions import List
 
-class State(MessagesState):
+class AppState(MessagesState):
     # 此处docs即所有检索到的doc的列表，该字段由生成步骤负责填充。
     docs: List[Document]
 
-graph_builder = StateGraph(State)
+graph_builder = StateGraph(AppState)
 
 # 5、将检索定义为工具，要注意工具的命名。
 # 如果只是简单地命名为retrieve，那么你问他天气怎么样，llm也会尝试调用retrieve，
@@ -91,7 +93,7 @@ from langchain_core.messages import SystemMessage
 from langgraph.prebuilt import ToolNode
 
 # 6.1: 生成一个AiMessage，它的内容是对用户提问的直接回答 或 对外部工具的调用请求
-def query_or_respond(state: MessagesState):
+def query_or_respond(state: AppState):
     #将llm绑定到工具，并调用llm
     llm_with_tools = llm.bind_tools([retrieve_info_of_nuclear_industry])
 
@@ -131,7 +133,7 @@ def query_or_respond(state: MessagesState):
 tools = ToolNode([retrieve_info_of_nuclear_industry])
 
 # 6.3: 负责将检索到的context封装进SystemMessage，重新调用llm，获取答案。
-def generate(state: MessagesState):
+def generate(state: AppState):
     # 1、从App状态中提取出ToolMessage，即检索工具调用结果。
     recent_tool_messages = []
     for message in reversed(state["messages"]):
@@ -211,7 +213,7 @@ with ConnectionPool(
 
     graph = graph_builder.compile(checkpointer=checkpointer)
 
-    # 9、设置App运行时配置（内含一个线程ID，唯一地标志了一个对话，）
+    # 9、当调用带checkpointer的App时，必须在App运行配置中设置线程ID。
     config_of_run = {"configurable": {"thread_id": "abc123"}}
 
     input_message = ""
