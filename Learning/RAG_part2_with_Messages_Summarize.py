@@ -1,15 +1,5 @@
 # RAG part2 with Postgre相较于RAG part2的改进：
-# 引入基于PostgreSQL的检查点，实现了对话历史的持久化与重加载，使得llm在多轮对话中保持记忆。
-
-# 持久化细节：
-# https://langchain-ai.github.io/langgraph/concepts/persistence
-# 检查点在进入App的每个step之前那一刻生成，是一个StateSnapshot对象，
-# 它包含上一个结点执行之后的App状态和一些相关元数据（比如上一个结点对App状态作出的改变）。
-# 每个检查点都对应一个线程，一个线程代表了一个检查点的集合。
-# RAG part2 中的App是一个最多5步骤的应用，所以一次App流程最多新增5个检查点
-# 在本模块中，使用一条PostgreSQL数据库连接创建一个检查器，用于保存每次App流程中新增的检查点，
-# 使得后续重新运行该App时，只要传入先前配置appConfig，就可以加载最新的检查点。（检查点的values字段的值就是App状态，其中包含了我们想要的对话历史）
-# 此时就可以将最新检查点作为进入_START_节点前的那个检查点，从而继续执行App流程，继续对话。
+# 添加一个生成摘要的节点，对历史消息进行总结。
 
 # 导入必要的模块和库
 from langgraph.checkpoint.postgres import PostgresSaver
@@ -59,14 +49,15 @@ vector_store = QdrantVectorStore(
     embedding=embeddings,
 )
 
-# 4、使用消息列表定义App状态，此处使用官方的消息列表状态MessagesState,它包含一个键值对"messages":List[BaseMessage]
+# 4、使用消息列表定义App状态
 from langgraph.graph import MessagesState, StateGraph
 from langchain_core.documents import Document
 from typing_extensions import List
 
 class AppState(MessagesState):
-    # 此处docs即所有检索到的doc的列表，该字段由生成步骤负责填充。
-    docs: List[Document]
+    # 1、MessagesState包含一个键值对"messages":List[BaseMessage]，保存用户的提问和llm的回答。
+    docs: List[Document]# 2、此处docs即所有检索到的doc的列表，该字段由生成步骤负责填充。
+    summary:str         # 3、保存生成的摘要。
 
 graph_builder = StateGraph(AppState)
 
@@ -90,28 +81,45 @@ def retrieve_info_of_nuclear_industry(query: str):
     return context, retrieved_docs
 
 # 6、定义App的各个步骤
-from langchain_core.messages import SystemMessage
+from langchain_core.messages import SystemMessage,HumanMessage,RemoveMessage
 from langgraph.prebuilt import ToolNode
+
+def summarize_conversation(state: AppState):
+    conversation_messages = [
+        message
+        for message in state["messages"]
+        if message.type == "human"
+           or (message.type == "ai" and not message.tool_calls)
+    ]
+    # 如果超过3轮问答，则进行摘要。
+    if len(conversation_messages)// 2 >= 3:
+        # 获取现存的摘要
+        summary = state.get("summary", "")
+
+        # 创建生成摘要步骤的提示词
+        if summary:
+            summary_command = (
+                f"下面是历史对话的上次摘要: \n{summary}\n\n"
+                "根据上次摘要，结合最近发生的以上对话，重新生成一份最新的摘要。"
+            )
+        else:
+            summary_command = "生成一份上述所有对话的摘要。"
+
+        # 合并提示词和历史对话
+        system_message_content = (
+            "你是一名摘要生成助手，任务是针对给定内容，生成一份简明扼要的摘要，要求直接分条列举摘要内容，省去摘要题目、“欢迎再次提问”等非摘要的内容。"
+        )
+        messages = [SystemMessage(system_message_content)] +conversation_messages + [HumanMessage(content=summary_command)]
+        response = llm.invoke(messages, config=config)
+
+        # 删除消息，只保留最近2条消息。
+        delete_messages = [RemoveMessage(id=m.id) for m in state["messages"][:-2]]
+        return {"summary": response.content, "messages": delete_messages}
 
 # 6.1: 生成一个AiMessage，它的内容是对用户提问的直接回答 或 对外部工具的调用请求
 def query_or_respond(state: AppState):
     #将llm绑定到工具，并调用llm
     llm_with_tools = llm.bind_tools([retrieve_info_of_nuclear_industry])
-
-    # # 验证：在设置了检查点的情况下，当前的state["messages"]应该会是上一次的state["messages"]+当前轮次的输入问题HumanMessage
-    # print("本次一问一答刚刚开始，当前App状态中的消息列表长度为",len(state["messages"]))
-    # # 统计输出App状态中的消息列表中3种类型的消息（根据消息对象的type字段判断类型）的个数
-    # message_counts = {
-    #     "human": 0,
-    #     "ai": 0,
-    #     "tool": 0,
-    # }
-    # for message in state["messages"]:
-    #     message_counts[message.type] += 1
-    #
-    # # 输出统计信息
-    # for message_type, count in message_counts.items():
-    #     print(f"  {message_type}消息的数量为：{count}")
     system_message_content = (
         "你是一名核工业专业知识问答助理。你的任务是尽力响应用户的输入(尽管用户的输入不是对核工业专业知识的提问)。\n"
         "总是以“欢迎你再次提问！”作为每次回答的结尾。"
@@ -172,10 +180,12 @@ def generate(state: AppState):
 from langgraph.graph import START,END
 from langgraph.prebuilt import tools_condition
 
+graph_builder.add_node("summarize",summarize_conversation)
 graph_builder.add_node(query_or_respond)
 graph_builder.add_node(tools)
 graph_builder.add_node(generate)
-graph_builder.add_edge(START,"query_or_respond")
+graph_builder.add_edge(START,"summarize")
+graph_builder.add_edge("summarize", "query_or_respond")
 graph_builder.add_conditional_edges(
     "query_or_respond",
     tools_condition,
@@ -188,13 +198,6 @@ graph_builder.add_edge("generate", END)
 
 # 定义 PostgreSQL 数据库连接 URI 和连接参数
 DB_URI = "postgresql://postgres:postgres@localhost:5442/postgres?sslmode=disable"
-# 协议：postgresql:// 表示使用 PostgreSQL 协议。
-# 用户信息：postgres:postgres 表示用户名为 postgres，密码也为 postgres。
-# 主机：@localhost 表示数据库位于本地机器。
-# 端口：:5442 表示数据库服务运行在 5442 端口（默认是 5432）。
-# 数据库名：/postgres 表示连接的数据库名为 postgres。
-# SSL 模式：?sslmode=disable 表示禁用 SSL 加密连接。
-
 connection_kwargs = {
     "autocommit": True,  # 开启自动提交
     "prepare_threshold": 0,  # 设置预处理语句阈值
