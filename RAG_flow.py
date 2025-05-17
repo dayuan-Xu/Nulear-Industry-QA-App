@@ -1,5 +1,7 @@
-# RAG part2 with agent相较于RAG part2的改进：
-# 构建了一个能够充分使用工具的agent，适合不需要上下文的单次问答。
+# 该模块提供
+# 一个编译好的引入内存检查器的RAG应用：graph
+# 一个默认的App运行配置变量：appConfig
+
 
 # 0、加载和读取
 from dotenv import load_dotenv
@@ -16,7 +18,7 @@ from langchain.chat_models import init_chat_model
 llm=init_chat_model(configurable_fields="any")
 model="gpt-4o-mini"
 model_provider="openai"
-config={
+modelConfig={
     "configurable": {
         "model": f"{model}",
         "model_provider": f"{model_provider}",
@@ -111,11 +113,12 @@ def query_or_respond(state: MessagesState):
     ]
     prompt = [SystemMessage(system_message_content)] + conversation_messages
     # 调用llm
-    response = llm_with_tools.invoke(prompt,config=config)
+    response = llm_with_tools.invoke(prompt,config=modelConfig)
     # 响应为AiMessage，会加进App的状态。
     return {"messages": [response]}
 
-# 6.2: 创建一个工具节点，它将调用检索工具，并将工具调用结果封装为一个ToolMessage加入App状态。
+# 6.2: 创建一个工具调用节点，它将根据最近的那条Message中的tool_calls来调用对应工具，
+#      并将所有工具调用结果封装为一个ToolMessage加入App状态中的messages字段。
 tools = ToolNode([retrieve_info_of_nuclear_industry])
 
 # 6.3: 负责将检索到的context封装进SystemMessage，重新调用llm，获取答案。
@@ -147,7 +150,7 @@ def generate(state: MessagesState):
     prompt = [SystemMessage(system_message_content)] + conversation_messages
 
     # 2、将消息列表(包含上下文的系统消息+对话消息列表)发给llm
-    response = llm.invoke(prompt,config=config)
+    response = llm.invoke(prompt,config=modelConfig)
     docs = []
     for tool_message in tool_messages:
         docs.extend(tool_message.artifact)
@@ -162,6 +165,7 @@ graph_builder.add_node(query_or_respond)
 graph_builder.add_node(tools)
 graph_builder.add_node(generate)
 graph_builder.add_edge(START,"query_or_respond")
+# 添加条件边，采用预定义的tools_condition函数来决定下一个步骤。
 graph_builder.add_conditional_edges(
     "query_or_respond",
     tools_condition,
@@ -170,24 +174,12 @@ graph_builder.add_conditional_edges(
 graph_builder.add_edge("tools", "generate")
 graph_builder.add_edge("generate", END)
 
-# 8、在编译App时指定一个 检查器，用于在每次执行时保存App状态
+# 8、指定一个 内存检查器，用于保存检查点
 from langgraph.checkpoint.memory import MemorySaver
 
 memory = MemorySaver()
+graph = graph_builder.compile(checkpointer=memory)
 
-# 9、创建智能体
-from langgraph.prebuilt import create_react_agent
-llm = init_chat_model("gpt-3.5-turbo", model_provider="openai",api_key=OPENAI_API_KEY,base_url=OPENAI_BASE_URL)
-agent_executor = create_react_agent(llm, [retrieve_info_of_nuclear_industry], checkpointer=memory)
+# 9、设置App运行时配置
+appConfig = {"configurable": {"thread_id": "abc123"}}
 
-# 10、设置App运行时配置
-config_of_run = {"configurable": {"thread_id": "abc123"}}
-
-# 下面开始单次问答
-input_message = input("请输入问题：")
-for event in agent_executor.stream(
-    {"messages": [{"role": "user", "content": input_message}]},
-    stream_mode="values",
-    config=config_of_run,
-):
-    event["messages"][-1].pretty_print()

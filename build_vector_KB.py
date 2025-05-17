@@ -1,6 +1,6 @@
 # 该模块负责指定目录的所有文件加载、存储到向量数据库中对应的集合。
 # index(kb_dir:str)
-# kb_dir:用户的某个知识库在服务器上的文件夹路径，内部是一系列文件。
+# kb_dir:用户的某个知识库在服务器上的文件夹路径，内部是用户上传的文件。
 
 # 0、加载和读取
 from dotenv import load_dotenv
@@ -27,7 +27,7 @@ client = QdrantClient(host=QDRANT_HOST, port=QDRANT_PORT,timeout=10)
 
 
 from tqdm import tqdm
-from load_file import load_txt,load_pdf_simply,load_pdf_with_Azure,load_md,load_docx_simply,load_pptx_simply
+from load_file_2_Doc import load_txt,load_pdf_simply,load_pdf_with_Azure,load_md,load_docx_simply,load_pptx_simply
 # 索引化流程：
 # user0创建一个知识库kb0-->服务器在all_users_files/user0文件夹下创建一个kb0文件夹
 # 用户上传文件到该知识库，后端调用index()函数，该函数会遍历该知识库下的所有文件，并调用不同的加载函数，将文件加载到向量数据库中。
