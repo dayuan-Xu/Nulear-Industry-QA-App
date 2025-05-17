@@ -1,6 +1,7 @@
 # RAG part2相较于RAG part1的改进：
-# 1、检索过程定义为可选的工具，不是每次都调用。
+# 1、检索过程定义为可选的工具，不是每次都必须调用。
 # 2、引入基于内存的检查点，让llm在单次对话（session）中保持记忆。
+# 3、清晰显示一次App执行中各个步骤的执行结果
 
 # 0、加载和读取
 from dotenv import load_dotenv
@@ -116,7 +117,8 @@ def query_or_respond(state: MessagesState):
     # 响应为AiMessage，会加进App的状态。
     return {"messages": [response]}
 
-# 6.2: 创建一个工具节点，它将调用检索工具，并将工具调用结果封装为一个ToolMessage加入App状态。
+# 6.2: 创建一个工具调用节点，它将根据最近的那条Message中的tool_calls来调用对应工具，
+#      并将所有工具调用结果封装为一个ToolMessage加入App状态中的messages字段。
 tools = ToolNode([retrieve_info_of_nuclear_industry])
 
 # 6.3: 负责将检索到的context封装进SystemMessage，重新调用llm，获取答案。
@@ -163,6 +165,7 @@ graph_builder.add_node(query_or_respond)
 graph_builder.add_node(tools)
 graph_builder.add_node(generate)
 graph_builder.add_edge(START,"query_or_respond")
+# 添加条件边，采用预定义的tools_condition函数来决定下一个步骤。
 graph_builder.add_conditional_edges(
     "query_or_respond",
     tools_condition,
@@ -182,9 +185,9 @@ appConfig = {"configurable": {"thread_id": "abc123"}}
 
 # 获取App流程图
 # image_data = graph.get_graph().draw_mermaid_png()
-# with open("output.png", "wb") as f:
+# with open("../display_graph/RAG_part2.png", "wb") as f:
 #     f.write(image_data)
-# print("图片已保存为 output.png")
+# print("图片已保存为 RAG_part2.png")
 
 # # 可见App调用结果仍然是一个App状态
 #input_message = "给我讲一个100字的笑话"
@@ -219,15 +222,13 @@ elif choice=="2":
         ):
             # 输出此次App流程中各个步骤的执行结果
             step_state["messages"][-1].pretty_print()
-            # 但在用户界面中，应该只暴露出生成的AiMessage（非工具调用请求）
-            # if step_state["messages"][-1].type == "ai" and not step_state["messages"][-1].tool_calls:
-            #     print(step_state["messages"][-1].content)
 
             # 输出生成步骤中检索到的信息的来源
             if "docs" in step_state:
                 print("\n检索到的信息来源：")
                 for doc in step_state["docs"]:
                     print("    ",doc.metadata["source"])
+
             # 如果是AiMessage，则输出令牌使用量
             if step_state["messages"][-1].type== "ai":
                 if  len(step_state["messages"][-1].tool_calls) > 0:

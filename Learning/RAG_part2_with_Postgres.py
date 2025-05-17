@@ -1,14 +1,26 @@
 # RAG part2 with Postgre相较于RAG part2的改进：
-# 引入基于PostgreSQL的检查点，实现了对话历史的持久化与重加载，使得llm在多轮对话中保持记忆。
+# 编译时引入基于PostgreSQL的检查器，运行时设置thread_id,
+# 实现了对话历史的持久化与重加载，使得llm在多轮对话（multi-turns interactions）中保持记忆,适合生产环境中使用。
+
+# 疑问：可以将一个thread的所有检查点保存到一个数据库中，但是如何从数据库中删除该thread的检查点？
+# 答案：连接PostgreSQL数据库执行DELETE语句，thread_id就可以标志所有检查点。
 
 # 持久化细节：
 # https://langchain-ai.github.io/langgraph/concepts/persistence
-# 检查点在进入App的每个step之前那一刻生成，是一个StateSnapshot对象，
+# 检查点checkpoint在进入App的每个step之前那一刻生成，是一个StateSnapshot对象，
 # 它包含上一个结点执行之后的App状态和一些相关元数据（比如上一个结点对App状态作出的改变）。
 # 每个检查点都对应一个线程，一个线程代表了一个检查点的集合。
 # RAG part2 中的App是一个最多5步骤的应用，所以一次App流程最多新增5个检查点
-# 在本模块中，使用一条PostgreSQL数据库连接创建一个检查器，用于保存每次App流程中新增的检查点，
-# 使得后续重新运行该App时，只要传入先前配置appConfig，就可以加载最新的检查点。（检查点的values字段的值就是App状态，其中包含了我们想要的对话历史）
+
+'''
+# 获取最近的检查点（必须指定thread_id)，其中values字段就是最新的App状态
+config = {"configurable": {"thread_id": "1"}}
+graph.get_state(config)
+
+'''
+
+# 在本模块中，使用一条PostgreSQL数据库连接创建一个检查器，用于保存每次App流程中新增的那些检查点，
+# 后续重新运行该App时，只要thread_id不变，就可以加载最新的检查点。（检查点的values字段的值就是App状态，其中包含了我们想要的对话历史）
 # 此时就可以将最新检查点作为进入_START_节点前的那个检查点，从而继续执行App流程，继续对话。
 
 # 导入必要的模块和库
@@ -97,21 +109,6 @@ from langgraph.prebuilt import ToolNode
 def query_or_respond(state: AppState):
     #将llm绑定到工具，并调用llm
     llm_with_tools = llm.bind_tools([retrieve_info_of_nuclear_industry])
-
-    # # 验证：在设置了检查点的情况下，当前的state["messages"]应该会是上一次的state["messages"]+当前轮次的输入问题HumanMessage
-    # print("本次一问一答刚刚开始，当前App状态中的消息列表长度为",len(state["messages"]))
-    # # 统计输出App状态中的消息列表中3种类型的消息（根据消息对象的type字段判断类型）的个数
-    # message_counts = {
-    #     "human": 0,
-    #     "ai": 0,
-    #     "tool": 0,
-    # }
-    # for message in state["messages"]:
-    #     message_counts[message.type] += 1
-    #
-    # # 输出统计信息
-    # for message_type, count in message_counts.items():
-    #     print(f"  {message_type}消息的数量为：{count}")
     system_message_content = (
         "你是一名核工业专业知识问答助理。你的任务是尽力响应用户的输入(尽管用户的输入不是对核工业专业知识的提问)。\n"
         "总是以“欢迎你再次提问！”作为每次回答的结尾。"
@@ -210,16 +207,16 @@ with ConnectionPool(
 ) as pool:
     # 初始化 PostgresSaver 对象，充当App的保存器，它负责将App状态保存到Postgres数据库中。
     checkpointer = PostgresSaver(pool)
+    # # 下面这条命令在初次使用该检查器时使用，在数据库中创建必要的表。
+    # checkpointer.setup()
+    graph = graph_builder.compile(checkpointer=checkpointer)        # 一个可运行的App对象。
 
-    graph = graph_builder.compile(checkpointer=checkpointer)
-
-    # 9、当调用带checkpointer的App时，必须在App运行配置中设置线程ID。
-    config_of_run = {"configurable": {"thread_id": "abc123"}}
+    # 9、当运行带checkpointer（检查器）的App时，必须在App运行配置中设置thread_id。
+    config_of_run = {"configurable": {"thread_id": "abc125"}}
 
     input_message = ""
-    print("下面开始输出RAG应用多轮对话的输出：\n")
     while True:
-        # 下面开始单次问答
+        # 1、下面开始一次App的执行。
         input_message = input("请输入问题：")
         if input_message == "exit":
             break
@@ -228,5 +225,7 @@ with ConnectionPool(
             stream_mode="values",
             config=config_of_run,
         ):
-            # 输出此次App流程中各个步骤的执行结果
+            # 输出此次App执行中各结点的执行结果（已知每个结点都在messages字段添加了新消息）
             step_state["messages"][-1].pretty_print()
+        # 2、进入下一次执行
+        pass

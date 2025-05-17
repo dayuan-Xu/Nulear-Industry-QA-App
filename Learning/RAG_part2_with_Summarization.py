@@ -1,5 +1,5 @@
-# RAG part2 with Postgre相较于RAG part2的改进：
-# 添加一个生成摘要的节点，对历史消息进行总结。
+# RAG part2 with Summarization相较于RAG part2的改进：
+# 添加了一个生成摘要的节点，对历史消息进行总结。
 
 # 导入必要的模块和库
 from langgraph.checkpoint.postgres import PostgresSaver
