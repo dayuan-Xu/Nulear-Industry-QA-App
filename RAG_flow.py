@@ -1,3 +1,23 @@
+_connection_pool = None
+
+def get_connection_pool():
+    from psycopg_pool import ConnectionPool
+    global _connection_pool
+    # 单例模式，确保整个应用生命周期内只创建一个连接池实例
+    if _connection_pool is None:
+        DB_URI = "postgresql://postgres:postgres@localhost:5442/postgres?sslmode=disable"
+        connection_kwargs = {
+            "autocommit": True,
+            "prepare_threshold": 0,
+        }
+        _connection_pool = ConnectionPool(
+            conninfo=DB_URI,
+            max_size=20,
+            kwargs=connection_kwargs,
+        )
+    return _connection_pool
+
+
 def get_graph(collection_name="user2117543200@qq.com_kb0"):
     # 导入必要的模块和库
     from langgraph.checkpoint.postgres import PostgresSaver
@@ -173,13 +193,8 @@ def get_graph(collection_name="user2117543200@qq.com_kb0"):
         "prepare_threshold": 0,  # 设置预处理语句阈值
     }
 
-    from psycopg_pool import ConnectionPool
     # 创建连接池
-    pool = ConnectionPool(
-        conninfo=DB_URI,
-        max_size=20,
-        kwargs=connection_kwargs,
-    )
+    pool = get_connection_pool()
     checkpointer = PostgresSaver(pool)
     graph = graph_builder.compile(checkpointer=checkpointer)
     return graph
