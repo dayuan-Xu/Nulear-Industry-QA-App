@@ -197,7 +197,7 @@ connection_kwargs = {
     "prepare_threshold": 0,  # 设置预处理语句阈值
 }
 
-# 使用 psycopg_pool 创建数据库连接池
+# 使用 psycopg_pool 创建数据库连接池，并在with块执行完毕后自动销毁连接池。
 from psycopg_pool import ConnectionPool
 
 with ConnectionPool(

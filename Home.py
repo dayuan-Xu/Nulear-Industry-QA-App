@@ -17,9 +17,9 @@ if pressed2:
     if st.session_state.logined==False:
         st.error("请先登录!")
     else:
-        st.switch_page("pages/2_knowledge_base.py")
+        st.switch_page("pages/2_choose_know_base.py")
 if pressed3:
     if st.session_state.logined==False:
         st.error("请先登录!")
     else:
-        st.switch_page("pages/3_QA_with_RAG.py")
+        st.switch_page("pages/3_QA.py")
