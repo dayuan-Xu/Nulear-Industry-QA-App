@@ -12,7 +12,7 @@ class User:
         self.chats=None
     def setChats(self):
         # 该方法访问数据库，获取该用户所有的历史对话的thread_id，以列表返回
-        self.chats= ["abc123","abc124"]# 返回默认用户的所有历史对话的thread_id
+        self.chats= ["abc123","abc124","abc125"]# 返回默认用户的所有历史对话的thread_id
 
 def verifyUser(user):
     # 获取当前文件所在目录的上一级目录
