@@ -56,7 +56,6 @@ class ConfigSchema(TypedDict):
     # 用户设置的目标知识库名称collection_name
     target_KB: str
 
-graph_builder = StateGraph(AppState, config_schema=ConfigSchema)
 
 # 5、将检索定义为工具，该工具与用户设置相绑定。
 def create_retrieval_tool(collection_name: str):
@@ -76,13 +75,12 @@ def create_retrieval_tool(collection_name: str):
         return context, retrieved_docs
     return _tool
 
-
 # 6.1: 生成一个AiMessage，它的内容是对用户提问的直接回答 或 对外部工具的调用请求
 def query_or_respond(state: AppState):
     # 使用partionl根据运行时配置固定工具的第二个参数。
-    retrieve_in_fixed_collection = create_retrieval_tool(collection_name="不应该让llm知道的参数")
+    retrieval_tool = create_retrieval_tool(collection_name="不应该让llm看见的参数")
     # 将llm绑定到工具，并调用llm
-    llm_with_tools = llm.bind_tools([retrieve_in_fixed_collection])
+    llm_with_tools = llm.bind_tools([retrieval_tool])
     system_message_content = (
         "你是一名核工业专业知识问答助理。你的任务是尽力响应用户的输入(尽管用户的输入不是对核工业专业知识的提问)。\n"
         "总是以“欢迎你再次提问！”作为每次回答的结尾。"
@@ -164,10 +162,11 @@ def get_connection_pool():
     return _connection_pool
 
 def get_graph(collection_name = "user2117543200@qq.com_kb0"):
-    # 根据用户运行时配置，固定住工具调用时检索的知识库
+    graph_builder = StateGraph(AppState, config_schema=ConfigSchema)
+    # 6.2 根据Ai返回的工具调用请求，调用所有工具。
     retrieval_tool = create_retrieval_tool(collection_name)
     tools = ToolNode([retrieval_tool])
-    # 7、定义控制流（添加节点、设置入口、添加边）、编译应用
+    # 7、定义控制流（添加节点、设置入口、添加边）
     graph_builder.add_node(query_or_respond)
     graph_builder.add_node(tools)
     graph_builder.add_node(generate)
@@ -185,3 +184,9 @@ def get_graph(collection_name = "user2117543200@qq.com_kb0"):
     checkpointer = PostgresSaver(pool)
     graph = graph_builder.compile(checkpointer=checkpointer)
     return graph
+
+def run_graph(graph,text,config):
+    graph.invoke(
+        {"messages": [{"role": "user", "content": text}]},
+        config=config,
+    )
