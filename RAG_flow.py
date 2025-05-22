@@ -15,11 +15,8 @@ from langgraph.graph import START,END
 from langgraph.prebuilt import tools_condition
 from psycopg_pool import ConnectionPool
 from dotenv import load_dotenv
-
-load_dotenv(override=True)
-# 0、加载配置文件
-from dotenv import load_dotenv
 import os
+# 0、加载配置文件
 load_dotenv(override=True)
 
 # 1、加载llm，供Node使用。

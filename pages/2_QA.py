@@ -1,12 +1,12 @@
 # 该页面任务：显示用户对话列表，并加载对话界面。
 # 目前难题：
 # 1、对话列表显示任务
-# 2、对话界面显示问题：加载后应该自动处于最近的对话，而不是处于顶部那些最旧的对话。   采用chat_input部件成功解决。
-# 3、对话界面：希望在流式输出时能正确显示Markdown格式的Ai回答
 
 import sys
 import os
 import time
+
+from Neuclear_QA_App import placeholder
 
 # 获取当前文件的上一级目录
 parent_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
@@ -39,8 +39,9 @@ if "pre_chat" not in st.session_state:
     st.session_state.chat_switched = True
 
 def set_pre_chat(thread_id):
-    st.session_state.pre_chat=thread_id
-    st.session_state.chat_switched = True
+    if thread_id !=  st.session_state.pre_chat:
+        st.session_state.pre_chat=thread_id
+        st.session_state.chat_switched = True
 
 def delete_chat(thread_id):
     # 访问数据库，根据thread_id删除对话
@@ -91,7 +92,7 @@ def show_message(message):
                     st.write("参数:",tool_call["args"])
             else:
                 AiMessageType="Ai回答"
-                st.write(message.content)
+                st.markdown(message.content)
 
             with st.expander(label=f"\n本次令牌使用情况："):
                 st.write("消息类型："+AiMessageType)
@@ -113,20 +114,34 @@ for message in st.session_state.messages:
     show_message(message)
 
 def response_generator(response):
-    for word in response.split():
-        yield word + " "
-        time.sleep(0.2)
+    for char in response:
+        yield char
+        time.sleep(0.02)
 
 # 3、处理用户提问
 prompt=st.chat_input("请输入问题:")
 if prompt:
     config = {"configurable": {"thread_id": st.session_state.pre_chat}}
+
     for message in LangChainMessage_Generator(graph,prompt,config):
-        # 最近生成的三种LangChain消息(用户输入、Ai响应、Tool结果)都加入session_state.messages中
+        # 最近生成的4种LangChain消息(1、用户输入、2、来自Ai的工具调用请求3、Tool结果4、Ai回答)都加入session_state.messages中
         st.session_state.messages.append(message)
-        # 对于Ai响应流式输出，其他LangChain消息(用户输入、来自Ai的工具调用、Tool结果)直接整体显示。
         if message.type == "ai" and len(message.tool_calls)== 0:
+            flow_state.empty()
+            # 流式输出Ai回答
             with st.chat_message("ai"):
                 st.write_stream(response_generator(message.content))
         else:
+            # 其他LangChain消息(1、2、3)直接整体显示。
             show_message(message)
+            if message.type =="human":
+                flow_state=st.empty()
+                flow_state.write("Current State: Thinking......")
+                time.sleep(2)
+            elif message.type =="ai":
+                flow_state.write("Current State: Retrieving......")
+                time.sleep(2)
+            elif message.type =="tool":
+                flow_state.write("Current State: Generating......")
+                time.sleep(2)
+
