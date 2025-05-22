@@ -60,7 +60,7 @@ class ConfigSchema(TypedDict):
 # 5、将检索定义为工具，该工具与用户设置相绑定。
 def create_retrieval_tool(collection_name: str):
     @tool(response_format="content_and_artifact")
-    def _tool(query: str):
+    def retrieve(query: str):
         """检索出与查询相关的2个信息"""
         vector_store = QdrantVectorStore(
             client=client,
@@ -73,7 +73,7 @@ def create_retrieval_tool(collection_name: str):
         # 由llm提供query，实际的工具调用由App执行，工具执行结果会保存进App状态作为一条TOOlMESSAGE。
         # 后续生成时只将ToolMessage的content提供给模型的作为知识库内容，而artifact则被App用来提取元数据。
         return context, retrieved_docs
-    return _tool
+    return retrieve
 
 # 6.1: 生成一个AiMessage，它的内容是对用户提问的直接回答 或 对外部工具的调用请求
 def query_or_respond(state: AppState):
@@ -141,29 +141,45 @@ def get_connection_pool():
     global _connection_pool
     # 单例模式，确保整个应用生命周期内只创建一个连接池实例
     if _connection_pool is None:
-        # 定义 PostgreSQL 数据库连接 URI 和连接参数
-        DB_URI = "postgresql://postgres:postgres@localhost:5442/postgres?sslmode=disable"
+        # 使用环境变量获取数据库连接信息，避免硬编码
+        db_user = os.getenv("DB_USER", "postgres")
+        db_password = os.getenv("DB_PASSWORD", "postgres")
+        db_host = os.getenv("DB_HOST", "localhost")
+        db_port = os.getenv("DB_PORT", "5442")
+        db_name = os.getenv("DB_NAME", "postgres")
+        ssl_mode = os.getenv("DB_SSL_MODE", "disable")
+
+        DB_URI = f"postgresql://{db_user}:{db_password}@{db_host}:{db_port}/{db_name}?sslmode={ssl_mode}"
+
         # 协议：postgresql:// 表示使用 PostgreSQL 协议。
         # 用户信息：postgres:postgres 表示用户名为 postgres，密码也为 postgres。
         # 主机：@localhost 表示数据库位于本地机器。
         # 端口：:5442 表示数据库服务运行在 5442 端口（默认是 5432）。
         # 数据库名：/postgres 表示连接的数据库名为 postgres。
         # SSL 模式：?sslmode=disable 表示禁用 SSL 加密连接。
-
-        connection_kwargs = {
-            "autocommit": True,
-            "prepare_threshold": 0,
-        }
-        _connection_pool = ConnectionPool(
-            conninfo=DB_URI,
-            max_size=20,
-            kwargs=connection_kwargs,
-        )
+        try:
+            connection_kwargs = {
+                "autocommit": True,
+                "prepare_threshold": 0,
+            }
+            _connection_pool = ConnectionPool(
+                conninfo=DB_URI,
+                max_size=20,
+                kwargs=connection_kwargs,
+            )
+        except Exception as e:
+            raise RuntimeError("无法初始化数据库连接池") from e
     return _connection_pool
 
 def get_graph(collection_name = "user2117543200@qq.com_kb0"):
+    # 根据用户配置，创建一个图
+    # 用户可以配置如下内容：
+    # 1、collection_name————————>设置为图的检索工具的参数。
+    # 2、k——————————————————————>设置检索工具返回的文档数量。
+    # 3、
     graph_builder = StateGraph(AppState, config_schema=ConfigSchema)
     # 6.2 根据Ai返回的工具调用请求，调用所有工具。
+    # note：此处工具名要与query_or_respond节点中告诉llm的工具名一致！
     retrieval_tool = create_retrieval_tool(collection_name)
     tools = ToolNode([retrieval_tool])
     # 7、定义控制流（添加节点、设置入口、添加边）
@@ -185,8 +201,10 @@ def get_graph(collection_name = "user2117543200@qq.com_kb0"):
     graph = graph_builder.compile(checkpointer=checkpointer)
     return graph
 
-def run_graph(graph,text,config):
-    graph.invoke(
+def LangChainMessage_Generator(graph,text,config):
+    for step_state in graph.stream(
         {"messages": [{"role": "user", "content": text}]},
+        stream_mode="values",
         config=config,
-    )
+    ):
+        yield step_state["messages"][-1]
