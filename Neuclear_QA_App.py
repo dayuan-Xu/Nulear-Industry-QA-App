@@ -93,15 +93,3 @@ if  'logined_user' not in st.session_state:
 else:
     area.info("当前登录用户:"+st.session_state.logined_user.email)
     area.button("注销",on_click=logout)
-
-
-
-#2、在Streamlit应用关闭时，添加清理逻辑
-import atexit
-from RAG_flow import get_connection_pool
-# 注册清理函数
-@atexit.register
-def cleanup():
-    pool = get_connection_pool()
-    if pool:
-        pool.close()  # 显式关闭
