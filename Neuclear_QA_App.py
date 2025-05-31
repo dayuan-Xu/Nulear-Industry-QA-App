@@ -1,24 +1,51 @@
 # 该页面任务：
 # 1、用户登录验证
 # 2、用户对象的构建，并将其保存到sessin_state中
+# 3、用户登出
 import os
 from time import sleep
+from typing import TypedDict
 import streamlit as st
+# 对话实体类
+class Chat (TypedDict):
+    thread_id: str
+    thread_title: str
 
-# 定义用户类
+# 用户对graph的的静态的功能性的配置(除了thread_id外)，在不同对话之间保持一致。
+class Config(TypedDict):
+    target_KB: str
+
+# 定义用户类:定义用户的基本配置
 class User:
     def __init__(self,email,password):
         self.email=email
         self.password=password
-        # 该用户所有知识库(知识库不是在数据库中，而时在主机的文件系统里）
+        # 该用户所有知识库(知识库文件不是在数据库中，而时在服务器主机的文件系统里）
         self.know_bases=None
         # 该用户所有对话的thread_id
         self.chats=None
+        self.config=None
     def complement_user_info(self):
+        self.set_KBs ()
         self.set_chats()
+        self.set_config()
+    def set_KBs(self):
+        # 访问数据库，添加该用户所有的知识库
+        self.know_bases=["user2117543200@qq.com_kb0"]
+        pass
     def set_chats(self):
-        # 该方法访问数据库，获取该用户所有的历史对话的thread_id，以列表返回
-        self.chats= ["abc123","abc124","abc125"]# 返回默认用户的所有历史对话的thread_id
+        # 该方法访问数据库二值表thread_id和thread_title，获取该用户所有的历史对话
+        # list[Chat]
+        Chat1=Chat(thread_id="abc123",thread_title="对话1")
+        Chat2=Chat(thread_id="abc124",thread_title="对话2")
+        Chat3=Chat(thread_id="abc125",thread_title="对话3")
+        self.chats=[Chat1,Chat2,Chat3]
+
+    def set_config(self):
+        # 该方法访问数据库，获取该用户上次的graph配置
+        self.config=Config(target_KB=self.know_bases[0])
+        pass
+
 
 # 读文件验证用户身份
 def userIdentification(user):
@@ -47,7 +74,6 @@ def logout():
         placeholder.info(f"注销成功!还有{3-i}s跳转到登录...")
         sleep(1)
     placeholder.empty()
-
 
 placeholder = st.empty()
 area=placeholder.container()

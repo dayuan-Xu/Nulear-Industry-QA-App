@@ -33,8 +33,8 @@ from load_file_2_Doc import load_txt,load_pdf_simply,load_pdf_with_Azure,load_md
 # 用户上传文件到该知识库，后端调用index()函数，该函数会遍历该知识库下的所有文件，并调用不同的加载函数，将文件加载到向量数据库中。
 def index(kb_dir:str):
     # 1、从kb_dir中获取collection_name
-    # 已知入参kb_dir格式为all_users_files/{user_email}/{kb_name}，那么就将user_email_kb_name设置为集合名并返回，写一个函数实现该逻辑
-    collection_name = get_collection_name_from_kb_dir(kb_dir)
+    # 已知入参kb_dir格式为all_users_files/{user_email}/{kb_name}，那么就将user_email和kb_name以下划线连接后作为集合名返回
+    collection_name = kb_dir_2_collection_name(kb_dir)
     if collection_name is None:
         print("无法从指定的路径中获取集合名，请检查路径格式是否正确")
         return
@@ -79,7 +79,7 @@ def index(kb_dir:str):
 
 
 # 从用户知识库路径中获取集合名
-def get_collection_name_from_kb_dir(kb_dir: str) -> str:
+def kb_dir_2_collection_name(kb_dir: str) -> str:
     # 分割路径以获取 user_email 和 kb_name
     parts = kb_dir.split(os.sep)
     if len(parts) < 3:

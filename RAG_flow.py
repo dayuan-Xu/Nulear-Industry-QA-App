@@ -1,5 +1,4 @@
 # 导入必要的模块和库
-import atexit
 from langchain.chat_models import init_chat_model
 from langchain_openai import OpenAIEmbeddings
 from langchain_qdrant import QdrantVectorStore
@@ -168,12 +167,14 @@ def get_connection_pool():
             raise RuntimeError("无法初始化数据库连接池") from e
     return _connection_pool
 
-def get_graph(collection_name = "user2117543200@qq.com_kb0"):
+def get_graph(config):
+
     # 根据用户配置，创建一个图
     # 用户可以配置如下内容：
     # 1、collection_name————————>设置为图的检索工具的参数。
     # 2、k——————————————————————>设置检索工具返回的文档数量。
     # 3、
+    collection_name= config.get("target_KB")
     graph_builder = StateGraph(AppState, config_schema=ConfigSchema)
     # 6.2 根据Ai返回的工具调用请求，调用所有工具。
     # note：此处工具名要与query_or_respond节点中告诉llm的工具名一致！
