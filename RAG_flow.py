@@ -12,9 +12,10 @@ from langgraph.checkpoint.postgres import PostgresSaver
 from langchain_core.tools import tool
 from langgraph.graph import START,END
 from langgraph.prebuilt import tools_condition
-from psycopg_pool import ConnectionPool
 from dotenv import load_dotenv
 import os
+from db_utils import get_connection_pool
+
 # 0、加载配置文件
 load_dotenv(override=True)
 
@@ -131,41 +132,6 @@ def generate(state: AppState):
         docs.extend(tool_message.artifact)
     # 3、返回的是回答AiMessage和docs，都加进App状态中对应的字段。
     return {"messages": [response], "docs": docs}
-
-_connection_pool = None
-def get_connection_pool():
-    global _connection_pool
-    # 单例模式，确保整个应用生命周期内只创建一个连接池实例
-    if _connection_pool is None:
-        # 使用环境变量获取数据库连接信息，避免硬编码
-        db_user = os.getenv("DB_USER", "postgres")
-        db_password = os.getenv("DB_PASSWORD", "postgres")
-        db_host = os.getenv("DB_HOST", "localhost")
-        db_port = os.getenv("DB_PORT", "5442")
-        db_name = os.getenv("DB_NAME", "postgres")
-        ssl_mode = os.getenv("DB_SSL_MODE", "disable")
-
-        DB_URI = f"postgresql://{db_user}:{db_password}@{db_host}:{db_port}/{db_name}?sslmode={ssl_mode}"
-
-        # 协议：postgresql:// 表示使用 PostgreSQL 协议。
-        # 用户信息：postgres:postgres 表示用户名为 postgres，密码也为 postgres。
-        # 主机：@localhost 表示数据库位于本地机器。
-        # 端口：:5442 表示数据库服务运行在 5442 端口（默认是 5432）。
-        # 数据库名：/postgres 表示连接的数据库名为 postgres。
-        # SSL 模式：?sslmode=disable 表示禁用 SSL 加密连接。
-        try:
-            connection_kwargs = {
-                "autocommit": True,
-                "prepare_threshold": 0,
-            }
-            _connection_pool = ConnectionPool(
-                conninfo=DB_URI,
-                max_size=20,
-                kwargs=connection_kwargs,
-            )
-        except Exception as e:
-            raise RuntimeError("无法初始化数据库连接池") from e
-    return _connection_pool
 
 def get_graph(config):
 

@@ -11,6 +11,7 @@
 - 次年3月：增加代理功能等优化工作。
 
 # 常用命令(在工作目录下执行)
+- 运行该项目：streamlit run Streamlit_App.py
 - 生成本地环境中安装的所有python包: pip freeze > requirements.txt
 - 将所有项目文件添加到暂存区: git add -A
 - 将暂存区的文件提交到本地仓库: git commit -m "commit message"
@@ -55,3 +56,9 @@
 
 第14周：
 优化了一些代码，完善了QA界面。
+
+第15周：
+学习Streamit概念，优化了导航菜单，大致构建出数据库访问模块。
+
+第16周：
+设计知识库管理界面。
