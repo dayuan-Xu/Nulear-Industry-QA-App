@@ -14,6 +14,7 @@ from db_utils import verify_user
 placeholder = st.empty()
 area=placeholder.container()
 def logout():
+    print(f"用户Email:{st.session_state.logined_user.email} 登出成功......\n")
     st.session_state.clear()
     for i in range(6):
         placeholder.info(f"注销成功!还有{6-i}s跳转到登录...")
@@ -47,6 +48,7 @@ if  'logined_user' not in st.session_state:
             if verify_user(user):
                 # 验证成功后补足用户相关信息
                 user.complement_user_info()
+                print(f"用户Email:{user.email} 登录成功......\n")
                 st.session_state.logined_user=user
                 st.info("登录成功")
                 st.balloons()

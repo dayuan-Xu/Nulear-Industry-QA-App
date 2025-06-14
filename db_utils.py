@@ -1,4 +1,5 @@
 # 该模块定义数据库操作。
+import atexit
 import os
 from psycopg_pool import ConnectionPool
 from models.KB import KnowledgeBase
@@ -47,7 +48,16 @@ def verify_user(user):
             if result and result[0] == user.password:
                 return True
     return False
-
+def get_user_id(email):
+    # 访问数据库，根据email获取用户id
+    pool = get_connection_pool()
+    with pool.connection() as conn:
+        with conn.cursor() as cur:
+            cur.execute("SELECT id FROM users WHERE email = %s", (email,))
+            result = cur.fetchone()
+            if result:
+                return result[0]
+    return None
 def get_KBs(email: str):
     pool = get_connection_pool()
     with pool.connection() as conn:
@@ -72,25 +82,55 @@ def get_chats(email: str):
             rows = cur.fetchall()
             return [Chat(thread_id=row[0], thread_title=row[1]) for row in rows]
 
-def insert_chat(new_chat):
-    # 访问数据库，插入新对话thread_id和thread_title
-    pass
+def insert_chat(new_chat: Chat,user_id:str):
+    # 访问数据库chats:thread_id(主码）、thread_title、creadted_time（timestamp without time zone)、user_id，插入新对话thread_id和thread_title
+    pool = get_connection_pool()
+    try:
+        with pool.connection() as conn:
+            with conn.cursor() as cur:
+                cur.execute("INSERT INTO chats (thread_id, thread_title, created_time, user_id) VALUES (%s, %s, NOW(), %s)",
+                            (new_chat["thread_id"], new_chat["thread_title"], user_id))
+                conn.commit()  # 提交事务
+                return 1  # 插入成功
+    except Exception as e:
+        # 可根据具体异常做更细粒度的处理
+        print(f"Error inserting chat: {e}")
 
 def delete_chat(thread_id: str) -> int:
-    # 访问 Postgres 数据库，删除
-    # 1、用户的对话表中这一项
-    # 2、checkpoints 表中所有 thread_id = 形参 的条目，并返回涉及条目数。
     pool = get_connection_pool()
-    deleted_rows = 0
-    with pool.connection() as conn:  # 从连接池获取一个连接
-        with conn.cursor() as cur:
-            # 执行删除操作
-            cur.execute("DELETE FROM checkpoints WHERE thread_id = %s RETURNING *", (thread_id,))
-            deleted_rows = len(cur.fetchall())  # 统计影响的行数
-
-    return deleted_rows
+    try:
+        with pool.connection() as conn:
+            with conn.cursor() as cur:
+                # 删除 chats 表中的记录
+                cur.execute("DELETE FROM chats WHERE thread_id = %s", (thread_id,))
+                # 删除 checkpoints 表中的记录
+                cur.execute("DELETE FROM checkpoints WHERE thread_id = %s", (thread_id,))
+                conn.commit()  # 提交事务
+                return 1  # 成功
+    except Exception as e:
+        # 可根据具体异常做更细粒度的处理
+        print(f"Error deleting chat: {e}")
+        return 0  # 失败
 
 def update_chat_title(chat, new_title):
-    # 访问数据库，根据thread_id和st.session_state.new_chat_title更新对话标题————一个二值表thread_id和thread_title
-    pass
+    # 访问数据库chat表，根据thread_id（主码）和st.session_state.new_chat_title更新thread_title
+    pool = get_connection_pool()
+    try:
+        with pool.connection() as conn:
+            with conn.cursor() as cur:
+                cur.execute("UPDATE chats SET thread_title = %s WHERE thread_id = %s", (new_title, chat["thread_id"]))
+                conn.commit()  # 提交事务
+                return 1  # 成功
+    except Exception as e:
+        # 可根据具体异常做更细粒度的处理
+        print(f"Error updating chat title: {e}")
+        return 0  # 失败
 
+
+def close_connection_pool():
+    global _connection_pool
+    if _connection_pool is not None:
+        _connection_pool.close()
+        print("Database connection pool closed.")
+# 注册退出钩子
+atexit.register(close_connection_pool)

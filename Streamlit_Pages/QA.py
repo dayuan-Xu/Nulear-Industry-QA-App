@@ -56,8 +56,6 @@ def set_config():
     # 触发事件
     st.session_state.config_changed=True
     pass
-
-
 def new_chat():
     # 即创建一个新的chat对象
     # 插入session中user的chats中
@@ -75,13 +73,13 @@ def new_chat():
         "thread_id": new_thread_id,
         "thread_title": new_title
     }
-
-    # 插入到用户 chats 列表中
+    # 插入到session中的user.chats中
     user.chats.append(new_chat)
     # 更新数据库
-    insert_chat(new_chat)
+    insert_chat(new_chat,user.id)
     # 切换到新对话
     switch_chat(new_chat)
+    print(f"Successfully created new chat: {new_title}")
     st.toast(f"已创建新对话：{new_title}")
 def handle_delete_chat(chat):
     thread_id=chat['thread_id']
@@ -107,7 +105,7 @@ def switch_chat(chat):
         st.session_state.chat_switched = True
         print(f"Successfully switched to {chat["thread_title"]} !\n")
     else:
-        print(f"{chat["thread_title"]}is pre chat,not need to switch!\n")
+        print(f"{chat["thread_title"]} is pre chat,no need to switch!\n")
 
 def edit_chat(chat):
     st.session_state.editing_chat=True
@@ -118,7 +116,7 @@ def handle_edit_form(*,type=0):
     target_chat = st.session_state.chat_to_be_updated
     new_title = st.session_state.new_chat_title
     if type==0:
-        print("Save button pressed!")
+        # print("Save button pressed!")
         updated = False
         for chat in st.session_state.logined_user.chats:
             if chat["thread_id"] == target_chat["thread_id"]:
@@ -134,7 +132,7 @@ def handle_edit_form(*,type=0):
         if not updated:
             print(f"Chat title updated failed,found no chat with title:{target_chat["thread_title"]}!")
     elif  type==1:
-        print("Cancel button pressed!")
+        # print("Cancel button pressed!")
         st.session_state.editing_chat = False
         st.session_state.chat_to_be_updated =None
     print("Edit form has been handled!")
@@ -148,9 +146,9 @@ def show_edit_form():
             # 若不使用回调函数，则需要提交2次：
             # 1、第一次提交，提交后rerun，提交按钮返回true，得到正确处理，但是表单仍然显示。
             # 2、第二次提交，提交后rerun，表单不会显示同时对应状态被清除。
-            st.form_submit_button("保存",on_click=handle_edit_form,kwargs={"type":0})
+            st.form_submit_button("💾",on_click=handle_edit_form,kwargs={"type":0},help="保存")
         with col2:
-            st.form_submit_button("取消",on_click=handle_edit_form,kwargs={"type":1})
+            st.form_submit_button("❌",on_click=handle_edit_form,kwargs={"type":1},help="取消")
 
 def show_chat_list():
     st.button("新建对话", on_click=new_chat)
@@ -192,14 +190,14 @@ if st.session_state.chat_switched:
         latest_state = latest_checkpoint.values
         # 只有在 messages 存在的情况下才赋值
         if "messages" in latest_state:
-            print(f"Successfully loaded messages for thread_id:{st.session_state.pre_chat['thread_id']}")
+            # print(f"Successfully loaded messages for thread_id:{st.session_state.pre_chat['thread_id']}")
             st.session_state.messages = latest_state["messages"]
         else:
-            print(f"There is newest checkpoint but No messages found for thread_id:{st.session_state.pre_chat['thread_id']}")
+            # print(f"There is newest checkpoint but No messages found for thread_id:{st.session_state.pre_chat['thread_id']}")
             st.session_state.messages = []  # 初始化为空列表
     else:
         # 没有检查点
-        print(f"No checkpoint found for thread_id:{st.session_state.pre_chat['thread_id']}")
+        # print(f"No checkpoint found for thread_id:{st.session_state.pre_chat['thread_id']}")
         st.session_state.messages = []  # 初始化为空列表
     # 表示对话切换事件处理完毕
     st.session_state.chat_switched = False
@@ -268,7 +266,7 @@ if prompt:
             if message.type =="human":
                 # 之前显示了用户提问，现在正在query or respond
                 graph_step.write("Current State: Thinking......")
-                sleep(2)
+                sleep(1)
             elif message.type =="ai":
                 # 之前显示了tool call，现在正在 retrieve
                 graph_step.write("Current State: Retrieving......")
