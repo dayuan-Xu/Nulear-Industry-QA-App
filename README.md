@@ -44,9 +44,6 @@
 第10周：
 添加一个摘要节点，当消息列表过长时，调用llm进行总结。
 
-第11周：
-准备考试，无进展。
-
 第12周：
 快速入门streamlit，使用streamlit简单搭建起本项目的前端结构。
 缺陷：前后端内容耦合，分离程度不够。
@@ -58,7 +55,11 @@
 优化了一些代码，完善了QA界面。
 
 第15周：
-学习Streamit概念，优化了导航菜单，大致构建出数据库访问模块。
+学习Streamit概念，优化了导航菜单。
+设计了关系表，大致构建出数据库访问模块:
+- users（id、email、password）
+- chats（thread_id、thread_title、created_time、user_id)
+- knowledge_bases(kb_id、name、doc_number、created_time、user_id）
 
 第16周：
 设计知识库管理界面。

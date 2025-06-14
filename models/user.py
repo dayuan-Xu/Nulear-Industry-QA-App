@@ -2,12 +2,13 @@ from datetime import datetime
 
 from models.KB import KnowledgeBase
 from models.chat import Chat
-from config import Config
-from db_utils import get_KBs, get_chats
+from models.config import Config
+from db_utils import get_user_id,get_KBs, get_chats
 
 
 class User:
-    def __init__(self, email, password):
+    def __init__(self, email:str, password:str):
+        self.id=None
         self.email = email
         self.password = password
         # 该用户所有知识库(知识库文件不是在数据库中，而时在服务器主机的文件系统里）
@@ -17,9 +18,15 @@ class User:
         self.config = None
 
     def complement_user_info(self):
+        self.set_id()
         self.set_KBs()
         self.set_chats()
         self.set_config()
+
+    def set_id(self):
+        self.id=get_user_id(self.email)
+        if self.id is None:
+            print(f"用户邮箱:{self.email}, 密码:{self.password}于数据库中不存在!")
 
     def set_KBs(self):
         if get_KBs(self.email):
@@ -43,3 +50,4 @@ class User:
         # 该方法访问数据库，获取该用户上次的graph配置
         self.config = Config(target_KB=self.know_bases[0])
         pass
+
