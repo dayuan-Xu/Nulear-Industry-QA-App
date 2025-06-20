@@ -40,6 +40,7 @@ QDRANT_HOST = os.getenv('QDRANT_HOST')
 QDRANT_PORT = int(os.getenv('QDRANT_PORT', "6333"))
 COLLECTION_NAME = os.getenv('COLLECTION_NAME')
 client = QdrantClient(host=QDRANT_HOST, port=QDRANT_PORT,timeout=10)
+# 创建一个全局向量库，指向的collection:user2117543200@qq.com_kb0
 vector_store = QdrantVectorStore(
     client=client,
     collection_name=COLLECTION_NAME,
@@ -191,7 +192,7 @@ appConfig = {"configurable": {"thread_id": "abc123"}}
 
 # # 可见App调用结果仍然是一个App状态
 #input_message = "给我讲一个100字的笑话"
-# result=graph.invoke({"messages": [{"role": "user", "content": input_message}]})
+# result=graph.invoke({"messages": [{"role": "User_Pages", "content": input_message}]})
 # print(result)
 
 input_message = ""
@@ -200,7 +201,7 @@ choice=input("请选择运行方式：\n1.单次问答\n2.多轮对话\n")
 if choice=="1":
     input_message = input("请输入问题：")
     for step_state in graph.stream(
-        {"messages": [{"role": "user", "content": input_message}]},
+        {"messages": [{"role": "User_Pages", "content": input_message}]},
         stream_mode="values",
         config=appConfig,
     ):
@@ -216,7 +217,7 @@ elif choice=="2":
         if input_message == "exit":
             break
         for step_state in graph.stream(
-            {"messages": [{"role": "user", "content": input_message}]},
+            {"messages": [{"role": "User_Pages", "content": input_message}]},
             stream_mode="values",
             config=appConfig,
         ):

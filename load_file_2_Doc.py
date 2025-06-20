@@ -1,7 +1,7 @@
 # 该模块参考LangChain的Document loaders：https://python.langchain.com/docs/how_to/#document-loaders
 # 对指定路径下的文件，各个函数将其加载为一个List[Document]
 # 对于文件的加载：大部分函数只是简单提取出文件中的文本内容。
-# 只要load_pdf_with_Azure()可以比较准确的提取pdf文件中的文本内容（包括复杂表格）。
+# 只有load_pdf_with_Azure()可以比较准确的提取pdf文件中的文本内容（包括复杂表格）。
 
 import os
 from dotenv import load_dotenv
@@ -18,7 +18,6 @@ from langchain_community.document_loaders import AzureAIDocumentIntelligenceLoad
 load_dotenv(override=True)
 AZURE_ENDPOINT=os.getenv('AZURE_ENDPOINT')
 AZURE_API_KEY=os.getenv('AZURE_API_KEY')
-print("付费服务相关变量设置成功")
 def load_txt(file_path:str)->List[Document]:
     # 该函数加载一个TXT文件，返回List[Document]
 
@@ -322,13 +321,14 @@ def load_pptx_simply(file_path:str)->List[Document]:
         print(f"加载 PPTX 文件时出错: {e}")
         return []
 
-
-
 if __name__ == "__main__":
 
     # load_txt("test_files/核工业百科.txt")
     # load_pdf_simply("test_files/1.10MW 高温堆热启动时蒸汽发生器.pdf")
-    # load_md("test_files/LangChainItroduction.md")
+    # load_md("test_files/&LangChainItroduction.md")
     load_docx_simply("test_files/大创开题报告.docx")
-    # load_pptx_simply("test_files/核工业专业知识问答模型构建-开题答辩.pptx")
+    # load_pptx_simply("test_files/&核工业专业知识问答模型构建-开题答辩.pptx")
     # load_pdf_with_Azure("test_files/1.10MW 高温堆热启动时蒸汽发生器.pdf")
+else:
+    # print("laod_file_2_Doc被导入了一次")
+    pass

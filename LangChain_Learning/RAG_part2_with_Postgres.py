@@ -14,8 +14,8 @@
 
 '''
 # 获取最近的检查点（必须指定thread_id)，其中values字段就是最新的App状态
-config = {"configurable": {"thread_id": "1"}}
-graph.get_state(config)
+config.py = {"configurable": {"thread_id": "1"}}
+graph.get_state(config.py)
 
 '''
 
@@ -221,7 +221,7 @@ with ConnectionPool(
         if input_message == "exit":
             break
         for step_state in graph.stream(
-            {"messages": [{"role": "user", "content": input_message}]},
+            {"messages": [{"role": "User_Pages", "content": input_message}]},
             stream_mode="values",
             config=config_of_run,
         ):

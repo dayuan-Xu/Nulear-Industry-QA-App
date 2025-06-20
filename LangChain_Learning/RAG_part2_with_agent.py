@@ -186,7 +186,7 @@ config_of_run = {"configurable": {"thread_id": "abc123"}}
 # 下面开始单次问答
 input_message = input("请输入问题：")
 for event in agent_executor.stream(
-    {"messages": [{"role": "user", "content": input_message}]},
+    {"messages": [{"role": "User_Pages", "content": input_message}]},
     stream_mode="values",
     config=config_of_run,
 ):
