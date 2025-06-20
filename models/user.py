@@ -3,7 +3,7 @@ from datetime import datetime
 from models.KB import KnowledgeBase
 from models.chat import Chat
 from models.config import Config
-from db_utils import get_user_id,get_KBs, get_chats
+from db_utils import get_user_id, get_KBs, get_chats, insert_KB
 
 
 class User:
@@ -29,13 +29,17 @@ class User:
             print(f"用户邮箱:{self.email}, 密码:{self.password}于数据库中不存在!")
 
     def set_KBs(self):
-        if get_KBs(self.email):
-            self.know_bases = get_KBs(self.email)
+        # 总是从数据库获取最新知识库
+        db_kbs = get_KBs(self.id)
+
+        if db_kbs:
+            # 如果数据库有已经创建的知识库
+            self.know_bases = db_kbs
+            # print(f"从数据库加载了 {len(db_kbs)} 个知识库")
         else:
-            KB1 = KnowledgeBase(kb_id=1, name="user2117543200@qq.com_kb0",  doc_number=4,created_time= datetime.now())
-            KB2 = KnowledgeBase(kb_id=2, name="user2117543200@qq.com_kb1", doc_number=5,created_time= datetime.now())
-            KB3 = KnowledgeBase(kb_id=3, name="user2117543200@qq.com_kb2",  doc_number=6,created_time= datetime.now())
-            self.know_bases = [KB1, KB2, KB3]
+            # 如果数据库没有任何知识库，则删除提示
+            # print("没有从数据库加载任何知识库")
+            self.know_bases = []
 
     def set_chats(self):
         if get_chats(self.email):
@@ -47,7 +51,22 @@ class User:
             self.chats = [Chat1, Chat2, Chat3]
 
     def set_config(self):
-        # 该方法访问数据库，获取该用户上次的graph配置
-        self.config = Config(target_KB=self.know_bases[0])
-        pass
+        # 该方法访问数据库，获取该用户上次的graph配置,现在先给出默认配置
+        if len(self.know_bases)==0:
+            self.config = None
+        else:
+            target_collection_name = self.get_collection_name(self.know_bases[0])
+            self.config = Config(target_collection_name=target_collection_name,max_ctx_retrieved=3)
 
+    def get_collection_name(self,KB:KnowledgeBase):
+        return f"user{self.email}_KB_{KB.kb_id}"
+
+    def to_dict(self):
+        return  {
+            "id": self.id,
+            "email": self.email,
+            "password": self.password,
+            "know_bases": self.know_bases,
+            "chats": self.chats,
+            "config": self.config
+        }

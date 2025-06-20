@@ -227,7 +227,7 @@ with ConnectionPool(
         if input_message == "exit":
             break
         for step_state in graph.stream(
-            {"messages": [{"role": "user", "content": input_message}]},
+            {"messages": [{"role": "User_Pages", "content": input_message}]},
             stream_mode="values",
             config=config_of_run,
         ):

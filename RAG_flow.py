@@ -1,8 +1,4 @@
-# 导入必要的模块和库
 from langchain.chat_models import init_chat_model
-from langchain_openai import OpenAIEmbeddings
-from langchain_qdrant import QdrantVectorStore
-from qdrant_client import QdrantClient
 from langgraph.graph import MessagesState, StateGraph
 from langchain_core.documents import Document
 from typing_extensions import List, TypedDict
@@ -12,39 +8,22 @@ from langgraph.checkpoint.postgres import PostgresSaver
 from langchain_core.tools import tool
 from langgraph.graph import START,END
 from langgraph.prebuilt import tools_condition
-from dotenv import load_dotenv
-import os
 from db_utils import get_connection_pool
-
-# 0、加载配置文件
-load_dotenv(override=True)
+from indexing import  FREE_OPENAI_API_KEY, OPENAI_BASE_URL, get_vector_store
 
 # 1、加载llm，供Node使用。
-OPENAI_API_KEY = os.getenv('FREE_OPENAI_API_KEY')
-OPENAI_BASE_URL=os.getenv('OPENAI_BASE_URL')
 llm=init_chat_model(configurable_fields="any")# 动态完全可配置模式:
-summarization_llm=init_chat_model("gpt-4o-mini", model_provider="openai",api_key=OPENAI_API_KEY,base_url=OPENAI_BASE_URL)
+summarization_llm=init_chat_model("gpt-4o-mini", model_provider="openai",api_key=FREE_OPENAI_API_KEY,base_url=OPENAI_BASE_URL)
 model="gpt-4o-mini"
 model_provider="openai"
 chat_model_config={
     "configurable": {
         "model": f"{model}",
         "model_provider": f"{model_provider}",
-        "api_key": f"{OPENAI_API_KEY}",
+        "api_key": f"{FREE_OPENAI_API_KEY}",
         "base_url": f"{OPENAI_BASE_URL}"
     }
 }
-
-#  2、加载嵌入模型，供检索工具使用。
-embeddings = OpenAIEmbeddings(model="text-embedding-ada-002", )
-embeddings.openai_api_key = OPENAI_API_KEY
-embeddings.openai_api_base = OPENAI_BASE_URL
-
-# 3、加载向量数据库客户端，供给检索工具使用。
-QDRANT_HOST = os.getenv('QDRANT_HOST')
-QDRANT_PORT = int(os.getenv('QDRANT_PORT', "6333"))
-client = QdrantClient(host=QDRANT_HOST, port=QDRANT_PORT,timeout=10)
-
 # 4、定义App状态和graph运行时配置结构
 class AppState(MessagesState):
     # 此处docs即所有检索到的doc的列表，该字段由生成步骤负责填充。
@@ -55,16 +34,12 @@ class ConfigSchema(TypedDict):
 
 
 # 5、将检索定义为工具，该工具与用户设置相绑定。
-def create_retrieval_tool(collection_name: str):
+def create_retrieval_tool(collection_name: str,max_ctx_retrieved:int):
     @tool(response_format="content_and_artifact")
     def retrieve(query: str):
         """检索出与查询相关的2个信息"""
-        vector_store = QdrantVectorStore(
-            client=client,
-            collection_name=collection_name,
-            embedding=embeddings,
-        )
-        retrieved_docs = vector_store.similarity_search(query, k=2)
+        vector_store = get_vector_store(collection_name)
+        retrieved_docs = vector_store.similarity_search(query, k=max_ctx_retrieved)
         context = "\n\n".join(f"检索到的信息: {doc.page_content}" for doc in retrieved_docs)
         # 此处context对应content，retrieved_docs对应artifact
         # 由llm提供query，实际的工具调用由App执行，工具执行结果会保存进App状态作为一条TOOlMESSAGE。
@@ -75,7 +50,7 @@ def create_retrieval_tool(collection_name: str):
 # 6.1: 生成一个AiMessage，它的内容是对用户提问的直接回答 或 对外部工具的调用请求
 def query_or_respond(state: AppState):
     # 使用partionl根据运行时配置固定工具的第二个参数。
-    retrieval_tool = create_retrieval_tool(collection_name="不应该让llm看见的参数")
+    retrieval_tool = create_retrieval_tool(collection_name="llm看不见的参数",max_ctx_retrieved=3)
     # 将llm绑定到工具，并调用llm
     llm_with_tools = llm.bind_tools([retrieval_tool])
     system_message_content = (
@@ -140,11 +115,12 @@ def get_graph(config):
     # 1、collection_name————————>设置为图的检索工具的参数。
     # 2、k——————————————————————>设置检索工具返回的文档数量。
     # 3、
-    collection_name= config.get("target_KB")
+    collection_name= config.get("target_collection_name")
+    max_ctx_retrieved=config.get("max_ctx_retrieved")
     graph_builder = StateGraph(AppState, config_schema=ConfigSchema)
     # 6.2 根据Ai返回的工具调用请求，调用所有工具。
     # note：此处工具名要与query_or_respond节点中告诉llm的工具名一致！
-    retrieval_tool = create_retrieval_tool(collection_name)
+    retrieval_tool = create_retrieval_tool(collection_name,max_ctx_retrieved)
     tools = ToolNode([retrieval_tool])
     # 7、定义控制流（添加节点、设置入口、添加边）
     graph_builder.add_node(query_or_respond)
@@ -172,3 +148,9 @@ def LangChainMessage_Generator(graph,text,config):
         config=config,
     ):
         yield step_state["messages"][-1]
+
+if __name__ == "__main__":
+   pass
+else:
+    # print("RAG_flow模块被导入了一次")
+    pass

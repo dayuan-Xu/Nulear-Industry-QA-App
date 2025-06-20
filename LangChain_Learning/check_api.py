@@ -36,8 +36,8 @@ def check_PromptValue_format():
 
 class schema(BaseModel):
     # 这种定义输出结构的类，本质上是只是让llm以特定格式回答，各个键的值仍然是由llm生成的。
-    answer: str = Field(description="The answer to the user's question ")
-    followup_question: str = Field(description="The following question that may be asked by user")
+    answer: str = Field(description="The answer to the User_Pages's question ")
+    followup_question: str = Field(description="The following question that may be asked by User_Pages")
 def check_structured_output():
     # 该函数是用于测试llm的结构化输出。
     global llm
