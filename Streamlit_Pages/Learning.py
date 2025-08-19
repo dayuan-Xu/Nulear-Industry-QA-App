@@ -3,69 +3,48 @@ import threading
 import numpy as np
 import pandas as pd
 import streamlit as st
-
 from streamlit.runtime.scriptrunner_utils.script_run_context import add_script_run_ctx, get_script_run_ctx
-tabs0=st.tabs(["1、使用fragment监视后端进程","2、另一个标签页"])
-
-
-
 if "progress" not in st.session_state:
     st.session_state.progress = {}
+top_menu=st.tabs(["**1 使用fragment检查更新后台任务进度**","fragment2","fragment3"])
 def update_progress(name):
     st.session_state.progress[name] = 0
     for i in range(100):
-        time.sleep(0.2)  # 模拟一些处理时间
+        time.sleep(0.1)  # 模拟一些处理时间
         st.session_state.progress[name] += 1  # 修改session中的变量
         print(f"{name}线程更新了进度为 {st.session_state.progress[name]}")
     print(f"更新session中的进度变量的{name}线程结束")
     del st.session_state.progress[name]
 
-with tabs0[0]:
-    st.subheader("一个fragment的rerun独立于其他fragment和整个脚本，所以可以把检查后台线程执行进度并显示的工作交给一个fragmen函数")
-    if st.button("开启一个后台解析线程"):
-        name="张三"
-        thread = threading.Thread(target=update_progress,args=(name,))
-        add_script_run_ctx(thread, get_script_run_ctx())
-        thread.start()
 
-    if st.button("开启另一个后台解析线程"):
-        name="李四"
-        thread = threading.Thread(target=update_progress,args=(name,))
-        add_script_run_ctx(thread, get_script_run_ctx())
-        thread.start()
+with top_menu[0]:
+    with st.container(border=True):
+        st.subheader("原理:一个fragment的rerun独立于其他fragment和整个脚本，所以可以把检查后台线程执行进度并显示的工作交给一个fragmen函数")
+        if st.button("开启一个后台解析线程"):
+            name="张三"
+            thread = threading.Thread(target=update_progress,args=(name,))
+            add_script_run_ctx(thread, get_script_run_ctx())
+            thread.start()
 
-    @st.fragment(run_every=0.5)
-    def show_progress():
-        for key, value in st.session_state.progress.items():
-            st.progress(value, f"{key}线程的当前进度:{value}")
-    "下面调用一个fragment函数统一检查并显示所有后台任务的最新进度"
-    show_progress()
+        if st.button("开启另一个后台解析线程"):
+            name="李四"
+            thread = threading.Thread(target=update_progress,args=(name,))
+            add_script_run_ctx(thread, get_script_run_ctx())
+            thread.start()
 
-    st.subheader("下面是其他的组件，他们在用户开启上述的两个后台线程时仍然可以响应用户交互")
+        @st.fragment(run_every=0.5)
+        def show_progress():
+            for key, value in st.session_state.progress.items():
+                st.progress(value, f"{key}线程的当前进度:{value}")
+        "下面调用一个fragment函数统一检查并显示所有后台任务的最新进度"
+        show_progress()
 
-    on = st.toggle("一个开关,属于普通脚本",key="toggle2")
-    if on:
-        "开关打开，这句话才显示！"
+        st.subheader("下面是其他的组件，他们在用户开启上述的两个后台线程时仍然可以响应用户交互")
 
-if "counter" not in st.session_state:
-    st.session_state.counter = 0
-st.session_state.counter += 1
-with st.sidebar:
-    st.subheader(f"该脚本文件重运行了{st.session_state.counter} 次.")
-st.button("Run this script again")
-" "
-" "
-" "
-" "
-" "
-" "
-" "
-" "
-" "
-" "
-" "
-" "
-" "
+        on = st.toggle("一个开关,属于普通脚本",key="toggle2")
+        if on:
+            "开关打开，这句话才显示！"
+
 @st.fragment
 def show_demo1():
     st.markdown("#### 示例1：开启多个线程，一直等待，直到所有线程结束后，再加载显示它们的返回结果")
@@ -472,7 +451,21 @@ def show_button_usecases():
         st.write("点击了按钮，现在触发fragment函数")
         fragment()
 
-
+""
+""
+""
+""
+""
+""
+""
+""
+""
+""
+""
+""
+""
+""
+""
 st.subheader("与fragment内部组件交互只会导致该fragment内部rerun，不会导致整个脚本文件rerun，下面的标签页中的组件大都使用一个fragment函数加载的")
 
 tabs=st.tabs(["**1、常见小组件**", "**2、表单**", "**3、小组件行为**","**4、按钮**","**5、多线程**","**6、yield与spinner**","**7、状态提示组件**"])

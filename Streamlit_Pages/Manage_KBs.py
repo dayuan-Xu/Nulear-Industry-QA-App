@@ -1,23 +1,19 @@
-# 该页面任务：tab1显示所有知识库，tab2显示知识库文件详情。
 import shutil
 import threading
 import streamlit as st
 from time import sleep
 from pathlib import Path
 from datetime import datetime
-from indexing import index_file_backend
 from models.KB import KnowledgeBase
+from indexing import index_file_backend, delete_collection, create_collection_if_not_exists, get_collection_name
 from db_utils import format_utc_to_local, delete_KB, insert_KB,update_KB,update_KB_name
 from streamlit.runtime.scriptrunner_utils.script_run_context import add_script_run_ctx, get_script_run_ctx
 
+from models.config import Config
 
-if "counter" not in st.session_state:
-    st.session_state.counter = 0
-st.session_state.counter += 1
 if "searched_file" not in st.session_state:
     st.session_state.searched_file = None
 if "pre_opened_KB" not in st.session_state:
-    # 初始化pre_opened_KB为None
     st.session_state.pre_opened_KB = None
 if "parse_progress_placeholders" not in st.session_state:
     # key为file_path，value为一个占位容器
@@ -74,8 +70,6 @@ def show_progress_if_any_not_finished():
 def parse_all_files():
     st.session_state.parse_all_files=True
 
-with st.sidebar:
-    st.header(f"本页面运行次数: {st.session_state.counter}")
 @st.dialog("ℹ️ 新建知识库")
 def create_KB_dialog():
     new_KB = st.text_input("请输入知识库名称", key="new_KB_name")
@@ -88,11 +82,17 @@ def create_KB_dialog():
                 if any(kb.name == new_KB for kb in st.session_state.pre_user.know_bases):
                     info.error("知识库名称重复！请选择其他名称")
                 else:
-                    # 1 2 先插入数据库，再更新 session中的用户对象
-                    insert_KB(new_KB, st.session_state.pre_user.id)
+                    user=st.session_state.pre_user
+                    # 1 2 先插入数据库，后更新 session中的用户对象
+                    new_KB=insert_KB(new_KB, user.id)
                     st.session_state.pre_user.set_KBs()
                     # 3 在文件系统中创建
-                    get_KB_directory(st.session_state.pre_user.email, new_KB, create_if_not_exists=True)
+                    new_KB_dir=get_KB_directory(user.email, new_KB.name, create_if_not_exists=True)
+                    # 4 在Qdrant中创建对应集合。
+                    create_collection_if_not_exists(get_collection_name(new_KB_dir, new_KB))
+                    # 5 如果这是该用户创建的第一个知识库，则更新config
+                    if len(user.know_bases) == 1:
+                        user.set_config()
                     info.success("知识库创建成功")
                     sleep(0.5)
                     print(f"成功创建知识库 {new_KB}")
@@ -103,10 +103,11 @@ def create_KB_dialog():
         if st.button("取消"):
             st.rerun()
 
-def delete_KB_dir(user_email, KB_name):
+def delete_KB_dir(user_email, KB:KnowledgeBase):
     """
        在文件系统中删除指定用户的知识库。
     """
+    KB_name=KB.name
     # 获取知识库目录
     KB_dir = get_KB_directory(user_email, KB_name, create_if_not_exists=False)
 
@@ -161,18 +162,24 @@ def rename_KB_dialog(KB,KB_dir:Path):
             st.rerun()
     pass
 @st.dialog("⚠️ 删除知识库")
-def delete_KB_dialog(KB):
+def delete_KB_dialog(KB,KB_dir:Path):
     st.write(f"确认删除知识库 **{KB.name}** 吗？此操作不可恢复。")
     # 已知对话框默认是500pix宽
     cols=st.columns([1/5]*5)
     info=st.empty()
     with cols[3]:
         if st.button(":red[确认]",use_container_width=True):
-            # 1 删除知识库，从当前用户和数据库中。
-            st.session_state.pre_user.know_bases.remove(KB)
+            # 1 删除知识库，从当前会话的用户和数据库中。
+            user=st.session_state.pre_user
+            if KB in user.know_bases:
+                user.know_bases.remove(KB)
+                if(len(user.know_bases)==0):
+                    user.set_config()
             delete_KB(KB.kb_id)
             # 2 删除知识库，从文件系统中。
-            delete_KB_dir(st.session_state.pre_user.email, KB.name)
+            delete_KB_dir(st.session_state.pre_user.email, KB)
+            # 3 删除知识库对应的collection，从向量数据库中
+            delete_collection(KB,KB_dir)
             info.success(f"成功删除知识库{KB.name}！")
             sleep(0.5)
             print(f"成功删除知识库 {KB.name}")
@@ -282,7 +289,7 @@ def show_page_top():
     # 1、页面顶部
     page_top=st.columns([0.5, 0.2, 0.3])
     with page_top[0]:
-        st.subheader(f"欢迎回来, {st.session_state.pre_user.email}, 今天要使用哪个知识库？", anchor=False)
+        st.subheader(f"欢迎回来, {st.session_state.pre_user.email}, 今天要使用哪个知识库？ 知识库总数: {len(st.session_state.pre_user.know_bases)}", anchor=False)
     with page_top[2]:
         top_right = st.columns([1, 1])
         with top_right[0]:
@@ -296,42 +303,49 @@ def show_page_top():
 def open_KB(kb):
     # 打开知识库
     st.session_state.pre_opened_KB = kb
+    # 默认将打开的知识库作为目标知识库
+    user = st.session_state.pre_user
+    target_collection_name =user.get_collection_name(kb)
+    user.config = Config(target_collection_name=target_collection_name, max_ctx_retrieved=3)
+    st.session_state.config_changed = True
+    print(f"{kb.name}已经打开，用户配置已经改变！")
+
 def close_KB():
     # 关闭知识库详情页
     st.session_state.pre_opened_KB = None
 def show_all_KB():
     #  显示所有知识库:名称、文档数、创建时间。
     KB_cols = st.columns(5)
-    for i, kb in enumerate(st.session_state.pre_user.know_bases):
+    for i, KB in enumerate(st.session_state.pre_user.know_bases):
+        KB_dir = get_KB_directory(st.session_state.pre_user.email, KB.name,True)
         with KB_cols[i % 5]:
             with st.container(border=True,height=260):
                 # 1 显示名称、删除按钮
                 blank_area,button1,bounton2 = st.columns([0.8, 0.1,0.1],vertical_alignment="center")
                 with button1:
-                    if st.button("", key=f"rename_button_of_{kb.kb_id}",type="tertiary",icon=":material/edit:",help="重命名知识库"):
-                        KB_dir=get_KB_directory(st.session_state.pre_user.email, kb.name)
-                        rename_KB_dialog(kb,KB_dir)
+                    if st.button("", key=f"rename_button_of_{KB.kb_id}",type="tertiary",icon=":material/edit:",help="重命名知识库"):
+                        rename_KB_dialog(KB,KB_dir)
                 with bounton2:
-                    if st.button("", key=f"delete_button_of_{kb.kb_id}",type="tertiary",icon=":material/delete:",help="删除知识库"):
-                        # print("知识库删除按钮被按下,展示确认对话框")
-                        delete_KB_dialog(kb)
-                st.button(f"**{kb.name}**", key=f"{kb.kb_id}", type="tertiary", use_container_width=True,help="单击查看知识库", on_click=open_KB, args=(kb,))
+                    if st.button("", key=f"delete_button_of_{KB.kb_id}",type="tertiary",icon=":material/delete:",help="删除知识库"):
+                        delete_KB_dialog(KB,KB_dir)
+                st.button(f"**{KB.name}**", key=f"{KB.kb_id}", type="tertiary", use_container_width=True,help="单击查看知识库", on_click=open_KB, args=(KB,))
                 st.text("\n")
                 st.text("\n")
                 st.text("\n")
                 # 2 显示文档数、创建时间
-                st.write(":material/description:" + f" {kb.doc_number} 文档")
-                local_created_time = format_utc_to_local(kb.created_time)
+                st.write(":material/description:" + f" {KB.doc_number} 文档")
+                local_created_time = format_utc_to_local(KB.created_time)
                 st.write(":material/calendar_month:" + f" {local_created_time}")
-def get_KB_directory(user_email, KB_name, create_if_not_exists=False):
+def get_KB_directory(user_email:str, KB_name:str, create_if_not_exists=False):
     """
-    获取知识库文件目录，并选择性地在不存在时创建目录。
+    获取知识库文件目录对应的绝对路径，并选择性地在不存在时创建目录。
+    任一文件或文件目录都有对应的路径（即表示他们在文件系统中位置的字符串），分为绝对路径和相对路径。
     """
     # 获取当前脚本路径: QA-App/Test_Streamlit_Pages/Manage_KBs.py
     current_script_path = Path(__file__)
     # 获取项目根目录: QA-App/
     project_root = current_script_path.parent.parent
-    # 构建路径: QA-App/all_users_files/{user_email}/{kb_name}
+    # 构建路径: QA-App/all_users_files/{user_email}/{KB_name}
     KB_dir = project_root / "all_users_files" / f"user{user_email}" / KB_name
     # 获取绝对路径
     KB_dir = KB_dir.resolve()
@@ -460,10 +474,10 @@ def show_file_bar( file_path,KB_dir):
                             help="下载"
                         )
 
-name_width=0.3
+name_width=0.42
 time_width=0.13
 status_width=0.15
-buttons_width=0.42
+buttons_width=0.3
 def show_KB_files(KB_dir):
     # 数据集Tab、知识库配置Tab
     # 1、对于每个已有文件，从本地路径中加载文件信息------文件名、上传日期、解析状态和解析按钮、操作（重命名按钮、删除按钮、下载按钮）
@@ -507,7 +521,7 @@ else:
         st.stop()
     else:
         st.title(f"{pre_KB.name}", anchor=False)
-        go_back,text,upload_file,one_press_parse_all=st.columns([0.1,0.4,0.3,0.2],vertical_alignment="bottom")
+        go_back,text,upload_file,one_press_parse_all=st.columns([0.15,0.35,0.3,0.2],vertical_alignment="bottom")
         with go_back:
             st.button(":blue[**返回所有知识库**]",use_container_width=True,on_click=close_KB)
         with text:

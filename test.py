@@ -1,7 +1,11 @@
-import requests
+import sys
+print(sys.path)
+from qdrant_client import QdrantClient
+
+client = QdrantClient(host="localhost", port=6333)
 
 try:
-    response = requests.get("http://localhost:6333", timeout=5)
-    print(f"Qdrant 服务状态: {response.status_code}")
+    collections = client.get_collections()
+    print("Qdrant 连接成功！当前集合列表：", collections)
 except Exception as e:
-    print(f"无法连接 Qdrant: {e}")
+    print("连接失败：", e)

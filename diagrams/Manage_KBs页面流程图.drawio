@@ -1,0 +1,58 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36 Edg/138.0.0.0" version="28.0.4">
+  <diagram name="第 1 页" id="vRNpLMbjjuTIj4yta5Sx">
+    <mxGraphModel dx="1616" dy="671" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="Rlb3rPcFuYB46HiBWzqk-4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Rlb3rPcFuYB46HiBWzqk-1" target="Rlb3rPcFuYB46HiBWzqk-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Rlb3rPcFuYB46HiBWzqk-1" value="进入Manage_KBs页面" style="rounded=0;whiteSpace=wrap;html=1;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="-50" y="70" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Rlb3rPcFuYB46HiBWzqk-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="Rlb3rPcFuYB46HiBWzqk-3" target="Rlb3rPcFuYB46HiBWzqk-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Rlb3rPcFuYB46HiBWzqk-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="Rlb3rPcFuYB46HiBWzqk-3" target="Rlb3rPcFuYB46HiBWzqk-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Rlb3rPcFuYB46HiBWzqk-3" value="当前是否打开某个知识库" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-55" y="160" width="150" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="Rlb3rPcFuYB46HiBWzqk-5" value="展示页面顶部&lt;div&gt;展示所有知识库&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="140" y="170" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Rlb3rPcFuYB46HiBWzqk-8" value="否" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="90" y="180" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Rlb3rPcFuYB46HiBWzqk-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="Rlb3rPcFuYB46HiBWzqk-9" target="Rlb3rPcFuYB46HiBWzqk-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Rlb3rPcFuYB46HiBWzqk-9" value="获取文件系统中当前知识库对应路径" style="rounded=0;whiteSpace=wrap;html=1;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="-40" y="270" width="115" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="Rlb3rPcFuYB46HiBWzqk-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="Rlb3rPcFuYB46HiBWzqk-11" target="Rlb3rPcFuYB46HiBWzqk-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Rlb3rPcFuYB46HiBWzqk-11" value="加载标题、文件上传区域、一键解析按钮" style="rounded=0;whiteSpace=wrap;html=1;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="-40" y="340" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Rlb3rPcFuYB46HiBWzqk-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="Rlb3rPcFuYB46HiBWzqk-12" target="Rlb3rPcFuYB46HiBWzqk-13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Rlb3rPcFuYB46HiBWzqk-12" value="处理上述个3个组件的交互事件" style="rounded=0;whiteSpace=wrap;html=1;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="-40" y="430" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Rlb3rPcFuYB46HiBWzqk-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="Rlb3rPcFuYB46HiBWzqk-13" target="Rlb3rPcFuYB46HiBWzqk-14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Rlb3rPcFuYB46HiBWzqk-13" value="展示该知识库所有文件" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="-40" y="510" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="Rlb3rPcFuYB46HiBWzqk-14" value="show_progress&lt;div&gt;_if_any_not_finished每隔1s更新加载进度&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="-45" y="592" width="130" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
