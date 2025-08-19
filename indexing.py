@@ -1,13 +1,10 @@
-# 该模块负责指定目录的所有文件加载、存储到向量数据库中对应的集合。
-# index(KB_dir:Path)
-# KB_dir:用户的某个知识库在服务器上的文件夹路径，内部是用户上传的文件。
+# 该模块提供 文件解析、集合删除功能,用到Qdrant数据库
 import os
 from time import sleep
 from httpx import ReadTimeout
 from qdrant_client.http.exceptions import ResponseHandlingException
 from tqdm import tqdm
 from pathlib import Path
-from dotenv import load_dotenv
 from qdrant_client import QdrantClient
 from langchain_openai import OpenAIEmbeddings
 from langchain_qdrant import QdrantVectorStore
@@ -15,10 +12,9 @@ from qdrant_client.http.models import Distance, VectorParams
 from load_file_2_Doc import load_txt,load_pdf_simply,load_pdf_with_Azure,load_md,load_docx_simply,load_pptx_simply
 from models.KB import KnowledgeBase
 from tenacity import retry, stop_after_attempt, wait_fixed
+from pydantic import SecretStr
 
-
-# 设置一些全局变量
-load_dotenv(override=True)
+# 读取一些全局变量
 PAID_OPENAI_API_KEY = os.getenv('PAID_OPENAI_API_KEY')
 FREE_OPENAI_API_KEY = os.getenv('FREE_OPENAI_API_KEY',"sk-h232CWVa1CKk0MI03s22pSR1B9HZrKFGqsiSmdb9xtaImb4W")
 OPENAI_BASE_URL = os.getenv('OPENAI_BASE_URL')
@@ -31,11 +27,11 @@ if not PAID_OPENAI_API_KEY:
 # 创建embeddings实例
 embeddings = OpenAIEmbeddings(
     model="text-embedding-ada-002",
-    api_key=PAID_OPENAI_API_KEY
+    api_key=SecretStr(PAID_OPENAI_API_KEY) if PAID_OPENAI_API_KEY else None
 )
 
 # Qdrant数据库客户端，用于创建向量库实例、删除collection
-client = QdrantClient(host=QDRANT_HOST, port=QDRANT_PORT,prefer_grpc=True,timeout=60*2)
+client = QdrantClient(host=QDRANT_HOST, port=QDRANT_PORT,timeout=60*2,check_compatibility=False)
 
 vector_stores={ }
 def get_vector_store(collection_name):
@@ -86,6 +82,15 @@ def create_collection_if_not_exists(collection_name, max_retries=5, delay=5):
                 return False
     return False
 
+def delete_collection(KB,KB_dir:Path):
+    collection_name=get_collection_name(KB_dir,KB)
+    if client.collection_exists(collection_name):
+        client.delete_collection(collection_name)
+        # print(f"集合 {collection_name} 已删除")
+        return True
+    else:
+        # print(f"集合 {collection_name} 不存在，无需删除")
+        return False
 def get_collection_name(KB_dir:Path,KB:KnowledgeBase):
     # 从用户知识库路径（绝对路径）KB_dir和KB.kb_id中获取集合名
     # str(KB_dir)=C:/QA-App/all_users_files/user2117543200@qq.com/测试知识库
@@ -206,6 +211,7 @@ if __name__ == "__main__":
         Path(
             r"/all_users_files/user2117543200@qq.com/测试知识库/&4.10MW高温气冷实验堆蒸汽发生器传热管流体诱发振动分析.pdf"),
         Path(r"D:\Python\PyCharm_Workspace\QA-App\all_users_files\user2117543200@qq.com\测试知识库"),
-        KnowledgeBase("49", "whatever")
+        KnowledgeBase(49, "whatever")
     ):
         print("收到，要更新session_state中相应文件的的解析进度")
+

@@ -43,12 +43,10 @@ class User:
 
     def set_chats(self):
         if get_chats(self.email):
+            # 如果对话列表非空
             self.chats = get_chats(self.email)
         else:
-            Chat1 = Chat(thread_id="abc123", thread_title="对话1")
-            Chat2 = Chat(thread_id="abc124", thread_title="对话2")
-            Chat3 = Chat(thread_id="abc125", thread_title="对话3")
-            self.chats = [Chat1, Chat2, Chat3]
+           self.chats=[]
 
     def set_config(self):
         # 该方法访问数据库，获取该用户上次的graph配置,现在先给出默认配置

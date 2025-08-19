@@ -7,58 +7,45 @@ from RAG_flow import get_graph,LangChainMessage_Generator
 from db_utils import insert_chat,delete_chat,update_chat_title
 import streamlit as st
 
-# 根据用户配置加载graph。
+
+# 尝试根据config首次加载该用户的graph
 if "graph" not in st.session_state:
-    # case1:初次来到QA界面，加载一次graph，初始化配置更改标志。
     config=st.session_state.pre_user.config
     if config is not None:
-        st.session_state.graph=get_graph(st.session_state.pre_user.config)
-        st.session_state.config_changed=False
+        # 有config，能加载graph，进而加载QA_page
+        st.session_state.graph=get_graph(config)
+        print(f"成功首次加载graph")
     else:
-        # 表明config无法初始化默认的目标知识库，说明没有任何知识库。
-        st.info("请先配置至少一个知识库!")
-        sleep(1)
-        st.switch_page("User_Pages/Manage_KBs.py")
-elif st.session_state.config_changed:
-    # case2:来过QA界面，则仅在graph静态配置改变的事件发生后，才重新加载graph
-    new_graph=get_graph(st.session_state.pre_user.config)
-    st.session_state.graph=new_graph
+        # 无config，表明该用户没有任何知识库，停止加载QA_page
+        st.error("QA前，请先打开一个知识库!")
+        sleep(2)
+        st.switch_page("Streamlit_Pages/Manage_KBs.py")
+
+# 执行到此处，表明之前根据config加载过graph，则判断是否要更新graph
+if st.session_state.config_changed:
+    new_config=st.session_state.pre_user.config
+    st.session_state.graph=get_graph(new_config)
     # 表示切换事件处理完毕
     st.session_state.config_changed=False
+    print(f"配置更新已经处理完毕")
+
 # 获取 graph
 graph=st.session_state.graph
 # 初始化当前对话
 if "pre_chat" not in st.session_state:
-    st.session_state.pre_chat = st.session_state.pre_user.chats[0]
-    print(f"Successfully switched to {st.session_state.pre_chat["thread_title"]} !\n")
-    # 触发对话切换事件，引起之后的对话历史消息加载
-    st.session_state.chat_switched = True
+    chats=st.session_state.pre_user.chats
+    if len(chats)>0:
+        # 默认处于第1条对话，后续可以初始化为最近的那条对话
+        st.session_state.pre_chat = st.session_state.pre_user.chats[0]
+        print(f"Successfully switched to {st.session_state.pre_chat["thread_title"]} !\n")
+        # 触发对话切换事件，引起之后的对话历史消息加载
+        st.session_state.chat_switched = True
+    else:
+        st.session_state.pre_chat=None
+        st.session_state.chat_switched = False
 
-if "counter" not in st.session_state:
-    st.session_state.counter = 0
-st.session_state.counter += 1
-with st.sidebar:
-    st.header(f"本页面运行次数: {st.session_state.counter}")
 
 st.header("核工业专业知识问答页面",anchor=False,divider="gray")
-@st.dialog("ℹ️ 编辑Graph配置")
-def update_config_dialog():
-    # 提示用户配置各项参数
-    cols = st.columns([1 / 5] * 5)
-    info=st.empty()
-    with cols[3]:
-        if st.button(":red[提交]", use_container_width=True):
-            # 根据用户输入更新
-            # 1、会话中用户的graph配置，即user.config.py
-
-            # 2、数据库中用户的graph配置
-            st.session_state.config_changed = True
-            info.success("配置更新成功")
-            # 3、触发整个脚本rerun
-            st.rerun()
-    with cols[4]:
-        if st.button("取消", use_container_width=True):
-            st.rerun()
 
 @st.dialog("ℹ️ 重命名对话")
 def rename_chat_dialog(chat):
@@ -114,7 +101,7 @@ def delete_chat_dialog(chat):
         if st.button("取消", use_container_width=True):
             print(f"取消删除对话 {chatname}")
             st.rerun()
-def new_chat():
+def new_chat(first_query_when_there_is_no_chat=None):
     # 即创建一个新的chat对象
     # 插入session中user的chats中
     # 访问数据库中用户的chats，插入新对话
@@ -124,7 +111,10 @@ def new_chat():
 
     # 生成新 thread_id 和 默认标题
     new_thread_id = str(uuid.uuid4())  # 使用 UUID 保证唯一性
-    new_title = f"新对话 {len(user.chats) + 1}"
+    if first_query_when_there_is_no_chat is not None:
+        new_title = first_query_when_there_is_no_chat
+    else:
+        new_title = f"新对话 {len(user.chats) + 1}"
 
     # 创建新的 chat
     new_chat = {
@@ -136,9 +126,13 @@ def new_chat():
     # 更新数据库
     insert_chat(new_chat,user.id)
     # 切换到新对话
-    switch_chat(new_chat)
+    if first_query_when_there_is_no_chat is not None:
+        switch_chat(new_chat,True)
+    else:
+        switch_chat(new_chat)
     print(f"Successfully created new chat: {new_title}")
     st.toast(f"已创建新对话：{new_title}")
+    return new_thread_id
 def handle_delete_chat(chat):
     thread_id=chat['thread_id']
     # 1、从session中的user.chats中删除
@@ -158,29 +152,37 @@ def handle_delete_chat(chat):
             switch_chat(user.chats[0])
         else:
             switch_chat(None)
-def switch_chat(chat):
+def switch_chat(chat,first_created_chat=False):
     if chat is None:
+        # 则QA_page切换到用户无任何对话的状态
         st.session_state.pre_chat = None
-        st.session_state.chat_switched = True
+        st.session_state.chat_switched = False
         return
     thread_id=chat['thread_id']
-    # 1、点击了切换按钮——————>保存变化到session_state中
-    if thread_id != st.session_state.pre_chat["thread_id"]:
+    if first_created_chat:
+        # 表示从没有任何对话切换到新建的第一条对话
         st.session_state.pre_chat = chat
         st.session_state.chat_switched = True
-        print(f"Successfully switched to {chat["thread_title"]} !\n")
+        print(f"Successfully created and switched to {chat["thread_title"]} !\n")
     else:
-        print(f"{chat["thread_title"]} is pre chat,no need to switch!\n")
+        # 表示由已有对话切换到另一对话
+        if thread_id != st.session_state.pre_chat["thread_id"]:
+            st.session_state.pre_chat = chat
+            st.session_state.chat_switched = True
+            print(f"Successfully switched to {chat["thread_title"]} !\n")
+        else:
+            print(f"{chat["thread_title"]} is pre chat,no need to switch!\n")
 
 def show_chat_list():
-    # 遍历对话列表，显示对话列表
+    # 遍历对话列表，加载每条对话
     for i,chat in enumerate(st.session_state.pre_user.chats):
         thread_id=chat['thread_id']
         thread_title=chat['thread_title']
         with st.container(border=True):
-            # 1、显示对话
+            # 显示这一条对话
             cols = st.columns([0.82,0.09,0.09])
             with cols[0]:
+                # 对话标题
                 if thread_id == st.session_state.pre_chat["thread_id"]:
                     st.button(f"✨{thread_title}", key=f'switch_button_of_{thread_id}', type="secondary",use_container_width=True,on_click=switch_chat, args=(chat,))
                 else:
@@ -193,18 +195,16 @@ def show_chat_list():
                 # 删除按钮，图标显示，无边框。
                 if st.button("", key=f"delete_button_of_{thread_id}",type="tertiary",icon=":material/delete:",help="删除对话"):
                     delete_chat_dialog(chat)
+    # 如果对话列表为空，则无对话列表可加载
 
-# 1  显示对话设置：Graph静态配置，
-#    显示对话列表：对话选中、换名、删除
+# 1  在侧边栏中加载对话列表：对话选中、换名、删除
 with st.sidebar:
-    if st.button(":material/edit_square: 编辑Graph"):
-        update_config_dialog()
     st.button(":material/add_comment: 开启新对话", on_click=new_chat)
     show_chat_list()
 
-# 2、加载历史消息到session_state.messages中
-if st.session_state.chat_switched and st.session_state.pre_chat is not None:
-    # 仅仅当pre_chat初始化or改变时
+# 2、加载pre_chat的历史消息到session_state.messages中
+if st.session_state.pre_chat is not None or st.session_state.chat_switched:
+    # 仅仅当pre_chat不为空or改变时
     run_config = {"configurable":
                       {"thread_id": st.session_state.pre_chat["thread_id"]}
                   }
@@ -227,7 +227,10 @@ if st.session_state.chat_switched and st.session_state.pre_chat is not None:
     # 表示对话切换事件处理完毕
     st.session_state.chat_switched = False
 
-# 3、显示当前对话的历史消息
+# 3、显示pre_chat的历史消息
+if st.session_state.pre_chat is None:
+    with st.chat_message("ai", avatar="🤖"):
+        st.write("你好，我是核工业知识问答助手，欢迎你提问!")
 def show_LangChain_message(message):
     #  支持四种LangChain消息的显示：用户消息、Ai消息(回答、工具调用请求)、工具调用结果
     if message.type == "human":
@@ -256,11 +259,12 @@ def show_LangChain_message(message):
     elif message.type == "tool":
         with st.expander(label=f"\n检索结果"):
             st.write(message.content)
-for message in st.session_state.messages:
-    # 从st.session_state.messages从加载pre_chat的历史消息
-    # case1：用户提问发送后页面rerun，执行到此处时session_state.messages中尚且没有最近的一次交互的LangChainMessage。
-    # case2：从别的chat切换到当前chat时，session_state.messages中已经存在最近的一次交互。
-    show_LangChain_message(message)
+if st.session_state.pre_chat is not None:
+    for message in st.session_state.messages:
+        # 从st.session_state.messages从加载pre_chat的历史消息
+        # case1：用户提问发送后页面rerun，执行到此处时session_state.messages中尚且没有最近的一次交互的LangChainMessage。
+        # case2：从别的chat切换到当前chat时，session_state.messages中已经存在当前chat的最近交互。
+        show_LangChain_message(message)
 
 # 4、处理用户提问
 def response_generator(response):
@@ -268,22 +272,53 @@ def response_generator(response):
         yield char
         sleep(0.02)
 
-#graph_step = st.empty()  在此处显示状态是错误的，因为每条新显示的消息会直接紧靠在输入栏上方，也即输入栏始终位于界面最下方。
+# 5、加载输入栏（无论pre_chat是否为None)
 prompt=st.chat_input("请输入问题:")
 if prompt:
+    if st.session_state.pre_chat is None:
+        new_chat(prompt)
+        # 在侧边栏加入该首个对话
+        with st.sidebar:
+            chat=st.session_state.pre_chat
+            thread_id = chat['thread_id']
+            thread_title = chat['thread_title']
+            with st.container(border=True):
+                # 显示这一条对话
+                cols = st.columns([0.82, 0.09, 0.09])
+                with cols[0]:
+                    # 对话标题
+                    if thread_id == st.session_state.pre_chat["thread_id"]:
+                        st.button(f"✨{thread_title}", key=f'switch_button_of_{thread_id}', type="secondary",
+                                  use_container_width=True, on_click=switch_chat, args=(chat,))
+                    else:
+                        st.button(thread_title, key=f'switch_button_of_{thread_id}', type="tertiary",
+                                  use_container_width=True, on_click=switch_chat, args=(chat,))
+                with cols[1]:
+                    # 编辑按钮，图标显示，无边框。
+                    if st.button("", key=f"edit_button_of_{thread_id}", type="tertiary", icon=":material/edit:",
+                                 help="重命名"):
+                        rename_chat_dialog(chat)
+                with cols[2]:
+                    # 删除按钮，图标显示，无边框。
+                    if st.button("", key=f"delete_button_of_{thread_id}", type="tertiary", icon=":material/delete:",
+                                 help="删除对话"):
+                        delete_chat_dialog(chat)
+        # 保存该首个新建对话的历史消息
+        st.session_state.messages= []
+
     run_config = {"configurable":
                       {"thread_id": st.session_state.pre_chat["thread_id"]}
                   }
-    with st.chat_message("human",avatar="👱🏼"):
+    with st.chat_message("human", avatar="👱🏼"):
         st.write(prompt)
     # 一方面加载用户输入和响应，另一方面将其保存到session_state.messages中。
     with st.spinner("正在处理..."):
-        for message in LangChainMessage_Generator(graph,prompt,run_config):
+        for message in LangChainMessage_Generator(graph, prompt, run_config):
             # 4种LangChain消息：1、用户输入 2、来自Ai的工具调用请求 3、Tool结果 4、Ai回答
             st.session_state.messages.append(message)
-            if message.type == "ai" and len(message.tool_calls)== 0:
+            if message.type == "ai" and len(message.tool_calls) == 0:
                 # 流式输出Ai回答
-                with st.chat_message("ai",avatar="🤖"):
+                with st.chat_message("ai", avatar="🤖"):
                     st.write_stream(response_generator(message.content))
                     with st.expander(label=f"\n本次令牌使用情况"):
                         st.write("消息类型：Ai回答")
@@ -295,6 +330,7 @@ if prompt:
                         with  cols[2]:
                             st.write("总令牌数：", message.usage_metadata["total_tokens"])
             elif message.type != "human":
-                #整体加载2-3类消息
+                # 整体加载2-3类消息
                 show_LangChain_message(message)
+
 

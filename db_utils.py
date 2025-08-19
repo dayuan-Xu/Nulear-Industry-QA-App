@@ -1,4 +1,4 @@
-# 该模块定义数据库操作。
+# 该模块提供 PostgreSQL数据库访问
 import atexit
 import os
 from psycopg_pool import ConnectionPool
@@ -13,12 +13,12 @@ def get_connection_pool():
     # 单例模式，确保整个应用生命周期内只创建一个连接池实例
     if _connection_pool is None:
         # 使用环境变量获取数据库连接信息，避免硬编码
-        db_user = os.getenv("DB_USER", "postgres")
-        db_password = os.getenv("DB_PASSWORD", "postgres")
-        db_host = os.getenv("DB_HOST", "localhost")
-        db_port = os.getenv("DB_PORT", "5442")
-        db_name = os.getenv("DB_NAME", "postgres")
-        ssl_mode = os.getenv("DB_SSL_MODE", "disable")
+        db_user = os.getenv("DB_USER")
+        db_password = os.getenv("DB_PASSWORD")
+        db_host = os.getenv("DB_HOST")
+        db_port = os.getenv("DB_PORT")
+        db_name = os.getenv("DB_NAME")
+        ssl_mode = os.getenv("DB_SSL_MODE")
 
         DB_URI = f"postgresql://{db_user}:{db_password}@{db_host}:{db_port}/{db_name}?sslmode={ssl_mode}"
 
@@ -70,18 +70,32 @@ def get_KBs(user_id):
             #print(f"get_KBs找到了{len(rows)}行结果")
             return [KnowledgeBase(kb_id=row[0], name=row[1], doc_number=row[2], created_time=row[3]) for row in rows]
 
-def insert_KB(name,user_id):
+def insert_KB(name, user_id):
     pool = get_connection_pool()
-    try :
+    try:
         with pool.connection() as connection:
             with connection.cursor() as cur:
+                # 使用 RETURNING 子句获取插入的记录信息
                 cur.execute("""
-                    INSERT INTO knowledge_bases (name, user_id) VALUES (%s, %s)
+                    INSERT INTO knowledge_bases (name, user_id)
+                    VALUES (%s, %s)
+                    RETURNING kb_id, name, doc_number, created_time
                 """, (name, user_id))
-                connection.commit()
-                return 1
+
+                # 获取插入后的记录
+                row = cur.fetchone()
+                if row:
+                    # 构造 KnowledgeBase 对象并返回
+                    new_KB = KnowledgeBase(kb_id=row[0], name=row[1], doc_number=row[2], created_time=row[3])
+                    connection.commit()
+                    return new_KB
+                else:
+                    connection.commit()
+                    return None
     except Exception as e:
-        print(f"Error inserting new KB:{e}")
+        print(f"Error inserting new KB: {e}")
+        return None
+
 def update_KB_name(kb_id: int, new_name: str):
     pool = get_connection_pool()
     try:
@@ -125,12 +139,12 @@ def get_chats(email: str):
     with pool.connection() as conn:
         with conn.cursor() as cur:
             cur.execute("""
-                SELECT thread_id, thread_title 
+                SELECT thread_id, thread_title ,created_time 
                 FROM chats 
                 WHERE user_id = (SELECT id FROM users WHERE email = %s)
             """, (email,))
             rows = cur.fetchall()
-            return [Chat(thread_id=row[0], thread_title=row[1]) for row in rows]
+            return [Chat(thread_id=row[0], thread_title=row[1], created_time=row[2]) for row in rows]
 
 def insert_chat(new_chat: Chat,user_id:str):
     # 访问数据库chats:thread_id(主码）、thread_title、creadted_time（timestamp without time zone)、user_id，插入新对话thread_id和thread_title
@@ -199,8 +213,6 @@ def close_connection_pool():
         print("Database connection pool closed.")
 
 
-
-
 '''
 为什么模块中顶层的函数调用 register_close_handler() 会在每次导入模块时都执行，而变量定义 _connection_pool_registered = False 却只执行一次？
 🧠 回答核心：
@@ -224,7 +236,6 @@ def register_close_handler():
     global _connection_pool_registered
     # print("===========注册关闭处理器执行了一次===========")
     if not _connection_pool_registered:
-        import atexit
         atexit.register(close_connection_pool)
         _connection_pool_registered = True
     if _connection_pool_registered:
@@ -232,9 +243,3 @@ def register_close_handler():
         pass
 
 register_close_handler()
-
-if __name__ == "__main__":
-    pass
-else:
-    # print("数据库操作模块被导入了一次")
-    pass
