@@ -183,7 +183,7 @@ graph_builder.add_edge("generate", END)
 
 # 8、设置Postgres检查器
 
-# 定义 PostgreSQL 数据库连接 URI 和连接参数
+# 定义 PostgreSQL 数据库连接 URI 和连接参数（此前先创建运行你自己的postgres容器：docker run -d -p 5442:5432 -e POSTGRES_PASSWORD=postgres postgres）
 DB_URI = "postgresql://postgres:postgres@localhost:5442/postgres?sslmode=disable"
 # 协议：postgresql:// 表示使用 PostgreSQL 协议。
 # 用户信息：postgres:postgres 表示用户名为 postgres，密码也为 postgres。

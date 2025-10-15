@@ -19,6 +19,10 @@
 - 将远程仓库更新到本地仓库: git pull
 
 # 过程记录
+第1-4周： 
+本地复现了GitHub上开源小项目[document.ai](https://github.com/GanymedeNil/document.ai)，理解了RAG框架的最简实现。
+Qdrant数据库服务通过本地创建运行容器提供，这里通过本地目录挂载的方式创建了Qdrant数据库服务： `docker run -p 6333:6333 -v $(pwd)/qdrant_storage:/qdrant/storage qdrant/qdrant`
+
 第5周：
 针对一篇核工业论文构建了简单的测试问题集，完全采用LangChain提供的组件本地实现了简单的RAG问答。
 阅读和本地复现了LangChain官网的Build a RAG App: Part 2，基于内存简单实现了多轮交互。
@@ -40,6 +44,7 @@
 第9周：
 实现了将给定目录下的所有文件（txt、pdf、md、docx、pptx）加载、存储到与用户知识库关联的向量数据库中的集合。
 引入了持久化技术，将App状态（内含对话历史）保存到PostgreSQL数据库而不是内存中，通过App运行配置成功加载了历史对话。
+持久化实现详情见RAG_part2_with_Postgres.py中的`checkpointer.setup()`的代码上下文
 
 第10周：
 添加一个摘要节点，当消息列表过长时，调用llm进行总结。
