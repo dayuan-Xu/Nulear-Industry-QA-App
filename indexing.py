@@ -10,7 +10,7 @@ from langchain_openai import OpenAIEmbeddings
 from langchain_qdrant import QdrantVectorStore
 from qdrant_client.http.models import Distance, VectorParams
 from load_file_2_Doc import load_txt,load_pdf_simply,load_pdf_with_Azure,load_md,load_docx_simply,load_pptx_simply
-from models.KB import KnowledgeBase
+from service_models.KB import KnowledgeBase
 from tenacity import retry, stop_after_attempt, wait_fixed
 from pydantic import SecretStr
 

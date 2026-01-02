@@ -1,27 +1,21 @@
-from datetime import datetime
-
-from models.KB import KnowledgeBase
-from models.chat import Chat
-from models.config import Config
+from service_models.KB import KnowledgeBase
+from service_models.chat import Chat
 from db_utils import get_user_id, get_KBs, get_chats, insert_KB
-
 
 class User:
     def __init__(self, email:str, password:str):
-        self.id=None
+        self.id= None
         self.email = email
         self.password = password
         # 该用户所有知识库(知识库文件不是在数据库中，而时在服务器主机的文件系统里）
-        self.know_bases = None
-        # 该用户所有对话的thread_id
-        self.chats = None
-        self.config = None
+        self.know_bases: list[KnowledgeBase] = []
+        # 该用户的所有对话
+        self.chats: list[Chat]  = []
 
     def complement_user_info(self):
         self.set_id()
         self.set_KBs()
         self.set_chats()
-        self.set_config()
 
     def set_id(self):
         self.id=get_user_id(self.email)
@@ -48,15 +42,10 @@ class User:
         else:
            self.chats=[]
 
-    def set_config(self):
-        # 该方法访问数据库，获取该用户上次的graph配置,现在先给出默认配置
-        if len(self.know_bases)==0:
-            self.config = None
-        else:
-            target_collection_name = self.get_collection_name(self.know_bases[0])
-            self.config = Config(target_collection_name=target_collection_name,max_ctx_retrieved=3)
-
-    def get_collection_name(self,KB:KnowledgeBase):
+    def get_collection_name(self, KB:KnowledgeBase):
+        if KB is None:
+            print("从KB对象获取collection_name失败，因为KB是None！！！")
+            return None
         return f"user{self.email}_KB_{KB.kb_id}"
 
     def to_dict(self):
@@ -66,5 +55,4 @@ class User:
             "password": self.password,
             "know_bases": self.know_bases,
             "chats": self.chats,
-            "config": self.config
         }

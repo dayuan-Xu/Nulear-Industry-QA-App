@@ -466,7 +466,7 @@ def show_button_usecases():
 ""
 ""
 ""
-st.subheader("与fragment内部组件交互只会导致该fragment内部rerun，不会导致整个脚本文件rerun，下面的标签页中的组件大都使用一个fragment函数加载的")
+st.subheader("与fragment内部组件交互只会导致该fragment内部rerun，不会导致整个脚本文件rerun，下面的标签页(包括标签页内部的组件)几乎全是使用一个fragment函数加载的")
 
 tabs=st.tabs(["**1、常见小组件**", "**2、表单**", "**3、小组件行为**","**4、按钮**","**5、多线程**","**6、yield与spinner**","**7、状态提示组件**"])
 with tabs[0]:

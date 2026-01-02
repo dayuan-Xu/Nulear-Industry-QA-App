@@ -1,11 +1,13 @@
 import datetime
 from time import sleep
 import streamlit as st
-# 1、准备单组件容器，并在其中插入一个多组件容器。
 
+# 1、准备单组件容器，并在其中插入一个多组件容器。
 placeholder = st.empty()
 container = placeholder.container()
 container.info("当前登录用户:" + st.session_state.pre_user.email)
+container.info("当前登录用户角色:" + st.session_state.role)
+
 if container.button("注销"):
     placeholder.success("注销成功")
     sleep(0.5)
