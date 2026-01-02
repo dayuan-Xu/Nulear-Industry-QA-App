@@ -2,8 +2,8 @@
 import atexit
 import os
 from psycopg_pool import ConnectionPool
-from models.KB import KnowledgeBase
-from models.chat import Chat
+from service_models.KB import KnowledgeBase
+from service_models.chat import Chat
 from datetime import timezone
 import pytz
 

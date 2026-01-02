@@ -3,7 +3,11 @@ import datetime
 from time import sleep
 import streamlit as st
 from db_utils import verify_user
-from models.user import User
+from indexing import FREE_OPENAI_API_KEY, OPENAI_BASE_URL
+from service_models.user import User
+
+model = "gpt-4o-mini"
+model_provider = "openai"
 
 if st.session_state.pre_user is None:
     login_form_values = {
@@ -35,14 +39,36 @@ if st.session_state.pre_user is None:
                     st.session_state.role = "User"
                 # 验证成功后补足用户相关信息
                 user.complement_user_info()
-                print(f"用户Email:{user.email} 登录成功",datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
+
+                # 初始化graph的自定义配置
+                if 'target_KB' not in st.session_state:
+                    st.session_state.target_KB = user.know_bases[0]
+
+                if 'max_ctx_retrieved' not in st.session_state:
+                    st.session_state.max_ctx_retrieved = 4
+
+                if 'actual_num_of_doc_used' not in st.session_state:
+                    st.session_state.actual_num_of_doc_used = 5
+
+                if 'model' not in st.session_state:
+                    st.session_state.model = model
+                if 'model_provider' not in st.session_state:
+                    st.session_state.model_provider = model_provider
+                if 'api_key' not in st.session_state:
+                    st.session_state.api_key = FREE_OPENAI_API_KEY
+                if 'base_url' not in st.session_state:
+                    st.session_state.base_url = OPENAI_BASE_URL
+
                 st.session_state.pre_user = user
-                if "config_changed" not in st.session_state:
-                    st.session_state.config_changed=False
+
+                print(f"用户Email:{user.email} 登录成功", datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
+
+
                 st.success("登录成功")
                 st.balloons()
                 sleep(1)
-                st.rerun()# rerun时，会发现role不为None，则会设置该身份可访问的分支，并转到相应页面
+                # rerun时，会发现role不为None，则会设置该身份可访问的分支，并转到相应页面
+                st.rerun()
             else:
                 st.error("用户名或密码错误")
 

@@ -4,12 +4,10 @@ import streamlit as st
 from time import sleep
 from pathlib import Path
 from datetime import datetime
-from models.KB import KnowledgeBase
+from service_models.KB import KnowledgeBase
 from indexing import index_file_backend, delete_collection, create_collection_if_not_exists, get_collection_name
 from db_utils import format_utc_to_local, delete_KB, insert_KB,update_KB,update_KB_name
 from streamlit.runtime.scriptrunner_utils.script_run_context import add_script_run_ctx, get_script_run_ctx
-
-from models.config import Config
 
 if "searched_file" not in st.session_state:
     st.session_state.searched_file = None
@@ -90,9 +88,9 @@ def create_KB_dialog():
                     new_KB_dir=get_KB_directory(user.email, new_KB.name, create_if_not_exists=True)
                     # 4 在Qdrant中创建对应集合。
                     create_collection_if_not_exists(get_collection_name(new_KB_dir, new_KB))
-                    # 5 如果这是该用户创建的第一个知识库，则更新config
+                    # 5 如果这是该用户创建的第一个知识库，则更新user_config
                     if len(user.know_bases) == 1:
-                        user.set_config()
+                        user.update_default_user_config()
                     info.success("知识库创建成功")
                     sleep(0.5)
                     print(f"成功创建知识库 {new_KB}")
@@ -161,6 +159,7 @@ def rename_KB_dialog(KB,KB_dir:Path):
             # print(f"取消重命名知识库{KB.name}")
             st.rerun()
     pass
+
 @st.dialog("⚠️ 删除知识库")
 def delete_KB_dialog(KB,KB_dir:Path):
     st.write(f"确认删除知识库 **{KB.name}** 吗？此操作不可恢复。")
@@ -173,8 +172,8 @@ def delete_KB_dialog(KB,KB_dir:Path):
             user=st.session_state.pre_user
             if KB in user.know_bases:
                 user.know_bases.remove(KB)
-                if(len(user.know_bases)==0):
-                    user.set_config()
+                if len(user.know_bases)==0:
+                    user.update_default_user_config()
             delete_KB(KB.kb_id)
             # 2 删除知识库，从文件系统中。
             delete_KB_dir(st.session_state.pre_user.email, KB)
@@ -188,6 +187,7 @@ def delete_KB_dialog(KB,KB_dir:Path):
         if st.button("取消",use_container_width= True):
             print(f"取消删除知识库{KB.name}")
             st.rerun()
+
 @st.dialog("ℹ️ 重命名文件")
 def rename_file_dialog(file_name, file_path):
     """
@@ -274,6 +274,7 @@ def search_file(KB_dir:Path):
                     st.session_state.searched_file=file_path
                     return
     st.toast(f"未找到该文件 **{st.session_state.file_name_searched}**",icon="🚨")
+
 def search_KB():
     # 如果输入为空或者全是空格
     if not st.session_state.kb_name or st.session_state.kb_name.strip() == "":
@@ -285,6 +286,7 @@ def search_KB():
             open_KB(KB)
             break
     st.toast(f"未找到该知识库 **{st.session_state.kb_name}**",icon="🚨")
+
 def show_page_top():
     # 1、页面顶部
     page_top=st.columns([0.5, 0.2, 0.3])
@@ -303,16 +305,11 @@ def show_page_top():
 def open_KB(kb):
     # 打开知识库
     st.session_state.pre_opened_KB = kb
-    # 默认将打开的知识库作为目标知识库
-    user = st.session_state.pre_user
-    target_collection_name =user.get_collection_name(kb)
-    user.config = Config(target_collection_name=target_collection_name, max_ctx_retrieved=3)
-    st.session_state.config_changed = True
-    print(f"{kb.name}已经打开，用户配置已经改变！")
 
 def close_KB():
     # 关闭知识库详情页
     st.session_state.pre_opened_KB = None
+
 def show_all_KB():
     #  显示所有知识库:名称、文档数、创建时间。
     KB_cols = st.columns(5)
@@ -336,6 +333,7 @@ def show_all_KB():
                 st.write(":material/description:" + f" {KB.doc_number} 文档")
                 local_created_time = format_utc_to_local(KB.created_time)
                 st.write(":material/calendar_month:" + f" {local_created_time}")
+
 def get_KB_directory(user_email:str, KB_name:str, create_if_not_exists=False):
     """
     获取知识库文件目录对应的绝对路径，并选择性地在不存在时创建目录。
@@ -506,7 +504,7 @@ def show_KB_files(KB_dir):
         st.session_state.searched_file=None
         show_file_bar(file_path,KB_dir)
 
-
+# 本页面加载逻辑
 if st.session_state.pre_opened_KB is None:
     # Case 1: 已登录，但是当前没有打开任何知识库，则显示所有知识库
     show_page_top()
