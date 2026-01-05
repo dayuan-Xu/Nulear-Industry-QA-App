@@ -44,6 +44,7 @@ if st.session_state.pre_user is None:
                 if 'target_KB' not in st.session_state:
                     st.session_state.target_KB = user.know_bases[0] if user.know_bases else None
 
+
                 if 'max_ctx_retrieved' not in st.session_state:
                     st.session_state.max_ctx_retrieved = 4
 

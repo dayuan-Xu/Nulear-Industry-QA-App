@@ -208,7 +208,9 @@ with ConnectionPool(
     # 初始化 PostgresSaver 对象，充当App的保存器，它负责将App状态保存到Postgres数据库中。
     checkpointer = PostgresSaver(pool)
     # # 下面这条命令在初次使用该检查器时使用，在数据库中创建必要的表。
-    checkpointer.setup()
+
+    # checkpointer.setup()
+
     graph = graph_builder.compile(checkpointer=checkpointer)        # 一个可运行的App对象。
 
     # 9、当运行带checkpointer（检查器）的App时，必须在App运行配置中设置thread_id。
