@@ -18,121 +18,60 @@ llm = init_chat_model(configurable_fields=["model", "model_provider", "api_key",
 class AppState(MessagesState):
     # 此处docs即所有检索到的doc的列表，该字段由生成步骤负责填充。
     docs: list[Document]
-
-# # 5、动态创建检索工具
-# def create_retrieval_tool(retrieval_tool_config: dict):
-#     def retrieve(query: str)-> tuple[str, list[dict]] | None:
-#         """基于语义相似度，检索出与查询（query）相关的文档信息"""
-#         collection_name = retrieval_tool_config.get("target_collection_name", "retrieval_config中没有collection_name这个key")
-#         max_ctx_retrieved = retrieval_tool_config.get("max_ctx_retrieved", "retrieval_config中没有max_ctx_retrieved这个key")
-#         if collection_name is None or max_ctx_retrieved is None:
-#             print("检索工具无法正确执行, 因为传入的retrieved_tool_config不正确！！！")
-#             return None
-
-#         vector_store = get_vector_store(collection_name)
-#         docs = vector_store.similarity_search(query, k=max_ctx_retrieved)
-
-#         content = "\n\n".join(f"文档{i + 1}: {d.page_content}" for i, d in enumerate(docs))
-
-#         # ✅ artifact 必须是 JSON 可序列化！
-#         artifact = [
-#             {
-#                 "page_content": doc.page_content,
-#                 "metadata": getattr(doc, 'metadata', {})  # Document.metadata
-#             }
-#             for doc in docs
-#         ]
-
-#         return content, artifact  # (str, list[dict]) ✅ msg_content_output 解析成功！
-
-#     return retrieve
-
-import logging
-
-# 配置日志（方便排查检索问题）
-logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger("retrieval_tool")
+# 5、动态创建检索工具
+from bm25_singleton import BM25Singleton  # 外部引用
 
 def create_retrieval_tool(retrieval_tool_config: dict):
     def retrieve(query: str) -> tuple[str, list[dict]] | None:
-        """
-        基于语义相似度 + MMR多样性检索（模拟关键词）的混合检索工具
-        Args:
-            query: 用户查询文本
-        Returns:
-            tuple: (拼接后的文档内容字符串, 结构化文档元数据列表) | None（检索失败时）
-        """
-        # 1. 校验配置参数
+        """混合检索：语义4个 + BM25关键词4个 = 8个结果"""
         collection_name = retrieval_tool_config.get("target_collection_name")
-        max_ctx_retrieved = retrieval_tool_config.get("max_ctx_retrieved")
-        if not all([collection_name, max_ctx_retrieved]) or not isinstance(max_ctx_retrieved, int):
-            logger.error(f"检索配置错误！collection_name={collection_name}, max_ctx_retrieved={max_ctx_retrieved}")
-            print("检索工具无法正确执行：配置参数缺失或类型错误！")
+        max_ctx_retrieved = retrieval_tool_config.get("max_ctx_retrieved", 4)
+        
+        if not collection_name or max_ctx_retrieved is None:
+            print("检索工具配置错误！")
             return None
 
-        try:
-            # 2. 获取向量库（添加异常捕获）
-            vector_store = get_vector_store(collection_name)
-            if vector_store is None:
-                logger.error(f"目标向量库 {collection_name} 不存在！")
-                print(f"检索工具无法执行：向量库 {collection_name} 不存在！")
-                return None
-
-            # 3. 语义检索（70%权重，优先匹配语义）
-            logger.info(f"开始语义检索，查询词：{query}，返回数：{max_ctx_retrieved * 2}")
-            semantic_docs = vector_store.similarity_search(query, k=max_ctx_retrieved * 2)
-            logger.info(f"语义检索完成，获取到 {len(semantic_docs)} 条文档")
-
-            # 4. MMR多样性检索（模拟关键词，兼顾相关性和多样性）
-            # lambda_mult=0.5：0=纯相关性，1=纯多样性，0.5平衡两者
-            logger.info(f"开始MMR多样性检索，查询词：{query}")
-            keyword_docs = vector_store.max_marginal_relevance_search(
-                query,
-                k=max_ctx_retrieved * 2,       # 最终返回的候选数
-                fetch_k=max_ctx_retrieved * 4,  # 先获取的候选池大小
-                lambda_mult=0.5                # 多样性权重
-            )
-            logger.info(f"MMR检索完成，获取到 {len(keyword_docs)} 条文档")
-
-            # 5. 结果融合 + 高效去重（用字典去重，比嵌套循环快）
-            logger.info("开始整合并去重检索结果")
-            doc_unique_dict = {}  # key=文档内容，value=文档对象（自动去重）
-            # 先加语义检索结果（优先级更高）
-            for doc in semantic_docs:
-                doc_unique_dict[doc.page_content] = doc
-            # 再加MMR结果（补充多样性，重复内容会被覆盖但不影响）
-            for doc in keyword_docs:
-                doc_unique_dict[doc.page_content] = doc
-
-            # 截取到最大返回数
-            docs = list(doc_unique_dict.values())[:max_ctx_retrieved]
-            logger.info(f"结果整合完成，最终保留 {len(docs)} 条去重后的文档")
-
-            # 6. 格式化输出
-            content = "\n\n".join(f"文档{i + 1}: {d.page_content}" for i, d in enumerate(docs))
-            # 结构化元数据（兜底空字典，添加文档长度等辅助信息）
-            artifact = [
-                {
-                    "page_content": doc.page_content,
-                    "metadata": doc.metadata if hasattr(doc, 'metadata') else {},
-                    "content_length": len(doc.page_content)  # 新增辅助字段
-                }
-                for doc in docs
-            ]
-
-            logger.info("检索工具执行成功！")
-            return content, artifact
-
-        except Exception as e:
-            # 捕获所有异常，避免程序崩溃
-            logger.error(f"检索工具执行失败：{str(e)}", exc_info=True)
-            print(f"检索工具执行出错：{str(e)}")
-            return None
+        vector_store = get_vector_store(collection_name)
+        
+        # 1. 语义检索 (4个)
+        semantic_docs = vector_store.similarity_search(query, k=max_ctx_retrieved)
+        
+        # 2. 关键词检索 (外部单例，4个)
+        bm25 = BM25Singleton(collection_name)
+        keyword_docs, keyword_scores = bm25.retrieve(query, max_ctx_retrieved)
+        
+        # 3. 合并 8 个结果
+        all_docs = semantic_docs + keyword_docs
+        
+        
+        # ✅ 格式化内容：带数字标签 [语义1] [语义2] [关键词1] [关键词2]
+        content_parts = []
+        for i, doc in enumerate(all_docs):
+            if i < max_ctx_retrieved:
+                # 语义检索：语义1, 语义2, 语义3, 语义4
+                label = f"[语义{i+1}]"
+            else:
+                # 关键词检索：关键词1, 关键词2, 关键词3, 关键词4
+                keyword_idx = i - max_ctx_retrieved + 1
+                label = f"[关键词{keyword_idx}]"
+            content_parts.append(f"{label} {doc.page_content}")
+        content = "\n\n".join(content_parts)
+        
+        # artifact
+        artifact = []
+        for i, doc in enumerate(all_docs):
+            source = "semantic" if i < max_ctx_retrieved else "keyword"
+            score = keyword_scores[i - max_ctx_retrieved] if source == "keyword" else 0.95
+            artifact.append({
+                "page_content": doc.page_content,
+                "metadata": getattr(doc, 'metadata', {}),
+                "source": source,
+                "score": float(score)
+            })
+        
+        return content, artifact
 
     return retrieve
-
-
-
 
 # 6、定义App的各个步骤
 
