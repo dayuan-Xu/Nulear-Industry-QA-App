@@ -6,6 +6,9 @@ from langchain_core.messages import AIMessage, HumanMessage, ToolMessage
 from RAG_flow import graph
 from db_utils import insert_chat,delete_chat,update_chat_title
 import streamlit as st
+from logger_manager import get_logger
+
+logger = get_logger("QA.py")
 
 if len(st.session_state.pre_user.know_bases) == 0:
     st.error("QA前请先创建至少1个知识库!")
@@ -18,7 +21,7 @@ if "pre_chat" not in st.session_state:
     if len(chats)>0:
         # 默认处于第1条对话，后续可以初始化为最近的那条对话
         st.session_state.pre_chat = st.session_state.pre_user.chats[0]
-        print(f"Successfully switched to {st.session_state.pre_chat['thread_title']} !\n")
+        logger.info(f"Successfully switched to {st.session_state.pre_chat['thread_title']} !\n")
         # 触发对话切换事件，引起之后的对话历史消息加载
         st.session_state.chat_switched = True
     else:
@@ -41,12 +44,12 @@ def rename_chat_dialog(chat):
                 if new_title ==chatname:
                     st.rerun()
                 try:
-                    # print("Save button pressed!")
+                    logger.debug("Save button pressed!")
                     updated = False
                     target_chat=chat
                     for chat_item in st.session_state.pre_user.chats:
                         if chat_item["thread_id"] == target_chat["thread_id"]:
-                            print(f"Successfully updated chat title: {chat_item['thread_title']}--->{new_title}")
+                            logger.info(f"Successfully updated chat title: {chat_item['thread_title']}--->{new_title}")
                             # 1、更新session中的已登录的用户的chat信息。
                             chat_item["thread_title"] = new_title
                             updated = True
@@ -54,12 +57,12 @@ def rename_chat_dialog(chat):
                             update_chat_title(chat_item, new_title)
                             break
                     if not updated:
-                        print(f"Chat title updated failed,found no chat with title:{target_chat['thread_title']}!")
+                        logger.error(f"Chat title updated failed,found no chat with title:{target_chat['thread_title']}!")
                     info.success("重命名成功")
                     sleep(0.5)
                     st.rerun()
                 except Exception as e:
-                    print(f"重命名失败：{e}")
+                    logger.error(f"重命名失败：{e}")
     with cols_1[4]:
         if st.button("取消", use_container_width=True):
             st.rerun()
@@ -76,11 +79,11 @@ def delete_chat_dialog(chat):
             handle_delete_chat(chat)
             info.success(f"成功删除对话{chatname}！")
             sleep(0.5)
-            print(f"成功删除对话 {chatname}")
+            logger.info(f"成功删除对话 {chatname}")
             st.rerun()
     with cols[4]:
         if st.button("取消", use_container_width=True):
-            print(f"取消删除对话 {chatname}")
+            logger.info(f"取消删除对话 {chatname}")
             st.rerun()
 
 def new_chat(first_query_when_there_is_no_chat=None):
@@ -112,7 +115,7 @@ def new_chat(first_query_when_there_is_no_chat=None):
         switch_chat(new_chat,True)
     else:
         switch_chat(new_chat)
-    print(f"Successfully created new chat: {new_title}")
+    logger.info(f"Successfully created new chat: {new_title}")
     st.toast(f"已创建新对话：{new_title}")
     return new_thread_id
 
@@ -147,15 +150,15 @@ def switch_chat(chat,first_created_chat=False):
         # 表示从没有任何对话切换到新建的第一条对话
         st.session_state.pre_chat = chat
         st.session_state.chat_switched = True
-        print(f"Successfully created and switched to {chat['thread_title']} !\n")
+        logger.info(f"Successfully created and switched to {chat['thread_title']} !\n")
     else:
         # 表示由已有对话切换到另一对话
         if thread_id != st.session_state.pre_chat["thread_id"]:
             st.session_state.pre_chat = chat
             st.session_state.chat_switched = True
-            print(f"Successfully switched to {chat['thread_title']} !\n")
+            logger.info(f"Successfully switched to {chat['thread_title']} !\n")
         else:
-            print(f"{chat['thread_title']} is pre chat,no need to switch!\n")
+            logger.debug(f"{chat['thread_title']} is pre chat,no need to switch!\n")
 
 # 1  在侧边栏中加载对话列表：对话选中、换名、删除
 def show_chat_list():
@@ -225,15 +228,15 @@ if st.session_state.pre_chat is not None or st.session_state.chat_switched:
         latest_state = latest_checkpoint.values
         # 有messages 存在时
         if "messages" in latest_state:
-            # print(f"Successfully loaded messages for thread_id:{st.session_state.pre_chat['thread_id']}")
+            logger.debug(f"Successfully loaded messages for thread_id:{st.session_state.pre_chat['thread_id']}")
             st.session_state.messages = latest_state["messages"]
         else:
             # 当用户点击新建对话时
-            # print(f"There is newest checkpoint but No messages found for thread_id:{st.session_state.pre_chat['thread_id']}")
+            logger.warning(f"There is newest checkpoint but No messages found for thread_id:{st.session_state.pre_chat['thread_id']}")
             st.session_state.messages = []  # 初始化为空列表
     else:
         # 没有检查点,一般来说不会出现
-        print(f"No checkpoint found for thread_id:{st.session_state.pre_chat['thread_id']}")
+        logger.warning(f"No checkpoint found for thread_id:{st.session_state.pre_chat['thread_id']}")
         st.session_state.messages = []  # 初始化为空列表
     # 表示对话切换事件处理完毕
     st.session_state.chat_switched = False

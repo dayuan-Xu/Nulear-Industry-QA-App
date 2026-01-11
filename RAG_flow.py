@@ -10,6 +10,9 @@ from sentence_transformers import CrossEncoder
 from typing_extensions import List
 from db_utils import get_connection_pool
 from indexing import get_vector_store
+from logger_manager import get_logger
+
+logger = get_logger("RAG_flow.py")
 
 # 1、加载llm，采用动态完全可配置模式
 llm = init_chat_model(configurable_fields=["model", "model_provider", "api_key", "base_url"])
@@ -47,11 +50,7 @@ class AppState(MessagesState):
 
 #     return retrieve
 
-import logging
 
-# 配置日志（方便排查检索问题）
-logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger("retrieval_tool")
 
 def create_retrieval_tool(retrieval_tool_config: dict):
     def retrieve(query: str) -> tuple[str, list[dict]] | None:
@@ -225,7 +224,7 @@ def rerank(query:str, docs: List[Document]):
     scores = reranker.predict(sentence_pairs)
     score_and_doc_list = zip(scores, docs)
     sorted_score_and_doc_list = sorted(score_and_doc_list, key=lambda x: x[0], reverse=True)
-    print(f"本次重排序耗时{(time.time()-start_time): .2} s")
+    logger.info(f"本次重排序耗时{(time.time()-start_time): .2} s")
     return [doc for _, doc in sorted_score_and_doc_list]
 
 # 6.3: 将检索到的context封装进SystemMessage，重新调用llm，获取答案。
@@ -239,8 +238,8 @@ def generate(state: AppState, config: RunnableConfig):
         else:
             break
     tool_messages = recent_tool_messages[::-1]
-    print("最近工具消息的数量 ", len(tool_messages))
-    print("最近的第1条工具消息:", tool_messages[0])
+    logger.debug("最近工具消息的数量 %s", len(tool_messages))
+    logger.debug("最近的第1条工具消息: %s", tool_messages[0])
 
     # 合并每次检索工具调用得到的文档列表
     docs: list[Document] = []
@@ -252,7 +251,7 @@ def generate(state: AppState, config: RunnableConfig):
                 # print("dict_from_Doc:", dict_from_Doc)
                 docs.append(Document(**dict_from_Doc))
         else:
-            print("无有效 artifact")
+            logger.warning("无有效 artifact")
             continue
 
     if not docs:
@@ -269,13 +268,13 @@ def generate(state: AppState, config: RunnableConfig):
             if message.type == "human":
                 query = message.content
                 break
-        print(f"开始重排序，因为 actual_num_doc_used = {actual_num_of_doc_used} 小于 本次query的相关文档总数 = {docs_length}, 用户query: {query}")
+        logger.info(f"开始重排序，因为 actual_num_doc_used = {actual_num_of_doc_used} 小于 本次query的相关文档总数 = {docs_length}, 用户query: {query}")
         docs_after_rerank = rerank(query, docs)
 
         infos = "\n\n".join(doc.page_content for doc in docs_after_rerank[:actual_num_of_doc_used])
         # print(f"重排序完成，只取相关性分数排名前{actual_num_of_doc_used}的文档，所以最终要加入到聊天窗口中的信息：\n{infos}")
     else:
-        print(f"无需重排序，因为 actual_num_doc_used = {actual_num_of_doc_used} 大于等于 本次query的相关文档总数 = {docs_length}")
+        logger.info(f"无需重排序，因为 actual_num_doc_used = {actual_num_of_doc_used} 大于等于 本次query的相关文档总数 = {docs_length}")
         infos = "\n\n".join(doc.page_content for doc in docs)
 
     system_message_content = (
