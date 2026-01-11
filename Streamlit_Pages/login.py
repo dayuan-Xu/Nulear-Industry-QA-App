@@ -1,10 +1,12 @@
 # 定义登录页面
-import datetime
 from time import sleep
 import streamlit as st
 from db_utils import verify_user
 from indexing import FREE_OPENAI_API_KEY, OPENAI_BASE_URL
 from service_models.user import User
+from logger_manager import get_logger
+
+logger = get_logger("login.py")
 
 model = "gpt-4o-mini"
 model_provider = "openai"
@@ -62,7 +64,7 @@ if st.session_state.pre_user is None:
 
                 st.session_state.pre_user = user
 
-                print(f"用户Email:{user.email} 登录成功", datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
+                logger.info(f"用户Email:{user.email} 登录成功")
 
 
                 st.success("登录成功")
@@ -71,5 +73,6 @@ if st.session_state.pre_user is None:
                 # rerun时，会发现role不为None，则会设置该身份可访问的分支，并转到相应页面
                 st.rerun()
             else:
+                logger.warning(f"用户Email:{user.email} 登录失败")
                 st.error("用户名或密码错误")
 

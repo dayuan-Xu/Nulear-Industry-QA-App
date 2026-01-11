@@ -8,6 +8,9 @@ from service_models.KB import KnowledgeBase
 from indexing import index_file_backend, delete_collection, create_collection_if_not_exists, get_collection_name
 from db_utils import format_utc_to_local, delete_KB, insert_KB,update_KB,update_KB_name
 from streamlit.runtime.scriptrunner_utils.script_run_context import add_script_run_ctx, get_script_run_ctx
+from logger_manager import get_logger
+
+logger = get_logger("Manage_KBs.py")
 
 if "searched_file" not in st.session_state:
     st.session_state.searched_file = None
@@ -27,23 +30,23 @@ def analog_parse_thread(file_path, frontend_file_name, KB_dir, KB):
     for i in range(100):
         sleep(0.2)  # 模拟一些处理时间
         st.session_state.parse_progress[file_path] += 1  # 修改进度
-        print(f"解析 {frontend_file_name} 的线程的最新进度为 {st.session_state.parse_progress[file_path]}")
-    print(f"解析 {frontend_file_name} 的线程结束")
+        logger.info(f"解析 {frontend_file_name} 的线程的最新进度为 {st.session_state.parse_progress[file_path]}")
+    logger.info(f"解析 {frontend_file_name} 的线程结束")
     # 重命名文件
     new_file_name = "&" + file_path.name
     file_path.rename(file_path.parent / new_file_name)
-    print("文件解析完毕，重命名成功")
+    logger.info("文件解析完毕，重命名成功")
 def real_parse_thread(file_path, frontend_file_name, KB_dir, KB):
     # 设置该文件的解析进度的初始值
     st.session_state.parse_progress[file_path] = 0
     for index,length in index_file_backend(file_path, KB_dir, KB):
         st.session_state.parse_progress[file_path] = int((index+1)/length*100)  # 修改进度
-        print(f"解析 {frontend_file_name} 的线程的最新进度为 {st.session_state.parse_progress[file_path]}")
-    print(f"解析 {frontend_file_name} 的线程结束")
+        logger.info(f"解析 {frontend_file_name} 的线程的最新进度为 {st.session_state.parse_progress[file_path]}")
+    logger.info(f"解析 {frontend_file_name} 的线程结束")
     # 重命名文件
     new_file_name = "&" + file_path.name
     file_path.rename(file_path.parent / new_file_name)
-    print("文件解析完毕，重命名成功")
+    logger.info("文件解析完毕，重命名成功")
 
 # 每0.2s统一检查更新所有存活的解析线程的新进度
 @st.fragment(run_every=1)
@@ -93,7 +96,7 @@ def create_KB_dialog():
                         user.update_default_user_config()
                     info.success("知识库创建成功")
                     sleep(0.5)
-                    print(f"成功创建知识库 {new_KB}")
+                    logger.info(f"成功创建知识库 {new_KB.name}")
                     st.rerun()
             else:
                 st.error("请输入知识库名称!")
@@ -151,7 +154,7 @@ def rename_KB_dialog(KB,KB_dir:Path):
                         st.rerun()
                     KB_dir.rename(KB_dir.parent / new_name)
                     info.success("知识库重命名成功")
-                    print(f"成功重命名知识库 {KB.name} 为 {new_name}")
+                    logger.info(f"成功重命名知识库 {KB.name} 为 {new_name}")
                     sleep(0.5)
                     st.rerun()
     with cols[4]:
@@ -181,11 +184,11 @@ def delete_KB_dialog(KB,KB_dir:Path):
             delete_collection(KB,KB_dir)
             info.success(f"成功删除知识库{KB.name}！")
             sleep(0.5)
-            print(f"成功删除知识库 {KB.name}")
+            logger.info(f"成功删除知识库 {KB.name}")
             st.rerun()
     with cols[4]:
         if st.button("取消",use_container_width= True):
-            print(f"取消删除知识库{KB.name}")
+            logger.info(f"取消删除知识库{KB.name}")
             st.rerun()
 
 @st.dialog("ℹ️ 重命名文件")
@@ -222,11 +225,11 @@ def rename_file_dialog(file_name, file_path):
                     try:
                         file_path.rename(new_file_path)
                         info.success("重命名成功")
-                        print(f"成功重命名文件 {file_path} 为 {new_file_path}")
+                        logger.info(f"成功重命名文件 {file_path} 为 {new_file_path}")
                         sleep(0.5)
                         st.rerun()
                     except Exception as e:
-                        print(f"重命名失败：{e}")
+                        logger.error(f"重命名失败：{e}")
     with cols[4]:
         if st.button("取消", use_container_width=True):
             st.rerun()
@@ -249,7 +252,7 @@ def delete_file_dialog(file_name, file_path):
                     if oneKB.kb_id == KB.kb_id:
                         oneKB.doc_number -= 1
                 info.success("文件删除成功")
-                print(f"成功删除文件 {file_path}")
+                logger.info(f"成功删除文件 {file_path}")
                 sleep(0.5)
                 st.rerun()
             except Exception as e:
@@ -353,9 +356,9 @@ def get_KB_directory(user_email:str, KB_name:str, create_if_not_exists=False):
         if not KB_dir.exists():
             if create_if_not_exists:
                 KB_dir.mkdir(parents=True, exist_ok=True)
-                # print(f"在文件系统中成功创建知识库 {KB_name}")
+                logger.info(f"在文件系统中成功创建知识库 {KB_name}")
         else:
-            # print(f"知识库 {KB_name} 在文件系统中已经存在")
+            logger.debug(f"知识库 {KB_name} 在文件系统中已经存在")
             pass
     except (OSError, PermissionError) as e:
         st.error(f"无法在文件系统中创建知识库目录 `{KB_dir}`：{e}")
@@ -389,7 +392,7 @@ def show_upload_file_area(pre_KB: KnowledgeBase, KB_dir: Path):
         for oneKB in st.session_state.pre_user.know_bases:
             if oneKB.kb_id == pre_KB.kb_id:
                 oneKB.doc_number += num
-        print(f"更新知识库 {st.session_state.pre_opened_KB.name} 的文档数量为 {pre_KB.doc_number}")
+        logger.info(f"更新知识库 {st.session_state.pre_opened_KB.name} 的文档数量为 {pre_KB.doc_number}")
 
 def show_file_bar( file_path,KB_dir):
     # 文件名，如果以&开头，则去掉&,变为前端文件名file_name
@@ -431,7 +434,7 @@ def show_file_bar( file_path,KB_dir):
                             if file_path in st.session_state.parse_progress_placeholders:
                                 st.toast("该文件正在解析中!", icon="🚨")
                             else:
-                                print(f"用户点击了 解析 按钮,下面初始化并启动一个线程,解析文件 {frontend_file_name}")
+                                logger.info(f"用户点击了 解析 按钮,下面初始化并启动一个线程,解析文件 {frontend_file_name}")
                                 KB = st.session_state.pre_opened_KB
                                 thread = threading.Thread(target=real_parse_thread,
                                                           args=(file_path, frontend_file_name, KB_dir, KB))
@@ -441,7 +444,7 @@ def show_file_bar( file_path,KB_dir):
                                 thread.start()
                     if st.session_state.parse_all_files:
                         if file_path not in st.session_state.parse_progress_placeholders:
-                            print(f"用户点击了 一键解析 按钮,下面初始化并启动一个线程,解析文件 {frontend_file_name}")
+                            logger.info(f"用户点击了 一键解析 按钮,下面初始化并启动一个线程,解析文件 {frontend_file_name}")
                             KB = st.session_state.pre_opened_KB
                             thread = threading.Thread(target=real_parse_thread,
                                                       args=(file_path, frontend_file_name, KB_dir, KB))
