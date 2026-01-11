@@ -1,6 +1,10 @@
 # Nulear-Industry-QA-App 核工业专业知识问答应用
 
-[LangChian官网](https://python.langchain.com/docs/how_to/)
+[LangChain官网](https://python.langchain.com/docs/how_to/)
+
+# 项目介绍
+本项目开发了一个面向核工业领域的智能问答系统，核心采用“混合检索+智能重排序”的增强型RAG架构。系统创新性地融合了语义向量检索与BM25关键词检索，实现对专业知识的双路精准召回；并引入基于CrossEncoder的智能重排序模块，对结果进行深度语义重排，确保生成答案的准确性与可信度。基于LangGraph构建的可配置工程化流水线，使系统具备了模块化、可扩展的生产级应用能力。本项目不仅解决了垂直领域知识获取的难题，更为工业场景的智能化知识管理提供了一个先进、可复用的技术范本。
+
 
 # 进度安排
 - 4-5月：在本地实现对常见类型文件的解析和存储，如TXT文件、PDF文件、DOCX文件、PPTX文件。
