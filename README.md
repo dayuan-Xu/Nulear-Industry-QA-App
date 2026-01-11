@@ -1,5 +1,6 @@
 # Nulear-Industry-QA-App 核工业专业知识问答应用
 
+# 技术参考
 [LangChain官网](https://python.langchain.com/docs/how_to/)
 
 # 项目介绍
@@ -15,7 +16,7 @@
 - 次年3月：增加代理功能等优化工作。
 
 # 常用命令(在工作目录下执行)
-- 运行该项目：streamlit run Streamlit_App.py
+- 运行该项目：streamlit run app.py
 - 生成本地环境中安装的所有python包: pip freeze > requirements.txt
 - 将所有项目文件添加到暂存区: git add -A
 - 将暂存区的文件提交到本地仓库: git commit -m "commit message"
@@ -93,4 +94,17 @@
    本地使用MonkeyOCR对本地主机显存要求至少8GB以上，可以将MonkeyOCR部署为远程服务供本项目调用。
 6. 提供文本嵌入模型的选择空间。
 7. 后台解析线程可以采用全局唯一的线程池技术。
-8...参考LangChain中的How To列表寻找优化点
+8. 参考LangChain中的How To列表寻找优化点
+
+**4-1学期1-19周**:
+1. 将RAG_flow.py的graph迁移到langchain、langgraph最新版本，并新增了语句对重排序rerank功能。
+2. streamlit前端新增了settings界面，支持实时控制graph的运行配置。
+3. 优化了QA.py中的渲染逻辑，更新了User业务模型的结构。
+4. 美化了QA界面，为每种langchain message找到了定制化的avatar
+5. 新增了系统流程图。
+6. 更新了requirements.txt文件。
+7. 实现了混合检索，融合了传统关键词检索和语义检索。
+8. 增加了日志记录。
+
+1月到3月:
+1. 待填充...
