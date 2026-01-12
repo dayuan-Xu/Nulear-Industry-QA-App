@@ -40,37 +40,37 @@
   - 进入PostgresSQL数据库：docker exec -it mypostgres psql -U postgres
   - 创建数据库：
   ```sql
--- 1. 创建用户表（基础表，其他表关联此表的user_id）
-CREATE TABLE IF NOT EXISTS users (
-    id SERIAL PRIMARY KEY,  -- 自增主键
-    email VARCHAR(255) NOT NULL UNIQUE,  -- 邮箱唯一，不允许重复
-    password VARCHAR(255) NOT NULL,  -- 存储加密后的密码（不要存明文）
-    created_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP  -- 可选：添加创建时间，默认当前时间
-);
--- 2. 创建聊天表（关联用户表）
-CREATE TABLE IF NOT EXISTS chats (
-    thread_id SERIAL PRIMARY KEY,  -- 会话ID（自增）
-    thread_title VARCHAR(255) NOT NULL,  -- 会话标题
-    created_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP,  -- 创建时间，默认当前时间
-    user_id INTEGER NOT NULL,  -- 关联用户ID
-    -- 外键约束：确保user_id必须存在于users表中
-    CONSTRAINT fk_chats_user FOREIGN KEY (user_id) 
-        REFERENCES users(id) 
-        ON DELETE CASCADE  -- 当用户删除时，关联的聊天记录也删除
-);
--- 3. 创建知识库表（关联用户表）
-CREATE TABLE IF NOT EXISTS knowledge_bases (
-    kb_id SERIAL PRIMARY KEY,  -- 知识库ID（自增）
-    name VARCHAR(255) NOT NULL,  -- 知识库名称
-    doc_number INTEGER DEFAULT 0,  -- 文档数量，默认0
-    created_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP,  -- 创建时间
-    user_id INTEGER NOT NULL,  -- 关联用户ID
-    -- 外键约束：确保user_id必须存在于users表中
-    CONSTRAINT fk_kb_user FOREIGN KEY (user_id) 
-        REFERENCES users(id) 
-        ON DELETE CASCADE  -- 当用户删除时，关联的知识库也删除
-);
-   ```
+  -- 1. 创建用户表（基础表，其他表关联此表的user_id）
+  CREATE TABLE IF NOT EXISTS users (
+      id SERIAL PRIMARY KEY,  -- 自增主键
+      email VARCHAR(255) NOT NULL UNIQUE,  -- 邮箱唯一，不允许重复
+      password VARCHAR(255) NOT NULL,  -- 存储加密后的密码（不要存明文）
+      created_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP  -- 可选：添加创建时间，默认当前时间
+  );
+  -- 2. 创建聊天表（关联用户表）
+  CREATE TABLE IF NOT EXISTS chats (
+      thread_id SERIAL PRIMARY KEY,  -- 会话ID（自增）
+      thread_title VARCHAR(255) NOT NULL,  -- 会话标题
+      created_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP,  -- 创建时间，默认当前时间
+      user_id INTEGER NOT NULL,  -- 关联用户ID
+      -- 外键约束：确保user_id必须存在于users表中
+      CONSTRAINT fk_chats_user FOREIGN KEY (user_id) 
+          REFERENCES users(id) 
+          ON DELETE CASCADE  -- 当用户删除时，关联的聊天记录也删除
+  );
+  -- 3. 创建知识库表（关联用户表）
+  CREATE TABLE IF NOT EXISTS knowledge_bases (
+      kb_id SERIAL PRIMARY KEY,  -- 知识库ID（自增）
+      name VARCHAR(255) NOT NULL,  -- 知识库名称
+      doc_number INTEGER DEFAULT 0,  -- 文档数量，默认0
+      created_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP,  -- 创建时间
+      user_id INTEGER NOT NULL,  -- 关联用户ID
+      -- 外键约束：确保user_id必须存在于users表中
+      CONSTRAINT fk_kb_user FOREIGN KEY (user_id) 
+          REFERENCES users(id) 
+          ON DELETE CASCADE  -- 当用户删除时，关联的知识库也删除
+  );
+  ```
 - 首次运行项目时，请先初始化(单独运行setup.py)
 - 运行项目：streamlit run app.py
 
