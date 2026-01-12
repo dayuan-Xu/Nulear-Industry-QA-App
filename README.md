@@ -72,6 +72,19 @@
   );
   ```
 - 首次运行项目时，请先初始化(单独运行setup.py)
+- 在Postgres数据库中添加用户账号信息(需要先进入数据库终端）：
+```sql
+delete from checkpoints where thread_id in ('abc123', 'abc124' , 'abc125');
+
+select * from users;
+select *from knowledge_bases;
+
+INSERT INTO users (email, password)
+VALUES ('2117543204@qq.com', '123456');
+
+UPDATE knowledge_bases SET name = '解析测试KB' WHERE kb_id = 45;
+UPDATE users SET email='2117543201@qq.com'  WHERE id=2;
+```
 - 运行项目：streamlit run app.py
 
 
