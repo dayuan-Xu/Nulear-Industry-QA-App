@@ -11,12 +11,65 @@
 - 次年3月：增加代理功能等优化工作。
 
 # 常用命令(在工作目录下执行)
-- 运行该项目：streamlit run Streamlit_App.py
+- 运行该项目：streamlit run app.py
 - 生成本地环境中安装的所有python包: pip freeze > requirements.txt
 - 将所有项目文件添加到暂存区: git add -A
 - 将暂存区的文件提交到本地仓库: git commit -m "commit message"
 - 将本地仓库提交到远程仓库: git push 
 - 将远程仓库更新到本地仓库: git pull
+
+# 使用说明
+- 将远程仓库的文件克隆到本地：git clone https://github.com/dayuan-Xu/Nulear-Industry-QA-App
+- 安装所需要的依赖：pip install -r requirements.txt
+- 数据库准备
+  - 安装dockerdesktop
+  - 创建Qdrant向量数据库：docker run -p 6333:6333 -v ${PWD}/qdrant_storage:/qdrant/storage qdrant/qdrant
+  - 创建PostgreSQL数据库服务：
+  ```bash
+  docker run --name postgres `
+  -e POSTGRES_PASSWORD=postgres `
+  -d -p 5442:5432 `
+  -v ${PWD}/postgres_data:/var/lib/postgresql `
+  postgres
+  ```
+  - 进入PostgresSQL数据库：docker exec -it mypostgres psql -U postgres
+  - 创建数据库：
+  ```sql
+-- 1. 创建用户表（基础表，其他表关联此表的user_id）
+CREATE TABLE IF NOT EXISTS users (
+    id SERIAL PRIMARY KEY,  -- 自增主键
+    email VARCHAR(255) NOT NULL UNIQUE,  -- 邮箱唯一，不允许重复
+    password VARCHAR(255) NOT NULL,  -- 存储加密后的密码（不要存明文）
+    created_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP  -- 可选：添加创建时间，默认当前时间
+);
+-- 2. 创建聊天表（关联用户表）
+CREATE TABLE IF NOT EXISTS chats (
+    thread_id SERIAL PRIMARY KEY,  -- 会话ID（自增）
+    thread_title VARCHAR(255) NOT NULL,  -- 会话标题
+    created_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP,  -- 创建时间，默认当前时间
+    user_id INTEGER NOT NULL,  -- 关联用户ID
+    -- 外键约束：确保user_id必须存在于users表中
+    CONSTRAINT fk_chats_user FOREIGN KEY (user_id) 
+        REFERENCES users(id) 
+        ON DELETE CASCADE  -- 当用户删除时，关联的聊天记录也删除
+);
+-- 3. 创建知识库表（关联用户表）
+CREATE TABLE IF NOT EXISTS knowledge_bases (
+    kb_id SERIAL PRIMARY KEY,  -- 知识库ID（自增）
+    name VARCHAR(255) NOT NULL,  -- 知识库名称
+    doc_number INTEGER DEFAULT 0,  -- 文档数量，默认0
+    created_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP,  -- 创建时间
+    user_id INTEGER NOT NULL,  -- 关联用户ID
+    -- 外键约束：确保user_id必须存在于users表中
+    CONSTRAINT fk_kb_user FOREIGN KEY (user_id) 
+        REFERENCES users(id) 
+        ON DELETE CASCADE  -- 当用户删除时，关联的知识库也删除
+);
+   ```
+- 首次运行项目时，请先初始化(单独运行setup.py)
+- 运行项目：streamlit run app.py
+
+
 
 # 过程记录
 第1-4周： 
