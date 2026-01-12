@@ -3,11 +3,11 @@
 # 技术参考
 [LangChain官网](https://python.langchain.com/docs/how_to/)
 
-# 项目介绍
+# 1、项目介绍
 本项目开发了一个面向核工业领域的智能问答系统，核心采用“混合检索+智能重排序”的增强型RAG架构。系统创新性地融合了语义向量检索与BM25关键词检索，实现对专业知识的双路精准召回；并引入基于CrossEncoder的智能重排序模块，对结果进行深度语义重排，确保生成答案的准确性与可信度。基于LangGraph构建的可配置工程化流水线，使系统具备了模块化、可扩展的生产级应用能力。本项目不仅解决了垂直领域知识获取的难题，更为工业场景的智能化知识管理提供了一个先进、可复用的技术范本。
 
 
-# 进度安排
+# 2、进度安排
 - 4-5月：在本地实现对常见类型文件的解析和存储，如TXT文件、PDF文件、DOCX文件、PPTX文件。
 - 6-7月：实现控制台多轮问答，同时完成一系列可视化工作（检索结果、令牌使用情况等）。
 - 8-9月：学习Streamlit前端框架，设计Web用户界面，包含知识库管理、模型选择、问答（对话）界面管理。
@@ -15,7 +15,7 @@
 - 次年1月-2月：增加文件解析范围，比如CSV文件、HTML文件、MD文件。
 - 次年3月：增加代理功能等优化工作。
 
-# 常用命令(在工作目录下执行)
+# 3、常用命令(在项目根目录下执行)
 - 运行该项目：streamlit run app.py
 - 生成本地环境中安装的所有python包: pip freeze > requirements.txt
 - 将所有项目文件添加到暂存区: git add -A
@@ -23,7 +23,7 @@
 - 将本地仓库提交到远程仓库: git push 
 - 将远程仓库更新到本地仓库: git pull
 
-# 使用说明
+# 4、使用说明
 - 将远程仓库的文件克隆到本地：git clone https://github.com/dayuan-Xu/Nulear-Industry-QA-App
 - 安装所需要的依赖：pip install -r requirements.txt
 - 数据库准备
@@ -76,7 +76,7 @@
 
 
 
-# 过程记录
+# 5、过程记录
 第1-4周： 
 本地复现了GitHub上开源小项目[document.ai](https://github.com/GanymedeNil/document.ai)，理解了RAG框架的最简实现。
 **Qdrant数据库服务**通过本地创建运行容器提供，这里通过本地目录挂载的方式创建了Qdrant数据库服务： `docker run -p 6333:6333 -v $(pwd)/qdrant_storage:/qdrant/storage qdrant/qdrant`
