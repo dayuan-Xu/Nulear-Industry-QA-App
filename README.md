@@ -1,6 +1,11 @@
 # Nulear-Industry-QA-App 核工业专业知识问答应用
 
-[LangChian官网](https://python.langchain.com/docs/how_to/)
+# 技术参考
+[LangChain官网](https://python.langchain.com/docs/how_to/)
+
+# 项目介绍
+本项目开发了一个面向核工业领域的智能问答系统，核心采用“混合检索+智能重排序”的增强型RAG架构。系统创新性地融合了语义向量检索与BM25关键词检索，实现对专业知识的双路精准召回；并引入基于CrossEncoder的智能重排序模块，对结果进行深度语义重排，确保生成答案的准确性与可信度。基于LangGraph构建的可配置工程化流水线，使系统具备了模块化、可扩展的生产级应用能力。本项目不仅解决了垂直领域知识获取的难题，更为工业场景的智能化知识管理提供了一个先进、可复用的技术范本。
+
 
 # 进度安排
 - 4-5月：在本地实现对常见类型文件的解析和存储，如TXT文件、PDF文件、DOCX文件、PPTX文件。
@@ -142,4 +147,17 @@ CREATE TABLE IF NOT EXISTS knowledge_bases (
    本地使用MonkeyOCR对本地主机显存要求至少8GB以上，可以将MonkeyOCR部署为远程服务供本项目调用。
 6. 提供文本嵌入模型的选择空间。
 7. 后台解析线程可以采用全局唯一的线程池技术。
-8...参考LangChain中的How To列表寻找优化点
+8. 参考LangChain中的How To列表寻找优化点
+
+**4-1学期1-19周**:
+1. 将RAG_flow.py的graph迁移到langchain、langgraph最新版本，并新增了语句对重排序rerank功能。
+2. streamlit前端新增了settings界面，支持实时控制graph的运行配置。
+3. 优化了QA.py中的渲染逻辑，更新了User业务模型的结构。
+4. 美化了QA界面，为每种langchain message找到了定制化的avatar
+5. 新增了系统流程图。
+6. 更新了requirements.txt文件。
+7. 实现了混合检索，融合了传统关键词检索和语义检索。
+8. 增加了日志记录。
+
+1月到3月:
+1. 待填充...

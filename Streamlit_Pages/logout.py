@@ -1,6 +1,9 @@
 import datetime
 from time import sleep
 import streamlit as st
+from logger_manager import get_logger
+
+logger = get_logger("logout.py")
 
 # 1、准备单组件容器，并在其中插入一个多组件容器。
 placeholder = st.empty()
@@ -13,7 +16,7 @@ if container.button("注销"):
     sleep(0.5)
     # 登出
     user=st.session_state.pre_user
-    print(f"用户Email:{user.email} 登出成功",datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
+    logger.info(f"用户Email:{user.email} 登出成功 {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
     st.session_state.clear()
     st.session_state.role = None
     st.session_state.pre_user = None

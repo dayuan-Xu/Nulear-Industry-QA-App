@@ -1,13 +1,16 @@
 import streamlit as st
+from logger_manager import get_logger
+
+logger = get_logger("settings.py")
 
 st.header("LangGraph运行时用户自定义配置")
 
 def change_target_KB():
-    print("开始切换目标知识库")
+    logger.info("开始切换目标知识库")
     for KB in st.session_state.pre_user.know_bases:
         if KB.name == st.session_state.target_KB_selectbox:
             st.session_state.target_KB=KB
-            print(f"目标知识库切换完成，已经切换到知识库:{st.session_state.target_KB_selectbox}")
+            logger.info(f"目标知识库切换完成，已经切换到知识库:{st.session_state.target_KB_selectbox}")
             break
 
 kb_name_list = [KB.name for KB in st.session_state.pre_user.know_bases]

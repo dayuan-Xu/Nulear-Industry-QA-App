@@ -2,7 +2,6 @@
 # 对指定路径下的文件，各个函数将其加载为一个List[Document]
 # 对于文件的加载：大部分函数只是简单提取出文件中的文本内容。
 # 只有load_pdf_with_Azure()可以比较准确的提取pdf文件中的文本内容（包括复杂表格）。
-
 import os
 from typing_extensions import List
 from langchain_core.documents import Document
@@ -12,6 +11,9 @@ from langchain_community.document_loaders import UnstructuredMarkdownLoader
 from langchain_community.document_loaders import Docx2txtLoader
 from pptx import Presentation
 from langchain_community.document_loaders import AzureAIDocumentIntelligenceLoader
+from logger_manager import get_logger
+
+logger = get_logger("load_file_2_Doc.py")
 
 # 读取环境变量
 AZURE_ENDPOINT=os.getenv('AZURE_ENDPOINT')
@@ -53,7 +55,7 @@ def load_txt(file_path:str)->List[Document]:
                     all_docs.extend(texts)
                     content = ""
     except UnicodeDecodeError:
-        print(f"文件 {file_path} 使用的编码不是 utf-8，尝试使用 GBK 编码...")
+        logger.warning(f"文件 {file_path} 使用的编码不是 utf-8，尝试使用 GBK 编码...")
         with open(file_path, encoding='gbk', errors='replace') as f:
             content = ""
             while True:
@@ -75,7 +77,7 @@ def load_txt(file_path:str)->List[Document]:
     # 3、为每一个doc的元数据添加一个属性metadat["source"]=file_path
     for i in range(len(all_docs)):
         all_docs[i].metadata["source"]=file_path
-    print("测试用的TXT文件的被切分成为:", len(all_docs), "份\n")
+    logger.info(f"测试用的TXT文件的被切分成为: {len(all_docs)} 份")
     # # 输出前三个元素查看是否成功加载
     # for i in range(3):
     #     print(all_docs[i])
@@ -123,7 +125,7 @@ def load_pdf_with_Azure(file_path:str)->List[Document]:
     # 1、检查变量endpoint和key是否设置了
 
     if  AZURE_ENDPOINT is None or AZURE_API_KEY is None :
-        print("请设置环境变量AZURE_ENDPOINT和AZURE_API_KEY")
+        logger.error("请设置环境变量AZURE_ENDPOINT和AZURE_API_KEY")
         return []
 
     loader = AzureAIDocumentIntelligenceLoader(
@@ -203,7 +205,7 @@ def load_md(file_path:str)->List[Document]:
         # print(all_splits[0].page_content)
         return all_splits
     except Exception as e:
-        print(f"加载 Markdown 文件时出错: {e}")
+        logger.error(f"加载 Markdown 文件时出错: {e}")
         return []
 
 def load_docx_simply(file_path:str)->List[Document]:
@@ -316,7 +318,7 @@ def load_pptx_simply(file_path:str)->List[Document]:
         return all_docs
 
     except Exception as e:
-        print(f"加载 PPTX 文件时出错: {e}")
+        logger.error(f"加载 PPTX 文件时出错: {e}")
         return []
 
 if __name__ == "__main__":

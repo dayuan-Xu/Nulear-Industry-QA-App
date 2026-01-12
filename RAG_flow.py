@@ -10,6 +10,9 @@ from sentence_transformers import CrossEncoder
 from typing_extensions import List
 from db_utils import get_connection_pool
 from indexing import get_vector_store
+from logger_manager import get_logger
+
+logger = get_logger("RAG_flow.py")
 
 # 1、加载llm，采用动态完全可配置模式
 llm = init_chat_model(configurable_fields=["model", "model_provider", "api_key", "base_url"])
@@ -20,30 +23,57 @@ class AppState(MessagesState):
     docs: list[Document]
 
 # 5、动态创建检索工具
+from bm25_singleton import BM25Singleton  # 外部引用
+
 def create_retrieval_tool(retrieval_tool_config: dict):
-    def retrieve(query: str)-> tuple[str, list[dict]] | None:
-        """基于语义相似度，检索出与查询（query）相关的文档信息"""
-        collection_name = retrieval_tool_config.get("target_collection_name", "retrieval_config中没有collection_name这个key")
-        max_ctx_retrieved = retrieval_tool_config.get("max_ctx_retrieved", "retrieval_config中没有max_ctx_retrieved这个key")
-        if collection_name is None or max_ctx_retrieved is None:
-            print("检索工具无法正确执行, 因为传入的retrieved_tool_config不正确！！！")
+    def retrieve(query: str) -> tuple[str, list[dict]] | None:
+        """混合检索：语义4个 + BM25关键词4个 = 8个结果"""
+        collection_name = retrieval_tool_config.get("target_collection_name")
+        max_ctx_retrieved = retrieval_tool_config.get("max_ctx_retrieved", 4)
+
+        if not collection_name or max_ctx_retrieved is None:
+            print("检索工具配置错误！")
             return None
 
         vector_store = get_vector_store(collection_name)
-        docs = vector_store.similarity_search(query, k=max_ctx_retrieved)
 
-        content = "\n\n".join(f"文档{i + 1}: {d.page_content}" for i, d in enumerate(docs))
+        # 1. 语义检索 (4个)
+        semantic_docs = vector_store.similarity_search(query, k=max_ctx_retrieved)
 
-        # ✅ artifact 必须是 JSON 可序列化！
-        artifact = [
-            {
+        # 2. 关键词检索 (外部单例，4个)
+        bm25 = BM25Singleton(collection_name)
+        keyword_docs, keyword_scores = bm25.retrieve(query, max_ctx_retrieved)
+
+        # 3. 合并 8 个结果
+        all_docs = semantic_docs + keyword_docs
+
+
+        # ✅ 格式化内容：带数字标签 [语义1] [语义2] [关键词1] [关键词2]
+        content_parts = []
+        for i, doc in enumerate(all_docs):
+            if i < max_ctx_retrieved:
+                # 语义检索：语义1, 语义2, 语义3, 语义4
+                label = f"[语义{i+1}]"
+            else:
+                # 关键词检索：关键词1, 关键词2, 关键词3, 关键词4
+                keyword_idx = i - max_ctx_retrieved + 1
+                label = f"[关键词{keyword_idx}]"
+            content_parts.append(f"{label} {doc.page_content}")
+        content = "\n\n".join(content_parts)
+
+        # artifact
+        artifact = []
+        for i, doc in enumerate(all_docs):
+            source = "semantic" if i < max_ctx_retrieved else "keyword"
+            score = keyword_scores[i - max_ctx_retrieved] if source == "keyword" else 0.95
+            artifact.append({
                 "page_content": doc.page_content,
-                "metadata": getattr(doc, 'metadata', {})  # Document.metadata
-            }
-            for doc in docs
-        ]
+                "metadata": getattr(doc, 'metadata', {}),
+                "source": source,
+                "score": float(score)
+            })
 
-        return content, artifact  # (str, list[dict]) ✅ msg_content_output 解析成功！
+        return content, artifact
 
     return retrieve
 
@@ -138,7 +168,7 @@ def rerank(query:str, docs: List[Document]):
     scores = reranker.predict(sentence_pairs)
     score_and_doc_list = zip(scores, docs)
     sorted_score_and_doc_list = sorted(score_and_doc_list, key=lambda x: x[0], reverse=True)
-    print(f"本次重排序耗时{(time.time()-start_time): .2} s")
+    logger.info(f"本次重排序耗时{(time.time()-start_time): .2} s")
     return [doc for _, doc in sorted_score_and_doc_list]
 
 # 6.3: 将检索到的context封装进SystemMessage，重新调用llm，获取答案。
@@ -152,8 +182,8 @@ def generate(state: AppState, config: RunnableConfig):
         else:
             break
     tool_messages = recent_tool_messages[::-1]
-    print("最近工具消息的数量 ", len(tool_messages))
-    print("最近的第1条工具消息:", tool_messages[0])
+    logger.debug("最近工具消息的数量 %s", len(tool_messages))
+    logger.debug("最近的第1条工具消息: %s", tool_messages[0])
 
     # 合并每次检索工具调用得到的文档列表
     docs: list[Document] = []
@@ -165,7 +195,7 @@ def generate(state: AppState, config: RunnableConfig):
                 # print("dict_from_Doc:", dict_from_Doc)
                 docs.append(Document(**dict_from_Doc))
         else:
-            print("无有效 artifact")
+            logger.warning("无有效 artifact")
             continue
 
     if not docs:
@@ -182,13 +212,13 @@ def generate(state: AppState, config: RunnableConfig):
             if message.type == "human":
                 query = message.content
                 break
-        print(f"开始重排序，因为 actual_num_doc_used = {actual_num_of_doc_used} 小于 本次query的相关文档总数 = {docs_length}, 用户query: {query}")
+        logger.info(f"开始重排序，因为 actual_num_doc_used = {actual_num_of_doc_used} 小于 本次query的相关文档总数 = {docs_length}, 用户query: {query}")
         docs_after_rerank = rerank(query, docs)
 
         infos = "\n\n".join(doc.page_content for doc in docs_after_rerank[:actual_num_of_doc_used])
         # print(f"重排序完成，只取相关性分数排名前{actual_num_of_doc_used}的文档，所以最终要加入到聊天窗口中的信息：\n{infos}")
     else:
-        print(f"无需重排序，因为 actual_num_doc_used = {actual_num_of_doc_used} 大于等于 本次query的相关文档总数 = {docs_length}")
+        logger.info(f"无需重排序，因为 actual_num_doc_used = {actual_num_of_doc_used} 大于等于 本次query的相关文档总数 = {docs_length}")
         infos = "\n\n".join(doc.page_content for doc in docs)
 
     system_message_content = (
