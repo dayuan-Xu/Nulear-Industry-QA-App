@@ -25,10 +25,10 @@
 
 # 4、项目运行
 - 将远程仓库的文件克隆到本地：git clone https://github.com/dayuan-Xu/Nulear-Industry-QA-App
-- 安装所需要的依赖：pip install -r requirements.txt
+- 安装项目所需要的所有Python包依赖：pip install -r requirements.txt
 - 数据库准备
   - 安装dockerdesktop
-  - 创建Qdrant向量数据库：docker run -p 6333:6333 -v ${PWD}/qdrant_storage:/qdrant/storage qdrant/qdrant，或者 使用docker desktop的图形化界面完成创建。
+  - 创建Qdrant向量数据库：docker run -p 6333:6333 -v ${PWD}/qdrant_storage:/qdrant/storage qdrant/qdrant（或者使用docker desktop的图形化界面完成创建）
   - 创建PostgreSQL数据库服务：
   ```bash
   docker run --name postgres `
@@ -37,7 +37,7 @@
   -v ${PWD}/postgres_data:/var/lib/postgresql `
   postgres
   ```
-  - 进入PostgresSQL数据库：docker exec -it mypostgres psql -U postgres
+  - 进入PostgresSQL数据库：docker exec -it mypostgres psql -U postgres （或者通过docker desktop的图形化界面进入该容器的Exec视图）
   - 创建数据库：
   ```sql
   -- 1. 创建用户表（基础表，其他表关联此表的user_id）
@@ -71,7 +71,7 @@
           ON DELETE CASCADE  -- 当用户删除时，关联的知识库也删除
   );
   ```
-- 首次运行项目时，请先初始化(单独运行setup.py)，创建持久化LangGraph State所必需的表结构。
+- 首次运行项目时，请先初始化(单独运行setup.py)，在postgres容器中创建持久化LangGraph State所必需的表结构。
 - 在Postgres数据库中添加用户账号信息(需要先进入数据库终端）：
 ```sql
 delete from checkpoints where thread_id in ('abc123', 'abc124' , 'abc125');
