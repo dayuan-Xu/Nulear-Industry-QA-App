@@ -23,12 +23,12 @@
 - 将本地仓库提交到远程仓库: git push 
 - 将远程仓库更新到本地仓库: git pull
 
-# 4、使用说明
+# 4、项目运行
 - 将远程仓库的文件克隆到本地：git clone https://github.com/dayuan-Xu/Nulear-Industry-QA-App
 - 安装所需要的依赖：pip install -r requirements.txt
 - 数据库准备
   - 安装dockerdesktop
-  - 创建Qdrant向量数据库：docker run -p 6333:6333 -v ${PWD}/qdrant_storage:/qdrant/storage qdrant/qdrant
+  - 创建Qdrant向量数据库：docker run -p 6333:6333 -v ${PWD}/qdrant_storage:/qdrant/storage qdrant/qdrant，或者 使用docker desktop的图形化界面完成创建。
   - 创建PostgreSQL数据库服务：
   ```bash
   docker run --name postgres `
@@ -71,7 +71,7 @@
           ON DELETE CASCADE  -- 当用户删除时，关联的知识库也删除
   );
   ```
-- 首次运行项目时，请先初始化(单独运行setup.py)
+- 首次运行项目时，请先初始化(单独运行setup.py)，创建持久化LangGraph State所必需的表结构。
 - 在Postgres数据库中添加用户账号信息(需要先进入数据库终端）：
 ```sql
 delete from checkpoints where thread_id in ('abc123', 'abc124' , 'abc125');
