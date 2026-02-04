@@ -12,6 +12,9 @@ from langchain_community.document_loaders import Docx2txtLoader
 from pptx import Presentation
 from langchain_community.document_loaders import AzureAIDocumentIntelligenceLoader
 from logger_manager import get_logger
+from langchain_community.document_loaders import CSVLoader
+from bs4 import BeautifulSoup
+import pandas as pd
 
 logger = get_logger("load_file_2_Doc.py")
 
@@ -321,11 +324,203 @@ def load_pptx_simply(file_path:str)->List[Document]:
         logger.error(f"加载 PPTX 文件时出错: {e}")
         return []
 
+
+def load_csv_simply(file_path: str) -> List[Document]:
+    """
+    负责人：么一明
+    该方法基于CSVLoader加载CSV文件，每行作为一个Document块，并进行智能切分。
+    """
+    # 1. 检查文件是否存在
+    if not os.path.exists(file_path):
+        logger.error(f"CSV文件 {file_path} 不存在！")
+        return []
+    
+    try:
+        # 2. 初始化CSV加载器
+        loader = CSVLoader(
+            file_path=file_path,
+            encoding="utf-8",
+            csv_args={
+                "delimiter": ",",
+                "quotechar": '"'
+            }
+        )
+        
+        # 3. 加载文档（每行一个Document）
+        docs = loader.load()
+        
+        # 4. 初始化文本分割器（处理长CSV行）
+        text_splitter = RecursiveCharacterTextSplitter(
+            separators=[
+                "\n",    # 换行符
+                ",",     # CSV分隔符
+                ";",     # 备用分隔符
+                "\t",    # 制表符
+                " ",     # 空格
+                ".",     # 句号
+                "\u3002", # 中文句号
+                "\uff0c", # 全角逗号
+                "\u3001", # 顿号
+                "",
+            ],
+            chunk_size=500,
+            chunk_overlap=100,
+            add_start_index=True
+        )
+        
+        # 5. 分割长文档
+        all_splits = text_splitter.split_documents(docs)
+        
+        # 6. 统一添加source元数据
+        for split in all_splits:
+            split.metadata["source"] = file_path
+        
+        logger.info(f"CSV文件 {file_path} 被切分为 {len(all_splits)} 个文档块")
+        return all_splits
+        
+    except UnicodeDecodeError:
+        logger.warning(f"CSV文件 {file_path} 不是UTF-8编码，尝试GBK...")
+        try:
+            loader = CSVLoader(
+                file_path=file_path,
+                encoding="gbk",
+                csv_args={"delimiter": ",", "quotechar": '"'}
+            )
+            docs = loader.load()
+            text_splitter = RecursiveCharacterTextSplitter(
+                separators=["\n", ",", ";", "\t", " ", ".", "\u3002", "\uff0c"],
+                chunk_size=500, chunk_overlap=100, add_start_index=True
+            )
+            all_splits = text_splitter.split_documents(docs)
+            for split in all_splits:
+                split.metadata["source"] = file_path
+            logger.info(f"CSV文件 {file_path} (GBK) 被切分为 {len(all_splits)} 个文档块")
+            return all_splits
+        except Exception as e:
+            logger.error(f"GBK解码失败: {e}")
+            return []
+    except Exception as e:
+        logger.error(f"加载CSV文件时出错: {e}")
+        return []
+
+def load_html_simply(file_path: str) -> List[Document]:
+    """
+    负责人：么一明  
+    该方法基于BeautifulSoup加载HTML文件，提取主要文本内容（标题、段落、列表、表格），返回List[Document]
+    """
+    # 1. 检查文件是否存在
+    if not os.path.exists(file_path):
+        logger.error(f"HTML文件 {file_path} 不存在！")
+        return []
+    
+    try:
+        # 2. 读取文件，支持多种编码
+        content = ""
+        encodings = ['utf-8', 'gbk', 'gb2312']
+        for encoding in encodings:
+            try:
+                with open(file_path, encoding=encoding) as f:
+                    content = f.read()
+                logger.info(f"HTML文件 {file_path} 使用 {encoding} 编码成功读取")
+                break
+            except UnicodeDecodeError:
+                continue
+        
+        if not content:
+            logger.error(f"HTML文件 {file_path} 所有编码均失败")
+            return []
+        
+        # 3. 使用BeautifulSoup解析
+        soup = BeautifulSoup(content, 'html.parser')
+        
+        # 4. 移除脚本、样式等无用标签
+        for tag in soup(['script', 'style', 'nav', 'header', 'footer', 'aside']):
+            tag.decompose()
+        
+        # 5. 提取结构化文本内容
+        all_texts = []
+        
+        # 提取标题（按重要性排序）
+        for level in range(1, 7):
+            for h in soup.find_all(f'h{level}'):
+                text = h.get_text(strip=True)
+                if text:
+                    all_texts.append(f"{'#' * level} {text}")
+        
+        # 提取段落
+        for p in soup.find_all('p'):
+            text = p.get_text(strip=True)
+            if len(text) > 10:
+                all_texts.append(text)
+        
+        # 提取有序列表
+        for ol in soup.find_all('ol'):
+            items = [li.get_text(strip=True) for li in ol.find_all('li')]
+            if items:
+                all_texts.extend([f"{i+1}. {item}" for i, item in enumerate(items)])
+        
+        # 提取无序列表  
+        for ul in soup.find_all('ul'):
+            items = [li.get_text(strip=True) for li in ul.find_all('li')]
+            if items:
+                all_texts.extend([f"- {item}" for item in items])
+        
+        # 提取表格（简化格式）
+        for table in soup.find_all('table'):
+            table_rows = []
+            for row in table.find_all('tr'):
+                cells = [cell.get_text(strip=True) for cell in row.find_all(['td', 'th'])]
+                if cells:
+                    table_rows.append("| " + " | ".join(cells) + " |")
+            if len(table_rows) > 1:
+                all_texts.append("\n".join(table_rows))
+        
+        # 6. 过滤有效文本并分割
+        filtered_texts = [text.strip() for text in all_texts if len(text.strip()) > 30]
+        
+        if not filtered_texts:
+            logger.warning(f"HTML文件 {file_path} 未提取到有效内容")
+            return []
+        
+        # 7. 使用RecursiveCharacterTextSplitter
+        text_splitter = RecursiveCharacterTextSplitter(
+            separators=[
+                "\n\n",     # 段落分隔
+                "\n",       # 换行
+                "<br>",     # HTML换行
+                "##",       # Markdown标题
+                "#",        # Markdown标题
+                "\u3002",   # 中文句号
+                ".",        # 英文句号
+                " ",        # 空格
+                "",
+            ],
+            chunk_size=500,
+            chunk_overlap=200,
+            add_start_index=True
+        )
+        
+        # 8. 创建Document列表
+        all_docs = text_splitter.create_documents(filtered_texts)
+        
+        # 9. 添加元数据
+        for doc in all_docs:
+            doc.metadata["source"] = file_path
+        
+        logger.info(f"HTML文件 {file_path} 被切分为 {len(all_docs)} 个文档块")
+        return all_docs
+        
+    except Exception as e:
+        logger.error(f"加载 HTML 文件时出错: {e}")
+        return []
+    
 if __name__ == "__main__":
 
-    # load_txt("test_files/核工业百科.txt")
-    # load_pdf_simply("test_files/1.10MW 高温堆热启动时蒸汽发生器.pdf")
-    # load_md("test_files/&LangChainItroduction.md")
-    load_docx_simply("test_files/大创开题报告.docx")
-    # load_pptx_simply("test_files/&核工业专业知识问答模型构建-开题答辩.pptx")
-    # load_pdf_with_Azure("test_files/1.10MW 高温堆热启动时蒸汽发生器.pdf")
+    #  load_txt("test_files/核工业百科.txt")
+    #  load_pdf_simply("test_files/1.10MW 高温堆热启动时蒸汽发生器.pdf")
+    #  load_md("test_files/LangChainItroduction.md")
+    #  load_docx_simply("test_files/大创开题报告.docx")
+    #  load_pptx_simply("test_files/核工业专业知识问答模型构建-开题答辩.pptx")
+    #  load_pdf_with_Azure("test_files/1.10MW 高温堆热启动时蒸汽发生器.pdf")
+    #  load_csv_simply("test_files/bank.csv")
+    load_html_simply("test_files/license.html")
