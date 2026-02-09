@@ -11,6 +11,7 @@ from typing_extensions import List
 from db_utils import get_connection_pool
 from indexing import get_vector_store
 from logger_manager import get_logger
+from typing import Union
 
 logger = get_logger("RAG_flow.py")
 
@@ -26,7 +27,7 @@ class AppState(MessagesState):
 from bm25_singleton import BM25Singleton  # 外部引用
 
 def create_retrieval_tool(retrieval_tool_config: dict):
-    def retrieve(query: str) -> tuple[str, list[dict]] | None:
+    def retrieve(query: str) -> Union[tuple[str, list[dict]], None]:
         """混合检索：语义4个 + BM25关键词4个 = 8个结果"""
         collection_name = retrieval_tool_config.get("target_collection_name")
         max_ctx_retrieved = retrieval_tool_config.get("max_ctx_retrieved", 4)

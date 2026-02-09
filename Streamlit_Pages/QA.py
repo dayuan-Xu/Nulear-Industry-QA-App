@@ -7,6 +7,7 @@ from RAG_flow import graph
 from db_utils import insert_chat,delete_chat,update_chat_title
 import streamlit as st
 from logger_manager import get_logger
+from typing import Union
 
 logger = get_logger("QA.py")
 
@@ -246,7 +247,9 @@ if st.session_state.pre_chat is None:
     with st.chat_message("ai", avatar="https://snsfont.com/emo_img/116_1.png"):
         st.write("你好，我是核工业知识问答助手，欢迎你提问!")
 
-def show_LangChain_message(LangChain_message: AIMessage | HumanMessage | ToolMessage, streaming_output_for_ai_message: bool = False):
+
+def show_LangChain_message(LangChain_message: Union[AIMessage, HumanMessage, ToolMessage],
+                           streaming_output_for_ai_message: bool = False):
     #  支持四种LangChain消息的显示：用户消息HumanMessage、Ai消息(包含or不包含工具调用请求)AIMessage、工具执行结果消息ToolMessage
     if LangChain_message.type == "human":
         with st.chat_message("human", avatar="https://snsfont.com/emo_img/74_31.png"):
