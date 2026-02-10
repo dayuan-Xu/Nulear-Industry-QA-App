@@ -1,13 +1,17 @@
-# 该模块提供 PostgreSQL数据库访问
+# 直接复制现有的 db_utils.py，但需要做一些调整以适应后端使用
 import atexit
 import os
 from psycopg_pool import ConnectionPool
-from service_models.KB import KnowledgeBase
-from service_models.chat import Chat
+from backend.models.schemas import KnowledgeBase, Chat
 from datetime import timezone
 import pytz
+import logging
+
+logger = logging.getLogger(__name__)
 
 _connection_pool = None
+
+
 def get_connection_pool():
     global _connection_pool
     # 单例模式，确保整个应用生命周期内只创建一个连接池实例
@@ -22,12 +26,6 @@ def get_connection_pool():
 
         DB_URI = f"postgresql://{db_user}:{db_password}@{db_host}:{db_port}/{db_name}?sslmode={ssl_mode}"
 
-        # 协议：postgresql:// 表示使用 PostgreSQL 协议。
-        # 用户信息：postgres:postgres 表示用户名为 postgres，密码也为 postgres。
-        # 主机：@localhost 表示数据库位于本地机器。
-        # 端口：:5442 表示数据库服务运行在 5442 端口（默认是 5432）。
-        # 数据库名：/postgres 表示连接的数据库名为 postgres。
-        # SSL 模式：?sslmode=disable 表示禁用 SSL 加密连接。
         try:
             connection_kwargs = {
                 "autocommit": True,
@@ -38,39 +36,92 @@ def get_connection_pool():
                 max_size=8,
                 kwargs=connection_kwargs,
             )
+            logger.info("数据库连接池初始化成功")
         except Exception as e:
+            logger.error(f"无法初始化数据库连接池: {e}")
             raise RuntimeError("无法初始化数据库连接池") from e
     return _connection_pool
-def verify_user(user):
-    pool = get_connection_pool()
-    with pool.connection() as conn:
-        with conn.cursor() as cur:
-            cur.execute("SELECT password FROM users WHERE email = %s", (user.email,))
-            result = cur.fetchone()
-            if result and result[0] == user.password:
-                return True
-    return False
-def get_user_id(email):
-    # 访问数据库，根据email获取用户id
-    pool = get_connection_pool()
-    with pool.connection() as conn:
-        with conn.cursor() as cur:
-            cur.execute("SELECT id FROM users WHERE email = %s", (email,))
-            result = cur.fetchone()
-            if result:
-                return result[0]
-    return None
-def get_KBs(user_id):
-    #print("get_KBs开始执行")
+
+
+def get_user_kbs(user_email: str):
+    """获取用户的所有知识库"""
+    user_id = get_user_id(user_email)
+    if not user_id:
+        return []
+
     pool = get_connection_pool()
     with pool.connection() as conn:
         with conn.cursor() as cur:
             cur.execute("SELECT * FROM knowledge_bases WHERE user_id = %s", (user_id,))
             rows = cur.fetchall()
-            #print(f"get_KBs找到了{len(rows)}行结果")
-            return [KnowledgeBase(kb_id=row[0], name=row[1], doc_number=row[2], created_time=row[3]) for row in rows]
+            kbs = []
+            for row in rows:
+                kb = KnowledgeBase(
+                    kb_id=row[0],
+                    name=row[1],
+                    doc_number=row[2],
+                    created_time=row[3],
+                    user_email=user_email,
+                    user_id=user_id
+                )
+                kbs.append(kb)
+            return kbs
 
-def insert_KB(name, user_id):
+
+def get_kb_by_id(kb_id: str):
+    """根据ID获取知识库"""
+    pool = get_connection_pool()
+    with pool.connection() as conn:
+        with conn.cursor() as cur:
+            cur.execute("""
+                SELECT kb.*, u.email 
+                FROM knowledge_bases kb 
+                JOIN users u ON kb.user_id = u.id 
+                WHERE kb.kb_id = %s
+            """, (kb_id,))
+            row = cur.fetchone()
+            if row:
+                return KnowledgeBase(
+                    kb_id=row[0],
+                    name=row[1],
+                    doc_number=row[2],
+                    created_time=row[3],
+                    user_email=row[4],
+                    user_id=None  # 可以从其他查询获取
+                )
+            return None
+
+
+def get_kb_by_name(user_email: str, kb_name: str):
+    """根据名称获取知识库"""
+    user_id = get_user_id(user_email)
+    if not user_id:
+        return None
+
+    pool = get_connection_pool()
+    with pool.connection() as conn:
+        with conn.cursor() as cur:
+            cur.execute("SELECT * FROM knowledge_bases WHERE user_id = %s AND name = %s",
+                        (user_id, kb_name))
+            row = cur.fetchone()
+            if row:
+                return KnowledgeBase(
+                    kb_id=row[0],
+                    name=row[1],
+                    doc_number=row[2],
+                    created_time=row[3],
+                    user_email=user_email,
+                    user_id=user_id
+                )
+            return None
+
+
+def insert_KB(name: str, user_email: str):
+    """创建知识库（修改版，接受user_email）"""
+    user_id = get_user_id(user_email)
+    if not user_id:
+        raise ValueError(f"用户 {user_email} 不存在")
+
     pool = get_connection_pool()
     try:
         with pool.connection() as connection:
@@ -86,17 +137,26 @@ def insert_KB(name, user_id):
                 row = cur.fetchone()
                 if row:
                     # 构造 KnowledgeBase 对象并返回
-                    new_KB = KnowledgeBase(kb_id=row[0], name=row[1], doc_number=row[2], created_time=row[3])
+                    new_KB = KnowledgeBase(
+                        kb_id=row[0],
+                        name=row[1],
+                        doc_number=row[2],
+                        created_time=row[3],
+                        user_email=user_email,
+                        user_id=user_id
+                    )
                     connection.commit()
                     return new_KB
                 else:
                     connection.commit()
                     return None
     except Exception as e:
-        print(f"Error inserting new KB: {e}")
-        return None
+        logger.error(f"Error inserting new KB: {e}")
+        raise
+
 
 def update_KB_name(kb_id: int, new_name: str):
+    """更新知识库名称"""
     pool = get_connection_pool()
     try:
         with pool.connection() as connection:
@@ -107,9 +167,12 @@ def update_KB_name(kb_id: int, new_name: str):
                 connection.commit()
                 return True
     except Exception as e:
-        print(f"Error updating KB name:{e}")
+        logger.error(f"Error updating KB name:{e}")
         return False
-def update_KB(kb_id: int, new_doc_number:int):
+
+
+def update_KB(kb_id: int, new_doc_number: int):
+    """更新知识库文档数量"""
     pool = get_connection_pool()
     try:
         with pool.connection() as connection:
@@ -120,9 +183,12 @@ def update_KB(kb_id: int, new_doc_number:int):
                 connection.commit()
                 return True
     except Exception as e:
-        print(f"Error updating KB doc_number:{e}")
+        logger.error(f"Error updating KB doc_number:{e}")
         return False
+
+
 def delete_KB(kb_id: int):
+    """删除知识库"""
     pool = get_connection_pool()
     try:
         with pool.connection() as conn:
@@ -131,10 +197,36 @@ def delete_KB(kb_id: int):
                 conn.commit()
                 return True
     except Exception as e:
-        # 可根据具体异常做更细粒度的处理
-        print(f"Error deleting KB: {e}")
+        logger.error(f"Error deleting KB: {e}")
         return False
+
+
+# 以下是原有函数，保持不变
+def verify_user(user):
+    pool = get_connection_pool()
+    with pool.connection() as conn:
+        with conn.cursor() as cur:
+            cur.execute("SELECT password FROM users WHERE email = %s", (user.email,))
+            result = cur.fetchone()
+            if result and result[0] == user.password:
+                return True
+    return False
+
+
+def get_user_id(email):
+    """获取用户ID"""
+    pool = get_connection_pool()
+    with pool.connection() as conn:
+        with conn.cursor() as cur:
+            cur.execute("SELECT id FROM users WHERE email = %s", (email,))
+            result = cur.fetchone()
+            if result:
+                return result[0]
+    return None
+
+
 def get_chats(email: str):
+    """获取用户的所有聊天"""
     pool = get_connection_pool()
     with pool.connection() as conn:
         with conn.cursor() as cur:
@@ -146,21 +238,25 @@ def get_chats(email: str):
             rows = cur.fetchall()
             return [Chat(thread_id=row[0], thread_title=row[1], created_time=row[2]) for row in rows]
 
-def insert_chat(new_chat: Chat,user_id:str):
-    # 访问数据库chats:thread_id(主码）、thread_title、creadted_time（timestamp without time zone)、user_id，插入新对话thread_id和thread_title
+
+def insert_chat(new_chat: Chat, user_id: str):
+    """插入新的聊天"""
     pool = get_connection_pool()
     try:
         with pool.connection() as conn:
             with conn.cursor() as cur:
-                cur.execute("INSERT INTO chats (thread_id, thread_title, created_time, user_id) VALUES (%s, %s, NOW(), %s)",
-                            (new_chat["thread_id"], new_chat["thread_title"], user_id))
+                cur.execute(
+                    "INSERT INTO chats (thread_id, thread_title, created_time, user_id) VALUES (%s, %s, NOW(), %s)",
+                    (new_chat["thread_id"], new_chat["thread_title"], user_id))
                 conn.commit()  # 提交事务
                 return 1  # 插入成功
     except Exception as e:
-        # 可根据具体异常做更细粒度的处理
-        print(f"Error inserting chat: {e}")
+        logger.error(f"Error inserting chat: {e}")
+        return 0
+
 
 def delete_chat(thread_id: str) -> int:
+    """删除聊天"""
     pool = get_connection_pool()
     try:
         with pool.connection() as conn:
@@ -172,12 +268,12 @@ def delete_chat(thread_id: str) -> int:
                 conn.commit()  # 提交事务
                 return 1  # 成功
     except Exception as e:
-        # 可根据具体异常做更细粒度的处理
-        print(f"Error deleting chat: {e}")
+        logger.error(f"Error deleting chat: {e}")
         return 0  # 失败
 
+
 def update_chat_title(chat, new_title):
-    # 访问数据库chat表，根据thread_id（主码）和st.session_state.new_chat_title更新thread_title
+    """更新聊天标题"""
     pool = get_connection_pool()
     try:
         with pool.connection() as conn:
@@ -186,9 +282,9 @@ def update_chat_title(chat, new_title):
                 conn.commit()  # 提交事务
                 return 1  # 成功
     except Exception as e:
-        # 可根据具体异常做更细粒度的处理
-        print(f"Error updating chat title: {e}")
+        logger.error(f"Error updating chat title: {e}")
         return 0  # 失败
+
 
 def format_utc_to_local(utc_time):
     """
@@ -206,40 +302,25 @@ def format_utc_to_local(utc_time):
     # 格式化输出
     return local_time.strftime("%Y-%m-%d %H:%M:%S")
 
+
 def close_connection_pool():
+    """关闭连接池"""
     global _connection_pool
     if _connection_pool is not None:
         _connection_pool.close()
-        print("Database connection pool closed.")
+        logger.info("Database connection pool closed.")
 
 
-'''
-为什么模块中顶层的函数调用 register_close_handler() 会在每次导入模块时都执行，而变量定义 _connection_pool_registered = False 却只执行一次？
-🧠 回答核心：
-因为模块在首次导入时会被完整执行一次；之后再次导入时，Python 只会从 sys.modules 缓存中加载整个模块对象， 但是：
-✅ 如果是“纯表达式”或“函数调用”，即使写在模块顶层，也会在每次导入时被重新执行。
-❌ 如果是“变量赋值”、“函数定义”、“类定义”等，则只会执行一次。
-
-1. Python 的模块缓存机制（sys.modules）
-当你第一次导入一个模块时，Python 会：
-执行整个模块文件中的所有代码
-把这个模块对象缓存到 sys.modules
-后续再导入该模块时，Python 不再执行模块文件，而是直接从 sys.modules 中取出已有的模块对象
-2. 顶层语句 ≠ 都不会重复执行
-不是所有顶层语句都不会重复执行！
-实际上，只有“定义性语句”（如变量定义、函数定义）不会重复执行
-而像“函数调用”这种“执行性语句”，即使写在模块顶层，也会在每次导入时被执行！
-'''
 _connection_pool_registered = False
 
+
 def register_close_handler():
+    """注册关闭处理器"""
     global _connection_pool_registered
-    # print("===========注册关闭处理器执行了一次===========")
     if not _connection_pool_registered:
         atexit.register(close_connection_pool)
         _connection_pool_registered = True
-    if _connection_pool_registered:
-        #print("全局标志变量已经设为True，数据库模块已经注册过关闭处理函数了，所以不会重复注册关闭钩子")
-        pass
+        logger.info("数据库连接池关闭处理器已注册")
+
 
 register_close_handler()

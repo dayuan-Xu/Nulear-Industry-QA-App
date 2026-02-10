@@ -2674,3 +2674,505 @@
 2026-02-07 16:10:36,352 - langsmith.client - DEBUG - Tracing control thread is shutting down
 2026-02-07 16:10:36,386 - langsmith.client - DEBUG - Closing Client.session
 2026-02-07 16:10:36,495 - langsmith.client - DEBUG - Closing Client.session
+2026-02-09 15:38:08,363 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-09 15:38:08,364 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-09 15:38:08,364 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-09 15:38:08,364 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-09 15:38:08,364 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-09 15:38:08,364 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-09 15:38:08,364 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-09 15:38:08,364 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-09 15:38:08,364 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-09 15:38:08,364 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-09 15:38:08,376 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-09 15:38:08,376 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-09 15:38:08,376 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-09 15:38:08,376 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-09 15:38:08,376 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-09 15:38:08,376 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-09 15:38:08,376 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-09 15:38:08,376 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-09 15:38:08,376 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-09 15:38:08,376 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-09 15:38:08,562 - login.py - INFO - 用户Email:2117543204@qq.com 登录成功
+2026-02-09 15:38:09,682 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-09 15:38:09,682 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-09 15:38:09,682 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-09 15:38:09,682 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-09 15:38:09,682 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-09 15:38:09,682 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-09 15:38:09,682 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-09 15:38:09,682 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-09 15:38:09,682 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-09 15:38:09,682 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-09 15:38:09,692 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-09 15:38:09,692 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-09 15:38:09,692 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-09 15:38:09,692 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-09 15:38:09,692 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-09 15:38:09,692 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-09 15:38:09,692 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-09 15:38:09,692 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-09 15:38:09,692 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-09 15:38:09,692 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-09 15:38:09,721 - Manage_KBs.py - DEBUG - 知识库 1 在文件系统中已经存在
+2026-02-09 15:38:11,194 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-09 15:38:11,194 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-09 15:38:11,194 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-09 15:38:11,194 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-09 15:38:11,194 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-09 15:38:11,194 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-09 15:38:11,194 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-09 15:38:11,194 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-09 15:38:11,194 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-09 15:38:11,194 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-09 15:38:11,205 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-09 15:38:11,205 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-09 15:38:11,205 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-09 15:38:11,205 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-09 15:38:11,205 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-09 15:38:11,205 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-09 15:38:11,205 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-09 15:38:11,205 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-09 15:38:11,205 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-09 15:38:11,205 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-09 15:39:42,625 - tensorflow - DEBUG - Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+2026-02-09 15:39:43,654 - h5py._conv - DEBUG - Creating converter from 7 to 5
+2026-02-09 15:39:43,654 - h5py._conv - DEBUG - Creating converter from 5 to 7
+2026-02-09 15:39:43,654 - h5py._conv - DEBUG - Creating converter from 7 to 5
+2026-02-09 15:39:43,654 - h5py._conv - DEBUG - Creating converter from 5 to 7
+2026-02-09 15:39:45,726 - matplotlib - DEBUG - matplotlib data path: D:\Python\lib\site-packages\matplotlib\mpl-data
+2026-02-09 15:39:45,740 - matplotlib - DEBUG - CONFIGDIR=C:\Users\gzw\.matplotlib
+2026-02-09 15:39:45,741 - matplotlib - DEBUG - interactive is False
+2026-02-09 15:39:45,741 - matplotlib - DEBUG - platform is win32
+2026-02-09 15:39:45,795 - matplotlib - DEBUG - CACHEDIR=C:\Users\gzw\.matplotlib
+2026-02-09 15:39:45,806 - matplotlib.font_manager - DEBUG - Using fontManager instance from C:\Users\gzw\.matplotlib\fontlist-v390.json
+2026-02-09 15:39:49,500 - tensorflow - WARNING - From D:\Python\lib\site-packages\tf_keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+
+2026-02-09 15:39:50,703 - tensorflow - WARNING - From D:\Python\lib\site-packages\keras\src\backend\common\global_state.py:82: The name tf.reset_default_graph is deprecated. Please use tf.compat.v1.reset_default_graph instead.
+
+2026-02-09 15:39:54,254 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-09 15:39:54,254 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-09 15:39:54,254 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-09 15:39:54,254 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-09 15:39:54,254 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-09 15:39:54,254 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-09 15:39:54,254 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-09 15:39:54,254 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-09 15:39:54,254 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-09 15:39:54,254 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-09 15:39:54,261 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-09 15:39:54,261 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-09 15:39:54,264 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-09 15:39:54,264 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-09 15:39:54,264 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-09 15:39:54,264 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-09 15:39:54,264 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-09 15:39:54,264 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-09 15:39:54,264 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-09 15:39:54,264 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-09 15:39:54,974 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-09 15:39:54,975 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-09 15:39:54,975 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-09 15:39:54,975 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-09 15:39:54,975 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-09 15:39:54,975 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-09 15:39:54,975 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-09 15:39:54,975 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-09 15:39:54,975 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-09 15:39:54,975 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-09 15:39:54,987 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-09 15:39:54,987 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-09 15:39:54,987 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-09 15:39:54,987 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-09 15:39:54,987 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-09 15:39:54,987 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-09 15:39:54,987 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-09 15:39:54,987 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-09 15:39:54,987 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-09 15:39:54,987 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-09 15:40:01,437 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-09 15:40:01,437 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-09 15:40:01,437 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-09 15:40:01,437 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-09 15:40:01,437 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-09 15:40:01,437 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-09 15:40:01,437 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-09 15:40:01,437 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-09 15:40:01,437 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-09 15:40:01,437 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-09 15:40:01,447 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-09 15:40:01,447 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-09 15:40:01,447 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-09 15:40:01,447 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-09 15:40:01,447 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-09 15:40:01,447 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-09 15:40:01,447 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-09 15:40:01,447 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-09 15:40:01,447 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-09 15:40:01,447 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-09 15:40:01,466 - login.py - INFO - 用户Email:2117543204@qq.com 登录成功
+2026-02-09 15:40:03,095 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-09 15:40:03,095 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-09 15:40:03,095 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-09 15:40:03,095 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-09 15:40:03,095 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-09 15:40:03,095 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-09 15:40:03,095 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-09 15:40:03,095 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-09 15:40:03,095 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-09 15:40:03,095 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-09 15:40:03,107 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-09 15:40:03,108 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-09 15:40:03,108 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-09 15:40:03,108 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-09 15:40:03,108 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-09 15:40:03,108 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-09 15:40:03,108 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-09 15:40:03,108 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-09 15:40:03,108 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-09 15:40:03,108 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-09 15:40:03,136 - Manage_KBs.py - DEBUG - 知识库 1 在文件系统中已经存在
+2026-02-09 15:40:08,374 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-09 15:40:08,374 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-09 15:40:08,374 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-09 15:40:08,374 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-09 15:40:08,374 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-09 15:40:08,374 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-09 15:40:08,374 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-09 15:40:08,374 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-09 15:40:08,374 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-09 15:40:08,374 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-09 15:40:08,383 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-09 15:40:08,383 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-09 15:40:08,383 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-09 15:40:08,383 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-09 15:40:08,383 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-09 15:40:08,383 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-09 15:40:08,383 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-09 15:40:08,383 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-09 15:40:08,383 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-09 15:40:08,383 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-09 15:40:10,497 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-09 15:40:10,497 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-09 15:40:10,497 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-09 15:40:10,497 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-09 15:40:10,497 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-09 15:40:10,497 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-09 15:40:10,497 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-09 15:40:10,497 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-09 15:40:10,497 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-09 15:40:10,497 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-09 15:40:10,507 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-09 15:40:10,507 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-09 15:40:10,507 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-09 15:40:10,507 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-09 15:40:10,507 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-09 15:40:10,507 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-09 15:40:10,507 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-09 15:40:10,507 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-09 15:40:10,507 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-09 15:40:10,507 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-09 15:40:10,511 - Manage_KBs.py - DEBUG - 知识库 1 在文件系统中已经存在
+2026-02-09 15:40:11,758 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-09 15:40:11,758 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-09 15:40:11,758 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-09 15:40:11,758 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-09 15:40:11,758 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-09 15:40:11,758 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-09 15:40:11,758 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-09 15:40:11,758 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-09 15:40:11,758 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-09 15:40:11,758 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-09 15:40:11,768 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-09 15:40:11,768 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-09 15:40:11,768 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-09 15:40:11,768 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-09 15:40:11,768 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-09 15:40:11,769 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-09 15:40:11,769 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-09 15:40:11,769 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-09 15:40:11,769 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-09 15:40:11,769 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-09 15:40:15,701 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-09 15:40:15,701 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-09 15:40:15,702 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-09 15:40:15,702 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-09 15:40:15,702 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-09 15:40:15,702 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-09 15:40:15,702 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-09 15:40:15,702 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-09 15:40:15,702 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-09 15:40:15,702 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-09 15:40:15,711 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-09 15:40:15,711 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-09 15:40:15,711 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-09 15:40:15,711 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-09 15:40:15,711 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-09 15:40:15,711 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-09 15:40:15,711 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-09 15:40:15,711 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-09 15:40:15,711 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-09 15:40:15,711 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-09 15:40:15,716 - Manage_KBs.py - DEBUG - 知识库 1 在文件系统中已经存在
+2026-02-09 15:43:21,378 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-09 15:43:21,378 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-09 15:43:21,378 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-09 15:43:21,378 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-09 15:43:21,378 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-09 15:43:21,378 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-09 15:43:21,378 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-09 15:43:21,378 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-09 15:43:21,378 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-09 15:43:21,378 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-09 15:43:21,389 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-09 15:43:21,389 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-09 15:43:21,389 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-09 15:43:21,389 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-09 15:43:21,389 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-09 15:43:21,389 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-09 15:43:21,389 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-09 15:43:21,389 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-09 15:43:21,389 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-09 15:43:21,389 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-09 15:43:21,391 - Manage_KBs.py - DEBUG - 知识库 1 在文件系统中已经存在
+2026-02-09 15:43:32,000 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-09 15:43:32,000 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-09 15:43:32,000 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-09 15:43:32,000 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-09 15:43:32,000 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-09 15:43:32,000 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-09 15:43:32,000 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-09 15:43:32,000 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-09 15:43:32,000 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-09 15:43:32,000 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-09 15:43:32,009 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-09 15:43:32,009 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-09 15:43:32,009 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-09 15:43:32,009 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-09 15:43:32,009 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-09 15:43:32,009 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-09 15:43:32,009 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-09 15:43:32,009 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-09 15:43:32,009 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-09 15:43:32,009 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-09 15:43:33,331 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-09 15:43:33,331 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-09 15:43:33,331 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-09 15:43:33,331 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-09 15:43:33,331 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-09 15:43:33,331 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-09 15:43:33,331 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-09 15:43:33,331 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-09 15:43:33,331 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-09 15:43:33,331 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-09 15:43:33,341 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-09 15:43:33,341 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-09 15:43:33,341 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-09 15:43:33,341 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-09 15:43:33,341 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-09 15:43:33,341 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-09 15:43:33,341 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-09 15:43:33,341 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-09 15:43:33,341 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-09 15:43:33,341 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-09 15:43:33,342 - Manage_KBs.py - DEBUG - 知识库 1 在文件系统中已经存在
+2026-02-09 17:07:59,491 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-09 17:07:59,491 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-09 17:07:59,491 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-09 17:07:59,491 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-09 17:07:59,491 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-09 17:07:59,491 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-09 17:07:59,491 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-09 17:07:59,491 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-09 17:07:59,491 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-09 17:07:59,491 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-09 17:07:59,497 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-09 17:07:59,497 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-09 17:07:59,497 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-09 17:07:59,497 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-09 17:07:59,497 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-09 17:07:59,497 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-09 17:07:59,497 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-09 17:07:59,497 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-09 17:07:59,497 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-09 17:07:59,497 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-09 17:07:59,568 - login.py - INFO - 用户Email:2117543204@qq.com 登录成功
+2026-02-09 17:08:00,682 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-09 17:08:00,683 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-09 17:08:00,683 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-09 17:08:00,683 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-09 17:08:00,683 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-09 17:08:00,683 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-09 17:08:00,683 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-09 17:08:00,683 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-09 17:08:00,683 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-09 17:08:00,683 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-09 17:08:00,694 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-09 17:08:00,695 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-09 17:08:00,695 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-09 17:08:00,695 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-09 17:08:00,695 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-09 17:08:00,695 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-09 17:08:00,695 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-09 17:08:00,695 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-09 17:08:00,695 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-09 17:08:00,695 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-09 17:08:00,724 - Manage_KBs.py - DEBUG - 知识库 1 在文件系统中已经存在
+2026-02-09 17:15:06,313 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-09 17:15:06,314 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-09 17:15:06,314 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-09 17:15:06,314 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-09 17:15:06,314 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-09 17:15:06,314 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-09 17:15:06,314 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-09 17:15:06,314 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-09 17:15:06,314 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-09 17:15:06,314 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-09 17:15:06,325 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-09 17:15:06,326 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-09 17:15:06,326 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-09 17:15:06,326 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-09 17:15:06,326 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-09 17:15:06,326 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-09 17:15:06,326 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-09 17:15:06,326 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-09 17:15:06,326 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-09 17:15:06,326 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-09 17:15:06,327 - Manage_KBs.py - DEBUG - 知识库 1 在文件系统中已经存在
+2026-02-09 17:15:10,570 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-09 17:15:10,570 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-09 17:15:10,570 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-09 17:15:10,570 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-09 17:15:10,571 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-09 17:15:10,571 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-09 17:15:10,571 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-09 17:15:10,571 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-09 17:15:10,571 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-09 17:15:10,571 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-09 17:15:10,580 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-09 17:15:10,580 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-09 17:15:10,580 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-09 17:15:10,580 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-09 17:15:10,580 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-09 17:15:10,580 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-09 17:15:10,580 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-09 17:15:10,583 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-09 17:15:10,583 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-09 17:15:10,583 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-09 17:15:10,584 - Manage_KBs.py - DEBUG - 知识库 1 在文件系统中已经存在
+2026-02-09 17:15:10,594 - Manage_KBs.py - INFO - 用户点击了 一键解析 按钮,下面初始化并启动一个线程,解析文件 测试问题集.txt
+2026-02-09 17:15:10,595 - httpcore.connection - DEBUG - connect_tcp.started host='127.0.0.1' port=6333 local_address=None timeout=120 socket_options=None
+2026-02-09 17:15:10,597 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001E9C72C57C0>
+2026-02-09 17:15:10,597 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2026-02-09 17:15:10,598 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-02-09 17:15:10,598 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2026-02-09 17:15:10,599 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-02-09 17:15:10,599 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2026-02-09 17:15:10,684 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'transfer-encoding', b'chunked'), (b'content-encoding', b'zstd'), (b'vary', b'accept-encoding, Origin, Access-Control-Request-Method, Access-Control-Request-Headers'), (b'content-type', b'application/json'), (b'date', b'Mon, 09 Feb 2026 09:15:10 GMT')])
+2026-02-09 17:15:10,684 - httpx - INFO - HTTP Request: GET http://127.0.0.1:6333/collections/user2117543204@qq.com_KB_1/exists "HTTP/1.1 200 OK"
+2026-02-09 17:15:10,689 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2026-02-09 17:15:10,689 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-02-09 17:15:10,689 - httpcore.http11 - DEBUG - response_closed.started
+2026-02-09 17:15:10,689 - httpcore.http11 - DEBUG - response_closed.complete
+2026-02-09 17:15:10,689 - httpcore.connection - DEBUG - close.started
+2026-02-09 17:15:10,689 - httpcore.connection - DEBUG - close.complete
+2026-02-09 17:15:10,691 - httpcore.connection - DEBUG - connect_tcp.started host='127.0.0.1' port=6333 local_address=None timeout=120 socket_options=None
+2026-02-09 17:15:10,705 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001E98F82D4F0>
+2026-02-09 17:15:10,705 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2026-02-09 17:15:10,705 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-02-09 17:15:10,705 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2026-02-09 17:15:10,705 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-02-09 17:15:10,705 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2026-02-09 17:15:10,727 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'transfer-encoding', b'chunked'), (b'content-encoding', b'zstd'), (b'vary', b'accept-encoding, Origin, Access-Control-Request-Method, Access-Control-Request-Headers'), (b'content-type', b'application/json'), (b'date', b'Mon, 09 Feb 2026 09:15:10 GMT')])
+2026-02-09 17:15:10,727 - httpx - INFO - HTTP Request: GET http://127.0.0.1:6333/collections/user2117543204@qq.com_KB_1 "HTTP/1.1 200 OK"
+2026-02-09 17:15:10,728 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2026-02-09 17:15:10,729 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-02-09 17:15:10,729 - httpcore.http11 - DEBUG - response_closed.started
+2026-02-09 17:15:10,729 - httpcore.http11 - DEBUG - response_closed.complete
+2026-02-09 17:15:10,729 - httpcore.connection - DEBUG - close.started
+2026-02-09 17:15:10,729 - httpcore.connection - DEBUG - close.complete
+2026-02-09 17:15:10,897 - openai._base_client - DEBUG - Request options: {'method': 'post', 'url': '/embeddings', 'files': None, 'idempotency_key': 'stainless-python-retry-68a7b0ff-08f2-4a16-a0b5-5cd81350cab2', 'post_parser': <function Embeddings.create.<locals>.parser at 0x000001E9C72D8EE0>, 'json_data': {'input': [[32490, 4424]], 'model': 'text-embedding-ada-002', 'encoding_format': 'base64'}}
+2026-02-09 17:15:10,923 - openai._base_client - DEBUG - Sending HTTP Request: POST https://api.chatanywhere.tech/v1/embeddings
+2026-02-09 17:15:10,923 - httpcore.connection - DEBUG - connect_tcp.started host='api.chatanywhere.tech' port=443 local_address=None timeout=None socket_options=None
+2026-02-09 17:15:10,980 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001E9C724EA00>
+2026-02-09 17:15:10,980 - httpcore.connection - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x000001E9C59156C0> server_hostname='api.chatanywhere.tech' timeout=None
+2026-02-09 17:15:11,010 - httpcore.connection - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001E9C1EB66A0>
+2026-02-09 17:15:11,010 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-02-09 17:15:11,011 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-02-09 17:15:11,011 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-02-09 17:15:11,011 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-02-09 17:15:11,011 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-02-09 17:15:11,699 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Server', b'nginx'), (b'Content-Type', b'application/json'), (b'Access-Control-Allow-Credentials', b'true'), (b'Access-Control-Allow-Origin', b'*'), (b'Access-Control-Allow-Methods', b'OPTIONS,GET,POST'), (b'Access-Control-Allow-Headers', b'*'), (b'Access-Control-Max-Age', b'6000'), (b'Vary', b'Origin'), (b'Vary', b'Access-Control-Request-Method'), (b'Vary', b'Access-Control-Request-Headers'), (b'Cache-Control', b'no-cache'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Date', b'Mon, 09 Feb 2026 09:15:10 GMT'), (b'EO-LOG-UUID', b'17472086067614888218'), (b'EO-Cache-Status', b'MISS')])
+2026-02-09 17:15:11,699 - httpx - INFO - HTTP Request: POST https://api.chatanywhere.tech/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-09 17:15:11,699 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-02-09 17:15:11,701 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-02-09 17:15:11,701 - httpcore.http11 - DEBUG - response_closed.started
+2026-02-09 17:15:11,701 - httpcore.http11 - DEBUG - response_closed.complete
+2026-02-09 17:15:11,701 - openai._base_client - DEBUG - HTTP Response: POST https://api.chatanywhere.tech/v1/embeddings "200 OK" Headers([('server', 'nginx'), ('content-type', 'application/json'), ('access-control-allow-credentials', 'true'), ('access-control-allow-origin', '*'), ('access-control-allow-methods', 'OPTIONS,GET,POST'), ('access-control-allow-headers', '*'), ('access-control-max-age', '6000'), ('vary', 'Origin'), ('vary', 'Access-Control-Request-Method'), ('vary', 'Access-Control-Request-Headers'), ('cache-control', 'no-cache'), ('transfer-encoding', 'chunked'), ('connection', 'keep-alive'), ('date', 'Mon, 09 Feb 2026 09:15:10 GMT'), ('eo-log-uuid', '17472086067614888218'), ('eo-cache-status', 'MISS')])
+2026-02-09 17:15:11,702 - openai._base_client - DEBUG - request_id: None
+2026-02-09 17:15:11,704 - load_file_2_Doc.py - INFO - 测试用的TXT文件的被切分成为: 2 份
+2026-02-09 17:15:11,705 - openai._base_client - DEBUG - Request options: {'method': 'post', 'url': '/embeddings', 'files': None, 'idempotency_key': 'stainless-python-retry-7375f937-5480-42fb-bd6b-df10c1ad68c7', 'post_parser': <function Embeddings.create.<locals>.parser at 0x000001E9C20ED3A0>, 'json_data': {'input': [[38572, 230, 33764, 83125, 29411, 605, 55273, 45736, 35086, 102, 45144, 228, 163, 225, 255, 69496, 28833, 13646, 164, 240, 116, 96500, 29391, 21990, 32648, 36651, 88631, 32016, 232, 25906, 251, 45390, 163, 244, 110, 8239, 111, 17620, 98871, 271, 82805, 29172, 57107, 3922, 37795, 122, 27479, 11589, 240, 50285, 29411, 16, 5486, 1950, 7614, 12, 23440, 16325, 75486, 23187, 9554, 8687, 236, 40862, 35330, 38572, 95, 9554, 23602, 230, 44309, 13870, 118, 27479, 21043, 43240, 83747, 95532, 19113, 28190, 61056, 33976, 5232, 12901, 44, 6733, 271, 17, 5486, 605, 67726, 45736, 35086, 102, 45144, 228, 19000, 30926, 8067, 227, 163, 225, 255, 36343, 95475, 45144, 228, 34547, 163, 253, 255, 21082, 32943, 74245, 30177, 30358, 69496, 3922, 50021, 16205, 225, 35304, 13828, 115, 36343, 69496, 28833, 9554, 53901, 45390, 58318, 28638, 237, 45390, 21043, 6271, 222, 82696, 95532, 17161, 22656, 73981, 65659, 22649, 50338, 5232, 53901, 45390, 21043, 56602, 66870, 21082, 3922, 28638, 237, 45390, 21043, 32016, 232, 25906, 251, 45390, 52332, 21990, 16205, 225, 27384, 163, 225, 255, 51611, 48634, 3922, 67178, 13153, 163, 244, 110, 8239, 111, 15017, 253, 17885, 97, 3490, 18, 5486, 163, 244, 110, 8239, 111, 17620, 98871, 16325, 38743, 70203, 32335, 27384, 51611, 48634, 13870, 118, 27479, 9554, 35417, 29430, 21043, 6271, 222, 82696, 95532, 17161, 22656, 34208, 35417, 29430, 73981, 65659, 22649, 50338, 5232, 32335, 27384, 51611, 48634, 13870, 118, 27479, 28, 51611, 48634, 43167, 16325, 39276, 9039, 9, 50211, 28638, 229, 51611, 48634, 13870, 118, 27479, 1811]], 'model': 'text-embedding-ada-002', 'encoding_format': 'base64'}}
+2026-02-09 17:15:11,705 - openai._base_client - DEBUG - Sending HTTP Request: POST https://api.chatanywhere.tech/v1/embeddings
+2026-02-09 17:15:11,705 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-02-09 17:15:11,705 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-02-09 17:15:11,705 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-02-09 17:15:11,705 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-02-09 17:15:11,705 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-02-09 17:15:12,281 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Server', b'nginx'), (b'Content-Type', b'application/json'), (b'Access-Control-Allow-Credentials', b'true'), (b'Access-Control-Allow-Origin', b'*'), (b'Access-Control-Allow-Methods', b'OPTIONS,GET,POST'), (b'Access-Control-Allow-Headers', b'*'), (b'Access-Control-Max-Age', b'6000'), (b'Vary', b'Origin'), (b'Vary', b'Access-Control-Request-Method'), (b'Vary', b'Access-Control-Request-Headers'), (b'Cache-Control', b'no-cache'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Date', b'Mon, 09 Feb 2026 09:15:11 GMT'), (b'EO-LOG-UUID', b'12408759958267274222'), (b'EO-Cache-Status', b'MISS')])
+2026-02-09 17:15:12,281 - httpx - INFO - HTTP Request: POST https://api.chatanywhere.tech/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-09 17:15:12,281 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-02-09 17:15:12,282 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-02-09 17:15:12,282 - httpcore.http11 - DEBUG - response_closed.started
+2026-02-09 17:15:12,282 - httpcore.http11 - DEBUG - response_closed.complete
+2026-02-09 17:15:12,282 - openai._base_client - DEBUG - HTTP Response: POST https://api.chatanywhere.tech/v1/embeddings "200 OK" Headers([('server', 'nginx'), ('content-type', 'application/json'), ('access-control-allow-credentials', 'true'), ('access-control-allow-origin', '*'), ('access-control-allow-methods', 'OPTIONS,GET,POST'), ('access-control-allow-headers', '*'), ('access-control-max-age', '6000'), ('vary', 'Origin'), ('vary', 'Access-Control-Request-Method'), ('vary', 'Access-Control-Request-Headers'), ('cache-control', 'no-cache'), ('transfer-encoding', 'chunked'), ('connection', 'keep-alive'), ('date', 'Mon, 09 Feb 2026 09:15:11 GMT'), ('eo-log-uuid', '12408759958267274222'), ('eo-cache-status', 'MISS')])
+2026-02-09 17:15:12,282 - openai._base_client - DEBUG - request_id: None
+2026-02-09 17:15:12,288 - httpcore.connection - DEBUG - connect_tcp.started host='127.0.0.1' port=6333 local_address=None timeout=120 socket_options=None
+2026-02-09 17:15:12,304 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001E9C72BCF70>
+2026-02-09 17:15:12,305 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'PUT']>
+2026-02-09 17:15:12,305 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-02-09 17:15:12,305 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'PUT']>
+2026-02-09 17:15:12,305 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-02-09 17:15:12,305 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'PUT']>
+2026-02-09 17:15:12,377 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'transfer-encoding', b'chunked'), (b'vary', b'accept-encoding, Origin, Access-Control-Request-Method, Access-Control-Request-Headers'), (b'content-type', b'application/json'), (b'content-encoding', b'zstd'), (b'date', b'Mon, 09 Feb 2026 09:15:11 GMT')])
+2026-02-09 17:15:12,378 - httpx - INFO - HTTP Request: PUT http://127.0.0.1:6333/collections/user2117543204@qq.com_KB_1/points?wait=true "HTTP/1.1 200 OK"
+2026-02-09 17:15:12,378 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'PUT']>
+2026-02-09 17:15:12,379 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-02-09 17:15:12,379 - httpcore.http11 - DEBUG - response_closed.started
+2026-02-09 17:15:12,379 - httpcore.http11 - DEBUG - response_closed.complete
+2026-02-09 17:15:12,379 - httpcore.connection - DEBUG - close.started
+2026-02-09 17:15:12,379 - httpcore.connection - DEBUG - close.complete
+2026-02-09 17:15:12,380 - Manage_KBs.py - INFO - 解析 测试问题集.txt 的线程的最新进度为 50
+2026-02-09 17:15:12,381 - openai._base_client - DEBUG - Request options: {'method': 'post', 'url': '/embeddings', 'files': None, 'idempotency_key': 'stainless-python-retry-0522974c-2e0c-4c68-b8bd-746896c9c7e7', 'post_parser': <function Embeddings.create.<locals>.parser at 0x000001E9C20ED430>, 'json_data': {'input': [[19, 5486, 605, 55273, 45736, 35086, 102, 45144, 228, 19000, 95475, 45144, 228, 16, 71, 34547, 163, 225, 255, 69496, 28833, 6708, 223, 10414, 116, 9554, 17599, 103, 87412, 33671, 9039, 21043, 43240, 83747, 33671, 11571, 19, 71, 34547, 9554, 17857, 95, 11571, 44388, 98184, 33671, 9039, 21043, 30624, 99849, 38743, 70203, 20834, 37507, 9554, 95532, 19113, 28190, 61056, 33976, 10, 21405, 35083, 44915, 22649, 50338, 10, 17161, 22656, 11589, 119, 48039, 22649, 50338, 5232, 1954, 33671, 3922, 9588, 33671, 3922, 68171, 1049, 27479, 35086, 102, 17597, 106, 17297, 9554, 60251, 15308, 117, 16423, 44368, 34171, 30356, 39276, 50928, 28037, 16937, 42016, 35086, 102, 17597, 106, 17297, 9554, 51611, 48634, 26592, 3922, 42399, 69636, 33976, 93233, 27552, 110, 44368, 50928, 20834, 1811]], 'model': 'text-embedding-ada-002', 'encoding_format': 'base64'}}
+2026-02-09 17:15:12,381 - openai._base_client - DEBUG - Sending HTTP Request: POST https://api.chatanywhere.tech/v1/embeddings
+2026-02-09 17:15:12,381 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-02-09 17:15:12,382 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-02-09 17:15:12,382 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-02-09 17:15:12,382 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-02-09 17:15:12,382 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-02-09 17:15:12,982 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Server', b'nginx'), (b'Content-Type', b'application/json'), (b'Access-Control-Allow-Credentials', b'true'), (b'Access-Control-Allow-Origin', b'*'), (b'Access-Control-Allow-Methods', b'OPTIONS,GET,POST'), (b'Access-Control-Allow-Headers', b'*'), (b'Access-Control-Max-Age', b'6000'), (b'Vary', b'Origin'), (b'Vary', b'Access-Control-Request-Method'), (b'Vary', b'Access-Control-Request-Headers'), (b'Cache-Control', b'no-cache'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Date', b'Mon, 09 Feb 2026 09:15:12 GMT'), (b'EO-LOG-UUID', b'7471732023533419129'), (b'EO-Cache-Status', b'MISS')])
+2026-02-09 17:15:12,982 - httpx - INFO - HTTP Request: POST https://api.chatanywhere.tech/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-09 17:15:12,982 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-02-09 17:15:12,982 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-02-09 17:15:12,982 - httpcore.http11 - DEBUG - response_closed.started
+2026-02-09 17:15:12,982 - httpcore.http11 - DEBUG - response_closed.complete
+2026-02-09 17:15:12,982 - openai._base_client - DEBUG - HTTP Response: POST https://api.chatanywhere.tech/v1/embeddings "200 OK" Headers([('server', 'nginx'), ('content-type', 'application/json'), ('access-control-allow-credentials', 'true'), ('access-control-allow-origin', '*'), ('access-control-allow-methods', 'OPTIONS,GET,POST'), ('access-control-allow-headers', '*'), ('access-control-max-age', '6000'), ('vary', 'Origin'), ('vary', 'Access-Control-Request-Method'), ('vary', 'Access-Control-Request-Headers'), ('cache-control', 'no-cache'), ('transfer-encoding', 'chunked'), ('connection', 'keep-alive'), ('date', 'Mon, 09 Feb 2026 09:15:12 GMT'), ('eo-log-uuid', '7471732023533419129'), ('eo-cache-status', 'MISS')])
+2026-02-09 17:15:12,982 - openai._base_client - DEBUG - request_id: None
+2026-02-09 17:15:12,983 - httpcore.connection - DEBUG - connect_tcp.started host='127.0.0.1' port=6333 local_address=None timeout=120 socket_options=None
+2026-02-09 17:15:12,997 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001E9C72C33A0>
+2026-02-09 17:15:12,997 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'PUT']>
+2026-02-09 17:15:12,997 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-02-09 17:15:12,998 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'PUT']>
+2026-02-09 17:15:12,998 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-02-09 17:15:12,998 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'PUT']>
+2026-02-09 17:15:13,032 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'transfer-encoding', b'chunked'), (b'vary', b'accept-encoding, Origin, Access-Control-Request-Method, Access-Control-Request-Headers'), (b'content-type', b'application/json'), (b'content-encoding', b'zstd'), (b'date', b'Mon, 09 Feb 2026 09:15:12 GMT')])
+2026-02-09 17:15:13,033 - httpx - INFO - HTTP Request: PUT http://127.0.0.1:6333/collections/user2117543204@qq.com_KB_1/points?wait=true "HTTP/1.1 200 OK"
+2026-02-09 17:15:13,033 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'PUT']>
+2026-02-09 17:15:13,033 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-02-09 17:15:13,033 - httpcore.http11 - DEBUG - response_closed.started
+2026-02-09 17:15:13,033 - httpcore.http11 - DEBUG - response_closed.complete
+2026-02-09 17:15:13,033 - httpcore.connection - DEBUG - close.started
+2026-02-09 17:15:13,033 - httpcore.connection - DEBUG - close.complete
+2026-02-09 17:15:13,033 - Manage_KBs.py - INFO - 解析 测试问题集.txt 的线程的最新进度为 100
+2026-02-09 17:15:13,034 - Manage_KBs.py - INFO - 解析 测试问题集.txt 的线程结束
+2026-02-09 17:15:13,035 - Manage_KBs.py - INFO - 文件解析完毕，重命名成功
