@@ -22798,3 +22798,1339 @@ TypeError: save_uploaded_file() got an unexpected keyword argument 'original_fil
 2026-02-12 23:27:52,076 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
 2026-02-12 23:27:52,076 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
 2026-02-12 23:27:52,076 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-12 23:31:02,176 - backend.main - INFO - Shutting down FastAPI application...
+2026-02-12 23:31:05,091 - backend.main - INFO - Starting FastAPI application...
+2026-02-12 23:31:36,663 - backend.main - INFO - Shutting down FastAPI application...
+2026-02-12 23:31:39,644 - backend.main - INFO - Starting FastAPI application...
+2026-02-12 23:32:05,950 - backend.main - INFO - Shutting down FastAPI application...
+2026-02-12 23:32:08,557 - backend.main - INFO - Starting FastAPI application...
+2026-02-12 23:32:45,359 - backend.main - INFO - Shutting down FastAPI application...
+2026-02-12 23:32:47,994 - backend.main - INFO - Starting FastAPI application...
+2026-02-12 23:33:01,555 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:33:01,555 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:33:01,555 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-12 23:33:01,555 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-12 23:33:01,555 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-12 23:33:01,555 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:33:01,555 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:33:01,555 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-12 23:33:01,555 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-12 23:33:01,555 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-12 23:33:01,567 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:33:01,567 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:33:01,567 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-12 23:33:01,567 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-12 23:33:01,567 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-12 23:33:01,567 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:33:01,567 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:33:01,567 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-12 23:33:01,567 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-12 23:33:01,567 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-12 23:33:01,576 - db_utils - INFO - 数据库连接池关闭处理器已注册
+2026-02-12 23:33:24,258 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:33:24,258 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:33:24,258 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-12 23:33:24,258 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-12 23:33:24,258 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-12 23:33:24,258 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:33:24,259 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:33:24,259 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-12 23:33:24,259 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-12 23:33:24,259 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-12 23:33:24,271 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:33:24,271 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:33:24,271 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-12 23:33:24,271 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-12 23:33:24,271 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-12 23:33:24,271 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:33:24,271 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:33:24,271 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-12 23:33:24,271 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-12 23:33:24,271 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-12 23:33:24,278 - db_utils - INFO - 数据库连接池初始化成功
+2026-02-12 23:33:24,309 - login.py - INFO - 用户Email:2117543204@qq.com 登录成功
+2026-02-12 23:33:25,945 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:33:25,945 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:33:25,945 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-12 23:33:25,945 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-12 23:33:25,945 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-12 23:33:25,945 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:33:25,945 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:33:25,945 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-12 23:33:25,945 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-12 23:33:25,945 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-12 23:33:25,956 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:33:25,956 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:33:25,956 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-12 23:33:25,956 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-12 23:33:25,957 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-12 23:33:25,957 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:33:25,957 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:33:25,957 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-12 23:33:25,957 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-12 23:33:25,957 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-12 23:33:30,990 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:33:33,029 - db_utils - INFO - 数据库连接池初始化成功
+2026-02-12 23:33:33,119 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/12/files HTTP/11" 200 266
+2026-02-12 23:33:33,125 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:33:33,125 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:33:33,125 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-12 23:33:33,125 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-12 23:33:33,125 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-12 23:33:33,125 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:33:33,125 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:33:33,125 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-12 23:33:33,125 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-12 23:33:33,125 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-12 23:33:33,136 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:33:33,137 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:33:33,137 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-12 23:33:33,137 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-12 23:33:33,137 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-12 23:33:33,137 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:33:33,137 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:33:33,137 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-12 23:33:33,137 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-12 23:33:33,137 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-12 23:33:33,153 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:33:35,173 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/12/parse-progress HTTP/11" 200 15
+2026-02-12 23:33:40,289 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:33:40,289 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:33:40,289 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-12 23:33:40,289 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-12 23:33:40,289 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-12 23:33:40,289 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:33:40,289 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:33:40,289 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-12 23:33:40,289 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-12 23:33:40,289 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-12 23:33:40,297 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:33:40,297 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:33:40,297 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-12 23:33:40,298 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-12 23:33:40,298 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-12 23:33:40,298 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:33:40,298 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:33:40,298 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-12 23:33:40,298 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-12 23:33:40,298 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-12 23:33:40,304 - Streamlit_Pages.api_client - INFO - 上传文件: kb_id=12, 文件名=测试问题集.txt
+2026-02-12 23:33:40,306 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:33:42,336 - python_multipart.multipart - DEBUG - Calling on_part_begin with no data
+2026-02-12 23:33:42,336 - python_multipart.multipart - DEBUG - Calling on_header_field with data[36:55]
+2026-02-12 23:33:42,336 - python_multipart.multipart - DEBUG - Calling on_header_value with data[57:111]
+2026-02-12 23:33:42,336 - python_multipart.multipart - DEBUG - Calling on_header_end with no data
+2026-02-12 23:33:42,336 - python_multipart.multipart - DEBUG - Calling on_headers_finished with no data
+2026-02-12 23:33:42,336 - python_multipart.multipart - DEBUG - Calling on_part_data with data[115:1028]
+2026-02-12 23:33:42,336 - python_multipart.multipart - DEBUG - Calling on_part_end with no data
+2026-02-12 23:33:42,336 - python_multipart.multipart - DEBUG - Calling on_end with no data
+2026-02-12 23:33:42,338 - backend.services.file_service - INFO - 文件保存成功: D:\DUT学习\dlut网课学习\大创\代码1\all_users_files\user2117543204\1\测试问题集.txt
+2026-02-12 23:33:42,350 - urllib3.connectionpool - DEBUG - http://localhost:8001 "POST /api/knowledge-bases/12/files/upload HTTP/11" 200 287
+2026-02-12 23:33:42,354 - Manage_KBs.py - INFO - 上传成功: 测试问题集.txt
+2026-02-12 23:33:42,354 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:33:44,397 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/12/files HTTP/11" 200 266
+2026-02-12 23:33:44,988 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:33:44,988 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:33:44,988 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-12 23:33:44,988 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-12 23:33:44,988 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-12 23:33:44,988 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:33:44,988 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:33:44,988 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-12 23:33:44,988 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-12 23:33:44,988 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-12 23:33:44,990 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:33:44,990 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:33:44,990 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-12 23:33:44,990 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-12 23:33:44,990 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-12 23:33:44,990 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:33:44,990 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:33:44,990 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-12 23:33:44,990 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-12 23:33:44,990 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-12 23:33:45,007 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:33:47,046 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/12/parse-progress HTTP/11" 200 15
+2026-02-12 23:33:57,151 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:33:57,151 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:33:57,151 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-12 23:33:57,151 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-12 23:33:57,151 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-12 23:33:57,151 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:33:57,151 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:33:57,151 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-12 23:33:57,151 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-12 23:33:57,151 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-12 23:33:57,164 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:33:57,164 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:33:57,164 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-12 23:33:57,164 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-12 23:33:57,164 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-12 23:33:57,164 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:33:57,164 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:33:57,164 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-12 23:33:57,164 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-12 23:33:57,164 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-12 23:34:15,374 - backend.main - INFO - Shutting down FastAPI application...
+2026-02-12 23:34:15,377 - db_utils - INFO - Database connection pool closed.
+2026-02-12 23:34:18,004 - backend.main - INFO - Starting FastAPI application...
+2026-02-12 23:34:22,786 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:34:22,786 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:34:22,786 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-12 23:34:22,786 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-12 23:34:22,786 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-12 23:34:22,786 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:34:22,786 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:34:22,786 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-12 23:34:22,786 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-12 23:34:22,786 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-12 23:34:22,799 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:34:22,799 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:34:22,799 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-12 23:34:22,799 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-12 23:34:22,799 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-12 23:34:22,799 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:34:22,799 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:34:22,799 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-12 23:34:22,799 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-12 23:34:22,799 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-12 23:34:22,809 - db_utils - INFO - 数据库连接池关闭处理器已注册
+2026-02-12 23:34:30,753 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:34:30,753 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:34:30,753 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-12 23:34:30,753 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-12 23:34:30,755 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-12 23:34:30,755 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:34:30,755 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:34:30,755 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-12 23:34:30,755 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-12 23:34:30,755 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-12 23:34:30,763 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:34:30,763 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:34:30,763 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-12 23:34:30,763 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-12 23:34:30,763 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-12 23:34:30,763 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:34:30,763 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:34:30,763 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-12 23:34:30,763 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-12 23:34:30,763 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-12 23:34:30,772 - db_utils - INFO - 数据库连接池初始化成功
+2026-02-12 23:34:30,827 - login.py - INFO - 用户Email:2117543204@qq.com 登录成功
+2026-02-12 23:34:32,384 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:34:32,387 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:34:32,387 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-12 23:34:32,387 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-12 23:34:32,387 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-12 23:34:32,388 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:34:32,388 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:34:32,388 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-12 23:34:32,388 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-12 23:34:32,388 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-12 23:34:32,395 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:34:32,395 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:34:32,395 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-12 23:34:32,395 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-12 23:34:32,395 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-12 23:34:32,395 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:34:32,399 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:34:32,399 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-12 23:34:32,400 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-12 23:34:32,400 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-12 23:35:27,618 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:35:29,653 - db_utils - INFO - 数据库连接池初始化成功
+2026-02-12 23:35:29,746 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/12/files HTTP/11" 200 266
+2026-02-12 23:35:29,751 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:35:29,751 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:35:29,751 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-12 23:35:29,751 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-12 23:35:29,751 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-12 23:35:29,751 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:35:29,751 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:35:29,751 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-12 23:35:29,751 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-12 23:35:29,751 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-12 23:35:29,764 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:35:29,764 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:35:29,764 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-12 23:35:29,764 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-12 23:35:29,764 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-12 23:35:29,764 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:35:29,764 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:35:29,764 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-12 23:35:29,764 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-12 23:35:29,764 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-12 23:35:29,780 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:35:31,802 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/12/parse-progress HTTP/11" 200 15
+2026-02-12 23:35:34,712 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:35:34,712 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:35:34,712 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-12 23:35:34,712 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-12 23:35:34,712 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-12 23:35:34,714 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:35:34,714 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:35:34,714 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-12 23:35:34,714 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-12 23:35:34,714 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-12 23:35:34,724 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:35:34,724 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:35:34,724 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-12 23:35:34,724 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-12 23:35:34,724 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-12 23:35:34,724 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:35:34,724 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:35:34,724 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-12 23:35:34,724 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-12 23:35:34,724 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-12 23:35:44,467 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:35:44,467 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:35:44,467 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-12 23:35:44,467 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-12 23:35:44,467 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-12 23:35:44,467 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:35:44,467 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:35:44,467 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-12 23:35:44,467 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-12 23:35:44,467 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-12 23:35:44,476 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:35:44,476 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:35:44,476 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-12 23:35:44,476 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-12 23:35:44,476 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-12 23:35:44,476 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:35:44,476 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:35:44,476 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-12 23:35:44,476 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-12 23:35:44,476 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-12 23:35:46,099 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:35:48,129 - backend.api.knowledge_bases - INFO - 开始删除知识库: kb_id=12
+2026-02-12 23:35:48,130 - backend.api.knowledge_bases - INFO - 找到知识库: 1, 所属用户: 2117543204@qq.com
+2026-02-12 23:35:48,141 - backend.api.knowledge_bases - INFO - 数据库记录删除成功: kb_id=12
+2026-02-12 23:35:48,142 - backend.api.knowledge_bases - INFO - 文件系统目录删除成功: 2117543204@qq.com/1
+2026-02-12 23:35:48,142 - backend.api.knowledge_bases - DEBUG - 向量数据库模块未导入，跳过删除
+2026-02-12 23:35:48,142 - backend.api.knowledge_bases - INFO - 知识库删除完成: kb_id=12
+2026-02-12 23:35:48,143 - urllib3.connectionpool - DEBUG - http://localhost:8001 "DELETE /api/knowledge-bases/12 HTTP/11" 200 46
+2026-02-12 23:35:48,657 - Manage_KBs.py - INFO - 成功删除知识库 1
+2026-02-12 23:35:49,207 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:35:49,207 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:35:49,208 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-12 23:35:49,208 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-12 23:35:49,208 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-12 23:35:49,208 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:35:49,208 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:35:49,208 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-12 23:35:49,208 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-12 23:35:49,208 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-12 23:35:49,216 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:35:49,216 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:35:49,216 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-12 23:35:49,216 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-12 23:35:49,216 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-12 23:35:49,216 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:35:49,216 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:35:49,216 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-12 23:35:49,216 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-12 23:35:49,216 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-12 23:35:50,924 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:35:50,924 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:35:50,924 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-12 23:35:50,924 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-12 23:35:50,924 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-12 23:35:50,925 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:35:50,925 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:35:50,925 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-12 23:35:50,925 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-12 23:35:50,925 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-12 23:35:50,934 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:35:50,934 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:35:50,934 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-12 23:35:50,934 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-12 23:35:50,934 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-12 23:35:50,934 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:35:50,934 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:35:50,934 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-12 23:35:50,934 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-12 23:35:50,934 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-12 23:35:54,631 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:35:56,681 - httpcore.connection - DEBUG - connect_tcp.started host='127.0.0.1' port=6333 local_address=None timeout=120 socket_options=None
+2026-02-12 23:35:56,704 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001E4B255F3D0>
+2026-02-12 23:35:56,704 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2026-02-12 23:35:56,704 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-02-12 23:35:56,704 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2026-02-12 23:35:56,704 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-02-12 23:35:56,704 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2026-02-12 23:35:56,708 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'transfer-encoding', b'chunked'), (b'content-encoding', b'zstd'), (b'vary', b'accept-encoding, Origin, Access-Control-Request-Method, Access-Control-Request-Headers'), (b'content-type', b'application/json'), (b'date', b'Thu, 12 Feb 2026 15:35:56 GMT')])
+2026-02-12 23:35:56,709 - httpx - INFO - HTTP Request: GET http://127.0.0.1:6333/collections/user2117543204@qq.com_KB_13/exists "HTTP/1.1 200 OK"
+2026-02-12 23:35:56,709 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2026-02-12 23:35:56,709 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-02-12 23:35:56,709 - httpcore.http11 - DEBUG - response_closed.started
+2026-02-12 23:35:56,709 - httpcore.http11 - DEBUG - response_closed.complete
+2026-02-12 23:35:56,709 - httpcore.connection - DEBUG - close.started
+2026-02-12 23:35:56,709 - httpcore.connection - DEBUG - close.complete
+2026-02-12 23:35:56,711 - httpcore.connection - DEBUG - connect_tcp.started host='127.0.0.1' port=6333 local_address=None timeout=120 socket_options=None
+2026-02-12 23:35:56,735 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001E4B2579340>
+2026-02-12 23:35:56,735 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'PUT']>
+2026-02-12 23:35:56,735 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-02-12 23:35:56,735 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'PUT']>
+2026-02-12 23:35:56,735 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-02-12 23:35:56,735 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'PUT']>
+2026-02-12 23:35:57,158 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'transfer-encoding', b'chunked'), (b'vary', b'accept-encoding, Origin, Access-Control-Request-Method, Access-Control-Request-Headers'), (b'content-type', b'application/json'), (b'content-encoding', b'zstd'), (b'date', b'Thu, 12 Feb 2026 15:35:56 GMT')])
+2026-02-12 23:35:57,159 - httpx - INFO - HTTP Request: PUT http://127.0.0.1:6333/collections/user2117543204@qq.com_KB_13 "HTTP/1.1 200 OK"
+2026-02-12 23:35:57,159 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'PUT']>
+2026-02-12 23:35:57,159 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-02-12 23:35:57,159 - httpcore.http11 - DEBUG - response_closed.started
+2026-02-12 23:35:57,159 - httpcore.http11 - DEBUG - response_closed.complete
+2026-02-12 23:35:57,159 - httpcore.connection - DEBUG - close.started
+2026-02-12 23:35:57,159 - httpcore.connection - DEBUG - close.complete
+2026-02-12 23:35:57,166 - urllib3.connectionpool - DEBUG - http://localhost:8001 "POST /api/knowledge-bases/?user_email=2117543204%40qq.com HTTP/11" 200 180
+2026-02-12 23:35:57,167 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:35:59,183 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/user/2117543204@qq.com HTTP/11" 200 149
+2026-02-12 23:35:59,696 - Manage_KBs.py - INFO - 成功创建知识库 1
+2026-02-12 23:36:00,246 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:36:00,246 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:36:00,246 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-12 23:36:00,246 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-12 23:36:00,246 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-12 23:36:00,246 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:36:00,246 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:36:00,246 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-12 23:36:00,246 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-12 23:36:00,246 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-12 23:36:00,255 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:36:00,255 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:36:00,255 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-12 23:36:00,255 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-12 23:36:00,255 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-12 23:36:00,255 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:36:00,255 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:36:00,255 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-12 23:36:00,255 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-12 23:36:00,255 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-12 23:36:02,409 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:36:04,431 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/13/files HTTP/11" 200 12
+2026-02-12 23:36:04,436 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:36:04,436 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:36:04,436 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-12 23:36:04,436 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-12 23:36:04,436 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-12 23:36:04,436 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:36:04,436 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:36:04,436 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-12 23:36:04,436 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-12 23:36:04,436 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-12 23:36:04,445 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:36:04,445 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:36:04,445 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-12 23:36:04,445 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-12 23:36:04,445 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-12 23:36:04,445 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:36:04,445 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:36:04,445 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-12 23:36:04,445 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-12 23:36:04,445 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-12 23:36:04,454 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:36:06,489 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/13/parse-progress HTTP/11" 200 15
+2026-02-12 23:36:13,476 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:36:13,478 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:36:13,478 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-12 23:36:13,478 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-12 23:36:13,478 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-12 23:36:13,478 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:36:13,478 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:36:13,479 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-12 23:36:13,479 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-12 23:36:13,479 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-12 23:36:13,487 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:36:13,487 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:36:13,488 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-12 23:36:13,488 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-12 23:36:13,488 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-12 23:36:13,488 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:36:13,488 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:36:13,488 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-12 23:36:13,488 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-12 23:36:13,488 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-12 23:36:13,495 - Streamlit_Pages.api_client - INFO - 上传文件: kb_id=13, 文件名=测试问题集.txt
+2026-02-12 23:36:13,497 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:36:15,528 - python_multipart.multipart - DEBUG - Calling on_part_begin with no data
+2026-02-12 23:36:15,528 - python_multipart.multipart - DEBUG - Calling on_header_field with data[36:55]
+2026-02-12 23:36:15,528 - python_multipart.multipart - DEBUG - Calling on_header_value with data[57:111]
+2026-02-12 23:36:15,528 - python_multipart.multipart - DEBUG - Calling on_header_end with no data
+2026-02-12 23:36:15,528 - python_multipart.multipart - DEBUG - Calling on_headers_finished with no data
+2026-02-12 23:36:15,529 - python_multipart.multipart - DEBUG - Calling on_part_data with data[115:1028]
+2026-02-12 23:36:15,529 - python_multipart.multipart - DEBUG - Calling on_part_end with no data
+2026-02-12 23:36:15,529 - python_multipart.multipart - DEBUG - Calling on_end with no data
+2026-02-12 23:36:15,544 - urllib3.connectionpool - DEBUG - http://localhost:8001 "POST /api/knowledge-bases/13/files/upload HTTP/11" 200 239
+2026-02-12 23:36:15,545 - Manage_KBs.py - INFO - 上传成功: 测试问题集.txt
+2026-02-12 23:36:15,546 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:36:17,570 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/13/files HTTP/11" 200 266
+2026-02-12 23:36:18,158 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:36:18,158 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:36:18,158 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-12 23:36:18,158 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-12 23:36:18,158 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-12 23:36:18,158 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:36:18,158 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:36:18,158 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-12 23:36:18,158 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-12 23:36:18,158 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-12 23:36:18,166 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:36:18,166 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:36:18,166 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-12 23:36:18,166 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-12 23:36:18,166 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-12 23:36:18,166 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:36:18,166 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:36:18,166 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-12 23:36:18,166 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-12 23:36:18,166 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-12 23:36:18,182 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:36:20,208 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/13/parse-progress HTTP/11" 200 15
+2026-02-12 23:36:26,236 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:36:26,236 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:36:26,236 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-12 23:36:26,236 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-12 23:36:26,236 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-12 23:36:26,236 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:36:26,236 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:36:26,236 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-12 23:36:26,236 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-12 23:36:26,236 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-12 23:36:26,246 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:36:26,246 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:36:26,246 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-12 23:36:26,246 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-12 23:36:26,246 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-12 23:36:26,246 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:36:26,246 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:36:26,246 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-12 23:36:26,246 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-12 23:36:26,246 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-12 23:36:26,251 - Streamlit_Pages.api_client - INFO - 上传文件: kb_id=13, 文件名=核工业专业知识问答模型构建-开题答辩.pptx
+2026-02-12 23:36:26,265 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:36:28,321 - python_multipart.multipart - DEBUG - Calling on_part_begin with no data
+2026-02-12 23:36:28,321 - python_multipart.multipart - DEBUG - Calling on_header_field with data[36:55]
+2026-02-12 23:36:28,321 - python_multipart.multipart - DEBUG - Calling on_header_value with data[57:149]
+2026-02-12 23:36:28,321 - python_multipart.multipart - DEBUG - Calling on_header_end with no data
+2026-02-12 23:36:28,321 - python_multipart.multipart - DEBUG - Calling on_headers_finished with no data
+2026-02-12 23:36:28,321 - python_multipart.multipart - DEBUG - Calling on_part_data with data[153:262144]
+2026-02-12 23:36:28,321 - python_multipart.multipart - DEBUG - Calling on_part_data with data[0:262144]
+2026-02-12 23:36:28,323 - python_multipart.multipart - DEBUG - Calling on_part_data with data[0:33912]
+2026-02-12 23:36:28,323 - python_multipart.multipart - DEBUG - Calling on_part_end with no data
+2026-02-12 23:36:28,323 - python_multipart.multipart - DEBUG - Calling on_end with no data
+2026-02-12 23:36:28,330 - urllib3.connectionpool - DEBUG - http://localhost:8001 "POST /api/knowledge-bases/13/files/upload HTTP/11" 200 318
+2026-02-12 23:36:28,330 - Manage_KBs.py - INFO - 上传成功: 核工业专业知识问答模型构建-开题答辩.pptx
+2026-02-12 23:36:28,332 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:36:30,372 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/13/files HTTP/11" 200 638
+2026-02-12 23:36:30,988 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:36:30,988 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:36:30,988 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-12 23:36:30,988 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-12 23:36:30,988 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-12 23:36:30,988 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:36:30,988 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:36:30,988 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-12 23:36:30,988 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-12 23:36:30,988 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-12 23:36:30,996 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:36:30,996 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:36:30,996 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-12 23:36:30,996 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-12 23:36:30,996 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-12 23:36:30,996 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:36:30,996 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:36:30,996 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-12 23:36:30,996 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-12 23:36:30,996 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-12 23:36:31,016 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:36:33,060 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/13/parse-progress HTTP/11" 200 15
+2026-02-12 23:42:31,004 - backend.main - INFO - Shutting down FastAPI application...
+2026-02-12 23:42:31,006 - db_utils - INFO - Database connection pool closed.
+2026-02-12 23:42:33,708 - backend.main - INFO - Starting FastAPI application...
+2026-02-12 23:43:00,123 - backend.main - INFO - Shutting down FastAPI application...
+2026-02-12 23:43:03,143 - backend.main - INFO - Starting FastAPI application...
+2026-02-12 23:43:52,079 - backend.main - INFO - Shutting down FastAPI application...
+2026-02-12 23:43:55,052 - backend.main - INFO - Starting FastAPI application...
+2026-02-12 23:44:26,413 - backend.main - INFO - Shutting down FastAPI application...
+2026-02-12 23:44:29,055 - backend.main - INFO - Starting FastAPI application...
+2026-02-12 23:45:05,090 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:45:05,090 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:45:05,091 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-12 23:45:05,091 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-12 23:45:05,091 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-12 23:45:05,091 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:45:05,091 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:45:05,091 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-12 23:45:05,091 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-12 23:45:05,091 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-12 23:45:05,104 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:45:05,104 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:45:05,104 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-12 23:45:05,104 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-12 23:45:05,104 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-12 23:45:05,104 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:45:05,104 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:45:05,104 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-12 23:45:05,104 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-12 23:45:05,104 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-12 23:45:11,780 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:45:13,809 - db_utils - INFO - 数据库连接池初始化成功
+2026-02-12 23:45:13,912 - urllib3.connectionpool - DEBUG - http://localhost:8001 "DELETE /api/knowledge-bases/13/files/%E6%A0%B8%E5%B7%A5%E4%B8%9A%E4%B8%93%E4%B8%9A%E7%9F%A5%E8%AF%86%E9%97%AE%E7%AD%94%E6%A8%A1%E5%9E%8B%E6%9E%84%E5%BB%BA-%E5%BC%80%E9%A2%98%E7%AD%94%E8%BE%A9.pptx HTTP/11" 200 32
+2026-02-12 23:45:13,912 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:45:15,949 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/13/files HTTP/11" 200 266
+2026-02-12 23:45:15,950 - Manage_KBs.py - INFO - 文件列表刷新成功: 共 1 个文件
+2026-02-12 23:45:15,951 - Manage_KBs.py - INFO - 成功删除文件 核工业专业知识问答模型构建-开题答辩.pptx，已清理进度占位符
+2026-02-12 23:45:17,118 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:45:17,118 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:45:17,118 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-12 23:45:17,118 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-12 23:45:17,118 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-12 23:45:17,118 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:45:17,118 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:45:17,118 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-12 23:45:17,118 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-12 23:45:17,120 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-12 23:45:17,132 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:45:17,132 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:45:17,132 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-12 23:45:17,132 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-12 23:45:17,132 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-12 23:45:17,132 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:45:17,132 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:45:17,132 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-12 23:45:17,132 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-12 23:45:17,132 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-12 23:45:18,955 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:45:18,955 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:45:18,955 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-12 23:45:18,955 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-12 23:45:18,955 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-12 23:45:18,955 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:45:18,955 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:45:18,955 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-12 23:45:18,955 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-12 23:45:18,955 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-12 23:45:18,964 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:45:18,964 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:45:18,964 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-12 23:45:18,964 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-12 23:45:18,964 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-12 23:45:18,964 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:45:18,964 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:45:18,964 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-12 23:45:18,964 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-12 23:45:18,964 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-12 23:45:20,646 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:45:22,674 - urllib3.connectionpool - DEBUG - http://localhost:8001 "DELETE /api/knowledge-bases/13/files/%E6%B5%8B%E8%AF%95%E9%97%AE%E9%A2%98%E9%9B%86.txt HTTP/11" 200 32
+2026-02-12 23:45:22,674 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:45:24,709 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/13/files HTTP/11" 200 12
+2026-02-12 23:45:24,709 - Manage_KBs.py - INFO - 文件列表刷新成功: 共 0 个文件
+2026-02-12 23:45:24,709 - Manage_KBs.py - INFO - 知识库 13 已无文件，已清空所有进度占位符
+2026-02-12 23:45:24,709 - Manage_KBs.py - INFO - 成功删除文件 测试问题集.txt，已清理进度占位符
+2026-02-12 23:45:25,889 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:45:25,889 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:45:25,889 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-12 23:45:25,889 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-12 23:45:25,889 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-12 23:45:25,889 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:45:25,889 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:45:25,889 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-12 23:45:25,889 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-12 23:45:25,889 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-12 23:45:25,901 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:45:25,902 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:45:25,902 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-12 23:45:25,902 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-12 23:45:25,902 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-12 23:45:25,902 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:45:25,902 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:45:25,903 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-12 23:45:25,903 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-12 23:45:25,903 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-12 23:45:25,912 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:45:27,941 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/13/parse-progress HTTP/11" 200 15
+2026-02-12 23:45:28,510 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:45:30,320 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:45:30,320 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:45:30,320 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-12 23:45:30,320 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-12 23:45:30,320 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-12 23:45:30,320 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:45:30,320 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:45:30,320 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-12 23:45:30,320 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-12 23:45:30,320 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-12 23:45:30,328 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:45:30,329 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:45:30,329 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-12 23:45:30,329 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-12 23:45:30,329 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-12 23:45:30,329 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:45:30,329 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:45:30,329 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-12 23:45:30,329 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-12 23:45:30,329 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-12 23:45:30,339 - db_utils - INFO - 数据库连接池关闭处理器已注册
+2026-02-12 23:45:31,062 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/13/parse-progress HTTP/11" 200 15
+2026-02-12 23:45:37,214 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:45:37,214 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:45:37,215 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-12 23:45:37,215 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-12 23:45:37,215 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-12 23:45:37,215 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:45:37,215 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:45:37,215 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-12 23:45:37,215 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-12 23:45:37,215 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-12 23:45:37,226 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:45:37,226 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:45:37,226 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-12 23:45:37,226 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-12 23:45:37,226 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-12 23:45:37,226 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:45:37,226 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:45:37,226 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-12 23:45:37,226 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-12 23:45:37,226 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-12 23:45:37,235 - db_utils - INFO - 数据库连接池初始化成功
+2026-02-12 23:45:37,281 - login.py - INFO - 用户Email:2117543204@qq.com 登录成功
+2026-02-12 23:45:38,953 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:45:38,953 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:45:38,954 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-12 23:45:38,954 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-12 23:45:38,954 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-12 23:45:38,954 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:45:38,954 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:45:38,954 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-12 23:45:38,954 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-12 23:45:38,954 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-12 23:45:38,966 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:45:38,966 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:45:38,966 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-12 23:45:38,966 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-12 23:45:38,966 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-12 23:45:38,967 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:45:38,967 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:45:38,967 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-12 23:45:38,967 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-12 23:45:38,967 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-12 23:45:43,435 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:45:45,467 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/13/files HTTP/11" 200 12
+2026-02-12 23:45:45,467 - Manage_KBs.py - INFO - 文件列表刷新成功: 共 0 个文件
+2026-02-12 23:45:45,471 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:45:45,471 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:45:45,471 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-12 23:45:45,471 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-12 23:45:45,471 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-12 23:45:45,471 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:45:45,471 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:45:45,475 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-12 23:45:45,475 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-12 23:45:45,475 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-12 23:45:45,483 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:45:45,483 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:45:45,483 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-12 23:45:45,483 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-12 23:45:45,483 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-12 23:45:45,483 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:45:45,483 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:45:45,483 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-12 23:45:45,483 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-12 23:45:45,484 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-12 23:45:49,871 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:45:49,871 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:45:49,871 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-12 23:45:49,871 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-12 23:45:49,871 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-12 23:45:49,871 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:45:49,871 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:45:49,871 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-12 23:45:49,871 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-12 23:45:49,871 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-12 23:45:49,880 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:45:49,880 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:45:49,880 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-12 23:45:49,880 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-12 23:45:49,880 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-12 23:45:49,880 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:45:49,880 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:45:49,880 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-12 23:45:49,880 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-12 23:45:49,880 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-12 23:45:49,883 - Streamlit_Pages.api_client - INFO - 使用原始文件名: 测试问题集.txt
+2026-02-12 23:45:49,888 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:45:51,933 - python_multipart.multipart - DEBUG - Calling on_part_begin with no data
+2026-02-12 23:45:51,934 - python_multipart.multipart - DEBUG - Calling on_header_field with data[36:55]
+2026-02-12 23:45:51,934 - python_multipart.multipart - DEBUG - Calling on_header_value with data[57:111]
+2026-02-12 23:45:51,934 - python_multipart.multipart - DEBUG - Calling on_header_end with no data
+2026-02-12 23:45:51,934 - python_multipart.multipart - DEBUG - Calling on_headers_finished with no data
+2026-02-12 23:45:51,934 - python_multipart.multipart - DEBUG - Calling on_part_data with data[115:1028]
+2026-02-12 23:45:51,934 - python_multipart.multipart - DEBUG - Calling on_part_end with no data
+2026-02-12 23:45:51,934 - python_multipart.multipart - DEBUG - Calling on_end with no data
+2026-02-12 23:45:51,948 - urllib3.connectionpool - DEBUG - http://localhost:8001 "POST /api/knowledge-bases/13/files/upload HTTP/11" 200 239
+2026-02-12 23:45:51,948 - Manage_KBs.py - INFO - 上传成功: 测试问题集.txt
+2026-02-12 23:45:51,952 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:45:53,985 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/13/files HTTP/11" 200 266
+2026-02-12 23:45:53,985 - Manage_KBs.py - INFO - 文件列表刷新成功: 共 1 个文件
+2026-02-12 23:45:54,544 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:45:54,545 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:45:54,545 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-12 23:45:54,545 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-12 23:45:54,545 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-12 23:45:54,545 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:45:54,545 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:45:54,545 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-12 23:45:54,545 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-12 23:45:54,545 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-12 23:45:54,558 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:45:54,558 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:45:54,558 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-12 23:45:54,558 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-12 23:45:54,558 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-12 23:45:54,558 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:45:54,558 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:45:54,558 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-12 23:45:54,558 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-12 23:45:54,558 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-12 23:48:47,105 - backend.main - INFO - Shutting down FastAPI application...
+2026-02-12 23:48:47,106 - db_utils - INFO - Database connection pool closed.
+2026-02-12 23:48:49,707 - backend.main - INFO - Starting FastAPI application...
+2026-02-12 23:49:00,139 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:49:00,139 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:49:00,139 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-12 23:49:00,139 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-12 23:49:00,139 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-12 23:49:00,139 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:49:00,139 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:49:00,139 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-12 23:49:00,139 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-12 23:49:00,139 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-12 23:49:00,148 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:49:00,148 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:49:00,148 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-12 23:49:00,148 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-12 23:49:00,148 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-12 23:49:00,148 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:49:00,148 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:49:00,148 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-12 23:49:00,148 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-12 23:49:00,148 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-12 23:49:06,173 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:49:06,173 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:49:06,173 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-12 23:49:06,173 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-12 23:49:06,173 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-12 23:49:06,173 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:49:06,173 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:49:06,173 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-12 23:49:06,173 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-12 23:49:06,173 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-12 23:49:06,182 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:49:06,182 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:49:06,182 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-12 23:49:06,182 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-12 23:49:06,182 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-12 23:49:06,182 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:49:06,182 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:49:06,182 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-12 23:49:06,182 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-12 23:49:06,182 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-12 23:49:06,194 - login.py - INFO - 用户Email:2117543204@qq.com 登录成功
+2026-02-12 23:49:07,825 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:49:07,825 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:49:07,825 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-12 23:49:07,825 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-12 23:49:07,825 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-12 23:49:07,825 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:49:07,825 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:49:07,825 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-12 23:49:07,825 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-12 23:49:07,825 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-12 23:49:07,835 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:49:07,835 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:49:07,835 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-12 23:49:07,835 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-12 23:49:07,835 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-12 23:49:07,835 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:49:07,835 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:49:07,835 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-12 23:49:07,835 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-12 23:49:07,835 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-12 23:49:11,358 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:49:13,378 - db_utils - INFO - 数据库连接池初始化成功
+2026-02-12 23:49:13,468 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/13/files HTTP/11" 200 266
+2026-02-12 23:49:13,468 - Manage_KBs.py - INFO - 文件列表刷新成功: 共 1 个文件
+2026-02-12 23:49:13,468 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:49:13,468 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:49:13,468 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-12 23:49:13,468 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-12 23:49:13,468 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-12 23:49:13,468 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:49:13,468 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:49:13,468 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-12 23:49:13,468 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-12 23:49:13,468 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-12 23:49:13,479 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:49:13,479 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:49:13,479 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-12 23:49:13,479 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-12 23:49:13,479 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-12 23:49:13,479 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:49:13,479 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:49:13,479 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-12 23:49:13,479 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-12 23:49:13,479 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-12 23:50:02,802 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:50:02,802 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:50:02,802 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-12 23:50:02,802 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-12 23:50:02,802 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-12 23:50:02,803 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:50:02,803 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:50:02,803 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-12 23:50:02,803 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-12 23:50:02,803 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-12 23:50:02,814 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:50:02,815 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:50:02,815 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-12 23:50:02,815 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-12 23:50:02,815 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-12 23:50:02,815 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:50:02,815 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:50:02,815 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-12 23:50:02,815 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-12 23:50:02,815 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-12 23:50:02,826 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:50:04,848 - urllib3.connectionpool - DEBUG - http://localhost:8001 "POST /api/knowledge-bases/13/files/%E6%B5%8B%E8%AF%95%E9%97%AE%E9%A2%98%E9%9B%86.txt/parse HTTP/11" 200 35
+2026-02-12 23:50:04,849 - Manage_KBs.py - INFO - 解析任务已启动: kb_id=13, file=测试问题集.txt
+2026-02-12 23:50:50,210 - db_utils - INFO - Database connection pool closed.
+2026-02-12 23:50:50,212 - db_utils - INFO - Database connection pool closed.
+2026-02-12 23:50:50,212 - db_utils - INFO - Database connection pool closed.
+2026-02-12 23:50:50,213 - db_utils - INFO - Database connection pool closed.
+2026-02-12 23:50:50,214 - db_utils - INFO - Database connection pool closed.
+2026-02-12 23:50:50,216 - db_utils - INFO - Database connection pool closed.
+2026-02-12 23:50:50,217 - db_utils - INFO - Database connection pool closed.
+2026-02-12 23:50:50,219 - db_utils - INFO - Database connection pool closed.
+2026-02-12 23:50:50,220 - db_utils - INFO - Database connection pool closed.
+2026-02-12 23:50:50,221 - db_utils - INFO - Database connection pool closed.
+2026-02-12 23:50:50,224 - db_utils - INFO - Database connection pool closed.
+2026-02-12 23:50:50,227 - db_utils - INFO - Database connection pool closed.
+2026-02-12 23:50:50,228 - db_utils - INFO - Database connection pool closed.
+2026-02-12 23:50:50,230 - db_utils - INFO - Database connection pool closed.
+2026-02-12 23:50:50,259 - db_utils - INFO - Database connection pool closed.
+2026-02-12 23:51:02,162 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:51:02,163 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:51:02,163 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-12 23:51:02,163 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-12 23:51:02,163 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-12 23:51:02,163 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:51:02,163 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:51:02,163 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-12 23:51:02,163 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-12 23:51:02,163 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-12 23:51:02,171 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:51:02,171 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:51:02,171 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-12 23:51:02,171 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-12 23:51:02,171 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-12 23:51:02,171 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:51:02,171 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:51:02,171 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-12 23:51:02,171 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-12 23:51:02,171 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-12 23:51:02,179 - db_utils - INFO - 数据库连接池初始化成功
+2026-02-12 23:51:02,225 - login.py - INFO - 用户Email:2117543204@qq.com 登录成功
+2026-02-12 23:51:03,331 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:51:03,331 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:51:03,331 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-12 23:51:03,331 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-12 23:51:03,331 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-12 23:51:03,331 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:51:03,331 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:51:03,331 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-12 23:51:03,331 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-12 23:51:03,331 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-12 23:51:03,341 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:51:03,341 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:51:03,341 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-12 23:51:03,341 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-12 23:51:03,341 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-12 23:51:03,341 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:51:03,341 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:51:03,341 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-12 23:51:03,341 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-12 23:51:03,341 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-12 23:51:05,758 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:51:07,787 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/13/files HTTP/11" 200 266
+2026-02-12 23:51:07,788 - Manage_KBs.py - INFO - 文件列表刷新成功: 共 1 个文件
+2026-02-12 23:51:07,792 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:51:07,792 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:51:07,792 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-12 23:51:07,792 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-12 23:51:07,792 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-12 23:51:07,792 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:51:07,792 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:51:07,792 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-12 23:51:07,792 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-12 23:51:07,792 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-12 23:51:07,800 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:51:07,800 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:51:07,800 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-12 23:51:07,800 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-12 23:51:07,800 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-12 23:51:07,800 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:51:07,800 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:51:07,800 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-12 23:51:07,800 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-12 23:51:07,800 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-12 23:53:51,288 - backend.main - INFO - Shutting down FastAPI application...
+2026-02-12 23:53:51,289 - db_utils - INFO - Database connection pool closed.
+2026-02-12 23:53:53,892 - backend.main - INFO - Starting FastAPI application...
+2026-02-12 23:54:06,985 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:54:06,985 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:54:06,985 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-12 23:54:06,985 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-12 23:54:06,985 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-12 23:54:06,985 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:54:06,985 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:54:06,985 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-12 23:54:06,985 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-12 23:54:06,985 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-12 23:54:06,996 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:54:06,996 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:54:06,996 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-12 23:54:06,996 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-12 23:54:06,996 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-12 23:54:06,996 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:54:06,996 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:54:06,996 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-12 23:54:06,996 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-12 23:54:06,996 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-12 23:54:07,004 - db_utils - INFO - 数据库连接池关闭处理器已注册
+2026-02-12 23:54:10,279 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:54:10,279 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:54:10,279 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-12 23:54:10,279 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-12 23:54:10,279 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-12 23:54:10,279 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:54:10,279 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:54:10,279 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-12 23:54:10,279 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-12 23:54:10,279 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-12 23:54:10,290 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:54:10,290 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:54:10,290 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-12 23:54:10,290 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-12 23:54:10,290 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-12 23:54:10,290 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:54:10,290 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:54:10,290 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-12 23:54:10,290 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-12 23:54:10,290 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-12 23:54:10,298 - db_utils - INFO - 数据库连接池初始化成功
+2026-02-12 23:54:10,334 - login.py - INFO - 用户Email:2117543204@qq.com 登录成功
+2026-02-12 23:54:11,433 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:54:11,433 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:54:11,433 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-12 23:54:11,433 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-12 23:54:11,433 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-12 23:54:11,433 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:54:11,433 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:54:11,433 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-12 23:54:11,433 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-12 23:54:11,433 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-12 23:54:11,444 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:54:11,444 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:54:11,444 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-12 23:54:11,444 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-12 23:54:11,444 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-12 23:54:11,444 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:54:11,444 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:54:11,444 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-12 23:54:11,444 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-12 23:54:11,444 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-12 23:54:13,500 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:54:15,546 - db_utils - INFO - 数据库连接池初始化成功
+2026-02-12 23:54:15,639 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/13/files HTTP/11" 200 266
+2026-02-12 23:54:15,639 - Manage_KBs.py - INFO - 文件列表刷新成功: 共 1 个文件
+2026-02-12 23:54:15,645 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:54:15,645 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:54:15,645 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-12 23:54:15,645 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-12 23:54:15,645 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-12 23:54:15,645 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:54:15,645 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:54:15,645 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-12 23:54:15,645 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-12 23:54:15,645 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-12 23:54:15,654 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:54:15,654 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:54:15,654 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-12 23:54:15,654 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-12 23:54:15,654 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-12 23:54:15,654 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:54:15,654 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:54:15,654 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-12 23:54:15,654 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-12 23:54:15,654 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-12 23:54:15,670 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:54:17,708 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/13/files/%E6%B5%8B%E8%AF%95%E9%97%AE%E9%A2%98%E9%9B%86.txt/download HTTP/11" 200 913
+2026-02-12 23:54:21,186 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:54:21,187 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:54:21,187 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-12 23:54:21,187 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-12 23:54:21,187 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-12 23:54:21,187 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:54:21,187 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:54:21,187 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-12 23:54:21,187 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-12 23:54:21,187 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-12 23:54:21,194 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:54:21,194 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:54:21,194 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-12 23:54:21,194 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-12 23:54:21,194 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-12 23:54:21,194 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:54:21,194 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:54:21,194 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-12 23:54:21,194 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-12 23:54:21,194 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-12 23:54:21,210 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:54:23,255 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/13/files/%E6%B5%8B%E8%AF%95%E9%97%AE%E9%A2%98%E9%9B%86.txt/download HTTP/11" 200 913
+2026-02-12 23:54:29,439 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:54:29,439 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:54:29,439 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-12 23:54:29,439 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-12 23:54:29,439 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-12 23:54:29,439 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:54:29,439 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:54:29,439 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-12 23:54:29,439 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-12 23:54:29,439 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-12 23:54:29,453 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:54:29,453 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:54:29,453 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-12 23:54:29,453 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-12 23:54:29,453 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-12 23:54:29,453 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:54:29,453 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:54:29,453 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-12 23:54:29,453 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-12 23:54:29,453 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-12 23:54:29,471 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:54:31,493 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/13/files/%E6%B5%8B%E8%AF%95%E9%97%AE%E9%A2%98%E9%9B%86.txt/download HTTP/11" 200 913
+2026-02-12 23:54:34,675 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:54:36,701 - urllib3.connectionpool - DEBUG - http://localhost:8001 "PUT /api/knowledge-bases/13/files/%E6%B5%8B%E8%AF%95%E9%97%AE%E9%A2%98%E9%9B%86.txt/rename HTTP/11" 200 102
+2026-02-12 23:54:36,703 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:54:38,744 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/13/files HTTP/11" 200 269
+2026-02-12 23:54:38,744 - Manage_KBs.py - INFO - 文件列表刷新成功: 共 1 个文件
+2026-02-12 23:54:38,745 - Manage_KBs.py - INFO - 成功重命名文件 测试问题集.txt 为 测试问题集1.txt
+2026-02-12 23:54:39,354 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:54:39,354 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:54:39,354 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-12 23:54:39,354 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-12 23:54:39,354 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-12 23:54:39,355 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:54:39,355 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:54:39,355 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-12 23:54:39,355 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-12 23:54:39,355 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-12 23:54:39,364 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:54:39,364 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:54:39,364 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-12 23:54:39,364 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-12 23:54:39,364 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-12 23:54:39,364 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:54:39,364 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:54:39,364 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-12 23:54:39,364 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-12 23:54:39,367 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-12 23:54:39,382 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:54:41,420 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/13/files/%E6%B5%8B%E8%AF%95%E9%97%AE%E9%A2%98%E9%9B%861.txt/download HTTP/11" 200 913
+2026-02-12 23:54:48,176 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:54:48,176 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:54:48,176 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-12 23:54:48,176 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-12 23:54:48,176 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-12 23:54:48,176 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:54:48,176 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:54:48,176 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-12 23:54:48,176 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-12 23:54:48,176 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-12 23:54:48,185 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:54:48,185 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:54:48,185 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-12 23:54:48,188 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-12 23:54:48,188 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-12 23:54:48,188 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-12 23:54:48,188 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-12 23:54:48,188 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-12 23:54:48,188 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-12 23:54:48,188 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-12 23:54:48,202 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:54:50,227 - urllib3.connectionpool - DEBUG - http://localhost:8001 "POST /api/knowledge-bases/13/files/%E6%B5%8B%E8%AF%95%E9%97%AE%E9%A2%98%E9%9B%861.txt/parse HTTP/11" 200 35
+2026-02-12 23:54:50,227 - Manage_KBs.py - INFO - 解析任务已启动: kb_id=13, file=测试问题集1.txt
+2026-02-12 23:54:50,231 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:54:52,277 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/13/files/%E6%B5%8B%E8%AF%95%E9%97%AE%E9%A2%98%E9%9B%861.txt/download HTTP/11" 200 913
+2026-02-12 23:54:52,277 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:54:54,336 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/13/parse-progress HTTP/11" 200 109
+2026-02-12 23:54:54,427 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:54:56,475 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/13/parse-progress HTTP/11" 200 109
+2026-02-12 23:54:56,561 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:54:58,606 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/13/parse-progress HTTP/11" 200 109
+2026-02-12 23:54:58,704 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:55:00,739 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/13/parse-progress HTTP/11" 200 109
+2026-02-12 23:55:00,831 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:55:02,847 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/13/parse-progress HTTP/11" 200 109
+2026-02-12 23:55:02,926 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:55:04,967 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/13/parse-progress HTTP/11" 200 109
+2026-02-12 23:55:05,061 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:55:07,086 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/13/parse-progress HTTP/11" 200 109
+2026-02-12 23:55:07,183 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:55:09,198 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/13/parse-progress HTTP/11" 200 109
+2026-02-12 23:55:09,284 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:55:11,308 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/13/parse-progress HTTP/11" 200 109
+2026-02-12 23:55:11,397 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:55:13,430 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/13/parse-progress HTTP/11" 200 109
+2026-02-12 23:55:13,511 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:55:15,543 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/13/parse-progress HTTP/11" 200 109
+2026-02-12 23:55:15,630 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:55:17,658 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/13/parse-progress HTTP/11" 200 109
+2026-02-12 23:55:17,740 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:55:19,768 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/13/parse-progress HTTP/11" 200 109
+2026-02-12 23:55:19,873 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:55:21,906 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/13/parse-progress HTTP/11" 200 109
+2026-02-12 23:55:21,988 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:55:24,025 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/13/parse-progress HTTP/11" 200 109
+2026-02-12 23:55:24,105 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:55:26,141 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/13/parse-progress HTTP/11" 200 109
+2026-02-12 23:55:26,237 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:55:28,265 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/13/parse-progress HTTP/11" 200 109
+2026-02-12 23:55:28,353 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:55:30,376 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/13/parse-progress HTTP/11" 200 109
+2026-02-12 23:55:30,459 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:55:32,490 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/13/parse-progress HTTP/11" 200 109
+2026-02-12 23:55:32,583 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:55:34,622 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/13/parse-progress HTTP/11" 200 109
+2026-02-12 23:55:34,725 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:55:36,767 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/13/parse-progress HTTP/11" 200 109
+2026-02-12 23:55:36,845 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:55:38,881 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/13/parse-progress HTTP/11" 200 109
+2026-02-12 23:55:38,975 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:55:41,007 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/13/parse-progress HTTP/11" 200 109
+2026-02-12 23:55:41,098 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:55:43,118 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/13/parse-progress HTTP/11" 200 109
+2026-02-12 23:55:43,212 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:55:45,226 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/13/parse-progress HTTP/11" 200 109
+2026-02-12 23:55:45,320 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:55:47,349 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/13/parse-progress HTTP/11" 200 109
+2026-02-12 23:55:47,441 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:55:49,468 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/13/parse-progress HTTP/11" 200 109
+2026-02-12 23:55:49,561 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:55:51,597 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/13/parse-progress HTTP/11" 200 109
+2026-02-12 23:55:51,692 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:55:53,737 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/13/parse-progress HTTP/11" 200 109
+2026-02-12 23:55:53,840 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:55:55,879 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/13/parse-progress HTTP/11" 200 109
+2026-02-12 23:55:55,979 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:55:58,001 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/13/parse-progress HTTP/11" 200 109
+2026-02-12 23:55:58,102 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:56:00,158 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/13/parse-progress HTTP/11" 200 109
+2026-02-12 23:56:00,252 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:56:02,282 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/13/parse-progress HTTP/11" 200 109
+2026-02-12 23:56:02,379 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:56:04,424 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/13/parse-progress HTTP/11" 200 109
+2026-02-12 23:56:04,501 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:56:06,541 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/13/parse-progress HTTP/11" 200 109
+2026-02-12 23:56:06,626 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:56:08,657 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/13/parse-progress HTTP/11" 200 109
+2026-02-12 23:56:08,741 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:56:10,761 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/13/parse-progress HTTP/11" 200 109
+2026-02-12 23:56:10,849 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:56:12,856 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/13/parse-progress HTTP/11" 200 109
+2026-02-12 23:56:12,939 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:56:14,970 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/13/parse-progress HTTP/11" 200 109
+2026-02-12 23:56:15,055 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:56:17,097 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/13/parse-progress HTTP/11" 200 109
+2026-02-12 23:56:17,188 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:56:19,215 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/13/parse-progress HTTP/11" 200 109
+2026-02-12 23:56:19,314 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:56:21,350 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/13/parse-progress HTTP/11" 200 109
+2026-02-12 23:56:21,436 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:56:23,485 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/13/parse-progress HTTP/11" 200 109
+2026-02-12 23:56:23,563 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:56:25,601 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/13/parse-progress HTTP/11" 200 109
+2026-02-12 23:56:25,694 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:56:27,731 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/13/parse-progress HTTP/11" 200 109
+2026-02-12 23:56:27,809 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:56:29,827 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/13/parse-progress HTTP/11" 200 109
+2026-02-12 23:56:29,924 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:56:31,973 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/13/parse-progress HTTP/11" 200 109
+2026-02-12 23:56:32,051 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:56:34,102 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/13/parse-progress HTTP/11" 200 109
+2026-02-12 23:56:34,182 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:56:36,219 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/13/parse-progress HTTP/11" 200 109
+2026-02-12 23:56:36,340 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:56:38,366 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/13/parse-progress HTTP/11" 200 109
+2026-02-12 23:56:38,454 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:56:40,501 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/13/parse-progress HTTP/11" 200 109
+2026-02-12 23:56:40,602 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:56:42,641 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/13/parse-progress HTTP/11" 200 109
+2026-02-12 23:56:42,738 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:56:44,769 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/13/parse-progress HTTP/11" 200 109
+2026-02-12 23:56:44,847 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:56:46,882 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/13/parse-progress HTTP/11" 200 109
+2026-02-12 23:56:46,986 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:56:49,017 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/13/parse-progress HTTP/11" 200 109
+2026-02-12 23:56:49,120 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:56:51,168 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/13/parse-progress HTTP/11" 200 109
+2026-02-12 23:56:51,250 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:56:53,301 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/13/parse-progress HTTP/11" 200 109
+2026-02-12 23:56:53,383 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:56:55,426 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/13/parse-progress HTTP/11" 200 109
+2026-02-12 23:56:55,506 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:56:57,544 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/13/parse-progress HTTP/11" 200 109
+2026-02-12 23:56:57,636 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:56:59,666 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/13/parse-progress HTTP/11" 200 109
+2026-02-12 23:56:59,749 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:57:01,772 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/13/parse-progress HTTP/11" 200 109
+2026-02-12 23:57:01,853 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:57:03,878 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/13/parse-progress HTTP/11" 200 109
+2026-02-12 23:57:03,968 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:57:05,987 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/13/parse-progress HTTP/11" 200 109
+2026-02-12 23:57:06,070 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:57:08,090 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/13/parse-progress HTTP/11" 200 109
+2026-02-12 23:57:08,189 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:57:10,199 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/13/parse-progress HTTP/11" 200 109
+2026-02-12 23:57:10,284 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:57:12,304 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/13/parse-progress HTTP/11" 200 109
+2026-02-12 23:57:12,387 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:57:14,412 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/13/parse-progress HTTP/11" 200 109
+2026-02-12 23:57:14,511 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:57:16,531 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/13/parse-progress HTTP/11" 200 109
+2026-02-12 23:57:16,620 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:57:18,655 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/13/parse-progress HTTP/11" 200 109
+2026-02-12 23:57:18,747 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:57:20,765 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/13/parse-progress HTTP/11" 200 109
+2026-02-12 23:57:20,847 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:57:22,867 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/13/parse-progress HTTP/11" 200 109
+2026-02-12 23:57:22,966 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:57:25,004 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/13/parse-progress HTTP/11" 200 109
+2026-02-12 23:57:25,089 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:57:27,113 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/13/parse-progress HTTP/11" 200 109
+2026-02-12 23:57:27,210 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:57:29,233 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/13/parse-progress HTTP/11" 200 109
+2026-02-12 23:57:29,335 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:57:31,358 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/13/parse-progress HTTP/11" 200 109
+2026-02-12 23:57:31,465 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:57:33,489 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/13/parse-progress HTTP/11" 200 109
+2026-02-12 23:57:33,582 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:57:35,610 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/13/parse-progress HTTP/11" 200 109
+2026-02-12 23:57:35,720 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:57:37,764 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/13/parse-progress HTTP/11" 200 109
+2026-02-12 23:57:37,865 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:57:39,890 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/13/parse-progress HTTP/11" 200 109
+2026-02-12 23:57:39,976 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:57:42,002 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/13/parse-progress HTTP/11" 200 109
+2026-02-12 23:57:42,107 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-12 23:57:44,131 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/13/parse-progress HTTP/11" 200 109
