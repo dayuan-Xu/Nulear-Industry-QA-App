@@ -57,7 +57,7 @@ class KnowledgeBaseService:
             logger.error(f"获取用户知识库失败: {e}")
             return []
 
-    def get_knowledge_base(self, kb_id: str) -> Optional[KnowledgeBase]:
+    def get_knowledge_base(self, kb_id: int) -> Optional[KnowledgeBase]:
         """获取知识库详情"""
         try:
             kb = get_kb_by_id(kb_id)
@@ -70,11 +70,11 @@ class KnowledgeBaseService:
             logger.error(f"获取知识库详情失败: {e}")
             return None
 
-    def rename_knowledge_base(self, kb_id: str, new_name: str) -> KnowledgeBase:
+    def rename_knowledge_base(self, kb_id: int, new_name: str) -> KnowledgeBase:
         """重命名知识库"""
         try:
             # 更新数据库
-            success = update_KB_name(int(kb_id), new_name)
+            success = update_KB_name(kb_id, new_name)
             if not success:
                 raise ValueError("重命名知识库失败")
 
@@ -87,7 +87,7 @@ class KnowledgeBaseService:
             logger.error(f"重命名知识库失败: {e}")
             raise
 
-    def delete_knowledge_base(self, kb_id: str) -> bool:
+    def delete_knowledge_base(self, kb_id: int) -> bool:
         """删除知识库"""
         try:
             success = delete_KB(int(kb_id))
@@ -96,7 +96,7 @@ class KnowledgeBaseService:
             logger.error(f"删除知识库失败: {e}")
             return False
 
-    def update_kb_document_count(self, kb_id: str, new_count: int) -> bool:
+    def update_kb_document_count(self, kb_id: int, new_count: int) -> bool:
         """更新知识库文档计数"""
         try:
             success = update_KB(int(kb_id), new_count)
