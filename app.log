@@ -44279,3 +44279,2252 @@ tornado.websocket.WebSocketClosedError
 2026-02-15 13:35:55,903 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
 2026-02-15 13:35:55,903 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
 2026-02-15 13:35:55,904 - Manage_KBs.py - DEBUG - need_refresh_16=False，不刷新
+2026-02-15 13:37:47,826 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:37:47,826 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:37:47,826 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 13:37:47,826 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 13:37:47,826 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 13:37:47,826 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:37:47,826 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:37:47,826 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 13:37:47,826 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 13:37:47,826 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 13:37:47,836 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:37:47,836 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:37:47,836 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 13:37:47,836 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 13:37:47,836 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 13:37:47,836 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:37:47,836 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:37:47,836 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 13:37:47,836 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 13:37:47,836 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 13:37:47,848 - db_utils - INFO - 数据库连接池关闭处理器已注册
+2026-02-15 13:38:02,916 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:38:02,916 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:38:02,916 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 13:38:02,916 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 13:38:02,916 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 13:38:02,916 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:38:02,916 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:38:02,916 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 13:38:02,916 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 13:38:02,916 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 13:38:02,928 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:38:02,928 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:38:02,928 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 13:38:02,928 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 13:38:02,928 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 13:38:02,928 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:38:02,928 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:38:02,928 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 13:38:02,928 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 13:38:02,928 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 13:38:02,934 - db_utils - INFO - 数据库连接池初始化成功
+2026-02-15 13:38:02,979 - login.py - INFO - 用户Email:2117543204@qq.com 登录成功
+2026-02-15 13:38:04,090 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:38:04,090 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:38:04,090 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 13:38:04,090 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 13:38:04,090 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 13:38:04,090 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:38:04,090 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:38:04,090 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 13:38:04,090 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 13:38:04,090 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 13:38:04,103 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:38:04,103 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:38:04,103 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 13:38:04,103 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 13:38:04,103 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 13:38:04,103 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:38:04,103 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:38:04,103 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 13:38:04,103 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 13:38:04,103 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 13:38:07,972 - Manage_KBs.py - INFO - 清理了 0 个占位符
+2026-02-15 13:38:07,973 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 13:38:10,130 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/18/files HTTP/11" 200 1178
+2026-02-15 13:38:10,131 - Manage_KBs.py - INFO - 刷新文件列表成功: ['&1.10MW 高温堆热启动时蒸汽发生器.pdf', '&工作流程.txt', '&测试问题集.txt', '&项目相关容器的构建与使用.txt']
+2026-02-15 13:38:10,136 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:38:10,136 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:38:10,136 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 13:38:10,136 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 13:38:10,136 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 13:38:10,136 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:38:10,136 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:38:10,136 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 13:38:10,136 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 13:38:10,136 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 13:38:10,146 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:38:10,146 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:38:10,146 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 13:38:10,146 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 13:38:10,146 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 13:38:10,146 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:38:10,146 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:38:10,146 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 13:38:10,146 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 13:38:10,146 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 13:38:10,147 - Manage_KBs.py - DEBUG - need_refresh_18=False，不刷新
+2026-02-15 13:38:13,302 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:38:13,303 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:38:13,303 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 13:38:13,303 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 13:38:13,303 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 13:38:13,303 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:38:13,303 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:38:13,303 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 13:38:13,303 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 13:38:13,303 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 13:38:13,313 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:38:13,313 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:38:13,313 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 13:38:13,313 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 13:38:13,313 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 13:38:13,313 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:38:13,313 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:38:13,313 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 13:38:13,313 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 13:38:13,313 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 13:38:13,314 - Manage_KBs.py - DEBUG - need_refresh_18=False，不刷新
+2026-02-15 13:38:14,521 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 13:38:16,585 - urllib3.connectionpool - DEBUG - http://localhost:8001 "DELETE /api/knowledge-bases/18/files/&1.10MW%20%E9%AB%98%E6%B8%A9%E5%A0%86%E7%83%AD%E5%90%AF%E5%8A%A8%E6%97%B6%E8%92%B8%E6%B1%BD%E5%8F%91%E7%94%9F%E5%99%A8.pdf HTTP/11" 200 32
+2026-02-15 13:38:16,585 - Manage_KBs.py - INFO - 清理了 0 个占位符
+2026-02-15 13:38:16,587 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 13:38:18,641 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/18/files HTTP/11" 200 835
+2026-02-15 13:38:18,642 - Manage_KBs.py - INFO - 刷新文件列表成功: ['&工作流程.txt', '&测试问题集.txt', '&项目相关容器的构建与使用.txt']
+2026-02-15 13:38:18,642 - Manage_KBs.py - INFO - 成功删除文件 &1.10MW 高温堆热启动时蒸汽发生器.pdf，已清理进度占位符
+2026-02-15 13:38:19,276 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:38:19,276 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:38:19,276 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 13:38:19,276 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 13:38:19,276 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 13:38:19,276 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:38:19,276 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:38:19,276 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 13:38:19,276 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 13:38:19,276 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 13:38:19,283 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:38:19,285 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:38:19,285 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 13:38:19,285 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 13:38:19,285 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 13:38:19,285 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:38:19,285 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:38:19,285 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 13:38:19,285 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 13:38:19,285 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 13:38:19,286 - Manage_KBs.py - DEBUG - need_refresh_18=False，不刷新
+2026-02-15 13:38:45,760 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:38:45,760 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:38:45,760 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 13:38:45,760 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 13:38:45,760 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 13:38:45,760 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:38:45,760 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:38:45,760 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 13:38:45,760 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 13:38:45,760 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 13:38:45,769 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:38:45,770 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:38:45,770 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 13:38:45,770 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 13:38:45,770 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 13:38:45,770 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:38:45,770 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:38:45,770 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 13:38:45,770 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 13:38:45,770 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 13:38:45,771 - Manage_KBs.py - DEBUG - need_refresh_18=False，不刷新
+2026-02-15 13:38:45,774 - Streamlit_Pages.api_client - INFO - 上传文件: kb_id=18, 文件名=1.10MW 高温堆热启动时蒸汽发生器.pdf
+2026-02-15 13:38:45,787 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 13:38:47,854 - urllib3.connectionpool - DEBUG - http://localhost:8001 "POST /api/knowledge-bases/18/files/upload HTTP/11" 200 381
+2026-02-15 13:38:47,855 - Manage_KBs.py - INFO - 上传成功: 1.10MW 高温堆热启动时蒸汽发生器.pdf
+2026-02-15 13:38:47,855 - Manage_KBs.py - INFO - 清理了 0 个占位符
+2026-02-15 13:38:47,856 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 13:38:49,898 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/18/files HTTP/11" 200 1177
+2026-02-15 13:38:49,898 - Manage_KBs.py - INFO - 刷新文件列表成功: ['&工作流程.txt', '&测试问题集.txt', '&项目相关容器的构建与使用.txt', '1.10MW 高温堆热启动时蒸汽发生器.pdf']
+2026-02-15 13:38:49,999 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:38:50,000 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:38:50,000 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 13:38:50,000 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 13:38:50,000 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 13:38:50,000 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:38:50,000 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:38:50,000 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 13:38:50,000 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 13:38:50,000 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 13:38:50,008 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:38:50,009 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:38:50,009 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 13:38:50,009 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 13:38:50,009 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 13:38:50,009 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:38:50,009 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:38:50,009 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 13:38:50,009 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 13:38:50,009 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 13:38:50,010 - Manage_KBs.py - DEBUG - need_refresh_18=False，不刷新
+2026-02-15 13:39:00,196 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:39:00,196 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:39:00,196 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 13:39:00,197 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 13:39:00,197 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 13:39:00,197 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:39:00,197 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:39:00,197 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 13:39:00,197 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 13:39:00,197 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 13:39:00,210 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:39:00,210 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:39:00,210 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 13:39:00,210 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 13:39:00,210 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 13:39:00,210 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:39:00,210 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:39:00,210 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 13:39:00,210 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 13:39:00,210 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 13:39:00,212 - Manage_KBs.py - DEBUG - need_refresh_18=False，不刷新
+2026-02-15 13:39:00,237 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 13:39:02,292 - urllib3.connectionpool - DEBUG - http://localhost:8001 "POST /api/knowledge-bases/18/files/1.10MW%20%E9%AB%98%E6%B8%A9%E5%A0%86%E7%83%AD%E5%90%AF%E5%8A%A8%E6%97%B6%E8%92%B8%E6%B1%BD%E5%8F%91%E7%94%9F%E5%99%A8.pdf/parse HTTP/11" 200 55
+2026-02-15 13:39:02,293 - Manage_KBs.py - INFO - 解析任务已启动: kb_id=18, file=1.10MW 高温堆热启动时蒸汽发生器.pdf
+2026-02-15 13:39:02,297 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 13:39:04,389 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/18/parse-progress HTTP/11" 200 15
+2026-02-15 13:39:04,390 - Manage_KBs.py - DEBUG - 更新进度 0%: 1.10MW 高温堆热启动时蒸汽发生器.pdf
+2026-02-15 13:39:04,505 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 13:39:06,552 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/18/parse-progress HTTP/11" 200 163
+2026-02-15 13:39:06,552 - Manage_KBs.py - DEBUG - 更新进度 2%: 1.10MW 高温堆热启动时蒸汽发生器.pdf
+2026-02-15 13:39:06,673 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 13:39:08,731 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/18/parse-progress HTTP/11" 200 164
+2026-02-15 13:39:08,732 - Manage_KBs.py - DEBUG - 更新进度 13%: 1.10MW 高温堆热启动时蒸汽发生器.pdf
+2026-02-15 13:39:08,844 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 13:39:10,894 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/18/parse-progress HTTP/11" 200 164
+2026-02-15 13:39:10,895 - Manage_KBs.py - DEBUG - 更新进度 25%: 1.10MW 高温堆热启动时蒸汽发生器.pdf
+2026-02-15 13:39:10,998 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 13:39:13,059 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/18/parse-progress HTTP/11" 200 164
+2026-02-15 13:39:13,060 - Manage_KBs.py - DEBUG - 更新进度 38%: 1.10MW 高温堆热启动时蒸汽发生器.pdf
+2026-02-15 13:39:13,173 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 13:39:15,216 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/18/parse-progress HTTP/11" 200 164
+2026-02-15 13:39:15,217 - Manage_KBs.py - DEBUG - 更新进度 50%: 1.10MW 高温堆热启动时蒸汽发生器.pdf
+2026-02-15 13:39:15,329 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 13:39:17,378 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/18/parse-progress HTTP/11" 200 164
+2026-02-15 13:39:17,379 - Manage_KBs.py - DEBUG - 更新进度 61%: 1.10MW 高温堆热启动时蒸汽发生器.pdf
+2026-02-15 13:39:17,502 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 13:39:19,545 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/18/parse-progress HTTP/11" 200 164
+2026-02-15 13:39:19,546 - Manage_KBs.py - DEBUG - 更新进度 72%: 1.10MW 高温堆热启动时蒸汽发生器.pdf
+2026-02-15 13:39:19,639 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 13:39:21,670 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/18/parse-progress HTTP/11" 200 164
+2026-02-15 13:39:21,671 - Manage_KBs.py - DEBUG - 更新进度 86%: 1.10MW 高温堆热启动时蒸汽发生器.pdf
+2026-02-15 13:39:21,778 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 13:39:23,828 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/18/parse-progress HTTP/11" 200 164
+2026-02-15 13:39:23,829 - Manage_KBs.py - DEBUG - 更新进度 97%: 1.10MW 高温堆热启动时蒸汽发生器.pdf
+2026-02-15 13:39:23,938 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 13:39:25,969 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/18/parse-progress HTTP/11" 200 164
+2026-02-15 13:39:26,075 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:39:26,075 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:39:26,076 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 13:39:26,076 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 13:39:26,076 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 13:39:26,076 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:39:26,076 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:39:26,076 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 13:39:26,076 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 13:39:26,076 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 13:39:26,084 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:39:26,084 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:39:26,084 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 13:39:26,084 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 13:39:26,084 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 13:39:26,084 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:39:26,084 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:39:26,084 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 13:39:26,084 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 13:39:26,084 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 13:39:26,086 - Manage_KBs.py - INFO - 检测到 need_refresh_18=True，准备刷新文件列表
+2026-02-15 13:39:26,086 - Manage_KBs.py - INFO - 清理了 1 个占位符
+2026-02-15 13:39:26,088 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 13:39:28,135 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/18/files HTTP/11" 200 1178
+2026-02-15 13:39:28,136 - Manage_KBs.py - INFO - 刷新文件列表成功: ['&1.10MW 高温堆热启动时蒸汽发生器.pdf', '&工作流程.txt', '&测试问题集.txt', '&项目相关容器的构建与使用.txt']
+2026-02-15 13:39:28,232 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:39:28,232 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:39:28,232 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 13:39:28,232 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 13:39:28,232 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 13:39:28,232 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:39:28,232 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:39:28,232 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 13:39:28,232 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 13:39:28,232 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 13:39:28,241 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:39:28,241 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:39:28,241 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 13:39:28,241 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 13:39:28,241 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 13:39:28,241 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:39:28,241 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:39:28,241 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 13:39:28,241 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 13:39:28,241 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 13:39:28,242 - Manage_KBs.py - DEBUG - need_refresh_18=False，不刷新
+2026-02-15 13:41:24,089 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:41:24,089 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:41:24,089 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 13:41:24,089 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 13:41:24,089 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 13:41:24,089 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:41:24,089 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:41:24,089 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 13:41:24,089 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 13:41:24,089 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 13:41:24,100 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:41:24,100 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:41:24,100 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 13:41:24,100 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 13:41:24,100 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 13:41:24,100 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:41:24,100 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:41:24,100 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 13:41:24,100 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 13:41:24,102 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 13:41:25,636 - Manage_KBs.py - INFO - 清理了 0 个占位符
+2026-02-15 13:41:25,638 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 13:41:27,783 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/18/files HTTP/11" 200 1178
+2026-02-15 13:41:27,785 - Manage_KBs.py - INFO - 刷新文件列表成功: ['&1.10MW 高温堆热启动时蒸汽发生器.pdf', '&工作流程.txt', '&测试问题集.txt', '&项目相关容器的构建与使用.txt']
+2026-02-15 13:41:27,790 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:41:27,791 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:41:27,791 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 13:41:27,791 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 13:41:27,791 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 13:41:27,791 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:41:27,791 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:41:27,791 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 13:41:27,791 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 13:41:27,791 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 13:41:27,802 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:41:27,802 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:41:27,802 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 13:41:27,802 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 13:41:27,802 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 13:41:27,803 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:41:27,803 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:41:27,803 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 13:41:27,803 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 13:41:27,803 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 13:41:27,804 - Manage_KBs.py - DEBUG - need_refresh_18=False，不刷新
+2026-02-15 13:41:33,922 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:41:33,922 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:41:33,922 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 13:41:33,922 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 13:41:33,922 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 13:41:33,922 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:41:33,923 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:41:33,923 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 13:41:33,923 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 13:41:33,923 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 13:41:33,934 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:41:33,934 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:41:33,934 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 13:41:33,934 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 13:41:33,934 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 13:41:33,934 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:41:33,934 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:41:33,934 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 13:41:33,934 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 13:41:33,935 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 13:41:33,936 - Manage_KBs.py - DEBUG - need_refresh_18=False，不刷新
+2026-02-15 13:41:34,923 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 13:41:36,975 - urllib3.connectionpool - DEBUG - http://localhost:8001 "DELETE /api/knowledge-bases/18/files/&1.10MW%20%E9%AB%98%E6%B8%A9%E5%A0%86%E7%83%AD%E5%90%AF%E5%8A%A8%E6%97%B6%E8%92%B8%E6%B1%BD%E5%8F%91%E7%94%9F%E5%99%A8.pdf HTTP/11" 200 32
+2026-02-15 13:41:36,975 - Manage_KBs.py - INFO - 清理了 0 个占位符
+2026-02-15 13:41:36,976 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 13:41:39,012 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/18/files HTTP/11" 200 835
+2026-02-15 13:41:39,013 - Manage_KBs.py - INFO - 刷新文件列表成功: ['&工作流程.txt', '&测试问题集.txt', '&项目相关容器的构建与使用.txt']
+2026-02-15 13:41:39,013 - Manage_KBs.py - INFO - 成功删除文件 &1.10MW 高温堆热启动时蒸汽发生器.pdf，已清理进度占位符
+2026-02-15 13:41:39,629 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:41:39,629 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:41:39,629 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 13:41:39,629 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 13:41:39,629 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 13:41:39,629 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:41:39,629 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:41:39,629 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 13:41:39,629 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 13:41:39,629 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 13:41:39,639 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:41:39,639 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:41:39,639 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 13:41:39,639 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 13:41:39,639 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 13:41:39,639 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:41:39,639 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:41:39,639 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 13:41:39,639 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 13:41:39,639 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 13:41:39,640 - Manage_KBs.py - DEBUG - need_refresh_18=False，不刷新
+2026-02-15 13:41:48,672 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:41:48,672 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:41:48,672 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 13:41:48,672 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 13:41:48,672 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 13:41:48,672 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:41:48,672 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:41:48,672 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 13:41:48,672 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 13:41:48,672 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 13:41:48,681 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:41:48,681 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:41:48,681 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 13:41:48,681 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 13:41:48,681 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 13:41:48,681 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:41:48,681 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:41:48,681 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 13:41:48,681 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 13:41:48,681 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 13:41:48,683 - Manage_KBs.py - DEBUG - need_refresh_18=False，不刷新
+2026-02-15 13:41:48,687 - Streamlit_Pages.api_client - INFO - 上传文件: kb_id=18, 文件名=1.10MW 高温堆热启动时蒸汽发生器.pdf
+2026-02-15 13:41:48,700 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 13:41:50,766 - urllib3.connectionpool - DEBUG - http://localhost:8001 "POST /api/knowledge-bases/18/files/upload HTTP/11" 200 381
+2026-02-15 13:41:50,767 - Manage_KBs.py - INFO - 上传成功: 1.10MW 高温堆热启动时蒸汽发生器.pdf
+2026-02-15 13:41:50,767 - Manage_KBs.py - INFO - 清理了 0 个占位符
+2026-02-15 13:41:50,767 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 13:41:52,808 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/18/files HTTP/11" 200 1177
+2026-02-15 13:41:52,809 - Manage_KBs.py - INFO - 刷新文件列表成功: ['&工作流程.txt', '&测试问题集.txt', '&项目相关容器的构建与使用.txt', '1.10MW 高温堆热启动时蒸汽发生器.pdf']
+2026-02-15 13:41:52,911 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:41:52,911 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:41:52,911 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 13:41:52,911 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 13:41:52,911 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 13:41:52,911 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:41:52,911 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:41:52,911 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 13:41:52,911 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 13:41:52,911 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 13:41:52,919 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:41:52,919 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:41:52,919 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 13:41:52,919 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 13:41:52,919 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 13:41:52,919 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:41:52,920 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:41:52,920 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 13:41:52,920 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 13:41:52,920 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 13:41:52,920 - Manage_KBs.py - DEBUG - need_refresh_18=False，不刷新
+2026-02-15 13:41:57,915 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:41:57,915 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:41:57,915 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 13:41:57,915 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 13:41:57,915 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 13:41:57,915 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:41:57,915 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:41:57,915 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 13:41:57,915 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 13:41:57,915 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 13:41:57,924 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:41:57,924 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:41:57,924 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 13:41:57,924 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 13:41:57,924 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 13:41:57,924 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:41:57,924 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:41:57,924 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 13:41:57,924 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 13:41:57,924 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 13:41:57,925 - Manage_KBs.py - DEBUG - need_refresh_18=False，不刷新
+2026-02-15 13:41:57,951 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 13:41:59,988 - urllib3.connectionpool - DEBUG - http://localhost:8001 "POST /api/knowledge-bases/18/files/1.10MW%20%E9%AB%98%E6%B8%A9%E5%A0%86%E7%83%AD%E5%90%AF%E5%8A%A8%E6%97%B6%E8%92%B8%E6%B1%BD%E5%8F%91%E7%94%9F%E5%99%A8.pdf/parse HTTP/11" 200 55
+2026-02-15 13:41:59,990 - Manage_KBs.py - INFO - 解析任务已启动: kb_id=18, file=1.10MW 高温堆热启动时蒸汽发生器.pdf
+2026-02-15 13:41:59,996 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 13:42:02,060 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/18/parse-progress HTTP/11" 200 15
+2026-02-15 13:42:02,061 - Manage_KBs.py - DEBUG - 更新进度 0%: 1.10MW 高温堆热启动时蒸汽发生器.pdf
+2026-02-15 13:42:02,190 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 13:42:04,224 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/18/parse-progress HTTP/11" 200 163
+2026-02-15 13:42:04,225 - Manage_KBs.py - DEBUG - 更新进度 0%: 1.10MW 高温堆热启动时蒸汽发生器.pdf
+2026-02-15 13:42:04,342 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 13:42:06,365 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/18/parse-progress HTTP/11" 200 163
+2026-02-15 13:42:06,367 - Manage_KBs.py - DEBUG - 更新进度 8%: 1.10MW 高温堆热启动时蒸汽发生器.pdf
+2026-02-15 13:42:06,469 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 13:42:08,511 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/18/parse-progress HTTP/11" 200 164
+2026-02-15 13:42:08,512 - Manage_KBs.py - DEBUG - 更新进度 19%: 1.10MW 高温堆热启动时蒸汽发生器.pdf
+2026-02-15 13:42:08,646 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 13:42:10,687 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/18/parse-progress HTTP/11" 200 164
+2026-02-15 13:42:10,687 - Manage_KBs.py - DEBUG - 更新进度 30%: 1.10MW 高温堆热启动时蒸汽发生器.pdf
+2026-02-15 13:42:10,787 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 13:42:12,810 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/18/parse-progress HTTP/11" 200 164
+2026-02-15 13:42:12,811 - Manage_KBs.py - DEBUG - 更新进度 41%: 1.10MW 高温堆热启动时蒸汽发生器.pdf
+2026-02-15 13:42:12,925 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 13:42:14,978 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/18/parse-progress HTTP/11" 200 164
+2026-02-15 13:42:14,979 - Manage_KBs.py - DEBUG - 更新进度 50%: 1.10MW 高温堆热启动时蒸汽发生器.pdf
+2026-02-15 13:42:15,087 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 13:42:17,126 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/18/parse-progress HTTP/11" 200 164
+2026-02-15 13:42:17,128 - Manage_KBs.py - DEBUG - 更新进度 61%: 1.10MW 高温堆热启动时蒸汽发生器.pdf
+2026-02-15 13:42:17,225 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 13:42:19,252 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/18/parse-progress HTTP/11" 200 164
+2026-02-15 13:42:19,252 - Manage_KBs.py - DEBUG - 更新进度 72%: 1.10MW 高温堆热启动时蒸汽发生器.pdf
+2026-02-15 13:42:19,361 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 13:42:21,410 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/18/parse-progress HTTP/11" 200 164
+2026-02-15 13:42:21,412 - Manage_KBs.py - DEBUG - 更新进度 80%: 1.10MW 高温堆热启动时蒸汽发生器.pdf
+2026-02-15 13:42:21,516 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 13:42:23,565 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/18/parse-progress HTTP/11" 200 164
+2026-02-15 13:42:23,566 - Manage_KBs.py - DEBUG - 更新进度 91%: 1.10MW 高温堆热启动时蒸汽发生器.pdf
+2026-02-15 13:42:23,681 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 13:42:25,724 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/18/parse-progress HTTP/11" 200 164
+2026-02-15 13:42:25,870 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:42:25,870 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:42:25,870 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 13:42:25,870 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 13:42:25,870 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 13:42:25,870 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:42:25,870 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:42:25,870 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 13:42:25,870 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 13:42:25,870 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 13:42:25,879 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:42:25,879 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:42:25,879 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 13:42:25,879 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 13:42:25,879 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 13:42:25,879 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:42:25,879 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:42:25,879 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 13:42:25,879 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 13:42:25,879 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 13:42:25,880 - Manage_KBs.py - INFO - 检测到 need_refresh_18=True，准备刷新文件列表
+2026-02-15 13:42:25,881 - Manage_KBs.py - INFO - 清理了 1 个占位符
+2026-02-15 13:42:25,882 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 13:42:27,914 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/18/files HTTP/11" 200 1178
+2026-02-15 13:42:27,914 - Manage_KBs.py - INFO - 刷新文件列表成功: ['&1.10MW 高温堆热启动时蒸汽发生器.pdf', '&工作流程.txt', '&测试问题集.txt', '&项目相关容器的构建与使用.txt']
+2026-02-15 13:42:28,039 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:42:28,040 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:42:28,040 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 13:42:28,040 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 13:42:28,040 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 13:42:28,040 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:42:28,040 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:42:28,040 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 13:42:28,040 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 13:42:28,040 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 13:42:28,051 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:42:28,051 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:42:28,051 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 13:42:28,052 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 13:42:28,052 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 13:42:28,052 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:42:28,052 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:42:28,052 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 13:42:28,052 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 13:42:28,052 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 13:42:28,053 - Manage_KBs.py - DEBUG - need_refresh_18=False，不刷新
+2026-02-15 13:44:21,677 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:44:21,678 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:44:21,678 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 13:44:21,678 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 13:44:21,678 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 13:44:21,678 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:44:21,678 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:44:21,678 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 13:44:21,678 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 13:44:21,678 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 13:44:21,691 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:44:21,691 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:44:21,691 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 13:44:21,691 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 13:44:21,691 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 13:44:21,691 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:44:21,691 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:44:21,691 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 13:44:21,691 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 13:44:21,691 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 13:44:21,692 - Manage_KBs.py - DEBUG - need_refresh_18=False，不刷新
+2026-02-15 13:44:27,583 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:44:27,583 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:44:27,584 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 13:44:27,584 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 13:44:27,584 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 13:44:27,584 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:44:27,584 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:44:27,584 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 13:44:27,584 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 13:44:27,584 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 13:44:27,594 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:44:27,594 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:44:27,594 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 13:44:27,594 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 13:44:27,594 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 13:44:27,594 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:44:27,595 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:44:27,595 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 13:44:27,595 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 13:44:27,595 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 13:44:27,596 - Manage_KBs.py - DEBUG - need_refresh_18=False，不刷新
+2026-02-15 13:44:31,639 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:44:31,641 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:44:31,641 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 13:44:31,641 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 13:44:31,641 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 13:44:31,641 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:44:31,641 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:44:31,641 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 13:44:31,641 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 13:44:31,641 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 13:44:31,649 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:44:31,649 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:44:31,649 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 13:44:31,649 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 13:44:31,649 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 13:44:31,649 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:44:31,649 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:44:31,649 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 13:44:31,649 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 13:44:31,649 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 13:44:35,079 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:44:35,080 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:44:35,080 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 13:44:35,080 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 13:44:35,080 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 13:44:35,080 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:44:35,080 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:44:35,080 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 13:44:35,080 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 13:44:35,080 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 13:44:35,090 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:44:35,091 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:44:35,091 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 13:44:35,091 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 13:44:35,091 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 13:44:35,091 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:44:35,091 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:44:35,091 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 13:44:35,091 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 13:44:35,091 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 13:44:42,267 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 13:44:44,820 - urllib3.connectionpool - DEBUG - http://localhost:8001 "POST /api/knowledge-bases/?user_email=2117543204%40qq.com HTTP/11" 200 193
+2026-02-15 13:44:44,821 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 13:44:46,867 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/user/2117543204@qq.com HTTP/11" 200 802
+2026-02-15 13:44:47,371 - Manage_KBs.py - INFO - 成功创建知识库 test parse all
+2026-02-15 13:44:47,489 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:44:47,489 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:44:47,489 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 13:44:47,489 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 13:44:47,489 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 13:44:47,489 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:44:47,489 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:44:47,489 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 13:44:47,489 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 13:44:47,489 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 13:44:47,500 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:44:47,500 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:44:47,500 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 13:44:47,500 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 13:44:47,500 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 13:44:47,500 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:44:47,500 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:44:47,500 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 13:44:47,502 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 13:44:47,502 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 13:44:57,355 - Manage_KBs.py - INFO - 清理了 0 个占位符
+2026-02-15 13:44:57,357 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 13:44:59,375 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/19/files HTTP/11" 200 12
+2026-02-15 13:44:59,376 - Manage_KBs.py - INFO - 刷新文件列表成功: []
+2026-02-15 13:44:59,379 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:44:59,379 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:44:59,379 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 13:44:59,379 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 13:44:59,379 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 13:44:59,379 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:44:59,379 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:44:59,379 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 13:44:59,379 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 13:44:59,379 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 13:44:59,389 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:44:59,389 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:44:59,389 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 13:44:59,389 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 13:44:59,389 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 13:44:59,389 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:44:59,389 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:44:59,389 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 13:44:59,389 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 13:44:59,389 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 13:44:59,390 - Manage_KBs.py - DEBUG - need_refresh_19=False，不刷新
+2026-02-15 13:45:31,263 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:45:31,263 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:45:31,263 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 13:45:31,263 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 13:45:31,263 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 13:45:31,263 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:45:31,263 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:45:31,264 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 13:45:31,264 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 13:45:31,264 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 13:45:31,273 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:45:31,273 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:45:31,273 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 13:45:31,273 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 13:45:31,273 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 13:45:31,273 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:45:31,273 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:45:31,273 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 13:45:31,273 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 13:45:31,273 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 13:45:31,273 - Manage_KBs.py - DEBUG - need_refresh_19=False，不刷新
+2026-02-15 13:45:31,278 - Streamlit_Pages.api_client - INFO - 上传文件: kb_id=19, 文件名=测试问题集.txt
+2026-02-15 13:45:31,282 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 13:45:33,342 - urllib3.connectionpool - DEBUG - http://localhost:8001 "POST /api/knowledge-bases/19/files/upload HTTP/11" 200 307
+2026-02-15 13:45:33,343 - Manage_KBs.py - INFO - 上传成功: 测试问题集.txt
+2026-02-15 13:45:33,344 - Streamlit_Pages.api_client - INFO - 上传文件: kb_id=19, 文件名=工作流程.txt
+2026-02-15 13:45:33,353 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 13:45:35,430 - urllib3.connectionpool - DEBUG - http://localhost:8001 "POST /api/knowledge-bases/19/files/upload HTTP/11" 200 299
+2026-02-15 13:45:35,431 - Manage_KBs.py - INFO - 上传成功: 工作流程.txt
+2026-02-15 13:45:35,432 - Manage_KBs.py - INFO - 清理了 0 个占位符
+2026-02-15 13:45:35,433 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 13:45:37,470 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/19/files HTTP/11" 200 539
+2026-02-15 13:45:37,471 - Manage_KBs.py - INFO - 刷新文件列表成功: ['工作流程.txt', '测试问题集.txt']
+2026-02-15 13:45:37,574 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:45:37,574 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:45:37,574 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 13:45:37,574 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 13:45:37,574 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 13:45:37,574 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:45:37,574 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:45:37,574 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 13:45:37,574 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 13:45:37,574 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 13:45:37,582 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:45:37,582 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:45:37,582 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 13:45:37,582 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 13:45:37,582 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 13:45:37,582 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:45:37,582 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:45:37,582 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 13:45:37,582 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 13:45:37,582 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 13:45:37,583 - Manage_KBs.py - DEBUG - need_refresh_19=False，不刷新
+2026-02-15 13:45:46,819 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 13:45:48,871 - urllib3.connectionpool - DEBUG - http://localhost:8001 "POST /api/knowledge-bases/19/files/parse-all HTTP/11" 200 61
+2026-02-15 13:45:48,876 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:45:48,876 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:45:48,876 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 13:45:48,876 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 13:45:48,876 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 13:45:48,876 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:45:48,876 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:45:48,876 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 13:45:48,876 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 13:45:48,876 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 13:45:48,887 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:45:48,887 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:45:48,888 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 13:45:48,888 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 13:45:48,888 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 13:45:48,888 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:45:48,888 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:45:48,888 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 13:45:48,888 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 13:45:48,888 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 13:45:48,889 - Manage_KBs.py - DEBUG - need_refresh_19=False，不刷新
+2026-02-15 13:52:20,252 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:52:20,252 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:52:20,252 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 13:52:20,252 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 13:52:20,252 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 13:52:20,253 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:52:20,253 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:52:20,253 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 13:52:20,253 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 13:52:20,253 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 13:52:20,262 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:52:20,262 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:52:20,262 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 13:52:20,263 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 13:52:20,263 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 13:52:20,263 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:52:20,263 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:52:20,263 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 13:52:20,263 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 13:52:20,263 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 13:52:22,199 - Manage_KBs.py - INFO - 清理了 0 个占位符
+2026-02-15 13:52:22,200 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 13:52:24,254 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/19/files HTTP/11" 200 541
+2026-02-15 13:52:24,254 - Manage_KBs.py - INFO - 刷新文件列表成功: ['&工作流程.txt', '&测试问题集.txt']
+2026-02-15 13:52:24,259 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:52:24,259 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:52:24,259 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 13:52:24,259 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 13:52:24,259 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 13:52:24,259 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:52:24,259 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:52:24,259 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 13:52:24,259 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 13:52:24,259 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 13:52:24,269 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:52:24,269 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:52:24,269 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 13:52:24,269 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 13:52:24,269 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 13:52:24,269 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:52:24,269 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:52:24,269 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 13:52:24,269 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 13:52:24,269 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 13:52:24,270 - Manage_KBs.py - DEBUG - need_refresh_19=False，不刷新
+2026-02-15 13:53:11,278 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:53:11,278 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:53:11,278 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 13:53:11,278 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 13:53:11,278 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 13:53:11,278 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:53:11,278 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:53:11,278 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 13:53:11,278 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 13:53:11,278 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 13:53:11,288 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:53:11,288 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:53:11,288 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 13:53:11,288 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 13:53:11,288 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 13:53:11,288 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:53:11,288 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:53:11,288 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 13:53:11,288 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 13:53:11,288 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 13:53:11,289 - Manage_KBs.py - DEBUG - need_refresh_19=False，不刷新
+2026-02-15 13:53:12,374 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 13:53:14,434 - urllib3.connectionpool - DEBUG - http://localhost:8001 "DELETE /api/knowledge-bases/19/files/&%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B.txt HTTP/11" 200 32
+2026-02-15 13:53:14,434 - Manage_KBs.py - INFO - 清理了 0 个占位符
+2026-02-15 13:53:14,435 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 13:53:16,484 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/19/files HTTP/11" 200 280
+2026-02-15 13:53:16,485 - Manage_KBs.py - INFO - 刷新文件列表成功: ['&测试问题集.txt']
+2026-02-15 13:53:16,486 - Manage_KBs.py - INFO - 成功删除文件 &工作流程.txt，已清理进度占位符
+2026-02-15 13:53:17,101 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:53:17,101 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:53:17,101 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 13:53:17,101 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 13:53:17,101 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 13:53:17,101 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:53:17,101 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:53:17,101 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 13:53:17,101 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 13:53:17,101 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 13:53:17,112 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:53:17,112 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:53:17,112 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 13:53:17,112 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 13:53:17,112 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 13:53:17,112 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:53:17,112 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:53:17,112 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 13:53:17,112 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 13:53:17,112 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 13:53:17,113 - Manage_KBs.py - DEBUG - need_refresh_19=False，不刷新
+2026-02-15 13:53:18,239 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:53:18,240 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:53:18,240 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 13:53:18,240 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 13:53:18,240 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 13:53:18,240 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:53:18,240 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:53:18,240 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 13:53:18,240 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 13:53:18,240 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 13:53:18,248 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:53:18,249 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:53:18,249 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 13:53:18,249 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 13:53:18,249 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 13:53:18,249 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:53:18,249 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:53:18,249 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 13:53:18,249 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 13:53:18,249 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 13:53:18,250 - Manage_KBs.py - DEBUG - need_refresh_19=False，不刷新
+2026-02-15 13:53:19,501 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 13:53:21,572 - urllib3.connectionpool - DEBUG - http://localhost:8001 "DELETE /api/knowledge-bases/19/files/&%E6%B5%8B%E8%AF%95%E9%97%AE%E9%A2%98%E9%9B%86.txt HTTP/11" 200 32
+2026-02-15 13:53:21,573 - Manage_KBs.py - INFO - 清理了 0 个占位符
+2026-02-15 13:53:21,574 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 13:53:23,603 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/19/files HTTP/11" 200 12
+2026-02-15 13:53:23,604 - Manage_KBs.py - INFO - 刷新文件列表成功: []
+2026-02-15 13:53:23,605 - Manage_KBs.py - INFO - 知识库 19 已无文件，已清空所有进度占位符
+2026-02-15 13:53:23,606 - Manage_KBs.py - INFO - 成功删除文件 &测试问题集.txt，已清理进度占位符
+2026-02-15 13:53:24,214 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:53:24,214 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:53:24,214 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 13:53:24,214 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 13:53:24,214 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 13:53:24,214 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:53:24,214 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:53:24,214 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 13:53:24,214 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 13:53:24,214 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 13:53:24,222 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:53:24,222 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:53:24,222 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 13:53:24,222 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 13:53:24,222 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 13:53:24,222 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:53:24,222 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:53:24,222 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 13:53:24,222 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 13:53:24,222 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 13:53:24,224 - Manage_KBs.py - DEBUG - need_refresh_19=False，不刷新
+2026-02-15 13:53:57,821 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:53:57,822 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:53:57,822 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 13:53:57,822 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 13:53:57,822 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 13:53:57,822 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:53:57,822 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:53:57,822 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 13:53:57,822 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 13:53:57,822 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 13:53:57,831 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:53:57,831 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:53:57,831 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 13:53:57,831 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 13:53:57,831 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 13:53:57,831 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:53:57,831 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:53:57,831 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 13:53:57,831 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 13:53:57,831 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 13:53:57,832 - Manage_KBs.py - DEBUG - need_refresh_19=False，不刷新
+2026-02-15 13:53:57,838 - Streamlit_Pages.api_client - INFO - 上传文件: kb_id=19, 文件名=20260108申论-作文理论讲义.pdf
+2026-02-15 13:53:57,861 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 13:53:59,927 - urllib3.connectionpool - DEBUG - http://localhost:8001 "POST /api/knowledge-bases/19/files/upload HTTP/11" 200 364
+2026-02-15 13:53:59,927 - Manage_KBs.py - INFO - 上传成功: 20260108申论-作文理论讲义.pdf
+2026-02-15 13:53:59,931 - Streamlit_Pages.api_client - INFO - 上传文件: kb_id=19, 文件名=国企行测必刷400题-学生版（含答案）.pdf
+2026-02-15 13:54:00,046 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 13:54:02,158 - urllib3.connectionpool - DEBUG - http://localhost:8001 "POST /api/knowledge-bases/19/files/upload HTTP/11" 200 413
+2026-02-15 13:54:02,159 - Manage_KBs.py - INFO - 上传成功: 国企行测必刷400题-学生版（含答案）.pdf
+2026-02-15 13:54:02,160 - Manage_KBs.py - INFO - 清理了 0 个占位符
+2026-02-15 13:54:02,162 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 13:54:04,211 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/19/files HTTP/11" 200 710
+2026-02-15 13:54:04,212 - Manage_KBs.py - INFO - 刷新文件列表成功: ['20260108申论-作文理论讲义.pdf', '国企行测必刷400题-学生版（含答案）.pdf']
+2026-02-15 13:54:04,331 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:54:04,331 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:54:04,331 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 13:54:04,331 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 13:54:04,331 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 13:54:04,331 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:54:04,331 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:54:04,331 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 13:54:04,331 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 13:54:04,331 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 13:54:04,340 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:54:04,340 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:54:04,340 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 13:54:04,340 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 13:54:04,340 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 13:54:04,340 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:54:04,340 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:54:04,340 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 13:54:04,340 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 13:54:04,340 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 13:54:04,341 - Manage_KBs.py - DEBUG - need_refresh_19=False，不刷新
+2026-02-15 13:54:12,247 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 13:54:14,275 - urllib3.connectionpool - DEBUG - http://localhost:8001 "POST /api/knowledge-bases/19/files/parse-all HTTP/11" 200 61
+2026-02-15 13:54:14,281 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:54:14,281 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:54:14,281 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 13:54:14,281 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 13:54:14,281 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 13:54:14,281 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:54:14,281 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:54:14,281 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 13:54:14,281 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 13:54:14,281 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 13:54:14,290 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:54:14,290 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:54:14,290 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 13:54:14,290 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 13:54:14,290 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 13:54:14,290 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:54:14,290 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:54:14,290 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 13:54:14,290 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 13:54:14,290 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 13:54:14,291 - Manage_KBs.py - DEBUG - need_refresh_19=False，不刷新
+2026-02-15 13:59:35,158 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:59:35,159 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:59:35,159 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 13:59:35,159 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 13:59:35,159 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 13:59:35,159 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:59:35,159 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:59:35,159 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 13:59:35,159 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 13:59:35,159 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 13:59:35,169 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:59:35,169 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:59:35,169 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 13:59:35,169 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 13:59:35,169 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 13:59:35,169 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 13:59:35,169 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 13:59:35,169 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 13:59:35,169 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 13:59:35,169 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 13:59:35,170 - Manage_KBs.py - DEBUG - need_refresh_19=False，不刷新
+2026-02-15 13:59:36,517 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:00:44,290 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:00:44,290 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:00:44,290 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 14:00:44,290 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 14:00:44,290 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 14:00:44,290 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:00:44,290 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:00:44,290 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 14:00:44,290 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 14:00:44,290 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 14:00:44,300 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:00:44,300 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:00:44,300 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 14:00:44,300 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 14:00:44,300 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 14:00:44,300 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:00:44,300 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:00:44,300 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 14:00:44,300 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 14:00:44,300 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 14:00:46,532 - Manage_KBs.py - INFO - 清理了 0 个占位符
+2026-02-15 14:00:46,534 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:01:07,037 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:01:07,037 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:01:07,037 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 14:01:07,038 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 14:01:07,038 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 14:01:07,038 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:01:07,038 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:01:07,038 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 14:01:07,038 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 14:01:07,038 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 14:01:07,052 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:01:07,052 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:01:07,052 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 14:01:07,052 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 14:01:07,052 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 14:01:07,052 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:01:07,052 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:01:07,052 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 14:01:07,052 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 14:01:07,052 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 14:01:11,232 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:01:11,232 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:01:11,233 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 14:01:11,233 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 14:01:11,233 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 14:01:11,233 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:01:11,233 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:01:11,233 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 14:01:11,233 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 14:01:11,233 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 14:01:11,241 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:01:11,241 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:01:11,241 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 14:01:11,241 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 14:01:11,241 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 14:01:11,241 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:01:11,241 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:01:11,241 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 14:01:11,241 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 14:01:11,241 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 14:01:11,289 - login.py - INFO - 用户Email:2117543204@qq.com 登录成功
+2026-02-15 14:01:12,411 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:01:12,411 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:01:12,411 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 14:01:12,411 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 14:01:12,411 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 14:01:12,411 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:01:12,411 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:01:12,411 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 14:01:12,411 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 14:01:12,411 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 14:01:12,420 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:01:12,420 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:01:12,420 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 14:01:12,420 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 14:01:12,420 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 14:01:12,420 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:01:12,420 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:01:12,420 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 14:01:12,420 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 14:01:12,421 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 14:01:17,635 - Manage_KBs.py - INFO - 清理了 0 个占位符
+2026-02-15 14:01:17,637 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:01:37,077 - Manage_KBs.py - ERROR - 刷新文件列表失败: ('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+2026-02-15 14:01:37,078 - Manage_KBs.py - ERROR - 刷新文件列表失败: ('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+2026-02-15 14:01:37,444 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:01:37,445 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:01:37,445 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 14:01:37,445 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 14:01:37,445 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 14:01:37,445 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:01:37,445 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:01:37,445 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 14:01:37,445 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 14:01:37,445 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 14:01:37,457 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:01:37,457 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:01:37,457 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 14:01:37,457 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 14:01:37,457 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 14:01:37,457 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:01:37,457 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:01:37,457 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 14:01:37,457 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 14:01:37,457 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 14:01:37,458 - Manage_KBs.py - DEBUG - need_refresh_14=False，不刷新
+2026-02-15 14:03:36,845 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:03:36,846 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:03:36,846 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 14:03:36,846 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 14:03:36,846 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 14:03:36,846 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:03:36,846 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:03:36,846 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 14:03:36,846 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 14:03:36,846 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 14:03:36,859 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:03:36,859 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:03:36,859 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 14:03:36,859 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 14:03:36,859 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 14:03:36,859 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:03:36,859 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:03:36,859 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 14:03:36,859 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 14:03:36,859 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 14:03:55,584 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:03:55,584 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:03:55,584 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 14:03:55,584 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 14:03:55,584 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 14:03:55,584 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:03:55,584 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:03:55,584 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 14:03:55,584 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 14:03:55,594 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 14:03:55,604 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:03:55,604 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:03:55,604 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 14:03:55,604 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 14:03:55,604 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 14:03:55,604 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:03:55,604 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:03:55,604 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 14:03:55,604 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 14:03:55,604 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 14:03:55,604 - db_utils - INFO - 数据库连接池初始化成功
+2026-02-15 14:03:56,111 - login.py - INFO - 用户Email:2117543204@qq.com 登录成功
+2026-02-15 14:03:57,228 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:03:57,231 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:03:57,231 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 14:03:57,231 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 14:03:57,231 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 14:03:57,231 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:03:57,231 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:03:57,231 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 14:03:57,231 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 14:03:57,231 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 14:03:57,243 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:03:57,243 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:03:57,243 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 14:03:57,243 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 14:03:57,243 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 14:03:57,243 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:03:57,243 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:03:57,243 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 14:03:57,243 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 14:03:57,243 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 14:04:13,755 - Manage_KBs.py - INFO - 清理了 0 个占位符
+2026-02-15 14:04:13,759 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:04:17,300 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/19/files HTTP/11" 200 711
+2026-02-15 14:04:17,300 - Manage_KBs.py - INFO - 刷新文件列表成功: ['&20260108申论-作文理论讲义.pdf', '国企行测必刷400题-学生版（含答案）.pdf']
+2026-02-15 14:04:17,303 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:04:17,303 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:04:17,303 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 14:04:17,303 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 14:04:17,303 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 14:04:17,303 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:04:17,303 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:04:17,303 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 14:04:17,303 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 14:04:17,303 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 14:04:17,316 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:04:17,316 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:04:17,316 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 14:04:17,316 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 14:04:17,316 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 14:04:17,316 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:04:17,316 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:04:17,316 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 14:04:17,316 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 14:04:17,316 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 14:04:17,317 - Manage_KBs.py - DEBUG - need_refresh_19=False，不刷新
+2026-02-15 14:04:21,097 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:04:21,097 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:04:21,097 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 14:04:21,097 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 14:04:21,098 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 14:04:21,098 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:04:21,098 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:04:21,098 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 14:04:21,098 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 14:04:21,098 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 14:04:21,107 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:04:21,107 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:04:21,107 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 14:04:21,107 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 14:04:21,107 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 14:04:21,107 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:04:21,107 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:04:21,107 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 14:04:21,107 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 14:04:21,107 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 14:04:21,110 - Manage_KBs.py - DEBUG - need_refresh_19=False，不刷新
+2026-02-15 14:04:22,385 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:04:24,437 - urllib3.connectionpool - DEBUG - http://localhost:8001 "DELETE /api/knowledge-bases/19/files/%E5%9B%BD%E4%BC%81%E8%A1%8C%E6%B5%8B%E5%BF%85%E5%88%B7400%E9%A2%98-%E5%AD%A6%E7%94%9F%E7%89%88%EF%BC%88%E5%90%AB%E7%AD%94%E6%A1%88%EF%BC%89.pdf HTTP/11" 200 32
+2026-02-15 14:04:24,438 - Manage_KBs.py - INFO - 清理了 0 个占位符
+2026-02-15 14:04:24,438 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:04:26,459 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/19/files HTTP/11" 200 337
+2026-02-15 14:04:26,459 - Manage_KBs.py - INFO - 刷新文件列表成功: ['&20260108申论-作文理论讲义.pdf']
+2026-02-15 14:04:26,459 - Manage_KBs.py - INFO - 成功删除文件 国企行测必刷400题-学生版（含答案）.pdf，已清理进度占位符
+2026-02-15 14:04:27,065 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:04:27,065 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:04:27,065 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 14:04:27,065 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 14:04:27,065 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 14:04:27,065 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:04:27,065 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:04:27,065 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 14:04:27,065 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 14:04:27,065 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 14:04:27,075 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:04:27,075 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:04:27,075 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 14:04:27,075 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 14:04:27,075 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 14:04:27,075 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:04:27,075 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:04:27,075 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 14:04:27,075 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 14:04:27,075 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 14:04:27,076 - Manage_KBs.py - DEBUG - need_refresh_19=False，不刷新
+2026-02-15 14:04:28,327 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:04:28,327 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:04:28,327 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 14:04:28,327 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 14:04:28,327 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 14:04:28,327 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:04:28,328 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:04:28,328 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 14:04:28,328 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 14:04:28,328 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 14:04:28,341 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:04:28,341 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:04:28,341 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 14:04:28,341 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 14:04:28,341 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 14:04:28,341 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:04:28,341 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:04:28,341 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 14:04:28,341 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 14:04:28,341 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 14:04:28,342 - Manage_KBs.py - DEBUG - need_refresh_19=False，不刷新
+2026-02-15 14:04:29,354 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:04:31,390 - urllib3.connectionpool - DEBUG - http://localhost:8001 "DELETE /api/knowledge-bases/19/files/&20260108%E7%94%B3%E8%AE%BA-%E4%BD%9C%E6%96%87%E7%90%86%E8%AE%BA%E8%AE%B2%E4%B9%89.pdf HTTP/11" 200 32
+2026-02-15 14:04:31,390 - Manage_KBs.py - INFO - 清理了 0 个占位符
+2026-02-15 14:04:31,390 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:04:33,428 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/19/files HTTP/11" 200 12
+2026-02-15 14:04:33,429 - Manage_KBs.py - INFO - 刷新文件列表成功: []
+2026-02-15 14:04:33,429 - Manage_KBs.py - INFO - 知识库 19 已无文件，已清空所有进度占位符
+2026-02-15 14:04:33,429 - Manage_KBs.py - INFO - 成功删除文件 &20260108申论-作文理论讲义.pdf，已清理进度占位符
+2026-02-15 14:04:34,179 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:04:34,179 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:04:34,179 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 14:04:34,179 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 14:04:34,179 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 14:04:34,179 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:04:34,179 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:04:34,179 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 14:04:34,179 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 14:04:34,179 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 14:04:34,192 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:04:34,192 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:04:34,192 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 14:04:34,192 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 14:04:34,192 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 14:04:34,192 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:04:34,192 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:04:34,192 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 14:04:34,192 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 14:04:34,192 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 14:04:34,194 - Manage_KBs.py - DEBUG - need_refresh_19=False，不刷新
+2026-02-15 14:08:19,082 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:08:19,082 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:08:19,082 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 14:08:19,082 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 14:08:19,082 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 14:08:19,082 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:08:19,082 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:08:19,082 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 14:08:19,082 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 14:08:19,082 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 14:08:19,091 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:08:19,091 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:08:19,092 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 14:08:19,092 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 14:08:19,092 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 14:08:19,092 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:08:19,092 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:08:19,092 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 14:08:19,092 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 14:08:19,092 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 14:08:19,103 - db_utils - INFO - 数据库连接池关闭处理器已注册
+2026-02-15 14:08:22,406 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:08:22,407 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:08:22,407 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 14:08:22,407 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 14:08:22,407 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 14:08:22,407 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:08:22,407 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:08:22,407 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 14:08:22,407 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 14:08:22,407 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 14:08:22,419 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:08:22,419 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:08:22,419 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 14:08:22,419 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 14:08:22,419 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 14:08:22,419 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:08:22,419 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:08:22,419 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 14:08:22,419 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 14:08:22,419 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 14:08:22,426 - db_utils - INFO - 数据库连接池初始化成功
+2026-02-15 14:08:22,490 - login.py - INFO - 用户Email:2117543204@qq.com 登录成功
+2026-02-15 14:08:23,581 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:08:23,581 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:08:23,581 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 14:08:23,581 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 14:08:23,581 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 14:08:23,581 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:08:23,581 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:08:23,581 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 14:08:23,581 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 14:08:23,581 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 14:08:23,591 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:08:23,591 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:08:23,593 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 14:08:23,593 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 14:08:23,593 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 14:08:23,593 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:08:23,593 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:08:23,593 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 14:08:23,593 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 14:08:23,593 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 14:08:26,961 - Manage_KBs.py - INFO - 清理了 0 个占位符
+2026-02-15 14:08:26,961 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:08:29,114 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/19/files HTTP/11" 200 12
+2026-02-15 14:08:29,114 - Manage_KBs.py - INFO - 刷新文件列表成功: []
+2026-02-15 14:08:29,114 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:08:29,114 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:08:29,114 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 14:08:29,114 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 14:08:29,114 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 14:08:29,114 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:08:29,114 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:08:29,114 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 14:08:29,114 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 14:08:29,114 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 14:08:29,128 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:08:29,128 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:08:29,128 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 14:08:29,128 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 14:08:29,128 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 14:08:29,128 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:08:29,128 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:08:29,128 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 14:08:29,128 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 14:08:29,128 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 14:08:29,129 - Manage_KBs.py - DEBUG - need_refresh_19=False，不刷新
+2026-02-15 14:08:29,138 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:08:31,154 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/19/parse-progress HTTP/11" 200 15
+2026-02-15 14:08:31,255 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:08:33,280 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/19/parse-progress HTTP/11" 200 15
+2026-02-15 14:08:33,371 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:08:35,420 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/19/parse-progress HTTP/11" 200 15
+2026-02-15 14:08:35,499 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:08:37,524 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/19/parse-progress HTTP/11" 200 15
+2026-02-15 14:08:37,624 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:08:39,660 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/19/parse-progress HTTP/11" 200 15
+2026-02-15 14:08:39,757 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:08:41,781 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/19/parse-progress HTTP/11" 200 15
+2026-02-15 14:08:41,884 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:08:43,909 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/19/parse-progress HTTP/11" 200 15
+2026-02-15 14:08:44,005 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:08:46,047 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/19/parse-progress HTTP/11" 200 15
+2026-02-15 14:08:46,138 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:08:48,157 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/19/parse-progress HTTP/11" 200 15
+2026-02-15 14:08:48,249 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:08:50,273 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/19/parse-progress HTTP/11" 200 15
+2026-02-15 14:08:50,357 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:08:52,407 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/19/parse-progress HTTP/11" 200 15
+2026-02-15 14:08:52,489 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:08:54,518 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/19/parse-progress HTTP/11" 200 15
+2026-02-15 14:08:54,616 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:08:56,646 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/19/parse-progress HTTP/11" 200 15
+2026-02-15 14:08:56,727 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:08:58,758 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/19/parse-progress HTTP/11" 200 15
+2026-02-15 14:08:58,843 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:09:00,861 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/19/parse-progress HTTP/11" 200 15
+2026-02-15 14:09:00,950 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:09:02,986 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/19/parse-progress HTTP/11" 200 15
+2026-02-15 14:09:03,078 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:09:05,084 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/19/parse-progress HTTP/11" 200 15
+2026-02-15 14:09:05,177 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:09:07,212 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/19/parse-progress HTTP/11" 200 15
+2026-02-15 14:09:07,295 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:09:09,335 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/19/parse-progress HTTP/11" 200 15
+2026-02-15 14:09:09,424 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:09:11,465 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/19/parse-progress HTTP/11" 200 15
+2026-02-15 14:09:11,561 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:09:13,603 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/19/parse-progress HTTP/11" 200 15
+2026-02-15 14:09:13,704 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:09:15,739 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/19/parse-progress HTTP/11" 200 15
+2026-02-15 14:09:15,839 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:09:17,860 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/19/parse-progress HTTP/11" 200 15
+2026-02-15 14:09:17,955 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:09:19,989 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/19/parse-progress HTTP/11" 200 15
+2026-02-15 14:09:20,083 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:09:22,121 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/19/parse-progress HTTP/11" 200 15
+2026-02-15 14:09:22,236 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:09:24,274 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/19/parse-progress HTTP/11" 200 15
+2026-02-15 14:09:24,370 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:09:26,407 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/19/parse-progress HTTP/11" 200 15
+2026-02-15 14:09:26,497 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:09:28,129 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:09:28,131 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:09:28,131 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 14:09:28,131 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 14:09:28,131 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 14:09:28,131 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:09:28,131 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:09:28,131 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 14:09:28,131 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 14:09:28,131 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 14:09:28,142 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:09:28,142 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:09:28,142 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 14:09:28,142 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 14:09:28,142 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 14:09:28,142 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:09:28,142 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:09:28,142 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 14:09:28,142 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 14:09:28,142 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 14:09:28,144 - Manage_KBs.py - DEBUG - need_refresh_19=False，不刷新
+2026-02-15 14:09:28,150 - Streamlit_Pages.api_client - INFO - 上传文件: kb_id=19, 文件名=20260108申论-作文理论讲义.pdf
+2026-02-15 14:09:28,171 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:09:28,538 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/19/parse-progress HTTP/11" 200 15
+2026-02-15 14:09:30,226 - urllib3.connectionpool - DEBUG - http://localhost:8001 "POST /api/knowledge-bases/19/files/upload HTTP/11" 200 364
+2026-02-15 14:09:30,226 - Manage_KBs.py - INFO - 上传成功: 20260108申论-作文理论讲义.pdf
+2026-02-15 14:09:30,228 - Streamlit_Pages.api_client - INFO - 上传文件: kb_id=19, 文件名=中文全部 成绩单_20222241136_2026-02-05.pdf
+2026-02-15 14:09:30,239 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:09:32,321 - urllib3.connectionpool - DEBUG - http://localhost:8001 "POST /api/knowledge-bases/19/files/upload HTTP/11" 200 400
+2026-02-15 14:09:32,321 - Manage_KBs.py - INFO - 上传成功: 中文全部 成绩单_20222241136_2026-02-05.pdf
+2026-02-15 14:09:32,321 - Manage_KBs.py - INFO - 清理了 0 个占位符
+2026-02-15 14:09:32,322 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:09:34,356 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/19/files HTTP/11" 200 697
+2026-02-15 14:09:34,357 - Manage_KBs.py - INFO - 刷新文件列表成功: ['20260108申论-作文理论讲义.pdf', '中文全部 成绩单_20222241136_2026-02-05.pdf']
+2026-02-15 14:09:34,448 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:09:34,448 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:09:34,448 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 14:09:34,448 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 14:09:34,448 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 14:09:34,448 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:09:34,448 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:09:34,448 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 14:09:34,448 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 14:09:34,448 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 14:09:34,457 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:09:34,457 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:09:34,457 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 14:09:34,457 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 14:09:34,458 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 14:09:34,458 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:09:34,458 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:09:34,458 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 14:09:34,458 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 14:09:34,458 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 14:09:34,459 - Manage_KBs.py - DEBUG - need_refresh_19=False，不刷新
+2026-02-15 14:09:34,473 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:09:36,502 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/19/parse-progress HTTP/11" 200 15
+2026-02-15 14:09:36,584 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:09:38,618 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/19/parse-progress HTTP/11" 200 15
+2026-02-15 14:09:38,705 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:09:40,720 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/19/parse-progress HTTP/11" 200 15
+2026-02-15 14:09:40,809 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:09:42,143 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:09:42,827 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/19/parse-progress HTTP/11" 200 15
+2026-02-15 14:09:44,179 - urllib3.connectionpool - DEBUG - http://localhost:8001 "POST /api/knowledge-bases/19/files/parse-all HTTP/11" 200 61
+2026-02-15 14:09:44,184 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:09:44,184 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:09:44,184 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 14:09:44,185 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 14:09:44,185 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 14:09:44,185 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:09:44,185 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:09:44,185 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 14:09:44,185 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 14:09:44,185 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 14:09:44,192 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:09:44,192 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:09:44,192 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 14:09:44,192 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 14:09:44,192 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 14:09:44,192 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:09:44,192 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:09:44,192 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 14:09:44,192 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 14:09:44,192 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 14:09:44,194 - Manage_KBs.py - DEBUG - need_refresh_19=False，不刷新
+2026-02-15 14:09:44,215 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:09:46,260 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/19/parse-progress HTTP/11" 200 15
+2026-02-15 14:09:46,357 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:09:48,402 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/19/parse-progress HTTP/11" 200 143
+2026-02-15 14:09:48,489 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:09:50,514 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/19/parse-progress HTTP/11" 200 143
+2026-02-15 14:09:50,614 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:09:52,648 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/19/parse-progress HTTP/11" 200 144
+2026-02-15 14:09:52,735 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:09:54,783 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/19/parse-progress HTTP/11" 200 144
+2026-02-15 14:09:54,892 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:09:56,927 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/19/parse-progress HTTP/11" 200 144
+2026-02-15 14:09:56,994 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:09:59,019 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/19/parse-progress HTTP/11" 200 144
+2026-02-15 14:09:59,110 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:10:01,154 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/19/parse-progress HTTP/11" 200 144
+2026-02-15 14:10:01,253 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:10:03,291 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/19/parse-progress HTTP/11" 200 144
+2026-02-15 14:10:03,384 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:10:05,421 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/19/parse-progress HTTP/11" 200 298
+2026-02-15 14:10:05,524 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:10:07,560 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/19/parse-progress HTTP/11" 200 298
+2026-02-15 14:10:07,648 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:10:09,710 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/19/parse-progress HTTP/11" 200 298
+2026-02-15 14:10:09,800 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:10:11,826 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/19/parse-progress HTTP/11" 200 298
+2026-02-15 14:10:11,914 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:10:13,943 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/19/parse-progress HTTP/11" 200 298
+2026-02-15 14:10:14,027 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:10:16,069 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/19/parse-progress HTTP/11" 200 298
+2026-02-15 14:10:16,145 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:10:18,190 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/19/parse-progress HTTP/11" 200 298
+2026-02-15 14:10:18,295 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:10:20,317 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/19/parse-progress HTTP/11" 200 298
+2026-02-15 14:10:20,418 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:10:22,447 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/19/parse-progress HTTP/11" 200 298
+2026-02-15 14:10:22,543 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:10:24,593 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/19/parse-progress HTTP/11" 200 298
+2026-02-15 14:10:24,687 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:10:26,742 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/19/parse-progress HTTP/11" 200 298
+2026-02-15 14:10:26,835 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:10:28,881 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/19/parse-progress HTTP/11" 200 298
+2026-02-15 14:10:28,989 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:10:31,038 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/19/parse-progress HTTP/11" 200 15
+2026-02-15 14:10:31,127 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:10:33,149 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/19/parse-progress HTTP/11" 200 15
+2026-02-15 14:10:33,235 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:10:35,282 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/19/parse-progress HTTP/11" 200 15
+2026-02-15 14:10:35,385 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:10:36,799 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:10:36,799 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:10:36,799 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 14:10:36,799 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 14:10:36,799 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 14:10:36,799 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:10:36,799 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:10:36,799 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 14:10:36,799 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 14:10:36,799 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 14:10:36,808 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:10:36,808 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:10:36,808 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 14:10:36,808 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 14:10:36,808 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 14:10:36,808 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:10:36,808 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:10:36,808 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 14:10:36,808 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 14:10:36,808 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 14:10:37,414 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/19/parse-progress HTTP/11" 200 15
+2026-02-15 14:10:39,459 - Manage_KBs.py - INFO - 清理了 0 个占位符
+2026-02-15 14:10:39,459 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:10:41,571 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/19/files HTTP/11" 200 699
+2026-02-15 14:10:41,577 - Manage_KBs.py - INFO - 刷新文件列表成功: ['&20260108申论-作文理论讲义.pdf', '&中文全部 成绩单_20222241136_2026-02-05.pdf']
+2026-02-15 14:10:41,581 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:10:41,581 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:10:41,581 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 14:10:41,581 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 14:10:41,581 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 14:10:41,582 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:10:41,582 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:10:41,582 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 14:10:41,582 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 14:10:41,582 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 14:10:41,589 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:10:41,589 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:10:41,589 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 14:10:41,589 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 14:10:41,589 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 14:10:41,589 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:10:41,589 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:10:41,589 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 14:10:41,589 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 14:10:41,589 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 14:10:41,590 - Manage_KBs.py - DEBUG - need_refresh_19=False，不刷新
+2026-02-15 14:10:49,972 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:10:49,972 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:10:49,972 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 14:10:49,972 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 14:10:49,972 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 14:10:49,972 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:10:49,972 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:10:49,972 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 14:10:49,972 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 14:10:49,972 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 14:10:49,983 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:10:49,984 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:10:49,984 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 14:10:49,984 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 14:10:49,984 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 14:10:49,984 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:10:49,984 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:10:49,984 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 14:10:49,984 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 14:10:49,984 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 14:10:49,984 - Manage_KBs.py - DEBUG - need_refresh_19=False，不刷新
+2026-02-15 14:10:51,224 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:10:53,249 - urllib3.connectionpool - DEBUG - http://localhost:8001 "DELETE /api/knowledge-bases/19/files/&20260108%E7%94%B3%E8%AE%BA-%E4%BD%9C%E6%96%87%E7%90%86%E8%AE%BA%E8%AE%B2%E4%B9%89.pdf HTTP/11" 200 32
+2026-02-15 14:10:53,251 - Manage_KBs.py - INFO - 清理了 0 个占位符
+2026-02-15 14:10:53,251 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:10:55,275 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/19/files HTTP/11" 200 373
+2026-02-15 14:10:55,275 - Manage_KBs.py - INFO - 刷新文件列表成功: ['&中文全部 成绩单_20222241136_2026-02-05.pdf']
+2026-02-15 14:10:55,277 - Manage_KBs.py - INFO - 成功删除文件 &20260108申论-作文理论讲义.pdf，已清理进度占位符
+2026-02-15 14:10:55,881 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:10:55,885 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:10:55,885 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 14:10:55,885 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 14:10:55,885 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 14:10:55,885 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:10:55,885 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:10:55,885 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 14:10:55,885 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 14:10:55,885 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 14:10:55,896 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:10:55,896 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:10:55,896 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 14:10:55,896 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 14:10:55,896 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 14:10:55,896 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:10:55,896 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:10:55,896 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 14:10:55,896 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 14:10:55,896 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 14:10:55,898 - Manage_KBs.py - DEBUG - need_refresh_19=False，不刷新
+2026-02-15 14:10:57,101 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:10:57,101 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:10:57,101 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 14:10:57,101 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 14:10:57,101 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 14:10:57,101 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:10:57,101 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:10:57,101 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 14:10:57,101 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 14:10:57,101 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 14:10:57,113 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:10:57,113 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:10:57,113 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 14:10:57,113 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 14:10:57,113 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 14:10:57,113 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:10:57,114 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:10:57,114 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 14:10:57,114 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 14:10:57,114 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 14:10:57,115 - Manage_KBs.py - DEBUG - need_refresh_19=False，不刷新
+2026-02-15 14:10:58,304 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:11:00,364 - urllib3.connectionpool - DEBUG - http://localhost:8001 "DELETE /api/knowledge-bases/19/files/&%E4%B8%AD%E6%96%87%E5%85%A8%E9%83%A8%20%E6%88%90%E7%BB%A9%E5%8D%95_20222241136_2026-02-05.pdf HTTP/11" 200 32
+2026-02-15 14:11:00,365 - Manage_KBs.py - INFO - 清理了 0 个占位符
+2026-02-15 14:11:00,368 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:11:02,395 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/19/files HTTP/11" 200 12
+2026-02-15 14:11:02,395 - Manage_KBs.py - INFO - 刷新文件列表成功: []
+2026-02-15 14:11:02,395 - Manage_KBs.py - INFO - 知识库 19 已无文件，已清空所有进度占位符
+2026-02-15 14:11:02,396 - Manage_KBs.py - INFO - 成功删除文件 &中文全部 成绩单_20222241136_2026-02-05.pdf，已清理进度占位符
+2026-02-15 14:11:03,014 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:11:03,014 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:11:03,014 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 14:11:03,014 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 14:11:03,014 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 14:11:03,014 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:11:03,014 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:11:03,014 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 14:11:03,014 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 14:11:03,014 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 14:11:03,026 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:11:03,026 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:11:03,026 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 14:11:03,026 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 14:11:03,026 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 14:11:03,026 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:11:03,026 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:11:03,026 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 14:11:03,026 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 14:11:03,026 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 14:11:03,028 - Manage_KBs.py - DEBUG - need_refresh_19=False，不刷新
+2026-02-15 14:18:29,046 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:18:29,046 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:18:29,046 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 14:18:29,046 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 14:18:29,046 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 14:18:29,047 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:18:29,047 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:18:29,047 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 14:18:29,047 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 14:18:29,047 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 14:18:29,058 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:18:29,058 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:18:29,058 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 14:18:29,058 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 14:18:29,058 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 14:18:29,058 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:18:29,058 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:18:29,058 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 14:18:29,058 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 14:18:29,058 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 14:18:31,607 - Manage_KBs.py - INFO - 清理了 0 个占位符
+2026-02-15 14:18:31,609 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:18:33,755 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/19/files HTTP/11" 200 12
+2026-02-15 14:18:33,755 - Manage_KBs.py - INFO - 刷新文件列表成功: []
+2026-02-15 14:18:33,762 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:18:33,762 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:18:33,763 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 14:18:33,763 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 14:18:33,763 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 14:18:33,763 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:18:33,763 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:18:33,763 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 14:18:33,763 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 14:18:33,763 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 14:18:33,774 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:18:33,774 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:18:33,776 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 14:18:33,776 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 14:18:33,776 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 14:18:33,776 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:18:33,776 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:18:33,776 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 14:18:33,776 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 14:18:33,776 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 14:18:33,803 - Manage_KBs.py - DEBUG - need_refresh_19=False，不刷新
+2026-02-15 14:18:51,297 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:18:51,297 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:18:51,297 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 14:18:51,297 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 14:18:51,297 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 14:18:51,298 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:18:51,298 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:18:51,298 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 14:18:51,298 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 14:18:51,298 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 14:18:51,309 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:18:51,309 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:18:51,309 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 14:18:51,309 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 14:18:51,309 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 14:18:51,309 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:18:51,309 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:18:51,309 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 14:18:51,309 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 14:18:51,309 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 14:18:51,311 - Manage_KBs.py - DEBUG - need_refresh_19=False，不刷新
+2026-02-15 14:18:51,317 - Streamlit_Pages.api_client - INFO - 上传文件: kb_id=19, 文件名=20260108申论-作文理论讲义.pdf
+2026-02-15 14:18:51,330 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:18:53,370 - urllib3.connectionpool - DEBUG - http://localhost:8001 "POST /api/knowledge-bases/19/files/upload HTTP/11" 200 364
+2026-02-15 14:18:53,370 - Manage_KBs.py - INFO - 上传成功: 20260108申论-作文理论讲义.pdf
+2026-02-15 14:18:53,372 - Streamlit_Pages.api_client - INFO - 上传文件: kb_id=19, 文件名=中文全部 成绩单_20222241136_2026-02-05.pdf
+2026-02-15 14:18:53,384 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:18:55,454 - urllib3.connectionpool - DEBUG - http://localhost:8001 "POST /api/knowledge-bases/19/files/upload HTTP/11" 200 400
+2026-02-15 14:18:55,456 - Manage_KBs.py - INFO - 上传成功: 中文全部 成绩单_20222241136_2026-02-05.pdf
+2026-02-15 14:18:55,456 - Manage_KBs.py - INFO - 清理了 0 个占位符
+2026-02-15 14:18:55,456 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:18:57,478 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/19/files HTTP/11" 200 697
+2026-02-15 14:18:57,478 - Manage_KBs.py - INFO - 刷新文件列表成功: ['20260108申论-作文理论讲义.pdf', '中文全部 成绩单_20222241136_2026-02-05.pdf']
+2026-02-15 14:18:57,567 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:18:57,569 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:18:57,569 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 14:18:57,569 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 14:18:57,569 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 14:18:57,569 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:18:57,569 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:18:57,569 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 14:18:57,569 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 14:18:57,569 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 14:18:57,577 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:18:57,578 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:18:57,578 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 14:18:57,578 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 14:18:57,578 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 14:18:57,578 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:18:57,578 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:18:57,578 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 14:18:57,578 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 14:18:57,578 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 14:18:57,579 - Manage_KBs.py - DEBUG - need_refresh_19=False，不刷新
+2026-02-15 14:19:01,122 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:19:03,161 - urllib3.connectionpool - DEBUG - http://localhost:8001 "POST /api/knowledge-bases/19/files/parse-all HTTP/11" 200 61
+2026-02-15 14:19:03,161 - Manage_KBs.py - INFO - 批量解析任务已启动: kb_id=19, 文件数=2
+2026-02-15 14:19:03,169 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:19:03,169 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:19:03,169 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 14:19:03,169 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 14:19:03,169 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 14:19:03,169 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:19:03,169 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:19:03,169 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 14:19:03,169 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 14:19:03,169 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 14:19:03,179 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:19:03,179 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:19:03,179 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 14:19:03,179 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 14:19:03,179 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 14:19:03,179 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:19:03,179 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:19:03,179 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 14:19:03,179 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 14:19:03,179 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 14:19:03,181 - Manage_KBs.py - DEBUG - need_refresh_19=False，不刷新
+2026-02-15 14:19:03,201 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:19:05,246 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/19/parse-progress HTTP/11" 200 15
+2026-02-15 14:19:05,246 - Manage_KBs.py - DEBUG - 更新进度 0%: 20260108申论-作文理论讲义.pdf
+2026-02-15 14:19:05,247 - Manage_KBs.py - DEBUG - 更新进度 0%: 中文全部 成绩单_20222241136_2026-02-05.pdf
+2026-02-15 14:19:05,332 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:19:07,363 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/19/parse-progress HTTP/11" 200 143
+2026-02-15 14:19:07,364 - Manage_KBs.py - DEBUG - 更新进度 0%: 20260108申论-作文理论讲义.pdf
+2026-02-15 14:19:07,364 - Manage_KBs.py - DEBUG - 更新进度 0%: 中文全部 成绩单_20222241136_2026-02-05.pdf
+2026-02-15 14:19:07,457 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:19:09,480 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/19/parse-progress HTTP/11" 200 143
+2026-02-15 14:19:09,480 - Manage_KBs.py - DEBUG - 更新进度 9%: 20260108申论-作文理论讲义.pdf
+2026-02-15 14:19:09,480 - Manage_KBs.py - DEBUG - 更新进度 0%: 中文全部 成绩单_20222241136_2026-02-05.pdf
+2026-02-15 14:19:09,577 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:19:11,617 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/19/parse-progress HTTP/11" 200 144
+2026-02-15 14:19:11,617 - Manage_KBs.py - DEBUG - 更新进度 27%: 20260108申论-作文理论讲义.pdf
+2026-02-15 14:19:11,617 - Manage_KBs.py - DEBUG - 更新进度 0%: 中文全部 成绩单_20222241136_2026-02-05.pdf
+2026-02-15 14:19:11,724 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:19:13,753 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/19/parse-progress HTTP/11" 200 144
+2026-02-15 14:19:13,755 - Manage_KBs.py - DEBUG - 更新进度 45%: 20260108申论-作文理论讲义.pdf
+2026-02-15 14:19:13,755 - Manage_KBs.py - DEBUG - 更新进度 0%: 中文全部 成绩单_20222241136_2026-02-05.pdf
+2026-02-15 14:19:13,843 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:19:15,874 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/19/parse-progress HTTP/11" 200 144
+2026-02-15 14:19:15,875 - Manage_KBs.py - DEBUG - 更新进度 59%: 20260108申论-作文理论讲义.pdf
+2026-02-15 14:19:15,875 - Manage_KBs.py - DEBUG - 更新进度 0%: 中文全部 成绩单_20222241136_2026-02-05.pdf
+2026-02-15 14:19:15,973 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:19:18,006 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/19/parse-progress HTTP/11" 200 144
+2026-02-15 14:19:18,006 - Manage_KBs.py - DEBUG - 更新进度 81%: 20260108申论-作文理论讲义.pdf
+2026-02-15 14:19:18,007 - Manage_KBs.py - DEBUG - 更新进度 0%: 中文全部 成绩单_20222241136_2026-02-05.pdf
+2026-02-15 14:19:18,096 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:19:20,109 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/19/parse-progress HTTP/11" 200 144
+2026-02-15 14:19:20,109 - Manage_KBs.py - DEBUG - 更新进度 95%: 20260108申论-作文理论讲义.pdf
+2026-02-15 14:19:20,109 - Manage_KBs.py - DEBUG - 更新进度 0%: 中文全部 成绩单_20222241136_2026-02-05.pdf
+2026-02-15 14:19:20,188 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:19:22,211 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/19/parse-progress HTTP/11" 200 298
+2026-02-15 14:19:22,336 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:19:22,336 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:19:22,337 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 14:19:22,337 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 14:19:22,337 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 14:19:22,337 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:19:22,337 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:19:22,337 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 14:19:22,337 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 14:19:22,337 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 14:19:22,348 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:19:22,348 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:19:22,348 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 14:19:22,348 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 14:19:22,348 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 14:19:22,348 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:19:22,348 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:19:22,348 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 14:19:22,348 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 14:19:22,348 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 14:19:22,349 - Manage_KBs.py - INFO - 检测到 need_refresh_19=True，准备刷新文件列表
+2026-02-15 14:19:22,349 - Manage_KBs.py - INFO - 清理了 2 个占位符
+2026-02-15 14:19:22,349 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:19:24,377 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/19/files HTTP/11" 200 698
+2026-02-15 14:19:24,379 - Manage_KBs.py - INFO - 刷新文件列表成功: ['&20260108申论-作文理论讲义.pdf', '中文全部 成绩单_20222241136_2026-02-05.pdf']
+2026-02-15 14:19:24,478 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:19:24,479 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:19:24,479 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 14:19:24,479 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 14:19:24,479 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 14:19:24,479 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:19:24,479 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:19:24,479 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 14:19:24,479 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 14:19:24,479 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 14:19:24,488 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:19:24,488 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:19:24,488 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 14:19:24,488 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 14:19:24,488 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 14:19:24,488 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:19:24,488 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:19:24,488 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 14:19:24,488 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 14:19:24,488 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 14:19:24,489 - Manage_KBs.py - DEBUG - need_refresh_19=False，不刷新
+2026-02-15 14:19:35,344 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:19:35,344 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:19:35,344 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 14:19:35,344 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 14:19:35,344 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 14:19:35,344 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:19:35,344 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:19:35,344 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 14:19:35,346 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 14:19:35,346 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 14:19:35,355 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:19:35,355 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:19:35,355 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 14:19:35,355 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 14:19:35,355 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 14:19:35,356 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:19:35,356 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:19:35,356 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 14:19:35,356 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 14:19:35,356 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 14:19:36,561 - Manage_KBs.py - INFO - 清理了 0 个占位符
+2026-02-15 14:19:36,561 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:19:38,601 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/19/files HTTP/11" 200 699
+2026-02-15 14:19:38,601 - Manage_KBs.py - INFO - 刷新文件列表成功: ['&20260108申论-作文理论讲义.pdf', '&中文全部 成绩单_20222241136_2026-02-05.pdf']
+2026-02-15 14:19:38,601 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:19:38,601 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:19:38,601 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 14:19:38,601 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 14:19:38,601 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 14:19:38,607 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:19:38,607 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:19:38,607 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 14:19:38,607 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 14:19:38,607 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 14:19:38,618 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:19:38,619 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:19:38,619 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 14:19:38,619 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 14:19:38,619 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 14:19:38,619 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:19:38,619 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:19:38,619 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 14:19:38,619 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 14:19:38,619 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 14:19:38,619 - Manage_KBs.py - DEBUG - need_refresh_19=False，不刷新
+2026-02-15 14:19:42,585 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:19:42,585 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:19:42,585 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 14:19:42,585 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 14:19:42,585 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 14:19:42,585 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:19:42,585 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:19:42,585 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 14:19:42,585 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 14:19:42,585 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 14:19:42,594 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:19:42,594 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:19:42,594 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 14:19:42,594 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 14:19:42,594 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 14:19:42,595 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:19:42,595 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:19:42,595 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 14:19:42,595 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 14:19:42,595 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 14:19:42,596 - Manage_KBs.py - DEBUG - need_refresh_19=False，不刷新
+2026-02-15 14:19:43,693 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:19:45,716 - urllib3.connectionpool - DEBUG - http://localhost:8001 "DELETE /api/knowledge-bases/19/files/&20260108%E7%94%B3%E8%AE%BA-%E4%BD%9C%E6%96%87%E7%90%86%E8%AE%BA%E8%AE%B2%E4%B9%89.pdf HTTP/11" 200 32
+2026-02-15 14:19:45,716 - Manage_KBs.py - INFO - 清理了 0 个占位符
+2026-02-15 14:19:45,717 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:19:47,756 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/19/files HTTP/11" 200 373
+2026-02-15 14:19:47,756 - Manage_KBs.py - INFO - 刷新文件列表成功: ['&中文全部 成绩单_20222241136_2026-02-05.pdf']
+2026-02-15 14:19:47,758 - Manage_KBs.py - INFO - 成功删除文件 &20260108申论-作文理论讲义.pdf，已清理进度占位符
+2026-02-15 14:19:48,346 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:19:48,346 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:19:48,346 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 14:19:48,346 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 14:19:48,347 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 14:19:48,347 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:19:48,347 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:19:48,347 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 14:19:48,347 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 14:19:48,347 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 14:19:48,356 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:19:48,356 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:19:48,356 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 14:19:48,356 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 14:19:48,356 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 14:19:48,356 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:19:48,356 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:19:48,356 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 14:19:48,356 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 14:19:48,356 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 14:19:48,358 - Manage_KBs.py - DEBUG - need_refresh_19=False，不刷新
+2026-02-15 14:19:49,480 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:19:49,480 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:19:49,480 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 14:19:49,480 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 14:19:49,480 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 14:19:49,481 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:19:49,481 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:19:49,481 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 14:19:49,481 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 14:19:49,481 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 14:19:49,493 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:19:49,493 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:19:49,493 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 14:19:49,493 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 14:19:49,493 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 14:19:49,493 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:19:49,493 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:19:49,493 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 14:19:49,493 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 14:19:49,493 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 14:19:49,494 - Manage_KBs.py - DEBUG - need_refresh_19=False，不刷新
+2026-02-15 14:19:50,393 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:19:52,435 - urllib3.connectionpool - DEBUG - http://localhost:8001 "DELETE /api/knowledge-bases/19/files/&%E4%B8%AD%E6%96%87%E5%85%A8%E9%83%A8%20%E6%88%90%E7%BB%A9%E5%8D%95_20222241136_2026-02-05.pdf HTTP/11" 200 32
+2026-02-15 14:19:52,435 - Manage_KBs.py - INFO - 清理了 0 个占位符
+2026-02-15 14:19:52,437 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:19:54,459 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/19/files HTTP/11" 200 12
+2026-02-15 14:19:54,459 - Manage_KBs.py - INFO - 刷新文件列表成功: []
+2026-02-15 14:19:54,460 - Manage_KBs.py - INFO - 知识库 19 已无文件，已清空所有进度占位符
+2026-02-15 14:19:54,461 - Manage_KBs.py - INFO - 成功删除文件 &中文全部 成绩单_20222241136_2026-02-05.pdf，已清理进度占位符
+2026-02-15 14:19:55,069 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:19:55,069 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:19:55,069 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 14:19:55,069 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 14:19:55,069 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 14:19:55,070 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:19:55,070 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:19:55,070 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 14:19:55,070 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 14:19:55,070 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 14:19:55,079 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:19:55,079 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:19:55,079 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 14:19:55,079 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 14:19:55,079 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 14:19:55,079 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:19:55,079 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:19:55,079 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 14:19:55,079 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 14:19:55,079 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 14:19:55,080 - Manage_KBs.py - DEBUG - need_refresh_19=False，不刷新
+2026-02-15 14:20:03,493 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:20:03,493 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:20:03,493 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 14:20:03,493 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 14:20:03,493 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 14:20:03,493 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:20:03,493 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:20:03,493 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 14:20:03,493 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 14:20:03,493 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 14:20:03,505 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:20:03,505 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:20:03,505 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 14:20:03,505 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 14:20:03,505 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 14:20:03,505 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:20:03,505 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:20:03,505 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 14:20:03,505 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 14:20:03,505 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 14:20:03,505 - Manage_KBs.py - DEBUG - need_refresh_19=False，不刷新
+2026-02-15 14:20:03,511 - Streamlit_Pages.api_client - INFO - 上传文件: kb_id=19, 文件名=20260108申论-作文理论讲义.pdf
+2026-02-15 14:20:03,524 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:20:05,558 - urllib3.connectionpool - DEBUG - http://localhost:8001 "POST /api/knowledge-bases/19/files/upload HTTP/11" 200 364
+2026-02-15 14:20:05,558 - Manage_KBs.py - INFO - 上传成功: 20260108申论-作文理论讲义.pdf
+2026-02-15 14:20:05,558 - Streamlit_Pages.api_client - INFO - 上传文件: kb_id=19, 文件名=高哲文-个人简历.pdf
+2026-02-15 14:20:05,577 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:20:07,612 - urllib3.connectionpool - DEBUG - http://localhost:8001 "POST /api/knowledge-bases/19/files/upload HTTP/11" 200 331
+2026-02-15 14:20:07,612 - Manage_KBs.py - INFO - 上传成功: 高哲文-个人简历.pdf
+2026-02-15 14:20:07,612 - Manage_KBs.py - INFO - 清理了 0 个占位符
+2026-02-15 14:20:07,612 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:20:09,654 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/19/files HTTP/11" 200 628
+2026-02-15 14:20:09,654 - Manage_KBs.py - INFO - 刷新文件列表成功: ['20260108申论-作文理论讲义.pdf', '高哲文-个人简历.pdf']
+2026-02-15 14:20:09,743 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:20:09,743 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:20:09,743 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 14:20:09,743 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 14:20:09,743 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 14:20:09,743 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:20:09,743 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:20:09,743 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 14:20:09,743 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 14:20:09,743 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 14:20:09,752 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:20:09,752 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:20:09,752 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 14:20:09,752 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 14:20:09,752 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 14:20:09,752 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:20:09,752 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:20:09,752 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 14:20:09,752 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 14:20:09,752 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 14:20:09,753 - Manage_KBs.py - DEBUG - need_refresh_19=False，不刷新
+2026-02-15 14:21:19,674 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:21:21,691 - urllib3.connectionpool - DEBUG - http://localhost:8001 "POST /api/knowledge-bases/19/files/parse-all HTTP/11" 200 61
+2026-02-15 14:21:21,692 - Manage_KBs.py - INFO - 批量解析任务已启动: kb_id=19, 文件数=2
+2026-02-15 14:21:21,698 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:21:21,698 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:21:21,698 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 14:21:21,698 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 14:21:21,698 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 14:21:21,698 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:21:21,698 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:21:21,698 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 14:21:21,698 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 14:21:21,698 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 14:21:21,707 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:21:21,707 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:21:21,707 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 14:21:21,707 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 14:21:21,707 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 14:21:21,707 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:21:21,707 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:21:21,707 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 14:21:21,707 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 14:21:21,707 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 14:21:21,709 - Manage_KBs.py - DEBUG - need_refresh_19=False，不刷新
+2026-02-15 14:21:21,726 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:21:23,742 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/19/parse-progress HTTP/11" 200 297
+2026-02-15 14:21:23,743 - Manage_KBs.py - DEBUG - 更新进度 0%: 20260108申论-作文理论讲义.pdf
+2026-02-15 14:21:23,743 - Manage_KBs.py - DEBUG - 更新进度 0%: 高哲文-个人简历.pdf
+2026-02-15 14:21:23,837 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:21:25,857 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/19/parse-progress HTTP/11" 200 298
+2026-02-15 14:21:25,857 - Manage_KBs.py - DEBUG - 更新进度 13%: 20260108申论-作文理论讲义.pdf
+2026-02-15 14:21:25,857 - Manage_KBs.py - DEBUG - 更新进度 0%: 高哲文-个人简历.pdf
+2026-02-15 14:21:25,968 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:21:28,010 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/19/parse-progress HTTP/11" 200 298
+2026-02-15 14:21:28,010 - Manage_KBs.py - DEBUG - 更新进度 31%: 20260108申论-作文理论讲义.pdf
+2026-02-15 14:21:28,010 - Manage_KBs.py - DEBUG - 更新进度 0%: 高哲文-个人简历.pdf
+2026-02-15 14:21:28,100 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:21:30,127 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/19/parse-progress HTTP/11" 200 298
+2026-02-15 14:21:30,127 - Manage_KBs.py - DEBUG - 更新进度 50%: 20260108申论-作文理论讲义.pdf
+2026-02-15 14:21:30,127 - Manage_KBs.py - DEBUG - 更新进度 0%: 高哲文-个人简历.pdf
+2026-02-15 14:21:30,248 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:21:32,289 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/19/parse-progress HTTP/11" 200 298
+2026-02-15 14:21:32,290 - Manage_KBs.py - DEBUG - 更新进度 68%: 20260108申论-作文理论讲义.pdf
+2026-02-15 14:21:32,290 - Manage_KBs.py - DEBUG - 更新进度 0%: 高哲文-个人简历.pdf
+2026-02-15 14:21:32,390 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:21:34,438 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/19/parse-progress HTTP/11" 200 298
+2026-02-15 14:21:34,440 - Manage_KBs.py - DEBUG - 更新进度 86%: 20260108申论-作文理论讲义.pdf
+2026-02-15 14:21:34,440 - Manage_KBs.py - DEBUG - 更新进度 0%: 高哲文-个人简历.pdf
+2026-02-15 14:21:34,547 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:21:36,620 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/19/parse-progress HTTP/11" 200 405
+2026-02-15 14:21:36,710 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:21:36,710 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:21:36,710 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 14:21:36,710 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 14:21:36,710 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 14:21:36,711 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:21:36,711 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:21:36,711 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 14:21:36,711 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 14:21:36,711 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 14:21:36,722 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:21:36,722 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:21:36,722 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 14:21:36,722 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 14:21:36,722 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 14:21:36,722 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:21:36,722 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:21:36,722 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 14:21:36,722 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 14:21:36,722 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 14:21:36,723 - Manage_KBs.py - INFO - 检测到 need_refresh_19=True，准备刷新文件列表
+2026-02-15 14:21:36,724 - Manage_KBs.py - INFO - 清理了 2 个占位符
+2026-02-15 14:21:36,726 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:21:38,750 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/19/files HTTP/11" 200 629
+2026-02-15 14:21:38,750 - Manage_KBs.py - INFO - 刷新文件列表成功: ['&20260108申论-作文理论讲义.pdf', '高哲文-个人简历.pdf']
+2026-02-15 14:21:38,847 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:21:38,847 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:21:38,847 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 14:21:38,847 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 14:21:38,847 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 14:21:38,847 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:21:38,847 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:21:38,847 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 14:21:38,847 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 14:21:38,847 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 14:21:38,859 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:21:38,859 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:21:38,859 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 14:21:38,859 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 14:21:38,859 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 14:21:38,859 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:21:38,859 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:21:38,859 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 14:21:38,859 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 14:21:38,860 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 14:21:38,861 - Manage_KBs.py - DEBUG - need_refresh_19=False，不刷新
+2026-02-15 14:26:39,585 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:26:39,585 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:26:39,585 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 14:26:39,585 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 14:26:39,585 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 14:26:39,586 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:26:39,586 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:26:39,586 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 14:26:39,586 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 14:26:39,586 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 14:26:39,596 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:26:39,596 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:26:39,596 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 14:26:39,596 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 14:26:39,596 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 14:26:39,596 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:26:39,596 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:26:39,596 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 14:26:39,596 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 14:26:39,596 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 14:26:40,912 - Manage_KBs.py - INFO - 清理了 0 个占位符
+2026-02-15 14:26:40,912 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8001
+2026-02-15 14:26:42,930 - urllib3.connectionpool - DEBUG - http://localhost:8001 "GET /api/knowledge-bases/19/files HTTP/11" 200 630
+2026-02-15 14:26:42,933 - Manage_KBs.py - INFO - 刷新文件列表成功: ['&20260108申论-作文理论讲义.pdf', '&高哲文-个人简历.pdf']
+2026-02-15 14:26:42,936 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:26:42,936 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:26:42,936 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 14:26:42,937 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 14:26:42,937 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 14:26:42,937 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:26:42,937 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:26:42,937 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 62 17
+2026-02-15 14:26:42,937 - PIL.PngImagePlugin - DEBUG - STREAM b'tEXt' 91 23
+2026-02-15 14:26:42,937 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 126 8192
+2026-02-15 14:26:42,950 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:26:42,951 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:26:42,951 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 14:26:42,951 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 14:26:42,951 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 14:26:42,951 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2026-02-15 14:26:42,951 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2026-02-15 14:26:42,951 - PIL.PngImagePlugin - DEBUG - STREAM b'sRGB' 62 1
+2026-02-15 14:26:42,951 - PIL.PngImagePlugin - DEBUG - STREAM b'gAMA' 75 4
+2026-02-15 14:26:42,951 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 91 4134
+2026-02-15 14:26:42,952 - Manage_KBs.py - DEBUG - need_refresh_19=False，不刷新

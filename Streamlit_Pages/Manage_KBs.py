@@ -233,17 +233,7 @@ def refresh_user_kbs():
 
 
 def refresh_kb_files(kb_id):
-    """刷新知识库文件列表，并清理该知识库的所有进度占位符"""
-    # 清理该知识库的所有占位符
-    keys_to_delete = [key for key in list(st.session_state.parse_progress_placeholders.keys()) if key[0] == kb_id]
-    for key in keys_to_delete:
-        try:
-            st.session_state.parse_progress_placeholders[key].empty()
-        except:
-            pass
-        del st.session_state.parse_progress_placeholders[key]
-    logger.info(f"清理了 {len(keys_to_delete)} 个占位符")
-
+    """刷新知识库文件列表，仅更新 session_state，不清理占位符"""
     try:
         files = api_client.get_kb_files(kb_id)
         st.session_state.kb_files = files
@@ -363,14 +353,33 @@ def parse_single_file(kb_id: int, file_name: str, display_name: str):
         logger.error(f"解析任务启动失败: {e}")
 
 
-def parse_all_files(kb_id):
-    """解析所有文件"""
-    st.session_state.parse_all_files = True
+def parse_all_files(kb_id: int):
+    """解析所有未解析的文件"""
     try:
+        # 获取当前文件列表
+        files = st.session_state.get("kb_files", [])
+        unparsed_files = [f for f in files if not f["is_parsed"]]
+
+        if not unparsed_files:
+            st.toast("没有未解析的文件", icon="ℹ️")
+            return
+
+        # 为每个未解析文件设置创建占位符的标志
+        for file_info in unparsed_files:
+            file_name = file_info["name"]
+            st.session_state[f"create_placeholder_{kb_id}_{file_name}"] = True
+
+        # 调用后端批量解析 API
         api_client.parse_all_files(kb_id)
-        st.toast("开始批量解析所有文件", icon="✅")
+        st.toast(f"开始批量解析 {len(unparsed_files)} 个文件", icon="✅")
+        logger.info(f"批量解析任务已启动: kb_id={kb_id}, 文件数={len(unparsed_files)}")
+
+        # 触发重绘，以便 show_file_bar 创建占位符
+        st.rerun()
+
     except Exception as e:
         st.toast(f"批量解析失败: {str(e)}", icon="🚨")
+        logger.error(f"批量解析失败: {e}")
 
 
 @st.fragment(run_every=0.1)
@@ -416,7 +425,6 @@ def show_progress_if_any_not_finished():
                     to_delete.append((task_kb_id, file_name))
                     if not st.session_state.get(f"need_refresh_{kb_id}", False):
                         st.session_state[f"need_refresh_{kb_id}"] = True
-                        st.rerun()
             else:
                 logger.warning(f"无效进度值 {prog} 用于文件 {file_name}")
 
@@ -460,6 +468,7 @@ def show_file_bar(file_info, kb_id):
             parse_progress_area, button_area, blank_area = st.columns([0.8, 0.1, 0.1], vertical_alignment="center")
             with parse_progress_area:
                 placeholder_key = (kb_id, file_name)
+                # 如果文件已解析，直接显示成功
                 if is_parsed:
                     st.write(":green[解析成功]")
                     # 清理可能残留的占位符
@@ -469,11 +478,17 @@ def show_file_bar(file_info, kb_id):
                 else:
                     # 未解析：检查是否正在解析（有占位符）
                     if placeholder_key in st.session_state.parse_progress_placeholders:
-                        # 已有占位符，由轮询函数更新
+                        # 占位符由轮询函数更新，此处无需显示额外内容
                         pass
                     else:
-                        # 未开始解析，仅显示文本
-                        st.write(":gray[未解析]")
+                        # 检查是否需要创建占位符（批量解析时设置）
+                        if st.session_state.get(f"create_placeholder_{kb_id}_{file_name}", False):
+                            placeholder = st.empty()
+                            placeholder.progress(0, "等待解析...")
+                            st.session_state.parse_progress_placeholders[placeholder_key] = placeholder
+                            del st.session_state[f"create_placeholder_{kb_id}_{file_name}"]
+                        else:
+                            st.write(":gray[未解析]")
 
             with button_area:
                 # ========== 修复：解析按钮点击时才创建占位符 ==========
