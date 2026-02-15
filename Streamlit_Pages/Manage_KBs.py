@@ -374,8 +374,7 @@ def parse_all_files(kb_id: int):
         st.toast(f"开始批量解析 {len(unparsed_files)} 个文件", icon="✅")
         logger.info(f"批量解析任务已启动: kb_id={kb_id}, 文件数={len(unparsed_files)}")
 
-        # 触发重绘，以便 show_file_bar 创建占位符
-        st.rerun()
+
 
     except Exception as e:
         st.toast(f"批量解析失败: {str(e)}", icon="🚨")
@@ -425,6 +424,7 @@ def show_progress_if_any_not_finished():
                     to_delete.append((task_kb_id, file_name))
                     if not st.session_state.get(f"need_refresh_{kb_id}", False):
                         st.session_state[f"need_refresh_{kb_id}"] = True
+                        st.rerun()
             else:
                 logger.warning(f"无效进度值 {prog} 用于文件 {file_name}")
 
