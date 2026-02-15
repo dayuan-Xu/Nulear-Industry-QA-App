@@ -143,7 +143,6 @@ class FileService:
         new_path = file_path.with_name(new_name)
         try:
             file_path.rename(new_path)
-            logger.info(f"✅ 重命名成功: {file_path} -> {new_path}")
             return True
         except Exception as e:
             logger.error(f"❌ 重命名失败: {e}")
@@ -187,7 +186,6 @@ def parse_file_background(kb_id: int, user_email: str, kb_name: str, file_name: 
         for index, total in index_file_backend(file_path, kb_dir, kb):
             progress = int((index + 1) / total * 100)
             parse_progress_store[kb_id_str][file_name]["progress"] = progress
-            logger.info(f"进度更新后全局进度: {parse_progress_store}")  # 调试
 
         parse_progress_store[kb_id_str][file_name]["progress"] = 100
         parse_progress_store[kb_id_str][file_name]["status"] = "completed"
