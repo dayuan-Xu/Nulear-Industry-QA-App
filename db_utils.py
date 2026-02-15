@@ -25,7 +25,7 @@ def get_connection_pool():
             }
             _connection_pool = ConnectionPool(
                 conninfo=DB_URI,
-                max_size=8,
+                max_size=20,
                 kwargs=connection_kwargs,
             )
             logger.info("数据库连接池初始化成功")
