@@ -1,19 +1,17 @@
+import os
 import time
 from operator import add
 from langchain.chat_models import init_chat_model
 from langchain_core.documents import Document
-from langchain_core.messages import SystemMessage, AIMessage, ToolMessage, AnyMessage
-# 生产环境
-from langgraph.checkpoint.postgres import PostgresSaver
+from langchain_core.messages import SystemMessage, AIMessage, ToolMessage, HumanMessage, AnyMessage
+from langchain_core.runnables import RunnableConfig
+# 测试环境
+from langgraph.checkpoint.memory import InMemorySaver
 from langgraph.graph import START, END, add_messages
 from langgraph.graph import StateGraph
 from langgraph.runtime import Runtime
 from sentence_transformers import CrossEncoder
 from typing_extensions import List, Annotated, TypedDict
-from bm25_singleton import BM25Singleton
-# 生产环境
-from db_utils import get_connection_pool
-from indexing import get_vector_store
 from logger_manager import get_logger
 
 logger = get_logger("RAG_flow.py")
@@ -38,7 +36,7 @@ class ContextSchema(TypedDict):
     api_key: str
     base_url: str
 
-# 5、检索工具(生产环境)
+# 5、检索工具(测试环境)
 def retrieve(collection_name:str, query: str, max_ctx_retrieved:int) ->  list[Document]:
     """基于混合检索从数据库中检索出相关文档
     args:
@@ -50,17 +48,7 @@ def retrieve(collection_name:str, query: str, max_ctx_retrieved:int) ->  list[Do
         print("检索工具入参不正确！")
         return None
 
-    vector_store = get_vector_store(collection_name)
-
-    # 1. 语义检索
-    semantic_docs = vector_store.similarity_search(query, k= int(max_ctx_retrieved / 2))
-
-    # 2. 关键词检索
-    bm25 = BM25Singleton(collection_name)
-    keyword_docs, keyword_scores = bm25.retrieve(query, int(max_ctx_retrieved / 2))
-
-    # 3. 合并结果
-    all_docs = semantic_docs + keyword_docs
+    all_docs = [Document(page_content=f"{i+10086}", metadata={"title":f"metadata_of_doc_{i+1}"}) for i in range(max_ctx_retrieved)]
 
     return all_docs
 
@@ -200,7 +188,7 @@ def generate(state: GraphState, runtime: Runtime[ContextSchema]):
     system_message_content = (
         "你是一名核工业专业知识问答助理。"
         "在回答用户提问时，考虑使用下面依据用户提问检索到的相关信息回答用户。"
-        "如果检索到的信息对于你的回答没有帮助，请先告诉我‘检索结果对于回答问题无帮助’，之后再尝试自己回答用户。"
+        "如果检索到的信息对于你的回答没有帮助，请直接告诉我你不知道。"
         "总是以“欢迎你再次提问！”作为每次回答的结尾。"
         "\n\n"
         f"检索结果：\n{infos}"
@@ -250,9 +238,50 @@ graph_builder.add_edge("tool_node", "rerank")
 graph_builder.add_edge("rerank", "generate")
 graph_builder.add_edge("generate", END)
 
-# 生产环境
-pool = get_connection_pool()
-checkpointer = PostgresSaver(pool)
+# 测试环境
+checkpointer = InMemorySaver()
 
 graph = graph_builder.compile(checkpointer=checkpointer, name="Nuclear QA workflow")
 
+agent = graph
+graph_png = agent.get_graph(xray=True).draw_mermaid_png()
+with open(f"diagrams/{agent.name}.png", "wb") as f:
+    f.write(graph_png)
+print(f"{agent.name} 架构图已保存为 {agent.name}.png")
+
+#
+# from dotenv import load_dotenv
+# # 加载环境变量
+# load_dotenv(override=True)
+# text = "10MV核反应堆是啥？"
+# config = {"configurable":{"thread_id":"666666"}}
+# context:ContextSchema = {
+#             "target_collection_name": "test_target_collection_name",
+#             "max_ctx_retrieved": 10,
+#             "actual_num_of_doc_used": 5,
+#             "model": "gpt-3.5-turbo",
+#             "model_provider": "openai",
+#             "api_key":os.getenv("FREE_OPENAI_API_KEY", ""),
+#             "base_url":os.getenv("OPENAI_BASE_URL", "")
+#            }
+#
+# initial_state = {"messages": [HumanMessage(content=text)]}
+
+# # values模式
+# for step_state in graph.stream(
+#     input=initial_state,
+#     config=config,
+#     context=context,
+#     stream_mode="values"
+# ):
+#     step_state["messages"][-1].pretty_print()
+
+# # updates模式
+# for update in graph.stream(
+#     input=initial_state,
+#     config=config,
+#     context=context,
+#     stream_mode="updates"
+# ):
+#     # 每次更新是一个字典，其中key为节点名称，value为节点对Graph State的更新
+#     print(update)

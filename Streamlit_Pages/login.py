@@ -48,7 +48,7 @@ if st.session_state.pre_user is None:
 
 
                 if 'max_ctx_retrieved' not in st.session_state:
-                    st.session_state.max_ctx_retrieved = 4
+                    st.session_state.max_ctx_retrieved = 8
 
                 if 'actual_num_of_doc_used' not in st.session_state:
                     st.session_state.actual_num_of_doc_used = 5

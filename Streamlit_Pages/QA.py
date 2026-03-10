@@ -3,7 +3,7 @@ import uuid
 from service_models.chat import  Chat
 from time import sleep
 from langchain_core.messages import AIMessage, HumanMessage, ToolMessage
-from RAG_flow import graph
+from RAG_flow import graph, ContextSchema
 from db_utils import insert_chat,delete_chat,update_chat_title
 import streamlit as st
 from logger_manager import get_logger
@@ -220,7 +220,7 @@ with st.sidebar:
 if st.session_state.pre_chat is not None or st.session_state.chat_switched:
     # 仅仅当pre_chat不为空or改变时
     run_config = {"configurable":
-                      {"thread_id": st.session_state.pre_chat["thread_id"]}
+                        {"thread_id": st.session_state.pre_chat["thread_id"]}
                   }
     # 获取最新检查点
     latest_checkpoint = graph.get_state(run_config)
@@ -241,17 +241,11 @@ if st.session_state.pre_chat is not None or st.session_state.chat_switched:
     # 表示对话切换事件处理完毕
     st.session_state.chat_switched = False
 
-# 3、显示pre_chat的历史消息
-if st.session_state.pre_chat is None:
-    with st.chat_message("ai", avatar="https://snsfont.com/emo_img/116_1.png"):
-        st.write("你好，我是核工业知识问答助手，欢迎你提问!")
-
 def show_LangChain_message(LangChain_message: AIMessage | HumanMessage | ToolMessage, streaming_output_for_ai_message: bool = False):
     #  支持四种LangChain消息的显示：用户消息HumanMessage、Ai消息(包含or不包含工具调用请求)AIMessage、工具执行结果消息ToolMessage
     if LangChain_message.type == "human":
-        with st.chat_message("human", avatar="https://snsfont.com/emo_img/74_31.png"):
-            st.write(LangChain_message.content)
-
+        with st.chat_message("user", avatar="https://snsfont.com/emo_img/74_31.png"):
+            st.markdown(LangChain_message.content)
     elif LangChain_message.type == "ai":
         with st.chat_message("ai", avatar="https://snsfont.com/emo_img/116_1.png"):
             if len(LangChain_message.tool_calls) > 0:
@@ -284,9 +278,15 @@ def show_LangChain_message(LangChain_message: AIMessage | HumanMessage | ToolMes
             with st.expander(label=f"\n检索工具执行结果", icon="🔍"):
                 st.write(LangChain_message.content)
 
-if st.session_state.pre_chat is not None:
+# 3、显示pre_chat的历史消息
+if st.session_state.pre_chat is None:
+    with st.chat_message("ai", avatar="https://snsfont.com/emo_img/116_1.png"):
+        st.write("你好，我是核工业知识问答助手，欢迎你提问!")
+
+elif st.session_state.pre_chat is not None:
     for message in st.session_state.messages:
-        # 从st.session_state.messages从加载pre_chat的历史消息
+        # 仅在非生成状态下显示历史消息，避免与实时生成冲突
+        # 从st.session_state.messages加载pre_chat的历史消息
         # case1：用户提问发送后页面rerun，执行到此处时session_state.messages中尚且没有最近的一次交互的LangChainMessage。
         # case2：从别的chat切换到当前chat时，session_state.messages中已经存在当前chat的最近交互。
         show_LangChain_message(message)
@@ -297,15 +297,19 @@ def response_generator(response):
         yield char
         sleep(0.02)
 
-
 # 根据graph实例、用户最新消息、graph运行时配置 执行graph
-def LangChainMessage_Generator(graph_1, text, config):
-    for step_state in graph_1.stream(
-        {"messages": [{"role": "user", "content": text}]},
-        stream_mode="values",
+def LangChainMessage_Generator(graph_1, text, run_config_1):
+    # 适配最新版LangGraph
+    config = {"configurable": {"thread_id": run_config_1["configurable"]["thread_id"]}}
+    context:ContextSchema = run_config_1["configurable"]
+
+    for update_to_graph_state in graph_1.stream(
+        input={"messages": [{"role": "user", "content": text}]},
         config=config,
+        context=context,
+        stream_mode="updates"
     ):
-        yield step_state["messages"][-1]
+        yield update_to_graph_state
 
 # 5、加载输入栏（无论pre_chat是否为None)
 prompt=st.chat_input("请输入问题:")
@@ -335,29 +339,29 @@ if prompt:
                         rename_chat_dialog(chat)
                 with cols[2]:
                     # 删除按钮，图标显示，无边框。
-                    if st.button("", key=f"delete_button_of_{thread_id}", type="tertiary", icon=":material/delete:",
+                  if st.button("", key=f"delete_button_of_{thread_id}", type="tertiary", icon=":material/delete:",
                                  help="删除对话"):
                         delete_chat_dialog(chat)
         # 保存该首个新建对话的历史消息
         st.session_state.messages= []
 
-    # 从当前session中获取graph运行时配置
-    user = st.session_state.pre_user
+    # 从当前 session 中获取 graph 运行时配置
+    user=st.session_state.pre_user
     target_collection_name = user.get_collection_name(st.session_state.target_KB)
 
-    # 检查运行时参数在session_state中是否有正确定义
+    # 检查运行时参数在 session_state 中是否有正确定义
     if st.session_state.model =="" or st.session_state.model_provider=="" or st.session_state.api_key=="" or st.session_state.base_url=="":
-        st.error("请先配置模型参数")
-        sleep(2)
-        st.switch_page("Streamlit_Pages/settings.py")
+      st.error("请先配置模型参数")
+      sleep(2)
+      st.switch_page("Streamlit_Pages/settings.py")
 
     run_config = {
         # 自定义运行时参数
         "configurable":{
                         "thread_id": st.session_state.pre_chat["thread_id"],
-                        "target_collection_name": target_collection_name,                   # 用于第1个node动态创建工具
-                        "max_ctx_retrieved": st.session_state.max_ctx_retrieved,            # 用于第1个node动态创建工具
-                        "actual_num_of_doc_used": st.session_state.actual_num_of_doc_used,  # 用于第3个node
+                        "target_collection_name": target_collection_name,
+                        "max_ctx_retrieved": st.session_state.max_ctx_retrieved,
+                        "actual_num_of_doc_used": st.session_state.actual_num_of_doc_used,
                         "model": st.session_state.model,
                         "model_provider": st.session_state.model_provider,
                         "api_key": st.session_state.api_key,
@@ -367,18 +371,26 @@ if prompt:
 
     # 渲染用户输入
     with st.chat_message("human", avatar="https://snsfont.com/emo_img/74_31.png"):
-        st.write(prompt)
+      st.write(prompt)
 
-    # 一方面加载用户输入和响应，另一方面将其保存到session_state.messages中。
-    with st.spinner("正在处理..."):
-        for message in LangChainMessage_Generator(graph, prompt, run_config):
-            # 4种LangChain消息：1、用户输入 2、来自Ai的工具调用请求 3、Tool结果 4、Ai回答
+    # 一方面加载用户输入和响应，另一方面将其保存到 session_state.messages 中。
+    with st.spinner("正在处理...", show_time=True):
+        for update in LangChainMessage_Generator(graph, prompt, run_config):
+            print( update)
+            # 不新增messages的节点函数没有消息可以渲染
+            if "rerank" in update:
+                continue
+            node_names=["generate_query_or_respond", "tool_node", "generate"]
+            new_messages = []
+            for node_name in node_names:
+                if node_name in update:
+                    new_messages = update[node_name]["messages"]
+            for message in new_messages:
+                # 4 种 LangChain 消息：1、用户输入 2、来自 Ai 的工具调用请求 3、Tool 结果 4、Ai 回答
+                if message.type == "ai" and len(message.tool_calls) == 0:
+                    # 流式输出第 4 类消息
+                    show_LangChain_message(message, streaming_output_for_ai_message=True)
+                elif message.type != "human":
+                    # 整体加载第 2-3 类消息
+                    show_LangChain_message(message)
             st.session_state.messages.append(message)
-            if message.type == "ai" and len(message.tool_calls) == 0:
-                # 流式输出第4类消息
-                show_LangChain_message(message, streaming_output_for_ai_message= True)
-            elif message.type != "human":
-                # 整体加载第2-3类消息
-                show_LangChain_message(message)
-
-

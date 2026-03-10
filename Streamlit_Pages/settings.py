@@ -38,9 +38,9 @@ with cols[1]:
     )
 
     st.number_input(
-        '检索工具每次检索返回的文档数',
+        '检索工具每次检索返回的文档数(偶数)',
         min_value=1,
-        step=1,
+        step=2,
         key='max_ctx_retrieved',
         # value=st.session_state.max_ctx_retrieved  # 显式指定初始值
     )
@@ -61,26 +61,26 @@ with cols[0]:
     st.text_input(
         '模型名称',
         key='model',
-        value=st.session_state.model,
+        # value=st.session_state.model,
         placeholder="请输入模型名称 e.g. gpt-4o-mini、deepseek-r1",
     )
     st.text_input(
         '模型提供商',
         key='model_provider',
-        value=st.session_state.model_provider,
+        # value=st.session_state.model_provider,
         placeholder="请输入模型提供者 e.g. openai、deepseek",
     )
     st.text_input(
         'API Key',
         key='api_key',
         type = "password",
-        value=st.session_state.api_key,
+        # value=st.session_state.api_key,
         placeholder="请输入API Key...",
     )
     st.text_input(
         'Base URL',
         key='base_url',
         type = "password",
-        value=st.session_state.base_url,
+        # value=st.session_state.base_url,
         placeholder="请输入Base URL...",
     )

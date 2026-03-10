@@ -12,12 +12,13 @@ if not root_logger.handlers:
     # 输出过滤：这是第二个过滤层，决定特定输出目标接收哪些消息
     # 独立控制：可以为不同输出目标设置不同级别
     # 作用范围：只影响发送到特定输出设备的消息
-    file_handler = logging.FileHandler("app.log")
+    file_handler = logging.FileHandler("app.log", encoding="utf-8")
     file_handler.setLevel(logging.DEBUG)
 
     console_handler = logging.StreamHandler()
     console_handler.setLevel(logging.INFO)
 
+    # 指定输出格式：时间 - 日志器（逻辑）名称 - 日志级别 - 日志消息
     formatter = logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s")
     file_handler.setFormatter(formatter)
     console_handler.setFormatter(formatter)
