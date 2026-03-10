@@ -1,6 +1,6 @@
 from service_models.KB import KnowledgeBase
 from service_models.chat import Chat
-from db_utils import get_user_id, get_KBs, get_chats, insert_KB
+from db_utils import get_user_id, get_user_kbs, get_chats, insert_KB
 
 class User:
     def __init__(self, email:str, password:str):
@@ -24,7 +24,7 @@ class User:
 
     def set_KBs(self):
         # 总是从数据库获取最新知识库
-        db_kbs = get_KBs(self.id)
+        db_kbs = get_user_kbs(self.email)
 
         if db_kbs:
             # 如果数据库有已经创建的知识库

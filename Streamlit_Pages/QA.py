@@ -285,8 +285,7 @@ if st.session_state.pre_chat is None:
 
 elif st.session_state.pre_chat is not None:
     for message in st.session_state.messages:
-        # 仅在非生成状态下显示历史消息，避免与实时生成冲突
-        # 从st.session_state.messages加载pre_chat的历史消息
+        # 从st.session_state.messages从加载pre_chat的历史消息
         # case1：用户提问发送后页面rerun，执行到此处时session_state.messages中尚且没有最近的一次交互的LangChainMessage。
         # case2：从别的chat切换到当前chat时，session_state.messages中已经存在当前chat的最近交互。
         show_LangChain_message(message)
