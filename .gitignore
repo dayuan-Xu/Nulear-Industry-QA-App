@@ -5,6 +5,7 @@ env/
 
 # Environment variables
 .env
+
 # Python 缓存文件
 __pycache__/
 *.pyc
@@ -14,5 +15,5 @@ __pycache__/
 # 日志文件
 *.log
 
-# IDE特定文件
+# IDE 自动生成的项目配置文件夹
 .idea/
