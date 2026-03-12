@@ -2,11 +2,13 @@ import time
 from operator import add
 from langchain.chat_models import init_chat_model
 from langchain_core.documents import Document
-from langchain_core.messages import SystemMessage, AIMessage, ToolMessage, AnyMessage
+from langchain_core.messages import SystemMessage, AIMessage, ToolMessage, AnyMessage, HumanMessage, RemoveMessage
+from langchain_core.messages.utils import count_tokens_approximately
 # 生产环境
 from langgraph.checkpoint.postgres import PostgresSaver
 from langgraph.graph import START, END, add_messages
 from langgraph.graph import StateGraph
+from langgraph.graph.message import REMOVE_ALL_MESSAGES
 from langgraph.runtime import Runtime
 from sentence_transformers import CrossEncoder
 from typing_extensions import List, Annotated, TypedDict
@@ -18,12 +20,32 @@ from logger_manager import get_logger
 
 logger = get_logger("RAG_flow.py")
 
+
+# 常见模型的上下文窗口限制
+MODEL_CONTEXT_WINDOWS = {
+    # "gpt-3.5-turbo": 16385,
+    "gpt-3.5-turbo": 2000,
+    "gpt-4o-mini": 128000,
+    "gpt-4": 8192,
+    "gpt-3.5-turbo-16k": 16385,
+    "gpt-4-32k": 32768,
+    "gpt-4-turbo": 128000,
+    "gpt-4o": 128000,
+    "gpt-5": 256000
+    # ... 添加更多模型
+}
+
+# 0、配置一个总结模型
+summarization_model = init_chat_model(configurable_fields=["model", "model_provider", "api_key", "base_url"])
+
 # 1、加载llm，采用动态完全可配置模式
 llm = init_chat_model(configurable_fields=["model", "model_provider", "api_key", "base_url"])
 
 # 2、定义Graph状态（核心数据）和graph运行时配置结构（仅仅用于对节点函数的config形参进行类型检查）
 class GraphState(TypedDict):
     messages: Annotated[List[AnyMessage],add_messages]
+    summarized_messages: Annotated[list[AnyMessage], add_messages]  # 只保留HumanMessage和无tool_calls的AIMessage
+    summary: str
     all_docs: Annotated[list[Document], add] # 记录每次检索工具的执行结果
     recent_docs_count: int                   # 最近几次检索工具调用返回的文档总数
     actual_docs_info_used :str               # 实际使用到的文档信息
@@ -35,6 +57,7 @@ class ContextSchema(TypedDict):
     actual_num_of_doc_used: int # 重排序后保留并使用的文档数
     model: str
     model_provider: str
+    token_limit: int           # model上下文窗口限制
     api_key: str
     base_url: str
 
@@ -67,6 +90,86 @@ def retrieve(collection_name:str, query: str, max_ctx_retrieved:int) ->  list[Do
 """
 6、定义RAG工作流的各个节点函数
 """
+def get_model_context_window(model_name: str) -> int:
+    """获取模型的上下文窗口限制"""
+    return MODEL_CONTEXT_WINDOWS.get(model_name, 8192)  # 默认值
+
+# 6.0: 根据预设条件判断是否要总结历史消息
+def summarize_history(state: GraphState, runtime: Runtime[ContextSchema]):
+    """根据预设条件判断是否要总结历史消息"""
+    # logger.debug(f"开始执行 summarize_history,token limit = {runtime.context['token_limit']}")
+    # 调用graph时如果没有在context中传入其schema定义的某个键值对，那么在节点函数内尝试访问该键值对会有KeyError
+
+    if len(state["summarized_messages"]) <= 3:
+        logger.info("消息总数不足 4 条，跳过总结节点")
+        return {}
+
+    # 获取历史消息[:-3]的token数
+    history = state["summarized_messages"][:-3]
+    if not history:
+        logger.error("获取历史消息[:-3]失败")
+        return {}
+
+    history_tokens = count_tokens_approximately(history, chars_per_token=1.5) # 纯中文语境下一个字符占1.5个token
+
+    if "token_limit" in runtime.context:
+        token_limit = runtime.context["token_limit"]
+        # logger.debug(f"Langgraph runtime context中存在token limit: {token_limit}")
+    else:
+        # logger.debug("未在runtime context中找到token limit, 尝试根据预定义映射寻找，找不到默认token limit为8192")
+        model = runtime.context['model']
+        token_limit = get_model_context_window(model)
+
+    # 计算可能需要总结的历史消息[:-3]的触发阈值
+    # trigger = token_limit - 1000 # 简单方法：为 SystemMessage + 近期一次问答 + 最近一条Human消息 预留1000个token的空间
+
+    # 在 generate_query_or_respond 节点的系统提示词
+    system_message_tokens = 72
+    # 预估最后 3 条消息的长度
+    last_3_messages = state["summarized_messages"][-3:]
+    last_3_tokens = count_tokens_approximately(last_3_messages, chars_per_token=1.5)
+
+    trigger = token_limit - system_message_tokens - last_3_tokens # 复杂方法，充分预估 SystemMessage + 近期一次问答 + 最近一条Human消息
+
+    if history_tokens <= trigger:
+        # 如果历史消息[:-3]总长小于它的触发阈值，则不需要总结它
+        logger.info(f"除去了最后3条消息的历史消息[:-3]的总长度为{history_tokens}，小于等于token limit-1000: {token_limit - 1000}，不需要总结历史消息[:-3]")
+        return {}
+
+    logger.info(f"除去了最后3条消息的历史消息[:-3]的总长度为{history_tokens}，超过token limit-1000: {token_limit-1000}，需要总结历史消息[:-3]")
+
+    # First, we get any existing summary
+    summary = state.get("summary", "")
+
+    # Create our summarization prompt
+    if summary:
+        # A summary already exists
+        summary_instruction = (f"这是到目前为止我们对话的总结：{summary}\n\n"
+                                "请基于以上对话历史，更新这份总结。要求:\n"
+                                "1. 保留所有关键的专业术语、数字和事实\n"
+                                "2. 使用与对话相同的语言\n"
+                                "3. 简洁但完整地概括主要话题\n"
+                                "4. 记录用户的核心需求和已解决的问题")
+    else:
+        summary_instruction =  ("请总结以上对话，特别注意:\n"
+                                "- 如果对话中涉及检索到的文档或数据，请在总结中记录关键信息\n"
+                                "- 保留重要的查询主题和对应的答案要点\n")
+
+    # Add instruction to our history
+    prompt = history + [HumanMessage(content=summary_instruction)]
+    llm_run_config = {
+        "model": runtime.context['model'],  # 默认使用与主模型相同的配置
+        "api_key": runtime.context['api_key'],
+        "base_url": runtime.context['base_url'],
+    }
+
+    response = summarization_model.invoke(prompt, config=llm_run_config)
+
+    # Delete all but the most 3 recent messages
+    delete_messages = [RemoveMessage(id=REMOVE_ALL_MESSAGES)]
+    last_3_messages = state["summarized_messages"][-3:]
+    return {"summary": response.content, "summarized_messages": delete_messages + [AIMessage(content=response.content)] + last_3_messages}
+
 
 # 6.1: 生成一个AIMessage，它要么直接回答用户提问，要么发出对工具调用请求
 def generate_query_or_respond(state: GraphState, runtime: Runtime[ContextSchema]):
@@ -84,17 +187,12 @@ def generate_query_or_respond(state: GraphState, runtime: Runtime[ContextSchema]
 
     system_message_content = (
         "你是一名核工业专业知识问答助理。"
-        "你需要尽力响应用户的输入，即便用户输入并不是有关核工业专业知识的提问。"
+        "你需要尽力响应用户的输入，如果用户输入并不是有关核工业专业知识的提问，就拒绝回答。"
         "每次响应最后记得带上‘欢迎你再次提问！🙂’"
     )
 
     # 从当前APP状态中提取出对话消息列表，包含：HumanMessage、无工具调用请求的AIMessage
-    conversation_messages = [
-        message
-        for message in state["messages"]
-        if message.type == "human"
-           or (message.type == "ai" and not message.tool_calls)
-    ]
+    conversation_messages = state["summarized_messages"]
 
     prompt = [SystemMessage(system_message_content)] + conversation_messages
 
@@ -107,7 +205,7 @@ def generate_query_or_respond(state: GraphState, runtime: Runtime[ContextSchema]
     response = llm_with_tools.invoke(prompt, config={"configurable": llm_run_config})
 
     # 响应为AIMessage，用于更新Graph State
-    return {"messages": [response]}
+    return {"messages": [response], "summarized_messages":[response] if not response.tool_calls else []}
 
 # 6.2 执行检索工具
 def execute_tools(state: GraphState, runtime: Runtime[ContextSchema]):
@@ -157,7 +255,7 @@ def rerank(state: GraphState, runtime: Runtime[ContextSchema]):
     """对最近检索到的文档进行重排序，并组成实际用于生成最后响应的参考信息"""
     # 获取最近检索到的所有文档
     recent_docs_count = state["recent_docs_count"]
-    recent_docs = state["all_docs"][-recent_docs_count:-1]
+    recent_docs = state["all_docs"][-recent_docs_count:]
     if not recent_docs:
         return {"messages": [AIMessage("最近几次的检索结果获取失败，无法进入重排序！")]}
 
@@ -165,31 +263,31 @@ def rerank(state: GraphState, runtime: Runtime[ContextSchema]):
     actual_num_of_doc_used = runtime.context['actual_num_of_doc_used']
 
     recent_docs_length = len(recent_docs)
-    if recent_docs_length > actual_num_of_doc_used:
-        # 获取最近的用户query
-        query = ""
-        for message in reversed(state["messages"]):
-            if message.type == "human":
-                query = message.content
-                break
-        logger.info(f"开始重排序，因为 actual_num_doc_used = {actual_num_of_doc_used} 小于 本次query的相关文档总数 = {recent_docs_length}, 用户query: {query}")
-        start_time = time.time()
-        reranker = CrossEncoder('BAAI/bge-reranker-large')
-        sentence_pairs = [(query, doc.page_content) for doc in recent_docs]
-        scores = reranker.predict(sentence_pairs)
-        score_and_doc_list = zip(scores, recent_docs)
-        sorted_score_and_doc_list = sorted(score_and_doc_list, key=lambda x: x[0], reverse=True)
-        logger.info(f"重排序完成，本次重排序耗时{(time.time() - start_time):.2f}s")
-        return {"actual_docs_info_used":chr(10).join( [f"文档_{i+1}:\n{score_doc_tuple[1].page_content}"
-                                                        for i, score_doc_tuple in enumerate(sorted_score_and_doc_list) ]
-                                        )
-                }
-    else:
-        logger.info(f"无需重排序，因为本次query的相关文档总数 = {recent_docs_length} <= actual_num_doc_used = {actual_num_of_doc_used}")
-        return {"actual_docs_info_used": chr(10).join( [f"文档_{i+1}:\ndoc.page_content"
-                                                        for i, doc in enumerate(recent_docs) ]
-                                         )
-                }
+    if recent_docs_length <= actual_num_of_doc_used:
+        logger.info(f"无需重排序，因为 根据本次用户提问查询到的相关文档总数 = {recent_docs_length} <= 实际要采用的文档数 = {actual_num_of_doc_used}")
+        content_list = [f"文档_{i + 1}:\n{doc.page_content}" for i, doc in enumerate(recent_docs)]
+        contents = chr(10).join(content_list)
+        return {"actual_docs_info_used": contents}
+
+    logger.info(f"开始重排序，因为 根据本次用户提问查询到的相关文档总数 = {recent_docs_length} > 实际要采用的文档数 = {actual_num_of_doc_used}")
+    # 获取最近的用户query
+    query = ""
+    for message in reversed(state["messages"]):
+        if message.type == "human":
+            query = message.content
+            break
+    start_time = time.time()
+    reranker = CrossEncoder('BAAI/bge-reranker-large')
+    sentence_pairs = [(query, doc.page_content) for doc in recent_docs]
+    scores = reranker.predict(sentence_pairs)
+    score_and_doc_list = zip(scores, recent_docs)
+    sorted_score_and_doc_list = sorted(score_and_doc_list, key=lambda x: x[0], reverse=True)
+    logger.info(f"重排序完成，本次重排序耗时{(time.time() - start_time):.2f}s")
+
+    sorted_docs = [score_doc_tuple[1] for score_doc_tuple in sorted_score_and_doc_list]
+    content_list = [f"文档_{i+1}:\n{doc.page_content}" for i, doc in enumerate(sorted_docs)]
+    contents = chr(10).join(content_list)
+    return {"actual_docs_info_used":contents}
 
 
 # 6.4: 再次调用llm，获取答案
@@ -200,18 +298,19 @@ def generate(state: GraphState, runtime: Runtime[ContextSchema]):
     system_message_content = (
         "你是一名核工业专业知识问答助理。"
         "在回答用户提问时，考虑使用下面依据用户提问检索到的相关信息回答用户。"
-        "如果检索到的信息对于你的回答没有帮助，请先告诉我‘检索结果对于回答问题无帮助’，之后再尝试自己回答用户。"
+        "如果检索到的信息对于你的回答没有帮助，请直接告诉我你不知道。"
         "总是以“欢迎你再次提问！”作为每次回答的结尾。"
         "\n\n"
         f"检索结果：\n{infos}"
     )
 
-    conversation_messages = [
-        message
-        for message in state["messages"]
-        if message.type == "human"
-            or (message.type == "ai" and not message.tool_calls)
-    ]
+    # conversation_messages = [
+    #     message
+    #     for message in state["messages"]
+    #     if message.type == "human"
+    #         or (message.type == "ai" and not message.tool_calls)
+    # ]
+    conversation_messages = state["summarized_messages"]
     prompt = [SystemMessage(system_message_content)] + conversation_messages
 
     # 2、将消息列表(包含上下文的系统消息+对话消息列表)发给llm
@@ -223,9 +322,10 @@ def generate(state: GraphState, runtime: Runtime[ContextSchema]):
     response = llm.invoke(prompt, config={"configurable": llm_run_config})
 
     # 3、将返回的AIMessage和docs加进Graph State
-    return {"messages": [response]}
+    return {"messages": [response], "summarized_messages":[response]}
 
 
+# 本函数只用来决定路由而不对Graph State做修改，所以作为条件边函数。而不是作为内部使用Command的节点函数
 def tools_condition(state):
     """条件边函数，决定某一节点下一步该往哪个节点走"""
     last_message = state["messages"][-1]
@@ -235,12 +335,14 @@ def tools_condition(state):
 
 graph_builder = StateGraph(state_schema=GraphState, context_schema=ContextSchema)
 
+graph_builder.add_node("summarize_history", summarize_history)
 graph_builder.add_node("generate_query_or_respond", generate_query_or_respond)
 graph_builder.add_node("tool_node", execute_tools)
 graph_builder.add_node("rerank", rerank)
 graph_builder.add_node("generate", generate)
 
-graph_builder.add_edge(START, "generate_query_or_respond")
+graph_builder.add_edge(START, "summarize_history")
+graph_builder.add_edge("summarize_history", "generate_query_or_respond")
 graph_builder.add_conditional_edges(
     "generate_query_or_respond",
     tools_condition,

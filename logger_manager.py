@@ -13,19 +13,25 @@ if not root_logger.handlers:
     # 独立控制：可以为不同输出目标设置不同级别
     # 作用范围：只影响发送到特定输出设备的消息
     file_handler = logging.FileHandler("app.log", encoding="utf-8")
-    file_handler.setLevel(logging.DEBUG)
+    file_handler.setLevel(logging.INFO)
 
     console_handler = logging.StreamHandler()
-    console_handler.setLevel(logging.INFO)
+    console_handler.setLevel(logging.DEBUG)
 
     # 指定输出格式：时间 - 日志器（逻辑）名称 - 日志级别 - 日志消息
-    formatter = logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s")
+    formatter = logging.Formatter("%(asctime)s - %(name)s - %(filename)s:%(lineno)d - %(levelname)s - %(message)s")
     file_handler.setFormatter(formatter)
     console_handler.setFormatter(formatter)
 
     root_logger.addHandler(file_handler)
     root_logger.addHandler(console_handler)
 
+# 抑制第三方库的噪音
+logging.getLogger("urllib3").setLevel(logging.WARNING)
+logging.getLogger("httpcore").setLevel(logging.WARNING)
+logging.getLogger("httpx").setLevel(logging.WARNING)
+logging.getLogger("openai").setLevel(logging.WARNING)
+logging.getLogger("langsmith").setLevel(logging.WARNING)
 
 def get_logger(name):
     """直接获取已配置的 logger"""

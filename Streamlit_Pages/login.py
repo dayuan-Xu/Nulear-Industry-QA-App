@@ -64,7 +64,7 @@ if st.session_state.pre_user is None:
 
                 st.session_state.pre_user = user
 
-                logger.info(f"用户Email:{user.email} 登录成功")
+                logger.info(f"用户Email:{user.email} 登录成功，LangGraph运行时配置成功加载到st.session_state")
 
 
                 st.success("登录成功")
