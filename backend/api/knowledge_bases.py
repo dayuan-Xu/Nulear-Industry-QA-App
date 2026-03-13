@@ -11,12 +11,12 @@ import os
 from datetime import datetime
 from backend.models.schemas import KnowledgeBaseCreate, KnowledgeBaseUpdate, FileRename
 from backend.services.kb_service import KnowledgeBaseService
-from backend.services.file_service import FileService, parse_file_background, parse_all_files_background
+from backend.services.file_service import FileService
 
 router = APIRouter(prefix="/api/knowledge-bases", tags=["knowledge-bases"])
 kb_service = KnowledgeBaseService()
 file_service = FileService()
-logger = logging.getLogger(__name__)
+
 
 class ParseProgress(BaseModel):
     file_name: str
@@ -204,60 +204,59 @@ async def upload_file(
 
 
 @router.post("/{kb_id}/files/{file_name}/parse")
-async def parse_file(
-    kb_id: int,
-    file_name: str,
-    background_tasks: BackgroundTasks
-):
-    """
-    解析单个文件
-    """
-    logger.info(f"请求解析文件: kb_id={kb_id}, file={file_name}")
+async def parse_file(kb_id: int, file_name: str):
+    """解析单个文件"""
+    try:
+        kb = kb_service.get_knowledge_base(kb_id)
+        if not kb:
+            raise HTTPException(status_code=404, detail="知识库不存在")
 
-    # 1. 验证知识库
-    kb = kb_service.get_knowledge_base(kb_id)
-    if not kb:
-        raise HTTPException(status_code=404, detail="知识库不存在")
+        # 初始化进度
+        if kb_id not in parse_progress_store:
+            parse_progress_store[kb_id] = {}
 
-    # 2. 验证文件是否存在
-    file_path = file_service.get_file_path(kb.user_email, kb.name, file_name)
-    if not file_path.exists():
-        raise HTTPException(status_code=404, detail="文件不存在")
+        parse_progress_store[kb_id][file_name] = ParseProgress(
+            file_name=file_name,
+            progress=0,
+            status="processing"
+        )
 
-    # 3. 检查是否已解析
-    if file_name.startswith("&"):
-        raise HTTPException(status_code=400, detail="文件已完成解析，无需重复解析")
+        # 启动后台解析任务
+        from backend.services.file_service import parse_file_background
+        parse_file_background(kb, file_name)
 
-    # 4. 启动后台任务（✅ 补全参数）
-    background_tasks.add_task(
-        parse_file_background,
-        kb_id,
-        kb.user_email,   # 必须传递
-        kb.name,         # 必须传递
-        file_name
-    )
-
-    return {"message": "解析任务已启动", "status": "accepted"}
+        return {"message": "文件解析已开始"}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"解析文件失败: {str(e)}")
 
 
 @router.post("/{kb_id}/files/parse-all")
-async def parse_all_files(
-    kb_id: int,
-    background_tasks: BackgroundTasks
-):
-    """批量解析所有未解析的文件"""
-    kb = kb_service.get_knowledge_base(kb_id)
-    if not kb:
-        raise HTTPException(status_code=404, detail="知识库不存在")
+async def parse_all_files(kb_id: int):
+    """解析所有文件"""
+    try:
+        kb = kb_service.get_knowledge_base(kb_id)
+        if not kb:
+            raise HTTPException(status_code=404, detail="知识库不存在")
 
-    background_tasks.add_task(
-        parse_all_files_background,
-        kb_id,
-        kb.user_email,   # ✅ 补全
-        kb.name
-    )
+        files = file_service.list_kb_files(kb.user_email, kb.name)
 
-    return {"message": "批量解析任务已启动", "status": "accepted"}
+        # 初始化所有文件的进度
+        parse_progress_store[kb_id] = {}
+        for file in files:
+            if not file["name"].startswith("&"):
+                parse_progress_store[kb_id][file["name"]] = ParseProgress(
+                    file_name=file["name"],
+                    progress=0,
+                    status="processing"
+                )
+
+        # 启动后台解析任务
+        from backend.services.file_service import parse_all_files_background
+        parse_all_files_background(kb)
+
+        return {"message": "批量解析已开始"}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"批量解析失败: {str(e)}")
 
 
 @router.get("/{kb_id}/parse-progress")
