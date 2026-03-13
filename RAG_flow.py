@@ -23,8 +23,8 @@ logger = get_logger("RAG_flow.py")
 
 # 常见模型的上下文窗口限制
 MODEL_CONTEXT_WINDOWS = {
-    # "gpt-3.5-turbo": 16385,
-    "gpt-3.5-turbo": 2000,
+    "gpt-3.5-turbo": 16385,
+    # "gpt-3.5-turbo": 2000,
     "gpt-4o-mini": 128000,
     "gpt-4": 8192,
     "gpt-3.5-turbo-16k": 16385,
@@ -186,8 +186,8 @@ def generate_query_or_respond(state: GraphState, runtime: Runtime[ContextSchema]
     llm_with_tools = llm.bind_tools([retrieve])
 
     system_message_content = (
-        "你是一名核工业专业知识问答助理。"
-        "你需要尽力响应用户的输入，如果用户输入并不是有关核工业专业知识的提问，就拒绝回答。"
+        "你是一名核工业知识问答助理，只回答用户对核工业相关知识的提问。"
+        "你会尝试从用户输入中提取有关核工业知识的关键词并调用工具检索相关信息。"
         "每次响应最后记得带上‘欢迎你再次提问！🙂’"
     )
 
@@ -236,10 +236,10 @@ def execute_tools(state: GraphState, runtime: Runtime[ContextSchema]):
 
                 docs = retrieve(collection_name=collection_name, max_ctx_retrieved=max_ctx_retrieved, **tool_args)
                 recent_docs.extend(docs)
-                # 组装ToolMessage
+                # 组装 ToolMessage
                 tool_messages.append(
                     ToolMessage(
-                        content=[f"Doc_{i+1}: {doc.metadata['title']}\n{doc.page_content}" for i, doc in enumerate(docs)],
+                        content=[f"Doc_{i+1}: {doc.metadata.get('title', doc.metadata.get('source', 'Unknown'))}\n{doc.page_content}" for i, doc in enumerate(docs)],
                         tool_call_id=tool_call["id"]  # 添加工具调用 ID
                     )
                 )
@@ -296,9 +296,9 @@ def generate(state: GraphState, runtime: Runtime[ContextSchema]):
     infos = state["actual_docs_info_used"]
 
     system_message_content = (
-        "你是一名核工业专业知识问答助理。"
+        "你是一名核工业知识问答助理。"
         "在回答用户提问时，考虑使用下面依据用户提问检索到的相关信息回答用户。"
-        "如果检索到的信息对于你的回答没有帮助，请直接告诉我你不知道。"
+        "如果检索到的信息对于你的回答没有帮助，那么你就依靠自己所知回答。"
         "总是以“欢迎你再次提问！”作为每次回答的结尾。"
         "\n\n"
         f"检索结果：\n{infos}"

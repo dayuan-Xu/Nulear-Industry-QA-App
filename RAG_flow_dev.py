@@ -10,6 +10,7 @@ from langgraph.graph import START, END, add_messages
 from langgraph.graph import StateGraph
 from langgraph.graph.message import REMOVE_ALL_MESSAGES
 from langgraph.runtime import Runtime
+from rich.pretty import pprint
 from sentence_transformers import CrossEncoder
 from typing_extensions import List, Annotated, TypedDict
 from langchain_core.messages.utils import  count_tokens_approximately
@@ -231,7 +232,7 @@ def execute_tools(state: GraphState, runtime: Runtime[ContextSchema]):
                 # 组装ToolMessage
                 tool_messages.append(
                     ToolMessage(
-                        content=[f"Doc_{i+1}: {doc.metadata['title']}\n{doc.page_content}" for i, doc in enumerate(docs)],
+                        content=[f"Doc_{i+1}: {doc.metadata.get('title', doc.metadata.get('source', 'Unknown'))}\n{doc.page_content}" for i, doc in enumerate(docs)],
                         tool_call_id=tool_call["id"]  # 添加工具调用 ID
                     )
                 )
@@ -376,6 +377,7 @@ while True:
         context=context,
         stream_mode="values"
     ):
+        # pprint(step_state)
         # 输出经过每一个节点后summarized_messages的最后一条消息
         step_state["summarized_messages"][-1].pretty_print()
 

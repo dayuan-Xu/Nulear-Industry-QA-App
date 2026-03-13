@@ -14,7 +14,6 @@ from langchain_community.document_loaders import AzureAIDocumentIntelligenceLoad
 from logger_manager import get_logger
 from langchain_community.document_loaders import CSVLoader
 from bs4 import BeautifulSoup
-import pandas as pd
 
 logger = get_logger("load_file_2_Doc.py")
 

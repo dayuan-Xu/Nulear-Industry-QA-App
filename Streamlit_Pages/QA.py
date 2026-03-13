@@ -1,5 +1,8 @@
 # 该页面任务：显示用户对话列表，并加载对话界面。
 import uuid
+
+from rich.pretty import pprint
+
 from service_models.chat import  Chat
 from time import sleep
 from langchain_core.messages import AIMessage, HumanMessage, ToolMessage
@@ -28,7 +31,7 @@ if "pre_chat" not in st.session_state:
         st.session_state.pre_chat=None
         st.session_state.chat_switched = False
 
-st.header("核工业专业知识问答页面",anchor=False,divider="gray")
+st.header("核工业知识问答页面",anchor=False,divider="gray")
 
 @st.dialog("ℹ️ 重命名对话")
 def rename_chat_dialog(chat):
@@ -116,7 +119,7 @@ def new_chat(first_query_when_there_is_no_chat=None):
     else:
         switch_chat(new_chat)
     logger.info(f"Successfully created new chat: {new_title}")
-    st.toast(f"已创建新对话：{new_title}")
+    st.toast(f"已创建新对话：{new_title}", icon="✅")
     return new_thread_id
 
 def handle_delete_chat(chat):
@@ -298,17 +301,29 @@ def response_generator(response):
 
 # 根据graph实例、用户最新消息、graph运行时配置 执行graph
 def LangChainMessage_Generator(graph_1, text, run_config_1):
-    # 适配最新版LangGraph
+    # 适配最新版LangGraph, 本函数实现需要考虑RAG_flow.py中的workflow
     config = {"configurable": {"thread_id": run_config_1["configurable"]["thread_id"]}}
     context:ContextSchema = run_config_1["configurable"]
 
-    for update_to_graph_state in graph_1.stream(
-        input={"messages": [{"role": "user", "content": text}]},
+    initial_state = {"messages": [HumanMessage(content=text)],"summarized_messages": [HumanMessage(content=text)]}
+
+    for update in graph_1.stream(
+        input=initial_state,
         config=config,
         context=context,
         stream_mode="updates"
     ):
-        yield update_to_graph_state
+        pprint(update)
+        # 不对“messages”这个key写入新消息的节点函数没有消息可以渲染
+        if "rerank" in update:
+            continue
+        node_names = ["generate_query_or_respond", "tool_node", "generate"]
+        new_messages = []
+        for node_name in node_names:
+            if node_name in update:
+                new_messages = update[node_name]["messages"]
+        for message_item in new_messages:
+            yield message_item
 
 # 5、加载输入栏（无论pre_chat是否为None)
 prompt=st.chat_input("请输入问题:")
@@ -374,22 +389,12 @@ if prompt:
 
     # 一方面加载用户输入和响应，另一方面将其保存到 session_state.messages 中。
     with st.spinner("正在处理...", show_time=True):
-        for update in LangChainMessage_Generator(graph, prompt, run_config):
-            print( update)
-            # 不新增messages的节点函数没有消息可以渲染
-            if "rerank" in update:
-                continue
-            node_names=["generate_query_or_respond", "tool_node", "generate"]
-            new_messages = []
-            for node_name in node_names:
-                if node_name in update:
-                    new_messages = update[node_name]["messages"]
-            for message in new_messages:
-                # 4 种 LangChain 消息：1、用户输入 2、来自 Ai 的工具调用请求 3、Tool 结果 4、Ai 回答
-                if message.type == "ai" and len(message.tool_calls) == 0:
-                    # 流式输出第 4 类消息
-                    show_LangChain_message(message, streaming_output_for_ai_message=True)
-                elif message.type != "human":
-                    # 整体加载第 2-3 类消息
-                    show_LangChain_message(message)
+        for message in LangChainMessage_Generator(graph, prompt, run_config):
+            # 4 种 LangChain 消息：1、用户输入 2、来自 Ai 的工具调用请求 3、Tool 结果 4、Ai 回答
+            if message.type == "ai" and len(message.tool_calls) == 0:
+                # 流式输出第 4 类消息
+                show_LangChain_message(message, streaming_output_for_ai_message=True)
+            elif message.type != "human":
+                # 整体加载第 2-3 类消息
+                show_LangChain_message(message)
             st.session_state.messages.append(message)

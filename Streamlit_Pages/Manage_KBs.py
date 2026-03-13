@@ -91,9 +91,6 @@ def create_KB_dialog():
                     new_KB_dir=get_KB_directory(user.email, new_KB.name, create_if_not_exists=True)
                     # 4 在Qdrant中创建对应集合。
                     create_collection_if_not_exists(get_collection_name(new_KB_dir, new_KB))
-                    # 5 如果这是该用户创建的第一个知识库，则更新user_config
-                    if len(user.know_bases) == 1:
-                        user.update_default_user_config()
                     info.success("知识库创建成功")
                     sleep(0.5)
                     logger.info(f"成功创建知识库 {new_KB.name}")
@@ -175,8 +172,6 @@ def delete_KB_dialog(KB,KB_dir:Path):
             user=st.session_state.pre_user
             if KB in user.know_bases:
                 user.know_bases.remove(KB)
-                if len(user.know_bases)==0:
-                    user.update_default_user_config()
             delete_KB(KB.kb_id)
             # 2 删除知识库，从文件系统中。
             delete_KB_dir(st.session_state.pre_user.email, KB)
@@ -526,7 +521,7 @@ else:
         with go_back:
             st.button(":blue[**返回所有知识库**]",use_container_width=True,on_click=close_KB)
         with text:
-            st.text_input("",icon=":material/search:",label_visibility="collapsed",key="file_name_searched",placeholder="搜索文件",
+            st.text_input("搜索文件",icon=":material/search:",label_visibility="collapsed",key="file_name_searched",placeholder="搜索文件",
                           on_change=search_file,args=(KB_dir,))
         with upload_file:
             show_upload_file_area(pre_KB, KB_dir)
