@@ -217,16 +217,15 @@ def refresh_user_kbs():
     """刷新用户知识库列表"""
     try:
         user_kbs = api_client.get_user_knowledge_bases(st.session_state.pre_user.email)
+        # 转换格式
         kbs = []
         for kb_data in user_kbs:
             kb = KnowledgeBase(
                 kb_id=kb_data["kb_id"],
                 name=kb_data["name"],
                 doc_number=kb_data["doc_number"],
-                created_time=kb_data["created_time"]  # 保留原始时间（可选）
+                created_time=kb_data["created_time"]
             )
-            # 使用后端返回的本地格式化时间
-            kb.local_created_time = kb_data.get("local_created_time", "")
             kbs.append(kb)
         st.session_state.pre_user.know_bases = kbs
     except Exception as e:
@@ -329,8 +328,7 @@ def show_all_KB():
                 st.text("\n" * 3)
                 # 2 显示文档数、创建时间
                 st.write(":material/description:" + f" {KB.doc_number} 文档")
-                display_time = KB.local_created_time if hasattr(KB, 'local_created_time') else str(KB.created_time)
-                st.write(":material/calendar_month:" + f" {display_time}")
+                st.write(":material/calendar_month:" + f" {KB.created_time}")
 
 def parse_single_file(kb_id: int, file_name: str, display_name: str):
     """解析单个文件 - 仅调用API，不处理UI"""

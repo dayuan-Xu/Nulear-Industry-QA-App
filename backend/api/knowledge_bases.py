@@ -64,22 +64,12 @@ async def create_knowledge_base(
 
 @router.get("/user/{user_email}")
 async def get_user_knowledge_bases(user_email: str):
+    """获取用户的所有知识库"""
     try:
         kbs = kb_service.get_user_knowledge_bases(user_email)
-        return {
-            "knowledge_bases": [
-                {
-                    "kb_id": kb.kb_id,
-                    "name": kb.name,
-                    "doc_number": kb.doc_number,
-                    "created_time": kb.created_time,
-                    "local_created_time": kb.local_created_time,  # 必须存在
-                    "user_email": user_email
-                } for kb in kbs
-            ]
-        }
+        return {"knowledge_bases": kbs}
     except Exception as e:
-        ...
+        raise HTTPException(status_code=500, detail=f"获取知识库失败: {str(e)}")
 
 
 @router.get("/{kb_id}")
