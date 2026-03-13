@@ -233,23 +233,18 @@ def refresh_user_kbs():
 
 
 def refresh_kb_files(kb_id):
-    """刷新知识库文件列表，并清理该知识库的所有进度占位符"""
-    # 清理该知识库的所有占位符
-    keys_to_delete = [key for key in list(st.session_state.parse_progress_placeholders.keys()) if key[0] == kb_id]
-    for key in keys_to_delete:
-        try:
-            st.session_state.parse_progress_placeholders[key].empty()
-        except:
-            pass
-        del st.session_state.parse_progress_placeholders[key]
-    logger.info(f"清理了 {len(keys_to_delete)} 个占位符")
-
+    """刷新知识库文件列表 - 只更新数据，不触发占位符创建"""
     try:
         files = api_client.get_kb_files(kb_id)
         st.session_state.kb_files = files
-        logger.info(f"刷新文件列表成功: {[f['name'] for f in files]}")
+        logger.info(f"文件列表刷新成功: 共 {len(files)} 个文件")
+
+        # ========== 重要：不要在这里创建任何占位符！ ==========
+        # 占位符只应该在用户点击解析按钮时创建
+
         return files
     except Exception as e:
+        st.error(f"刷新文件列表失败: {str(e)}")
         logger.error(f"刷新文件列表失败: {e}")
         return []
 
@@ -373,62 +368,62 @@ def parse_all_files(kb_id):
         st.toast(f"批量解析失败: {str(e)}", icon="🚨")
 
 
-@st.fragment(run_every=0.1)
+@st.fragment(run_every=1)
 def show_progress_if_any_not_finished():
+    """显示解析进度 - 只有存在解析任务时才轮询"""
+
+    # 1. 必须已打开知识库
     if not st.session_state.pre_opened_KB:
         return
 
+    # 2. 必须有活跃的解析任务（占位符）
     if not st.session_state.parse_progress_placeholders:
         return
 
     kb_id = st.session_state.pre_opened_KB.kb_id
-    need_refresh = False
 
     try:
-        progress_data = api_client.get_parse_progress(kb_id)
-
+        # 3. 获取当前知识库的文件列表（用于检查文件是否还存在）
         current_files = st.session_state.get("kb_files", [])
         current_file_names = {f["name"] for f in current_files}
 
+        # 4. 获取解析进度
+        progress_data = api_client.get_parse_progress(kb_id)
+
+        # 5. 遍历所有占位符
         to_delete = []
         for (task_kb_id, file_name), placeholder in st.session_state.parse_progress_placeholders.items():
             if task_kb_id != kb_id:
                 continue
 
+            # 5.1 检查文件是否已被删除
             if file_name not in current_file_names:
+                logger.info(f"文件已删除，清理占位符: {file_name}")
                 placeholder.empty()
                 to_delete.append((task_kb_id, file_name))
                 continue
 
-            import urllib.parse
+            # 5.2 更新进度
+            if file_name in progress_data:
+                prog = progress_data[file_name].get("progress", 0)
 
-            # 在轮询函数中：
-            decoded_file_name = urllib.parse.unquote(file_name)
-            prog_info = progress_data.get(decoded_file_name, {})
-            prog = prog_info.get("progress", 0)
-            # 确保进度值是有效的数字
-            if isinstance(prog, (int, float)) and 0 <= prog <= 100:
                 if prog < 100:
                     placeholder.progress(prog / 100, f"解析进度: {prog}%")
-                    logger.debug(f"更新进度 {prog}%: {file_name}")
                 else:
                     placeholder.write(":green[解析成功]")
                     to_delete.append((task_kb_id, file_name))
-                    if not st.session_state.get(f"need_refresh_{kb_id}", False):
-                        st.session_state[f"need_refresh_{kb_id}"] = True
-                        st.rerun()
             else:
-                logger.warning(f"无效进度值 {prog} 用于文件 {file_name}")
+                # 后端还没有进度记录，显示等待中
+                placeholder.progress(0, "等待解析...")
 
+        # 6. 清理已完成的占位符
         for key in to_delete:
             if key in st.session_state.parse_progress_placeholders:
                 del st.session_state.parse_progress_placeholders[key]
 
-        if need_refresh:
-            st.session_state[f"need_refresh_{kb_id}"] = True
-
     except Exception as e:
         logger.error(f"获取解析进度失败: {e}")
+
 
 def show_file_bar(file_info, kb_id):
     """显示文件信息栏 - 修复：未解析文件不创建进度占位符"""
@@ -457,23 +452,31 @@ def show_file_bar(file_info, kb_id):
             st.write(f":material/calendar_month: {upload_time}")
 
         with status_area:
-            parse_progress_area, button_area, blank_area = st.columns([0.8, 0.1, 0.1], vertical_alignment="center")
+            parse_progress_area, button_area, blank_area = st.columns(
+                [0.8, 0.1, 0.1], vertical_alignment="center"
+            )
+
             with parse_progress_area:
                 placeholder_key = (kb_id, file_name)
+
+                # ========== 关键修复：只有已解析或正在解析的文件才显示状态 ==========
                 if is_parsed:
+                    # 已解析文件：显示绿色成功
                     st.write(":green[解析成功]")
+
                     # 清理可能残留的占位符
                     if placeholder_key in st.session_state.parse_progress_placeholders:
                         st.session_state.parse_progress_placeholders[placeholder_key].empty()
                         del st.session_state.parse_progress_placeholders[placeholder_key]
+
+                elif placeholder_key in st.session_state.parse_progress_placeholders:
+                    # 正在解析的文件：显示进度占位符（已有）
+                    placeholder = st.session_state.parse_progress_placeholders[placeholder_key]
+                    # 占位符内容由轮询函数更新
+
                 else:
-                    # 未解析：检查是否正在解析（有占位符）
-                    if placeholder_key in st.session_state.parse_progress_placeholders:
-                        # 已有占位符，由轮询函数更新
-                        pass
-                    else:
-                        # 未开始解析，仅显示文本
-                        st.write(":gray[未解析]")
+                    # 未解析且未开始解析的文件：只显示"未解析"文字，不创建占位符！
+                    st.write(":gray[未解析]")
 
             with button_area:
                 # ========== 修复：解析按钮点击时才创建占位符 ==========
@@ -510,11 +513,22 @@ def show_file_bar(file_info, kb_id):
                     delete_file_dialog(kb_id, file_name, display_name)
 
             with button_cols[2]:
-                download_url = api_client.download_file_url(kb_id, file_name)
-                st.markdown(
-                    f'<a href="{download_url}" download="{display_name}" style="text-decoration: none; font-size: 1rem;line-height: 2.5;">⬇️</a>',
-                    unsafe_allow_html=True
-                )
+                # 下载文件
+                try:
+                    file_content = api_client.download_file(kb_id, file_name)
+                    if file_content:
+                        st.download_button(
+                            label="⬇️",
+                            data=file_content,
+                            file_name=display_name,
+                            mime="application/octet-stream",
+                            type="tertiary",
+                            key=f"download_{file_name}"
+                        )
+                    else:
+                        st.write("⬇️")
+                except:
+                    st.write("⬇️")
 
 
 def show_KB_files(kb_id: int):
@@ -561,16 +575,6 @@ if st.session_state.pre_opened_KB is None:
 else:
     # Case 2: 显示知识库详情
     pre_KB = st.session_state.pre_opened_KB
-    kb_id = pre_KB.kb_id
-
-    # ========== 新增：检查是否需要刷新文件列表（解析完成后触发） ==========
-    if st.session_state.get(f"need_refresh_{kb_id}", False):
-        logger.info(f"检测到 need_refresh_{kb_id}=True，准备刷新文件列表")
-        refresh_kb_files(kb_id)
-        st.session_state[f"need_refresh_{kb_id}"] = False
-        st.rerun()  # 重新运行以显示最新状态
-    else:
-        logger.debug(f"need_refresh_{kb_id}=False，不刷新")
 
     st.title(f"{pre_KB.name}", anchor=False)
 

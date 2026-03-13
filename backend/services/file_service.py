@@ -137,17 +137,11 @@ class FileService:
     def rename_file_after_parse(self, user_email: str, kb_name: str, file_name: str) -> bool:
         file_path = self.get_file_path(user_email, kb_name, file_name)
         if not file_path.exists():
-            logger.error(f"文件不存在，无法重命名: {file_path}")
             return False
         new_name = "&" + file_path.name
         new_path = file_path.with_name(new_name)
-        try:
-            file_path.rename(new_path)
-            logger.info(f"✅ 重命名成功: {file_path} -> {new_path}")
-            return True
-        except Exception as e:
-            logger.error(f"❌ 重命名失败: {e}")
-            return False
+        file_path.rename(new_path)
+        return True
 
 
 # ========== 后台解析任务（使用 parse_progress_store） ==========
@@ -159,7 +153,6 @@ def parse_file_background(kb_id: int, user_email: str, kb_name: str, file_name: 
     global parse_progress_store
 
     logger.info(f"开始后台解析: kb_id={kb_id}, file={file_name}")
-    logger.info(f"全局进度存储 ID: {id(parse_progress_store)}")  # 调试
 
     kb_id_str = str(kb_id)
     if kb_id_str not in parse_progress_store:
@@ -187,7 +180,6 @@ def parse_file_background(kb_id: int, user_email: str, kb_name: str, file_name: 
         for index, total in index_file_backend(file_path, kb_dir, kb):
             progress = int((index + 1) / total * 100)
             parse_progress_store[kb_id_str][file_name]["progress"] = progress
-            logger.info(f"进度更新后全局进度: {parse_progress_store}")  # 调试
 
         parse_progress_store[kb_id_str][file_name]["progress"] = 100
         parse_progress_store[kb_id_str][file_name]["status"] = "completed"

@@ -262,10 +262,14 @@ async def parse_all_files(
 
 @router.get("/{kb_id}/parse-progress")
 async def get_parse_progress(kb_id: int):
-    from backend.services.file_service import parse_progress_store
-    progress = parse_progress_store.get(str(kb_id), {})
-    logger.info(f"返回进度: {progress}")
-    return {"progress": progress}
+    """获取解析进度"""
+    try:
+        if kb_id not in parse_progress_store:
+            return {"progress": {}}
+
+        return {"progress": parse_progress_store[kb_id]}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"获取解析进度失败: {str(e)}")
 
 
 @router.put("/{kb_id}/files/{file_name}/rename")
