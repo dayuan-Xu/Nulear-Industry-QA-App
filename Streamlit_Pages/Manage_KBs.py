@@ -154,46 +154,25 @@ def delete_file_dialog(kb_id, file_name, display_name):
     st.write(f"确定要删除文件 **{display_name}** 吗？此操作不可恢复。")
     cols = st.columns([1 / 5] * 5)
     info = st.empty()
-
     with cols[3]:
         if st.button(":red[确认]", use_container_width=True):
             try:
-                # 1. 调用后端API删除文件
+                # 调用API删除文件
                 api_client.delete_file(kb_id, file_name)
 
-                # 2. 清理该文件的进度占位符
-                placeholder_key = (kb_id, file_name)
-                if placeholder_key in st.session_state.parse_progress_placeholders:
-                    st.session_state.parse_progress_placeholders[placeholder_key].empty()
-                    del st.session_state.parse_progress_placeholders[placeholder_key]
-                if placeholder_key in st.session_state.parse_progress:
-                    del st.session_state.parse_progress[placeholder_key]
-
-                # 3. 刷新文件列表
+                # 刷新文件列表
                 refresh_kb_files(kb_id)
 
-                # 4. 更新文档计数
+                # 更新文档计数
                 KB = st.session_state.pre_opened_KB
                 KB.doc_number -= 1
 
-                # 5. **关键修复：如果文档数量变为0，清空所有进度占位符**
-                if KB.doc_number == 0:
-                    # 清空所有占位符
-                    for key in list(st.session_state.parse_progress_placeholders.keys()):
-                        if key[0] == kb_id:  # 只清理当前知识库的
-                            st.session_state.parse_progress_placeholders[key].empty()
-                            del st.session_state.parse_progress_placeholders[key]
-                    st.session_state.parse_progress = {}  # 完全清空进度记录
-                    logger.info(f"知识库 {kb_id} 已无文件，已清空所有进度占位符")
-
                 info.success("文件删除成功")
-                logger.info(f"成功删除文件 {file_name}，已清理进度占位符")
+                logger.info(f"成功删除文件 {file_name}")
                 sleep(0.5)
                 st.rerun()
-
             except Exception as e:
                 st.error(f"删除失败: {str(e)}")
-
     with cols[4]:
         if st.button("取消", use_container_width=True):
             st.rerun()
@@ -466,10 +445,8 @@ def show_file_bar(file_info, kb_id):
                 )
 
 
-def show_KB_files(kb_id: int):
-    """显示知识库文件 - 修复空列表白屏问题"""
-
-    # 表头
+def show_KB_files(kb_id):
+    """显示知识库文件"""
     name_width = 0.42
     time_width = 0.13
     status_width = 0.15
@@ -486,20 +463,14 @@ def show_KB_files(kb_id: int):
         with table_head[3]:
             "**操作**"
 
-    # 获取文件列表
-    files = st.session_state.get("kb_files", [])
-
-    # 关键修复：如果文件列表为空，显示提示信息并直接返回
-    if not files:
-        st.info("📁 知识库为空，请上传文件")
-        return
-
-    # 正常显示文件
     if st.session_state.searched_file is None:
-        for file_info in files:
+        # 显示所有文件
+        for file_info in st.session_state.kb_files:
             show_file_bar(file_info, kb_id)
     else:
+        # 显示搜索到的文件
         show_file_bar(st.session_state.searched_file, kb_id)
+        st.session_state.searched_file = None
 
 
 # 页面主逻辑
