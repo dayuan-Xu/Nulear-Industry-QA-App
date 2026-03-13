@@ -36,9 +36,6 @@ if "detail_page_initialized" not in st.session_state:
 if "parse_task_active" not in st.session_state:
     st.session_state.parse_task_active = False
 
-if "kb_sort_mode" not in st.session_state:
-    st.session_state.kb_sort_mode = "time_desc"  # 默认按时间降序（最新在前）
-
 @st.dialog("ℹ️ 新建知识库")
 def create_KB_dialog():
     new_KB = st.text_input("请输入知识库名称", key="new_KB_name")
@@ -311,17 +308,7 @@ def show_page_top():
 
 
 def show_all_KB():
-    kbs = st.session_state.pre_user.know_bases
-    sort_mode = st.session_state.kb_sort_mode
-
-    if sort_mode == "name_asc":
-        kbs.sort(key=lambda x: x.name)
-    elif sort_mode == "name_desc":
-        kbs.sort(key=lambda x: x.name, reverse=True)
-    elif sort_mode == "time_asc":
-        kbs.sort(key=lambda x: x.created_time)
-    elif sort_mode == "time_desc":
-        kbs.sort(key=lambda x: x.created_time, reverse=True)
+    """显示所有知识库"""
     KB_cols = st.columns(5)
     for i, KB in enumerate(st.session_state.pre_user.know_bases):
         with KB_cols[i % 5]:
@@ -567,23 +554,6 @@ def show_KB_files(kb_id: int):
 if st.session_state.pre_opened_KB is None:
     # Case 1: 显示所有知识库
     show_page_top()
-    # 排序选项
-    col1, col2 = st.columns([0.7, 0.3])
-    with col1:
-        st.write("")  # 占位对齐
-    with col2:
-        sort_choice = st.radio(
-            "排序方式",
-            ["按名称", "按时间（最新）"],
-            horizontal=True,
-            index=1,  # 默认按时间
-            key="sort_radio",
-            label_visibility="collapsed"
-        )
-        if sort_choice == "按名称":
-            st.session_state.kb_sort_mode = "name_asc"
-        else:
-            st.session_state.kb_sort_mode = "time_desc"
     show_all_KB()
 else:
     # Case 2: 显示知识库详情
