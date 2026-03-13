@@ -21,20 +21,6 @@ if "parse_all_files" not in st.session_state:
 if "kb_files" not in st.session_state:
     st.session_state.kb_files = []
 
-if "upload_in_progress" not in st.session_state:
-    st.session_state.upload_in_progress = False
-
-if "file_name_searched" not in st.session_state:
-    st.session_state.file_name_searched = ""
-
-if "file_name_searched_detailed" not in st.session_state:
-    st.session_state.file_name_searched_detailed = ""
-
-if "detail_page_initialized" not in st.session_state:
-    st.session_state.detail_page_initialized = False
-
-if "parse_task_active" not in st.session_state:
-    st.session_state.parse_task_active = False
 
 @st.dialog("ℹ️ 新建知识库")
 def create_KB_dialog():
@@ -540,61 +526,36 @@ else:
                       on_change=lambda: search_file(pre_KB.kb_id))
 
     with upload_file:
-        uploaded_files = st.file_uploader(
-            ":blue[上传新文件]",
-            type=["txt", "pdf", "md", "docx", "pptx"],
-            accept_multiple_files=True,
-            key=f"uploader_{pre_KB.kb_id}"
-        )
+        # 文件上传区域
+        uploaded_files = st.file_uploader(":blue[上传新文件]", type=["txt", "pdf", "md", "docx", "pptx"],
+                                          accept_multiple_files=True)
 
-        if uploaded_files and not st.session_state.upload_in_progress:
-            st.session_state.upload_in_progress = True
-
-            for uploaded_file in uploaded_files:
+        for uploaded_file in uploaded_files:
+            try:
+                # 保存临时文件
                 import tempfile
+
+                with tempfile.NamedTemporaryFile(delete=False) as tmp_file:
+                    tmp_file.write(uploaded_file.getvalue())
+                    tmp_path = tmp_file.name
+
+                # 上传到后端
+                api_client.upload_file(pre_KB.kb_id, tmp_path)
+
+                # 刷新文件列表
+                refresh_kb_files(pre_KB.kb_id)
+
+                # 更新文档计数
+                pre_KB.doc_number += 1
+
+                st.toast(f"文件 `{uploaded_file.name}` 上传成功！", icon="✅")
+
                 import os
-                from pathlib import Path
 
-                # 获取原始文件名
-                original_filename = uploaded_file.name
-                logger.info(f"准备上传文件: {original_filename}")
+                os.unlink(tmp_path)
 
-                # 创建临时文件（使用原始文件的扩展名）
-                suffix = Path(original_filename).suffix
-                with tempfile.NamedTemporaryFile(delete=False, suffix=suffix) as tmp:
-                    tmp.write(uploaded_file.getvalue())
-                    tmp_path = tmp.name
-
-                try:
-                    # 上传文件 - 传递原始文件名！
-                    result = api_client.upload_file(
-                        pre_KB.kb_id,
-                        Path(tmp_path),
-                        original_filename=original_filename  # 关键修复
-                    )
-
-                    # 更新文档计数
-                    pre_KB.doc_number += 1
-
-                    st.toast(f"文件 `{original_filename}` 上传成功！", icon="✅")
-                    logger.info(f"文件上传成功: {original_filename}")
-
-                except Exception as e:
-                    st.toast(f"文件 `{original_filename}` 上传失败: {str(e)}", icon="🚨")
-                    logger.error(f"文件上传失败: {original_filename}, 错误: {e}")
-
-                finally:
-                    # 清理临时文件
-                    try:
-                        os.unlink(tmp_path)
-                        logger.debug(f"临时文件已删除: {tmp_path}")
-                    except Exception as e:
-                        logger.warning(f"临时文件删除失败: {tmp_path}, 错误: {e}")
-
-            # 上传完成后刷新文件列表
-            refresh_kb_files(pre_KB.kb_id)
-            st.session_state.upload_in_progress = False
-            st.rerun()
+            except Exception as e:
+                st.toast(f"文件 `{uploaded_file.name}` 上传失败: {e}", icon="🚨")
 
     with one_press_parse_all:
         st.button("解析所有文件", use_container_width=True,

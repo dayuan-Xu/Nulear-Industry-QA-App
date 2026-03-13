@@ -1,10 +1,8 @@
-import logging
-
 import requests
 from typing import Dict, List, Optional, Any, Union
 import streamlit as st
 from pathlib import Path
-logger = logging.getLogger(__name__)
+
 
 class ApiClient:
     def __init__(self):
@@ -47,42 +45,24 @@ class ApiClient:
         response.raise_for_status()
         return response.json()["files"]
 
-    def upload_file(self, kb_id: int, file_path: Union[str, Path], original_filename: str = None) -> Dict:
+    def upload_file(self, kb_id: int, file_path: Union[str, Path]) -> Dict:
         """
         上传文件到知识库
-
-        Args:
-            kb_id: 知识库ID
-            file_path: 临时文件路径
-            original_filename: 原始文件名（必须传递！）
+        file_path: 可以是字符串路径或 Path 对象
         """
-        # 统一转换为Path对象
+        # 统一转换为 Path 对象
         if isinstance(file_path, str):
             file_path = Path(file_path)
 
-        # 检查文件是否存在
-        if not file_path.exists():
-            raise FileNotFoundError(f"文件不存在: {file_path}")
+        # 获取文件名
+        file_name = file_path.name
 
-        # 使用原始文件名，如果没有提供则使用临时文件名（但会警告）
-        if original_filename:
-            file_name = original_filename
-            logger.info(f"使用原始文件名: {file_name}")
-        else:
-            file_name = file_path.name
-            logger.warning(f"未提供原始文件名，使用临时文件名: {file_name}")
-
-        try:
-            with open(file_path, "rb") as f:
-                response = requests.post(
-                    f"{self.base_url}/api/knowledge-bases/{kb_id}/files/upload",
-                    files={"file": (file_name, f)},
-                    timeout=30
-                )
-            return response.json()
-        except Exception as e:
-            logger.error(f"上传文件失败: {e}", exc_info=True)
-            raise
+        with open(file_path, "rb") as f:
+            response = requests.post(
+                f"{self.base_url}/api/knowledge-bases/{kb_id}/files/upload",
+                files={"file": (file_name, f)}
+            )
+        return response.json()
 
     def parse_file(self, kb_id: int, file_name: str) -> Dict:
         """解析文件"""
