@@ -330,12 +330,24 @@ def show_all_KB():
                 st.write(":material/description:" + f" {KB.doc_number} 文档")
                 st.write(":material/calendar_month:" + f" {KB.created_time}")
 
+
 def parse_single_file(kb_id: int, file_name: str, display_name: str):
-    """解析单个文件 - 仅调用API，不处理UI"""
+    """解析单个文件 - 确保占位符已创建"""
     try:
+        # 检查占位符是否存在，如果不存在则创建
+        placeholder_key = (kb_id, file_name)
+        if placeholder_key not in st.session_state.parse_progress_placeholders:
+            # 这里无法直接创建占位符（需要UI上下文），所以返回并提示用户刷新
+            st.warning("请稍后再次点击解析按钮")
+            logger.warning(f"占位符不存在，无法启动解析: {file_name}")
+            return
+
+        # 启动解析任务
         api_client.parse_file(kb_id, file_name)
+
         st.toast(f"开始解析文件 {display_name}", icon="✅")
         logger.info(f"解析任务已启动: kb_id={kb_id}, file={file_name}")
+
     except Exception as e:
         st.toast(f"解析失败: {str(e)}", icon="🚨")
         logger.error(f"解析任务启动失败: {e}")
@@ -479,15 +491,23 @@ def show_file_bar(file_info, kb_id):
                             st.write(":gray[未解析]")
 
             with button_area:
-                if st.button("", key=f"parse_{file_name}", type="tertiary", icon="🔄", help="开始解析"):
+                # ========== 修复：解析按钮点击时才创建占位符 ==========
+                if st.button("", key=f"parse_{file_name}", type="tertiary",
+                             icon="🔄", help="开始解析"):
                     if is_parsed:
                         st.toast(f"文件**{display_name}**已经完成解析", icon="🚨")
                     else:
-                        # 设置创建占位符的标志
-                        st.session_state[f"create_placeholder_{kb_id}_{file_name}"] = True
+                        # 解析前先创建进度占位符
+                        placeholder_key = (kb_id, file_name)
+                        if placeholder_key not in st.session_state.parse_progress_placeholders:
+                            # 在按钮点击时创建占位符
+                            with parse_progress_area:
+                                placeholder = st.empty()
+                                placeholder.progress(0, "解析进度: 0%")
+                                st.session_state.parse_progress_placeholders[placeholder_key] = placeholder
+
                         # 调用解析API
                         parse_single_file(kb_id, file_name, display_name)
-                        st.rerun()  # 立即重绘，以便在下一帧创建占位符
 
         with operation_area:
             # ... 操作区域代码保持不变 ...
