@@ -539,71 +539,61 @@ else:
                       key="file_name_searched", placeholder="搜索文件",
                       on_change=lambda: search_file(pre_KB.kb_id))
 
-    # ========== 知识库详情页面上传区域 ==========
     with upload_file:
-        # 动态 key 实现上传后自动清空
-        uploader_key = f"uploader_{pre_KB.kb_id}_{st.session_state.get(f'uploader_counter_{pre_KB.kb_id}', 0)}"
-
         uploaded_files = st.file_uploader(
             ":blue[上传新文件]",
             type=["txt", "pdf", "md", "docx", "pptx"],
             accept_multiple_files=True,
-            key=uploader_key
+            key=f"uploader_{pre_KB.kb_id}"
         )
 
-        # 初始化上传状态
-        upload_state_key = f"uploading_{pre_KB.kb_id}"
-        if upload_state_key not in st.session_state:
-            st.session_state[upload_state_key] = False
+        if uploaded_files and not st.session_state.upload_in_progress:
+            st.session_state.upload_in_progress = True
 
-        # 处理上传
-        if uploaded_files and not st.session_state[upload_state_key]:
-            st.session_state[upload_state_key] = True
-
-            success_count = 0
             for uploaded_file in uploaded_files:
                 import tempfile
                 import os
                 from pathlib import Path
 
+                # 获取原始文件名
                 original_filename = uploaded_file.name
+                logger.info(f"准备上传文件: {original_filename}")
 
-                # 保存临时文件
-                with tempfile.NamedTemporaryFile(delete=False, suffix=Path(original_filename).suffix) as tmp:
+                # 创建临时文件（使用原始文件的扩展名）
+                suffix = Path(original_filename).suffix
+                with tempfile.NamedTemporaryFile(delete=False, suffix=suffix) as tmp:
                     tmp.write(uploaded_file.getvalue())
                     tmp_path = tmp.name
 
                 try:
-                    # 上传
-                    api_client.upload_file(pre_KB.kb_id, Path(tmp_path), original_filename)
-                    pre_KB.doc_number += 1
-                    success_count += 1
-                    logger.info(f"上传成功: {original_filename}")
+                    # 上传文件 - 传递原始文件名！
+                    result = api_client.upload_file(
+                        pre_KB.kb_id,
+                        Path(tmp_path),
+                        original_filename=original_filename  # 关键修复
+                    )
 
-                except FileExistsError:
-                    st.toast(f"文件 `{original_filename}` 已存在", icon="⚠️")
+                    # 更新文档计数
+                    pre_KB.doc_number += 1
+
+                    st.toast(f"文件 `{original_filename}` 上传成功！", icon="✅")
+                    logger.info(f"文件上传成功: {original_filename}")
+
                 except Exception as e:
                     st.toast(f"文件 `{original_filename}` 上传失败: {str(e)}", icon="🚨")
+                    logger.error(f"文件上传失败: {original_filename}, 错误: {e}")
 
                 finally:
+                    # 清理临时文件
                     try:
                         os.unlink(tmp_path)
-                    except:
-                        pass
+                        logger.debug(f"临时文件已删除: {tmp_path}")
+                    except Exception as e:
+                        logger.warning(f"临时文件删除失败: {tmp_path}, 错误: {e}")
 
-            # ========== 关键：上传成功后重置上传器 ==========
-            counter_key = f"uploader_counter_{pre_KB.kb_id}"
-            st.session_state[counter_key] = st.session_state.get(counter_key, 0) + 1
-
-            # 刷新文件列表
-            if success_count > 0:
-                refresh_kb_files(pre_KB.kb_id)
-                st.toast(f"{success_count} 个文件上传成功", icon="✅")
-
-            # 重置上传状态
-            st.session_state[upload_state_key] = False
-
-            # 重渲染
+            # 上传完成后刷新文件列表
+            refresh_kb_files(pre_KB.kb_id)
+            st.session_state.upload_in_progress = False
             st.rerun()
 
     with one_press_parse_all:
