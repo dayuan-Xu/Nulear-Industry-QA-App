@@ -158,6 +158,7 @@ def parse_file_background(kb_id: int, user_email: str, kb_name: str, file_name: 
     global parse_progress_store
 
     logger.info(f"开始后台解析: kb_id={kb_id}, file={file_name}")
+    logger.info(f"全局进度存储 ID: {id(parse_progress_store)}")  # 调试
 
     kb_id_str = str(kb_id)
     if kb_id_str not in parse_progress_store:
