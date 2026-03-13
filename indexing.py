@@ -15,7 +15,7 @@ from tenacity import retry, stop_after_attempt, wait_fixed
 from pydantic import SecretStr
 
 # 读取一些全局变量
-PAID_OPENAI_API_KEY = os.getenv('PAID_OPENAI_API_KEY',"sk-h232CWVa1CKk0MI03s22pSR1B9HZrKFGqsiSmdb9xtaImb4W")
+PAID_OPENAI_API_KEY = os.getenv('PAID_OPENAI_API_KEY')
 FREE_OPENAI_API_KEY = os.getenv('FREE_OPENAI_API_KEY',"sk-h232CWVa1CKk0MI03s22pSR1B9HZrKFGqsiSmdb9xtaImb4W")
 OPENAI_BASE_URL = os.getenv('OPENAI_BASE_URL')
 QDRANT_HOST = os.getenv('QDRANT_HOST','127.0.0.1')

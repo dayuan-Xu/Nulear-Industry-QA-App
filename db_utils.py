@@ -14,9 +14,17 @@ _connection_pool = None
 
 def get_connection_pool():
     global _connection_pool
+    # 单例模式，确保整个应用生命周期内只创建一个连接池实例
     if _connection_pool is None:
-        from backend.config import Config
-        DB_URI = f"postgresql://{Config.DB_USER}:{Config.DB_PASSWORD}@{Config.DB_HOST}:{Config.DB_PORT}/{Config.DB_NAME}?sslmode={Config.DB_SSL_MODE}"
+        # 使用环境变量获取数据库连接信息，避免硬编码
+        db_user = os.getenv("DB_USER")
+        db_password = os.getenv("DB_PASSWORD")
+        db_host = os.getenv("DB_HOST")
+        db_port = os.getenv("DB_PORT")
+        db_name = os.getenv("DB_NAME")
+        ssl_mode = os.getenv("DB_SSL_MODE")
+
+        DB_URI = f"postgresql://{db_user}:{db_password}@{db_host}:{db_port}/{db_name}?sslmode={ssl_mode}"
 
         try:
             connection_kwargs = {
@@ -60,22 +68,17 @@ def get_user_kbs(user_email: str):
             return kbs
 
 
-def get_kb_by_id(kb_id: int):
+def get_kb_by_id(kb_id: str):
     """根据ID获取知识库"""
     pool = get_connection_pool()
     with pool.connection() as conn:
         with conn.cursor() as cur:
             cur.execute("""
-                            SELECT 
-                                kb.kb_id,        -- row[0]
-                                kb.name,         -- row[1]  
-                                kb.doc_number,   -- row[2]
-                                kb.created_time, -- row[3]
-                                u.email          -- row[4]  ← 这才是邮箱字符串
-                            FROM knowledge_bases kb
-                            JOIN users u ON kb.user_id = u.id
-                            WHERE kb.kb_id = %s
-                        """, (kb_id,))
+                SELECT kb.*, u.email 
+                FROM knowledge_bases kb 
+                JOIN users u ON kb.user_id = u.id 
+                WHERE kb.kb_id = %s
+            """, (kb_id,))
             row = cur.fetchone()
             if row:
                 return KnowledgeBase(
@@ -83,7 +86,7 @@ def get_kb_by_id(kb_id: int):
                     name=row[1],
                     doc_number=row[2],
                     created_time=row[3],
-                    user_email=str(row[4]),
+                    user_email=row[4],
                     user_id=None  # 可以从其他查询获取
                 )
             return None
@@ -91,27 +94,17 @@ def get_kb_by_id(kb_id: int):
 
 def get_kb_by_name(user_email: str, kb_name: str):
     """根据名称获取知识库"""
-    print(f"DEBUG: get_kb_by_name called with user_email={user_email}, kb_name={kb_name}")
-
     user_id = get_user_id(user_email)
-    print(f"DEBUG: user_id = {user_id}")
-
     if not user_id:
-        print(f"DEBUG: 用户 {user_email} 不存在")
         return None
 
     pool = get_connection_pool()
     with pool.connection() as conn:
         with conn.cursor() as cur:
-            # 添加调试输出
-            print(f"DEBUG: 执行查询: SELECT * FROM knowledge_bases WHERE user_id = {user_id} AND name = '{kb_name}'")
-
             cur.execute("SELECT * FROM knowledge_bases WHERE user_id = %s AND name = %s",
                         (user_id, kb_name))
             row = cur.fetchone()
-
             if row:
-                print(f"DEBUG: 找到记录: {row}")
                 return KnowledgeBase(
                     kb_id=row[0],
                     name=row[1],
@@ -120,9 +113,8 @@ def get_kb_by_name(user_email: str, kb_name: str):
                     user_email=user_email,
                     user_id=user_id
                 )
-            else:
-                print(f"DEBUG: 未找到记录")
-                return None
+            return None
+
 
 def insert_KB(name: str, user_email: str):
     """创建知识库（修改版，接受user_email）"""

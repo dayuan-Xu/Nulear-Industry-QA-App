@@ -21,7 +21,19 @@ if "parse_all_files" not in st.session_state:
 if "kb_files" not in st.session_state:
     st.session_state.kb_files = []
 
+# 在页面顶部添加错误处理装饰器
+def handle_api_errors(func):
+    """处理API错误的装饰器"""
+    def wrapper(*args, **kwargs):
+        try:
+            return func(*args, **kwargs)
+        except Exception as e:
+            st.error(f"操作失败: {str(e)}")
+            logger.error(f"API调用失败: {e}")
+    return wrapper
 
+
+# 修改create_KB_dialog函数中的API调用部分
 @st.dialog("ℹ️ 新建知识库")
 def create_KB_dialog():
     new_KB = st.text_input("请输入知识库名称", key="new_KB_name")
@@ -270,6 +282,28 @@ def show_page_top():
 
 def show_all_KB():
     """显示所有知识库"""
+    try:
+        # 从API获取最新知识库列表
+        kb_data_list = api_client.get_user_knowledge_bases(st.session_state.pre_user.email)
+
+        # 转换数据格式
+        from service_models.KB import KnowledgeBase
+        kbs = []
+        for kb_data in kb_data_list:
+            kb = KnowledgeBase(
+                kb_id=kb_data["kb_id"],
+                name=kb_data["name"],
+                doc_number=kb_data["doc_number"],
+                created_time=kb_data["created_time"]
+            )
+            kbs.append(kb)
+
+        st.session_state.pre_user.know_bases = kbs
+
+    except Exception as e:
+        st.error(f"获取知识库失败: {str(e)}")
+        return
+
     KB_cols = st.columns(5)
     for i, KB in enumerate(st.session_state.pre_user.know_bases):
         with KB_cols[i % 5]:
@@ -312,59 +346,33 @@ def parse_all_files(kb_id):
         st.toast(f"批量解析失败: {str(e)}", icon="🚨")
 
 
+@st.fragment(run_every=1)
 def show_progress_if_any_not_finished():
-    """
-    显示解析进度 - 手动控制版本，不使用 fragment
-    返回: bool - 是否还有活跃任务
-    """
-    # 如果没有打开的知识库，直接返回
-    if not st.session_state.pre_opened_KB:
-        return False
+    """显示解析进度"""
+    if st.session_state.pre_opened_KB:
+        kb_id = st.session_state.pre_opened_KB.kb_id
 
-    # 如果没有活跃的解析任务，直接返回
-    if not st.session_state.parse_progress_placeholders:
-        return False
+        try:
+            # 从API获取解析进度
+            progress_data = api_client.get_parse_progress(kb_id)
+            progress_dict = progress_data.get("progress", {})
 
-    kb_id = st.session_state.pre_opened_KB.kb_id
+            for file_name, progress_info in progress_dict.items():
+                progress = progress_info.get("progress", 0)
 
-    try:
-        # 获取进度数据
-        progress_data = api_client.get_parse_progress(kb_id)
+                # 更新进度显示
+                for key, placeholder in st.session_state.parse_progress_placeholders.items():
+                    if key[1] == file_name:  # key格式为 (kb_id, file_name)
+                        placeholder.progress(progress, f"解析进度: {progress}%")
 
-        # 更新进度显示
-        completed = []
-        active_count = 0
+                        if progress == 100:
+                            placeholder.write(":green[解析成功]")
+                            # 从字典中移除
+                            if key in st.session_state.parse_progress_placeholders:
+                                del st.session_state.parse_progress_placeholders[key]
 
-        for (task_kb_id, file_name), placeholder in st.session_state.parse_progress_placeholders.items():
-            if task_kb_id != kb_id:
-                continue
-
-            if file_name in progress_data:
-                prog = progress_data[file_name].get("progress", 0)
-                status = progress_data[file_name].get("status", "processing")
-
-                if prog < 100:
-                    placeholder.progress(prog / 100, f"解析进度: {prog}%")
-                    active_count += 1
-                else:
-                    placeholder.write(":green[解析成功]")
-                    completed.append((task_kb_id, file_name))
-            else:
-                # 任务还在初始化
-                placeholder.write(":orange[等待解析...]")
-                active_count += 1
-
-        # 清理已完成的任务
-        for task_key in completed:
-            if task_key in st.session_state.parse_progress_placeholders:
-                del st.session_state.parse_progress_placeholders[task_key]
-
-        # 返回是否有活跃任务
-        return active_count > 0
-
-    except Exception as e:
-        logger.error(f"获取解析进度失败: {e}")
-        return False
+        except Exception as e:
+            logger.error(f"获取解析进度失败: {str(e)}")
 
 
 def show_file_bar(file_info, kb_id):

@@ -1,4 +1,3 @@
-import logging
 import shutil
 from pathlib import Path
 from fastapi import UploadFile
@@ -8,39 +7,10 @@ import threading
 import time
 from indexing import index_file_backend
 
-logger = logging.getLogger(__name__)
 
 class FileService:
     def __init__(self):
         self.base_dir = Path(__file__).parent.parent.parent / "all_users_files"
-
-    def _get_user_dir(self, user_email: str) -> Path:
-        """获取用户文件目录：all_users_files/user{email}"""
-        # 移除邮箱中的特殊字符，只保留用户名部分
-        # 这里假设邮箱格式为 username@domain.com，取@之前的部分
-        user_part = user_email.split('@')[0]
-        user_dir = self.base_dir / f"user{user_part}"
-
-        # 确保目录存在
-        try:
-            user_dir.mkdir(parents=True, exist_ok=True)
-        except Exception as e:
-            logger.error(f"创建用户目录失败: {user_dir}, 错误: {e}")
-
-        return user_dir
-
-    def _get_kb_dir(self, user_email: str, kb_name: str) -> Path:
-        """获取知识库文件目录：all_users_files/user{email}/{kb_name}"""
-        user_dir = self._get_user_dir(user_email)
-        kb_dir = user_dir / kb_name
-
-        # 确保目录存在
-        try:
-            kb_dir.mkdir(parents=True, exist_ok=True)
-        except Exception as e:
-            logger.error(f"创建知识库目录失败: {kb_dir}, 错误: {e}")
-
-        return kb_dir
 
     def create_kb_directory(self, user_email: str, kb_name: str) -> Path:
         """创建知识库目录"""
@@ -167,58 +137,14 @@ class FileService:
         return kb_dir / file_name
 
     def search_file(self, user_email: str, kb_name: str, search_name: str) -> Optional[Dict]:
-        """
-        在知识库中搜索文件
-        - 返回文件信息字典（如果找到）
-        - 返回 None（如果未找到）
-        - 不会抛出异常（异常由上层处理）
-        """
-        logger = logging.getLogger(__name__)
-        logger.info(f"搜索文件: 用户={user_email}, 知识库={kb_name}, 搜索词={search_name}")
+        """搜索文件"""
+        files = self.list_kb_files(user_email, kb_name)
 
-        try:
-            # 1. 获取知识库目录
-            kb_dir = self._get_kb_dir(user_email, kb_name)
+        for file in files:
+            if file["display_name"] == search_name:
+                return file
 
-            # 2. 检查目录是否存在
-            if not kb_dir.exists():
-                logger.warning(f"知识库目录不存在: {kb_dir}")
-                return None
-
-            # 3. 获取所有文件
-            files = self.list_kb_files(user_email, kb_name)
-            logger.info(f"找到 {len(files)} 个文件")
-
-            if not files:
-                logger.info("知识库为空，没有文件")
-                return None
-
-            # 4. 精确匹配搜索
-            for file in files:
-                display_name = file.get("display_name", "")
-                if display_name == search_name:
-                    logger.info(f"找到精确匹配: {display_name}")
-                    return file
-
-            # 5. 模糊匹配（可选）
-            for file in files:
-                display_name = file.get("display_name", "")
-                if search_name.lower() in display_name.lower():
-                    logger.info(f"找到模糊匹配: {display_name}")
-                    return file
-
-            logger.info(f"未找到匹配的文件: {search_name}")
-            return None
-
-        except PermissionError as e:
-            logger.error(f"权限错误，无法访问目录: {e}")
-            return None
-        except OSError as e:
-            logger.error(f"系统错误，无法访问目录: {e}")
-            return None
-        except Exception as e:
-            logger.error(f"搜索文件时发生未知错误: {e}", exc_info=True)
-            return None  # 返回 None，由上层决定是 404 还是 500
+        return None
 
 
 def parse_file_background(kb, file_name):
