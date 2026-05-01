@@ -14,7 +14,7 @@
 - 数据库准备
   - 安装dockerdesktop
   - 创建并运行Qdrant向量数据库容器：PowerShell下运行命令 docker run -p 6333:6333 -v ${PWD}/qdrant_storage:/qdrant/storage qdrant/qdrant（或者使用docker desktop的图形化界面完成创建）
-  - 创建并允许PostgreSQL数据库：PowerShell下运行命令
+  - 创建并运行PostgreSQL数据库：PowerShell下运行命令
   ```powershell
   docker run --name postgres `
   -e POSTGRES_PASSWORD=postgres `
